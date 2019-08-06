@@ -1,4 +1,9 @@
 ---
 label: dd
 hide_body: false
-fields: []
+fields:
+- name: dadfadf
+  type: text
+  config:
+    required: false
+  label: dadfadf
