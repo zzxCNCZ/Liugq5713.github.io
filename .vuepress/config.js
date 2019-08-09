@@ -32,9 +32,19 @@ module.exports = {
         "build-in-date",
         "build-in-json",
         "build-in-timer",
-        "design-patterns-oop"
+        "function",
+        "design-patterns-oop",
+        "error"
       ],
-      browser: [""],
+      "/browser/": [
+        "",
+        "canvas",
+        "event",
+        "file",
+        "formdata",
+        "uri",
+        "storage"
+      ],
       "/": [""]
     }
   }
