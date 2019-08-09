@@ -25,7 +25,8 @@ module.exports = {
         "type-number",
         "type-string",
         "type-array",
-        "type-object"
+        "type-object",
+        "logical-statement"
       ],
       "/": [""]
     }
