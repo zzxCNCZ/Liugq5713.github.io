@@ -8,7 +8,9 @@
 
 ## 位运算
 
-按位操作符（Bitwise operators） 将其操作数（operands）当作 32 位的比特序列（由 0 和 1 组成）
+按位操作符（Bitwise operators） 将其操作数（operands）当作 32 位的比特序列（由 0 和 1 组成）,即经位运算的数字将会转为最小位 -Math.pow(2,31),最大为 Math.pow(2,31)-1 的整数
+
+`～～1.1 将会被转化为1`
 
 ## 常量
 
