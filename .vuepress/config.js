@@ -26,7 +26,10 @@ module.exports = {
         "type-string",
         "type-array",
         "type-object",
-        "logical-statement"
+        "logical-statement",
+        "build-in-date",
+        "build-in-json",
+        "build-in-timer"
       ],
       "/": [""]
     }
