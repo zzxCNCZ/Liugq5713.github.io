@@ -2,7 +2,7 @@
 
 ## 存储方式
 
-数字类型是双精度浮点型，其值的范围在 -(2的53次方-1) 和 2的53次方-1之间
+数字类型是双精度浮点型([double-precision 64-bit binary format IEEE 754 value](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type))，其值的范围在 -(2的53次方-1) 和 2的53次方-1之间
 
 数字类型有三个 symbolic values:+Infinity, -Infinity 和 NaN (not-a-number).
 

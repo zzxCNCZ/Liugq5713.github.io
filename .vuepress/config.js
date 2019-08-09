@@ -17,7 +17,8 @@ module.exports = {
     nav: [
       { text: "Home", link: "/" },
       { text: "JavaScript", link: "/javascript/" },
-      { text: "Browser", link: "/browser/" }
+      { text: "Browser", link: "/browser/" },
+      {text:'Vue',link:'/vue/'}
     ],
     sidebar: {
       "/javascript/": [
@@ -44,6 +45,14 @@ module.exports = {
         "canvas",
         "file",
         "formdata",
+      ],
+      '/vue/':[
+        '',
+        'vue-base',
+        'vue-base-computed',
+        'vue-component',
+        'vue-component-sfc',
+        'vue-qa'
       ],
       "/": [""]
     }

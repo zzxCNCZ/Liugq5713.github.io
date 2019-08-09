@@ -34,7 +34,7 @@ URL.createObjectURL() 静态方法会创建一个 DOMString，其中包含一个
 objectURL = URL.createObjectURL(object);
 ```
 
-### 上传图片预览 URL.createObjectURL
+#### 上传图片预览 
 
 有时我们通过 input 上传图片文件之前，会希望可以预览一下图片，这个时候就可以通过前面所学到的东西实现，而且非常简单。[demo](https://developer.mozilla.org/en-US/docs/Web/API/File/Using_files_from_web_applications#Example_Using_object_URLs_to_display_images)
 
