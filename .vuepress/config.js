@@ -12,7 +12,6 @@ module.exports = {
   ],
   themeConfig: {
     logo: "/hero.png",
-    displayAllHeaders: true,
     sidebarDepth: 2,
     lastUpdated: "Last Updated",
     nav: [
@@ -20,7 +19,14 @@ module.exports = {
       { text: "WEBAPI", link: "/guide/" }
     ],
     sidebar: {
-      "/javascript/": ["", "variable", "type-common"],
+      "/javascript/": [
+        "",
+        "variable",
+        "type-number",
+        "type-string",
+        "type-array",
+        "type-object"
+      ],
       "/": [""]
     }
   }
