@@ -1,7 +1,5 @@
 # 引用类型 Object
 
-[[toc]]
-
 ## 创建对象
 
 > Use computed property names when creating objects with dynamic property names.Why? They allow you to define all the properties of an object in one place.
