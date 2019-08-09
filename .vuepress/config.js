@@ -38,12 +38,12 @@ module.exports = {
       ],
       "/browser/": [
         "",
-        "canvas",
         "event",
+        "uri",
+        "storage",
+        "canvas",
         "file",
         "formdata",
-        "uri",
-        "storage"
       ],
       "/": [""]
     }

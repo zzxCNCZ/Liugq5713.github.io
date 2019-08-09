@@ -1,4 +1,4 @@
-# 浏览器的本地存储
+# Storage
 
 ## cookie
 

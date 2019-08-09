@@ -1,4 +1,4 @@
-# 事件
+# Event
 
 ## onclick vs addEventListener 添加的点击事件
 
