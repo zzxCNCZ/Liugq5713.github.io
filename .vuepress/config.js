@@ -1,6 +1,5 @@
 module.exports = {
   title: "重学前端",
-  base: "/fe/",
   head: [
     [
       "link",
@@ -10,13 +9,15 @@ module.exports = {
       }
     ]
   ],
+  base: "/fe/",
   themeConfig: {
     logo: "/hero.png",
     sidebarDepth: 2,
     lastUpdated: "Last Updated",
     nav: [
-      { text: "JAVASCRIPT", link: "/javascript/" },
-      { text: "WEBAPI", link: "/guide/" }
+      { text: "Home", link: "/" },
+      { text: "JavaScript", link: "/javascript/" },
+      { text: "Browser", link: "/browser/" }
     ],
     sidebar: {
       "/javascript/": [
@@ -31,6 +32,7 @@ module.exports = {
         "build-in-json",
         "build-in-timer"
       ],
+      browser: [""],
       "/": [""]
     }
   }
