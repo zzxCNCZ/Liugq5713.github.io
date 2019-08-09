@@ -31,7 +31,8 @@ module.exports = {
         "logical-statement",
         "build-in-date",
         "build-in-json",
-        "build-in-timer"
+        "build-in-timer",
+        "design-patterns-oop"
       ],
       browser: [""],
       "/": [""]
