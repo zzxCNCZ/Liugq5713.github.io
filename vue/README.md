@@ -1,4 +1,5 @@
-# vueee
+# 收集
+
 ## 强制更新
 
 `this.$forceUpdate();`
@@ -14,11 +15,6 @@ addons.getChannel().emit(Events.FORCE_RE_RENDER);
 `import Header from "@/components/Header"`
 
 ## 组件
-
-写组件的两个目的：
-
-一是为了复用，复用的话写组件要考虑多一些，各种情况都要考虑
-二是为了拆分代码逻辑，使得一个文件不要太大，这种好用就行
 
 ## mutation 如何做到对你的操作进行检测
 

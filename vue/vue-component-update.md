@@ -1,11 +1,10 @@
-# Vue 组件更新
-## 为什么我的数据修改了，页面不更新
+# 组件 更新
 
-:::
+## 为什么我的数据修改了，页面不更新
 
 > 不知道这是不是 vue 初学者问的最多的问题，笔者刚学的时候碰到了好几次这样的情况
 
-::: tip 当出现页面不更新的情况，尽量先找找自己代码上的原因，别粗暴的强制更新页面
+当出现页面不更新的情况，尽量先找找自己代码上的原因，别粗暴的强制更新页面
 
 vue 的数据绑定是使用 Object.defineProterty，由于 JavaScript 本身的限制， vue 检测不到数组和对象的一些变化
 
@@ -18,7 +17,7 @@ vue 的数据绑定是使用 Object.defineProterty，由于 JavaScript 本身的
 Vue.set( target, key, value ),确保这个新属性同样是响应式的，且触发视图更新。它必须用于向响应式对象上添加新属性
 
 ```js
-push(), pop(), shift(), unshift(), splice(), sort(), reverse()
+push(), pop(), shift(), unshift(), splice(), sort(), reverse();
 ```
 
 - [对象更新](https://cn.vuejs.org/v2/guide/list.html#%E5%AF%B9%E8%B1%A1%E6%9B%B4%E6%94%B9%E6%A3%80%E6%B5%8B%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9)
@@ -49,23 +48,23 @@ The [key](https://vuejs.org/v2/api/#key) special attribute is primarily used as 
 <script>
   export default {
     beforeCreate() {
-      const { params, query } = this.$route
-      const { path } = params
-      this.$router.replace({ path: '/' + path, query })
+      const { params, query } = this.$route;
+      const { path } = params;
+      this.$router.replace({ path: "/" + path, query });
     },
     render: function(h) {
-      return h() // avoid warning message
+      return h(); // avoid warning message
     }
-  }
+  };
 </script>
 ```
 
 ```js
 // 手动重定向页面到 '/redirect' 页面
-const { fullPath } = this.$route
+const { fullPath } = this.$route;
 this.$router.replace({
-  path: '/redirect' + fullPath
-})
+  path: "/redirect" + fullPath
+});
 ```
 
 当遇到你需要刷新页面的情况，你就手动重定向页面到 redirect 页面，它会将页面重新 redirect 重定向回来，由于页面的 key 发生了变化，从而间接实现了刷新页面组件的效果。

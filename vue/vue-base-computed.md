@@ -1,5 +1,6 @@
-# Vue computed属性 
-vue的computed属性默认是只读的，你可以提供一个 `setter`。
+# 属性 计算属性 computed
+
+vue 的 computed 属性默认是只读的，你可以提供一个 `setter`。
 
 这个知识点有什么作用呢？
 
@@ -8,7 +9,12 @@ vue的computed属性默认是只读的，你可以提供一个 `setter`。
 ```html
 <template>
   <el-select v-model="email">
-    <el-option v-for="item in adminUserOptions" :key="item.email" :label="item.email" :value="item.email"/>
+    <el-option
+      v-for="item in adminUserOptions"
+      :key="item.email"
+      :label="item.email"
+      :value="item.email"
+    />
   </el-select>
 </template>
 ```
@@ -16,19 +22,18 @@ vue的computed属性默认是只读的，你可以提供一个 `setter`。
 ```js
 export default {
   props: {
-    value: {
-    }
+    value: {}
   },
   computed: {
     email: {
       get() {
-        return this.value
+        return this.value;
       },
       set(val) {
-        this.$emit('input', val)
-        this.$emit('change', val)
+        this.$emit("input", val);
+        this.$emit("change", val);
       }
     }
   }
-}
+};
 ```

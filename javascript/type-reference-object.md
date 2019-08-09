@@ -59,3 +59,47 @@ const personWithOtherFriends = {
 - Object.keys({}).length===0
 - JSON.stringfy({})==='{}'
 - 通过 for in 遍历一个对象的属性，如果没有，那么就说明它是一个空对象
+
+## 如何判断 js 对象的类型
+
+::: tip constructor 属性
+JavaScript 对象还有一个 constructor 属性（除了某些内置的对象，如 window，document 之外都有），它指向对象的构造器（constructor），而对象的构造器名字与对象的类型名是一样的，而构造器的名字又可以从 constructor 属性的字符串中被解析出来。下面的代码就是使用了这种机制，来获得一个现有对象的类名称，返回值为已定义的类名或 undefined
+
+```js
+/* Returns the class name of the argument or undefined if  
+    it's not a valid JavaScript object.  
+*/
+
+function getObjectClass(obj) {
+  if (obj && obj.constructor && obj.constructor.toString) {
+    var arr = obj.constructor.toString().match(/function\s*(\w+)/);
+
+    if (arr && arr.length == 2) {
+      return arr[1];
+    }
+  }
+
+  return undefined;
+}
+```
+
+:::
+
+## [Cannot convert undefined or null to object](https://stackoverflow.com/questions/29721205/how-to-resolve-typeerror-cannot-convert-undefined-or-null-to-object/29721434)
+
+::: tip This error is caused when you call a function that expects an Object as its argument, but pass undefined or null instead, like for example
+
+```js
+Object.keys(null);
+Object.assign(window.UndefinedVariable, {});
+// As that is usually by mistake, the solution is to check your code
+// and fix the null/undefined condition so that the function either gets a proper Object,
+// or does not get called at all.
+
+Object.keys({ key: "value" });
+if (window.UndefinedVariable) {
+  Object.assign(window.UndefinedVariable, {});
+}
+```
+
+:::

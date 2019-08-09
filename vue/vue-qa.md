@@ -1,6 +1,6 @@
-# Vue常见问题
+# 问题
 
-### 为什么 vue 打包后的项目不能直接打开？
+## 为什么 vue 打包后的项目不能直接打开？
 
 是因为 run build 出来的静态文件的路径是绝对路径，方便你放到服务器根目录下，你如果直接打开会访问路径如`file:///C:/css/app.e2713bb0.css`这样的资源，这当然访问不到了。如果改成相对路径也是可以直接跑的。
 
@@ -10,8 +10,8 @@
 
 ```js
 module.exports = {
-  publicPath: './'
-}
+  publicPath: "./"
+};
 ```
 
 关于路径，我们把项目把项目托管在 Github Page 上的时候，就要去设置一下路径。因为你实际访问的路径是 /xxx/你的仓库名/，而打包的话，默认只会是根路径。
@@ -34,8 +34,8 @@ ActionAction 类似于 mutation，不同在于：
 // 可以在地址栏里面看到
 
 ```js
-this.$router.push({ path: '/xxx', query: { id } })
-this.$router.push({ name: 'xxx', params: { id } })
+this.$router.push({ path: "/xxx", query: { id } });
+this.$router.push({ name: "xxx", params: { id } });
 ```
 
 ## 路由如何做权限判断
@@ -48,21 +48,21 @@ this.$router.push({ name: 'xxx', params: { id } })
 
 ```js
 const User = {
-  props: ['id'],
-  template: '<div>User {{ id }}</div>'
-}
+  props: ["id"],
+  template: "<div>User {{ id }}</div>"
+};
 const router = new VueRouter({
   routes: [
-    { path: '/user/:id', component: User, props: true },
+    { path: "/user/:id", component: User, props: true },
 
     // 对于包含命名视图的路由，你必须分别为每个命名视图添加 `props` 选项：
     {
-      path: '/user/:id',
+      path: "/user/:id",
       components: { default: User, sidebar: Sidebar },
       props: { default: true, sidebar: false }
     }
   ]
-})
+});
 ```
 
 这样你便可以在任何地方使用该组件，使得该组件更易于重用和测试。
@@ -93,7 +93,7 @@ Vue.prototype.\$axios = Axios;
 "You can use the special attribute ref"
 
 ```js
-<child-comp ref='child' />
+<child-comp ref="child" />
 // vm.$refs.child.YOUR_DATA
 ```
 

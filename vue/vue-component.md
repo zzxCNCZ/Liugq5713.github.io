@@ -1,4 +1,4 @@
-# Vue 组件
+# 组件 基础
 
 ## 动态组件
 
@@ -16,12 +16,12 @@
 ## [异步组件](https://cn.vuejs.org/v2/guide/components-dynamic-async.html)
 
 ```js
-Vue.component('async-webpack-example', function(resolve) {
+Vue.component("async-webpack-example", function(resolve) {
   // 这个特殊的 `require` 语法将会告诉 webpack
   // 自动将你的构建代码切割成多个包，这些包
   // 会通过 Ajax 请求加载
-  require(['./my-async-component'], resolve)
-})
+  require(["./my-async-component"], resolve);
+});
 ```
 
 ### [单文件组件使用异步组件](https://cn.vuejs.org/v2/guide/components-dynamic-async.html#%E5%BC%82%E6%AD%A5%E7%BB%84%E4%BB%B6)
@@ -50,7 +50,7 @@ beforeCreate: function () {
 
 ```js
 components: {
-  TreeFolderContents: () => import('./tree-folder-contents.vue')
+  TreeFolderContents: () => import("./tree-folder-contents.vue");
 }
 ```
 

@@ -18,7 +18,7 @@ module.exports = {
       { text: "Home", link: "/" },
       { text: "JavaScript", link: "/javascript/" },
       { text: "Browser", link: "/browser/" },
-      {text:'Vue',link:'/vue/'}
+      { text: "Vue", link: "/vue/" }
     ],
     sidebar: {
       "/javascript/": [
@@ -44,15 +44,18 @@ module.exports = {
         "storage",
         "canvas",
         "file",
-        "formdata",
+        "formdata"
       ],
-      '/vue/':[
-        '',
-        'vue-base',
-        'vue-base-computed',
-        'vue-component',
-        'vue-component-sfc',
-        'vue-qa'
+      "/vue/": [
+        "",
+        "vue-base",
+        "vue-base-computed",
+        "vue-component",
+        "vue-component-update",
+        "vue-component-sfc",
+        "vue-src-code-vfor",
+        "vue-communication-store",
+        "vue-qa"
       ],
       "/": [""]
     }

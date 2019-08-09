@@ -1,4 +1,4 @@
-# Vue 基础
+# 基础
 
 项目越来越大，必须遵循一些代码的规范，像 vue 就有官方推荐的一些做法，[vue 官方指南](https://vuejs.org/v2/style-guide/)
 
