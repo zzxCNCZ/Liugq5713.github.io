@@ -1,8 +1,75 @@
 # 引用类型 Array
 
-## [slice 方法](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/slice)
+## 检测是否是数组
+
+- instanceof
+- Array.isArray
+- Object.prototype.toString.call
+
+## 对数组本身进行处理
+
+- Array.of
+  创建数组，传入希望你在数组中包含的值
+- Array.from 将可迭代对象或类数组对象转变为真正的数组
+  可以添加一个映射函数来加工数组
+
+## 转换方法
+
+- join
+- toString
+- toLocaleString
+
+## 栈方法
+
+- push / pop
+
+## 队列方法
+
+- unshift / shift
+- push
+
+## 重排序
+
+- sort
+- reverse
+
+## 位置方法
+
+- indexOf / lastIndexOf
+  局限：每次只能查找一个值
+- find / findIndex
+  接受两个参数
+  第一个是回调函数
+  第二个参数是可选参数，用于指定回调函数里面 this 的值
+
+## 操作方法
+
+- concat
+
+### [slice 方法](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/slice)
 
 将所有**可枚举属性**的值从一个或多个源对象复制到目标对象（拷贝过程中将调用源对象的 getter 方法，并在 target 对象上使用 setter 方法实现目标对象的拷贝
+
+- splice
+- copyWithin
+  param : 该方法开始填充值得索引位置
+  param : 开始复制值得索引位置
+  param : 限制重写值得数量
+- fill
+  用指定的值填充一至多个数组元素
+  eg : nums.fill(0,1,2) ,将数至 2 下标的元素填充
+
+## 迭代
+
+- every
+- some
+- map
+- filter
+- forEach
+
+## 归并方法
+
+- reduce / reduceRight
 
 ## Range 的左闭右开原则
 
@@ -24,7 +91,7 @@
 因此我们可以这样写数组操作，eg:
 
 ```js
-(arr || []).map(item => {
+;(arr || []).map(item => {
   // some code
-});
+})
 ```

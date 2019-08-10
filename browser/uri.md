@@ -20,7 +20,7 @@ URL is used to parse, construct, normalise, and encode URLs
 
 // base Optional
 // A USVString representing the base URL to use in case url is a relative URL. If not specified, it defaults to ''.
-url = new URL(url, [base]);
+url = new URL(url, [base])
 ```
 
 ### URL.createObjectURL()
@@ -31,26 +31,26 @@ URL.createObjectURL() 静态方法会创建一个 DOMString，其中包含一个
 ```js
 // object
 // A File, Blob, MediaStream, or MediaSource object to create an object URL for.
-objectURL = URL.createObjectURL(object);
+objectURL = URL.createObjectURL(object)
 ```
 
-#### 上传图片预览 
+#### 上传图片预览
 
 有时我们通过 input 上传图片文件之前，会希望可以预览一下图片，这个时候就可以通过前面所学到的东西实现，而且非常简单。[demo](https://developer.mozilla.org/en-US/docs/Web/API/File/Using_files_from_web_applications#Example_Using_object_URLs_to_display_images)
 
 ```html
-html<input id="upload" type="file" /> <img id="preview" src="" alt="预览" />
+<input id="upload" type="file" /> <img id="preview" src="" alt="预览" />
 ```
 
 ```js
-javascriptconst upload = document.querySelector("#upload");
-const preview = document.querySelector("#preview");
+const upload = document.querySelector('#upload')
+const preview = document.querySelector('#preview')
 
 upload.onchange = function() {
-  const file = upload.files[0]; //File对象
-  const src = URL.createObjectURL(file);
-  preview.src = src;
-};
+  const file = upload.files[0] //File对象
+  const src = URL.createObjectURL(file)
+  preview.src = src
+}
 ```
 
 video 标签，audio 标签还是 img 标签的 src 属性，不管是相对路径，绝对路径，或者一个网络地址，归根结底都是指向一个文件资源的地址。那我们生成一个指向我们上传的文件的地址然后添加到 src 属性上，不就能实现预览了嘛。
@@ -63,16 +63,19 @@ Revokes an object URL previously created using URL.createObjectURL().
 
 ### 获取 URL 的查询参数的值
 
-eg: const url =http://www.123.com?id=123&name=kuchcy'
+eg: `const url =http://www.123.com?id=123&name=kuchcy'`
+
 我应该如何获取到 URL 里面的 id 的值呢？
-一行代码的事情 :
-new URL(url).searchParams.get('id')
+一行代码的事情(但是此方法慎用，兼容性不太好) :
+`new URL(url).searchParams.get('id')`
 
 ### 相对路径转绝对路径
 
+```js
 var a = document.createElement('a')
 a.href = url // url 为相对路径
 a.href // 相对路径已经变成绝对路径
+```
 
 ### URI vs URL
 
