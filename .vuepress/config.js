@@ -19,6 +19,7 @@ module.exports = {
       { text: 'JavaScript', link: '/javascript/' },
       { text: 'Browser', link: '/browser/' },
       { text: 'Vue', link: '/vue/' },
+      { text: 'Tool', link: '/tool/' },
       { text: 'Algorithm', link: '/algorithm/' }
     ],
     sidebar: {
@@ -38,7 +39,8 @@ module.exports = {
         'design-patterns-oop',
         'error'
       ],
-      '/browser/': ['', 'cros', 'event', 'uri', 'storage', 'canvas', 'file', 'formdata'],
+      '/browser/': ['', 'viewport', 'cros', 'event', 'uri', 'storage', 'canvas', 'file', 'formdata'],
+      '/tool/': ['', 'husky'],
       '/vue/': ['', 'vue-base', 'vue-base-computed', 'vue-component', 'vue-component-update', 'vue-component-sfc', 'vue-src-code-vfor', 'vue-communication-store', 'vue-qa'],
       '/algorithm/': ['', 'dp', '13RomanToInteger', '17LetterCombinationsOfAPhoneNumber'],
       '/': ['']
