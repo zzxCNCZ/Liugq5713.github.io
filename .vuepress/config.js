@@ -38,9 +38,9 @@ module.exports = {
         'design-patterns-oop',
         'error'
       ],
-      '/browser/': ['', 'event', 'uri', 'storage', 'canvas', 'file', 'formdata'],
+      '/browser/': ['', 'cros', 'event', 'uri', 'storage', 'canvas', 'file', 'formdata'],
       '/vue/': ['', 'vue-base', 'vue-base-computed', 'vue-component', 'vue-component-update', 'vue-component-sfc', 'vue-src-code-vfor', 'vue-communication-store', 'vue-qa'],
-      '/algorithm/': [''],
+      '/algorithm/': ['', 'dp', '13RomanToInteger', '17LetterCombinationsOfAPhoneNumber'],
       '/': ['']
     }
   }
