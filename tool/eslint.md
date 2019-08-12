@@ -1,9 +1,4 @@
----
-title: 代码检测 Eslint
-date: 2019-04-01T07:28:58.483Z
-
-categories: ["tool"]
----
+# 代码检测 Eslint
 
 ## [eslint 配置](https://gist.github.com/Liugq5713/4a13d1d1f89ffaadf925bbbeac2cdf8b)
 
