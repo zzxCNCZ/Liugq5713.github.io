@@ -61,20 +61,38 @@ module.exports = {
         title: 'GIT',
         collapsable: false,
         children: [
-          'git/',
-          'git/base',
-          'git/branch',
-          'git/config',
-          'git/knowledge',
-          'git/log',
-          'git/qa',
-          'git/reset',
-          'git/stash',
-          'git/squash',
-        ]
+          '',
+          'base',
+          'branch',
+          'config',
+          'knowledge',
+          'log',
+          'qa',
+          'reset',
+          'stash',
+          'squash',
+        ].map(i => `git/${i}`)
       }],
       '/vue/': ['', 'vue-base', 'vue-base-computed', 'vue-component', 'vue-component-update', 'vue-component-sfc', 'vue-src-code-vfor', 'vue-communication-store', 'vue-qa'],
-      '/algorithm/': ['', 'sort', 'search', 'dp', '13RomanToInteger', '17LetterCombinationsOfAPhoneNumber'],
+      '/algorithm/': [
+        {
+          title: '排序',
+          collapsable: false,
+          children: [
+            '',
+            'base',
+            'bubble'].map(i => `sort/${i}`)
+        },
+        {
+          title: '题目',
+          collapsable: false,
+          children: [
+            '',
+            'search',
+            'dp', '13RomanToInteger', '17LetterCombinationsOfAPhoneNumber'
+          ],
+        },
+      ],
       '/': ['']
     }
   }
