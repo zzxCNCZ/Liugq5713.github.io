@@ -40,9 +40,41 @@ module.exports = {
         'error'
       ],
       '/browser/': ['', 'viewport', 'cros', 'event', 'uri', 'storage', 'canvas', 'file', 'formdata'],
-      '/tool/': ['', 'husky'],
+      '/tool/': [{
+        title: '其他',
+        collapsable: false,
+        children: [
+          '',
+          'babel',
+          'chrome',
+          'eslint',
+          'github',
+          'husky',
+          'nginx',
+          'npm',
+          'npmQA',
+          'vscode',
+          'webpack',
+          'webpackQA'
+        ]
+      }, {
+        title: 'GIT',
+        collapsable: false,
+        children: [
+          'git/',
+          'git/base',
+          'git/branch',
+          'git/config',
+          'git/knowledge',
+          'git/log',
+          'git/qa',
+          'git/reset',
+          'git/stash',
+          'git/squash',
+        ]
+      }],
       '/vue/': ['', 'vue-base', 'vue-base-computed', 'vue-component', 'vue-component-update', 'vue-component-sfc', 'vue-src-code-vfor', 'vue-communication-store', 'vue-qa'],
-      '/algorithm/': ['', 'dp', '13RomanToInteger', '17LetterCombinationsOfAPhoneNumber'],
+      '/algorithm/': ['', 'sort', 'search', 'dp', '13RomanToInteger', '17LetterCombinationsOfAPhoneNumber'],
       '/': ['']
     }
   }
