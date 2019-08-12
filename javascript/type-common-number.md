@@ -6,7 +6,9 @@
 
 数字类型是双精度浮点型([double-precision 64-bit binary format IEEE 754 value](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type))，其值的范围在 -(2 的 53 次方-1) 和 2 的 53 次方-1 之间
 
-数字类型有三个 symbolic values:+Infinity, -Infinity 和 NaN (not-a-number).
+数字类型有三个 symbolic values:+Infinity, -Infinity 和 NaN (not-a-number)
+
+`typeof NaN //'number'` `typeof -Infinity // 'number'`
 
 ## 位运算
 
