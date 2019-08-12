@@ -1,9 +1,0 @@
----
-label: dd
-hide_body: false
-fields:
-- name: dadfadf
-  type: text
-  config:
-    required: false
-  label: dadfadf
