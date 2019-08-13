@@ -6,7 +6,7 @@
 
 数字类型是双精度浮点型([double-precision 64-bit binary format IEEE 754 value](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type))，其值的范围在 -(2 的 53 次方-1) 和 2 的 53 次方-1 之间
 
-数字类型有三个 symbolic values:+Infinity, -Infinity 和 NaN (not-a-number)
+数字类型有三个 symbolic 值:+Infinity, -Infinity 和 NaN (not-a-number)
 
 `typeof NaN //'number'` `typeof -Infinity // 'number'`
 
@@ -18,26 +18,15 @@
 
 ## 类型转化
 
-转为数字类型的方法
-
-### praseInt
-
-    	最好提供基底
-    		ps:  ES3引擎将070解释为八进制，但是ES5是直接解释为十进制的
-
-### parseFloat
-
-### Number
+- praseInt 最好提供基底 ps: ES3 引擎将 070 解释为八进制，但是 ES5 是直接解释为十进制的
+- parseFloat
+- Number
 
 ## 判断数字极端情况下的方法
 
-### isNaN
+- isNaN 判断该参数是否为数字
 
-判断该参数是否为数字
-
-### isFinite
-
-检验参数是否是位于最大值和最小值之间
+- isFinite 检验参数是否是位于最大值和最小值之间
 
 ## 常量
 

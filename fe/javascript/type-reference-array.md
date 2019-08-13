@@ -61,11 +61,12 @@
 
 ## 迭代
 
-- every
-- some
-- map
-- filter
-- forEach
+- map : `create a new array` with the results of calling a provided function on every element in the calling array
+- foreach : executes a provided function once for `each array element`
+- every : test whether `all elements` in the array pass the test implemented by the provided function
+- some : test whether `at least` one element in the array passes the test implemented by the provided function
+- filter : `create a new array` with all elements that pass the test implemented by the provided function
+- reduce : executes a reducer function (that you provide) on each member of the array resulting in a single output value.
 
 ## 归并方法
 
@@ -91,7 +92,7 @@
 因此我们可以这样写数组操作，eg:
 
 ```js
-;(arr || []).map(item => {
+(arr || []).map(item => {
   // some code
-})
+});
 ```
