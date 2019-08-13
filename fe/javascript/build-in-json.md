@@ -8,6 +8,10 @@ parses a JSON string, constructing the JavaScript value or object described by t
 
 ## [JSON.stringify](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify)
 
+::: warning
+如果数据有循环引用的情况，那么使用 `JSON.stringify` 会报错
+:::
+
 The JSON.stringify() method converts a JavaScript value to a JSON string, optionally replacing values if a replacer function is specified or optionally including only the specified properties if a replacer array is specified.
 
 ### 使用
