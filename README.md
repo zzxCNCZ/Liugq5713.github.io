@@ -4,7 +4,7 @@ heroImage: /hero.png
 heroText: 重学前端
 tagline: 学而不思则罔，思而不学则殆
 actionText: 继续学习 →
-actionLink: /javascript/
+actionLink: /fe/
 features:
   - title: 准备做
     details: 对象

@@ -9,9 +9,9 @@ ES6 之前，JavaScript 字符串基于 16 位字符编码（UTF-16）进行构�
 UTF-16 引入了代理对，规定了用两个 16 位编码单元表示一个码位，也就是说字符串有两种，一种是由编码单元 16 位表示的 BMP 字符。另一种是由两个编码单元 32 位表示的辅助平面字符
 
 ```js
-console.log('16位表示', '汉'.length)
+console.log("16位表示", "汉".length);
 
-console.log('32位表示', '𠮷'.length)
+console.log("32位表示", "𠮷".length);
 ```
 
 ## 值不可变
@@ -23,9 +23,9 @@ console.log('32位表示', '𠮷'.length)
 :::
 
 ```js
-const str = 'Jello World'
+const str = "Jello World";
 // 报错：TypeError: Cannot assign to read only property '0' of string 'Jello World'
-myStr[0] = 'H'
+myStr[0] = "H";
 ```
 
 曾经遇到一个给字符串排序的需求，想使用 Array 的 sort 方法给字符串排序。
@@ -33,14 +33,32 @@ myStr[0] = 'H'
 借用方法是可行的，比如借用 Array 的 map 方法
 
 ```js
-Array.prototype.map.call('test', function(res) {
-  console.log(res)
-})
+Array.prototype.map.call("test", function(res) {
+  console.log(res);
+});
 ```
 
 但是 sort 方法不行，为什么呢？
 
 The sort() method sorts the elements of an array **in place** and returns the array.即 sort 方法会修改原来的数组，即它会修改原来的 string ,所以不能使用
+
+### 获取单个字符
+
+- charAt(),'string'.charAt(0)
+- 将其看作为类数组对象,'string'[0]
+
+### 获取字符的 Unicode 值
+
+charCodeAt()
+
+## indexOf 和 include 方法
+
+> 这两个方法数组也有，虽然我以前只是数组这样用
+
+```js
+//includes() 方法用于判断一个字符串是否包含在另一个字符串中，根据情况返回 true 或 false。
+str.includes(searchString[, position])
+```
 
 ## 类型转化
 
@@ -56,6 +74,25 @@ dafdsf
 :::
 
 <<< @/javascript/code/type-common-string-substring.js
+
+### 截取字符串
+
+// 因为字符串是不可修改的，所以这些方法不会修改原先的字符串
+
+- substring
+
+```js
+// 取两个参数中较小的为起点，较大的为终点
+str.substring(a, b);
+```
+
+- substr()
+
+第一个参数代表开始位置,第二个参数代表截取的长度
+
+- `str.slice(beginIndex[, endIndex])`
+
+// 如果参数是负数，都会给参数加上数组的宽度使其变为正数
 
 ## 模式匹配
 

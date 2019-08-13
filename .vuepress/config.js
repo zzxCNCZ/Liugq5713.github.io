@@ -16,28 +16,39 @@ module.exports = {
     lastUpdated: "Last Updated",
     nav: [
       { text: "Home", link: "/" },
-      { text: "JavaScript", link: "/javascript/" },
+      { text: "Fe", link: "/fe/" },
       { text: "Browser", link: "/browser/" },
       { text: "Lib", link: "/lib/" },
       { text: "Tool", link: "/tool/" },
       { text: "Algorithm", link: "/algorithm/" }
     ],
     sidebar: {
-      "/javascript/": [
-        "",
-        "variable",
-        "type-common-number",
-        "type-common-string",
-        "type-common-boolean",
-        "type-reference-array",
-        "type-reference-object",
-        "logical-statement",
-        "build-in-date",
-        "build-in-json",
-        "build-in-timer",
-        "function",
-        "design-patterns-oop",
-        "error"
+      "/fe/": [
+        {
+          title: "Javascript",
+          collapsable: false,
+          children: [
+            "",
+            "variable",
+            "type-common-number",
+            "type-common-string",
+            "type-common-boolean",
+            "type-reference-array",
+            "type-reference-object",
+            "logical-statement",
+            "build-in-date",
+            "build-in-json",
+            "build-in-timer",
+            "function",
+            "design-patterns-oop",
+            "error"
+          ].map(i => `javascript/${i}`)
+        },
+        {
+          title: "其他",
+          collapsable: false,
+          children: [""]
+        }
       ],
       "/browser/": [
         "",
