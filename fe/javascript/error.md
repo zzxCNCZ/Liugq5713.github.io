@@ -75,3 +75,7 @@ try {
   // complete that thing even if all dies
 }
 ```
+
+## try catch 可以捕获 async 代码
+
+<<< @/fe/javascript/code/try-catch-async.js
