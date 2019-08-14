@@ -77,6 +77,14 @@ JavaScript 的取模运算%并不限于整数运算，可以对浮点数取模�
 
 - isFinite 检验参数是否是位于最大值和最小值之间
 
+- 判断浮点数时候相等
+
+```js
+function floatEqual(num, dest) {
+  return Math.abs(num - dest) < Number.EPSILON;
+}
+```
+
 ## 常量
 
 > 有些时候你会面临给一个变量初始化的情况，比起直接赋值一个具体的数，调用 js 本身的 API 我就觉得更好
