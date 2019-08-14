@@ -129,6 +129,10 @@ export const getRowIdentity = (row, rowKey) => {
 
 ### emit/on
 
+[vue emit 传递多个参数](https://github.com/vuejs/vue/issues/5735)
+
+其实可以用 test(...arguments, 参数名 1...);这样你可以不用获取到数组，可以更清晰你传入的参数是什么
+
 读者肯定知道 emit/on 如何使用，我就简单说一下 vue 的 `v-model`和`sync`的语法糖，我们可以利用这些语法糖，帮助我们写出简洁的代码（父组件可以少写监听子组件的事件，比如你不用写@input）
 
 #### v-model
