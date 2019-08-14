@@ -96,7 +96,7 @@ var height =
 
 ### 原生实现
 
-[<datalist> element](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/datalist)，不需要 JavaScript 就能实现的本地搜索，可以看一下 MDN ,自己去试一下
+[`<datalist> element`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/datalist)，不需要 JavaScript 就能实现的本地搜索，可以看一下 MDN ,自己去试一下
 
 ```html
 <input list="ice-cream-flavors" id="ice-cream-choice" name="ice-cream-choice" />
