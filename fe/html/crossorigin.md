@@ -1,4 +1,4 @@
-## image 和 script crossorigin 属性
+## crossorigin 属性
 
 最近一直在做水印的功能，把原先上传到七牛云上的图片绘制到`canvas`上，叠加水印之后在上传到七牛云上，但是出现了图片跨域的错误
 

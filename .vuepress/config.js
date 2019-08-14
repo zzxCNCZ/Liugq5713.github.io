@@ -58,12 +58,10 @@ module.exports = {
           collapsable: false,
           children: [
             "animation",
-            "click",
             "css",
             "cssExpandClickAreas",
             "cssFontFamily",
             "flex",
-            "fontfamily",
             "QA"
           ].map(i => `css/${i}`)
         },
