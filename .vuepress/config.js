@@ -1,4 +1,12 @@
+const path = require("path");
 module.exports = {
+  configureWebpack: {
+    resolve: {
+      alias: {
+        algorithm: path.join(__dirname, "algorithm")
+      }
+    }
+  },
   title: "重学前端",
   head: [
     [
