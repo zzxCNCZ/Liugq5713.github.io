@@ -47,7 +47,8 @@ module.exports = {
             "build-in-date",
             "build-in-json",
             "build-in-timer",
-            "function",
+            "func-base",
+            "func-promise",
             "design-patterns-oop",
             "error"
           ].map(i => `javascript/${i}`)

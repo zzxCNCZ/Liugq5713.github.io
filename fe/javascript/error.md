@@ -78,4 +78,4 @@ try {
 
 ## try catch 可以捕获 async 代码
 
-<<< @/fe/javascript/code/try-catch-async.js
+<<< @/fe/javascript/code/error-try-catch-async.js
