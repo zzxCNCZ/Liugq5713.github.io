@@ -54,6 +54,27 @@ module.exports = {
           ].map(i => `javascript/${i}`)
         },
         {
+          title: "CSS",
+          collapsable: false,
+          children: [
+            "animation",
+            "click",
+            "css",
+            "cssExpandClickAreas",
+            "cssFontFamily",
+            "flex",
+            "fontfamily",
+            "QA"
+          ].map(i => `css/${i}`)
+        },
+        {
+          title: "CSS",
+          collapsable: false,
+          children: ["crossorigin", "element", "html", "iframe", "select"].map(
+            i => `html/${i}`
+          )
+        },
+        {
           title: "其他",
           collapsable: false,
           children: [""]
