@@ -68,7 +68,7 @@ module.exports = {
           ].map(i => `css/${i}`)
         },
         {
-          title: "CSS",
+          title: "HTML",
           collapsable: false,
           children: ["crossorigin", "element", "html", "iframe", "select"].map(
             i => `html/${i}`

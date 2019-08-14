@@ -1,10 +1,4 @@
----
-title: 使用 svg
-date: 2019-03-28T03:13:13.680Z
-
-categories: ['fe']
-tags: ['html']
----
+# 使用 svg
 
 ## image / background-image
 

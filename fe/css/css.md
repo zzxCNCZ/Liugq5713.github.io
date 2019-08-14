@@ -1,10 +1,4 @@
----
-title: CSS
-date: 2019-03-15T10:19:38.331Z
-
-categories: ['fe']
-tags: ['css']
----
+# CSS
 
 ### 控制页面文字不能被选中
 
@@ -25,7 +19,7 @@ user-select: auto | text | none | contain | all;
 
 ### inline 元素
 
-image 为啥只是 inline 元素而不是 inline-block 元素？ （来自于张鑫旭的《CSS 世界》）  
+image 为啥只是 inline 元素而不是 inline-block 元素？ （来自于张鑫旭的《CSS 世界》）
 这里需要引入一个新的概念，替换元素（通过修改某个属性值呈现的内容就可以被替换的元素）和非替换元素。那么由定义 image 标签就是典型的替换元素，image 标签可以设置宽高式是替换元素的尺寸计算规则决定的。
 替换元素与非替换元素之间的只是隔了" src " 或 " content " 属性。单独使用 image 标签，不添加 src 属性的话，它的表现就是一个内联元素。
 

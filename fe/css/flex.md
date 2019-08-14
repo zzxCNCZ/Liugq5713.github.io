@@ -1,10 +1,4 @@
----
-title: flex box
-date: 2019-02-14T10:12:05.190Z
-
-categories: ['fe']
-tags: ['css']
----
+# flex box
 
 首先，需要明白 flex 布局两个常见单词的意思。
 

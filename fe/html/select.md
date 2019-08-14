@@ -1,10 +1,4 @@
----
-title: select 没有 placeholder
-date: 2019-04-03T02:17:32.296Z
-
-categories: ['fe']
-tags: ['html']
----
+# select 没有 placeholder
 
 起因是一个小朋友问我，原生的`select`标签我怎么添加不了`placeholder`啊。我当时内心是有点小鄙视的，直接加上不就好了。
 
@@ -48,8 +42,8 @@ tags: ['html']
 
 ```js
 export function isKorean(text) {
-  const reg = /([(\uAC00-\uD7AF)|(\u3130-\u318F)])+/gi
-  return reg.test(text)
+  const reg = /([(\uAC00-\uD7AF)|(\u3130-\u318F)])+/gi;
+  return reg.test(text);
 }
 ```
 

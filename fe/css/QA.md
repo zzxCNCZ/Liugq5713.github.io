@@ -1,10 +1,4 @@
----
-title: QA
-date: 2019-01-31T03:28:11.815Z
-
-categories: ['fe']
-tags: ['css']
----
+# QA
 
 ## 解决 a 在 hover/active 状态下文字加粗后发生偏移的 2 个办法
 

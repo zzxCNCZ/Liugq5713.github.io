@@ -1,8 +1,4 @@
----
-title: image和script标签的 crossorigin 属性
-categories: ['fe']
-tags: ['html']
----
+## image 和 script crossorigin 属性
 
 最近一直在做水印的功能，把原先上传到七牛云上的图片绘制到`canvas`上，叠加水印之后在上传到七牛云上，但是出现了图片跨域的错误
 
@@ -39,24 +35,24 @@ crossorigin 会让浏览器启用 CORS 访问检查，检查 http 相应头的`A
 对于 module script，控制用于跨域请求的凭据模式。我们在收集错误日志的时候，通常会在 window 上注册一个方法来监测所有代码抛出的异常：
 
 ```js
-window.addEventListener('error', function(msg, url, lineno, colno, error) {
-  var string = msg.toLowerCase()
-  var substring = 'script error'
+window.addEventListener("error", function(msg, url, lineno, colno, error) {
+  var string = msg.toLowerCase();
+  var substring = "script error";
   if (string.indexOf(substring) > -1) {
-    alert('Script Error: See Browser Console for Detail')
+    alert("Script Error: See Browser Console for Detail");
   } else {
     var message = {
       Message: msg,
       URL: url,
       Line: lineNo,
       Column: columnNo,
-      'Error object': JSON.stringify(error)
-    }
+      "Error object": JSON.stringify(error)
+    };
     // send error log to server
-    record(message)
+    record(message);
   }
-  return false
-})
+  return false;
+});
 ```
 
 但是对于跨域 js 来说，只会给出很少的报错信息：'error: script error'，通过使用 crossorigin 属性可以使跨域 js 暴露出跟同域 js 同样的报错信息。但是，资源服务器必须返回一个 Access-Control-Allow-Origin 的 header，否则资源无法访问。

@@ -1,10 +1,5 @@
----
-title: 'HTML'
-date: 2019-04-01T07:30:29.290Z
+# HTML
 
-categories: ['fe']
-tags: ['html']
----
 ## Element.closest
 
 Element.closest()  方法用来获取：匹配特定选择器且离当前元素最近的祖先元素（也可以是当前元素本身）。如果匹配不到，则返回  null。
@@ -12,6 +7,7 @@ Element.closest()  方法用来获取：匹配特定选择器且离当前元素
 ## ChildNode.remove()
 
 The ChildNode.remove() method removes the object from the tree it belongs to.
+
 ## 元素
 
 ### link 标签
@@ -69,7 +65,7 @@ The HTML `<pre>` element represents preformatted text which is to be presented e
 var height =
   window.innerHeight ||
   document.documentElement.clientHeight ||
-  document.body.clientHeight
+  document.body.clientHeight;
 ```
 
 ### 滚动高度
