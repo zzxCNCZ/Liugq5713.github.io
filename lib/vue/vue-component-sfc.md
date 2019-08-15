@@ -129,10 +129,6 @@ export const getRowIdentity = (row, rowKey) => {
 
 ### emit/on
 
-[vue emit 传递多个参数](https://github.com/vuejs/vue/issues/5735)
-
-其实可以用 test(...arguments, 参数名 1...);这样你可以不用获取到数组，可以更清晰你传入的参数是什么
-
 读者肯定知道 emit/on 如何使用，我就简单说一下 vue 的 `v-model`和`sync`的语法糖，我们可以利用这些语法糖，帮助我们写出简洁的代码（父组件可以少写监听子组件的事件，比如你不用写@input）
 
 #### v-model
@@ -160,6 +156,12 @@ export const getRowIdentity = (row, rowKey) => {
 #### 自定义 v-model
 
 为啥要自定义组件的 v-model 呢，因为数据不符合要求呗。你的输入值不可能总是 value ，你的事件不可能总是 input，具体详见[文档](https://cn.vuejs.org/v2/guide/components-custom-events.html#%E8%87%AA%E5%AE%9A%E4%B9%89%E7%BB%84%E4%BB%B6%E7%9A%84-v-model)
+
+### [vue emit 传递多个参数](https://github.com/vuejs/vue/issues/5735)
+
+子组件向父组件发送事件，父组件该监听事件，并需要传入额外的参数时，在父组件中可以这样写，`@custom="test(arguments, newArg)"`，
+
+也可以用 test(...arguments, 参数名 1...);这样你可以不用获取到数组，可以更清晰你传入的参数是什么，当然前提是子组件 emit 出来的参数要固定
 
 #### sync（双向绑定语法糖）
 
