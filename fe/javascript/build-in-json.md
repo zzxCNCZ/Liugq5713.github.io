@@ -1,5 +1,14 @@
 # 内置对象 JSON
 
+::: tip JSON 的规格
+
+1. 并列的数据之间用逗号（", "）分隔。
+2. 映射用冒号（": "）表示。
+3. 并列数据的集合（数组）用方括号("[]")表示。
+4. 映射的集合（对象）用大括号（"{}"）表示。
+
+:::
+
 > 一直不是很清楚 JSON.parse 是把字符串转成 JSON,还是将 JSON 转成字符串。后来我就记起来了，JSON.parse 就是 parse json
 
 ## [JSON.parse](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/parse)
