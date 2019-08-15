@@ -51,7 +51,7 @@ The sort() method sorts the elements of an array **in place** and returns the ar
 
 charCodeAt()
 
-## indexOf 和 include 方法
+## indexOf 和 includes 方法
 
 > 这两个方法数组也有，虽然我以前只是数组这样用
 
@@ -69,13 +69,9 @@ str.includes(searchString[, position])
 
 ## 汉字和英文
 
-::: tip dddd
-dafdsf
-:::
+<<< @/fe/javascript/code/type-common-string-substring.js
 
-<<< @/javascript/code/type-common-string-substring.js
-
-### 截取字符串
+## 截取字符串
 
 // 因为字符串是不可修改的，所以这些方法不会修改原先的字符串
 
@@ -110,6 +106,7 @@ str.substring(a, b);
 执行检索和替换操作
 
 - [手机号隐藏中间四位数](#hidden-phone-number)
+- [高亮文本](#highlightText)
 
 ### match
 
@@ -119,7 +116,7 @@ str.substring(a, b);
 
 将调用他的字符串拆分为一个子串组成的数组
 
-## 应用
+## replace 应用
 
 ### hidden-phone-number
 
@@ -128,5 +125,32 @@ str.substring(a, b);
 ```javascript
 const hidePhone = phoneNumber => {
   return phoneNumber.replace(/^(\d{3})\d{4}/, "$1****");
+};
+```
+
+### highlightText
+
+```javascript
+export const highlightText = (content, words) => {
+  if (typeof content !== "string") {
+    console.error("please make sure the type of content is string");
+    return content;
+  }
+
+  if (Array.isArray(words)) {
+    const word_group = words
+      .map(word => {
+        return `${word}`;
+      })
+      .join("|");
+    const reg = new RegExp(`(${word_group})`, "g");
+    return content.replace(reg, "<span class='highlight'>$&</span>");
+  }
+
+  if (typeof words === "string") {
+    const reg = new RegExp(words, "g");
+    return content.replace(reg, "<span class='highlight'>$&</span>");
+  }
+  return content;
 };
 ```
