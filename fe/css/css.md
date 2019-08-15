@@ -1,5 +1,25 @@
 # CSS
 
+## 优先级
+
+行内样式 > id 选择器 > class 选择器 > 元素选择器
+
+```css
+.blue {
+  color: blue;
+}
+.red {
+  color: red;
+}
+```
+
+```html
+<div class="red blue">item</div>
+<div class="blue red">item</div>
+```
+
+class 之间是没有权重关系的，所以以 CSS 后定义的为准
+
 ### 控制页面文字不能被选中
 
 > 来自我导航站项目的一个小需求，我发现，我点击快了，文字会被选中，非常的丑陋。也可以用于 html 中可能有些地方不想让用户复制文字
