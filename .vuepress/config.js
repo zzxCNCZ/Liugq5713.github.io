@@ -131,14 +131,14 @@ module.exports = {
           collapsable: false,
           children: [
             "",
-            "vue-base",
-            "vue-base-computed",
-            "vue-component",
-            "vue-component-update",
-            "vue-component-sfc",
-            "vue-src-code-vfor",
-            "vue-communication-store",
-            "vue-qa"
+            "base",
+            "base-computed",
+            "component",
+            "component-update",
+            "component-sfc",
+            "src-code-vfor",
+            "communication-store",
+            "qa"
           ].map(i => `vue/${i}`)
         },
         {
