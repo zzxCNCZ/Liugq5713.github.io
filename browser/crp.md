@@ -1,8 +1,9 @@
 # 关键渲染路径
 
-可以从网页渲染的过程作答，但是优化要有一个思路：即先衡量，再优化。花上你几个小时优化几毫秒也不是很值得。
+::: tip 解释
 
-关键渲染路径：是指浏览器呈现网页要经历的一系列步骤
+关键渲染路径(Critical Rendering Path)：是指浏览器呈现网页要经历的一系列步骤
+:::
 
 PS： Google 的[关键渲染路径文档](https://developers.google.com/web/fundamentals/performance/critical-rendering-path/?hl=zh-cn)写的是真的好
 

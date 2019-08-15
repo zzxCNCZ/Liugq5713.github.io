@@ -81,7 +81,7 @@ module.exports = {
       "/browser/": [
         "",
         "viewport",
-        "cros",
+        "crp",
         "event",
         "uri",
         "storage",
