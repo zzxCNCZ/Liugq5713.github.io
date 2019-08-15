@@ -13,7 +13,7 @@ PS： Google 的[关键渲染路径文档](https://developers.google.com/web/fun
 
 HTML response > Tokens > Nodes > DOM Tree
 
-浏览器会逐步构建 DOM,通过这一点来优化生成网页的速度。即不用等所有 HTML 的都好了之后在处理，返回部分 HTML 是个很好的性能优化策略
+浏览器会**逐步构建 DOM**,通过这一点来优化生成网页的速度。即不用等所有 HTML 的都好了之后在处理，返回部分 HTML 是个很好的性能优化策略
 
 ## CSS -> CSSOM
 
@@ -21,11 +21,13 @@ HTML response > Tokens > Nodes > DOM Tree
 
 如果使用 CSS 部分树，会导致网页的样式渲染不正常。所以浏览器会组织呈现，直到收到并处理了所有的 CSS 内容。即 CSS 为一种渲染阻塞资源(render blocking resource)
 
-## 渲染树
+## 渲染树(CSSOM 树和 DOM 树合并)
 
-渲染树最重要的特性就是仅捕获可见内容。渲染树是 DOM 和 CSSOM 的结合，是最终能渲染到页面的元素的树形结构表示。也就是说，它包含能在页面中最终呈现的元素，而不包含那些用 CSS 样式隐藏的元素，比如带有 display: none;属性的元素。
+渲染树最重要的特性就是仅捕获可见内容。渲染树是 DOM 和 CSSOM 的结合，是最终能渲染到页面的元素的树形结构表示。也就是说，它包含能在**页面中最终呈现的元素**，而不包含那些用 CSS 样式隐藏的元素，比如带有 display: none;属性的元素。
 
 ## Layout
+
+根据渲染树来布局，以计算每个节点的几何信息,将各个节点绘制到屏幕上
 
 `<meta name="viewport" content="width=device-width, initial-scale=1">`
 
