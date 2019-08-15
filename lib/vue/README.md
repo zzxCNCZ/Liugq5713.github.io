@@ -1,11 +1,5 @@
 # 收集
 
-## 强制更新
-
-`this.$forceUpdate();`
-
-addons.getChannel().emit(Events.FORCE_RE_RENDER);
-
 ## vue-cli 已经默认设置了 alias
 
 [源代码位置](https://github.com/vuejs/vue-cli/blob/8f0673a93f87c1724d26dd405d3b1278ab179ae3/packages/%40vue/cli-service/lib/config/base.js)
@@ -36,25 +30,6 @@ function enableStrictMode(store) {
   );
 }
 ```
-
-### 为什么 vue 打包后的项目不能直接打开？
-
-是因为 run build 出来的静态文件的路径是绝对路径，方便你放到服务器根目录下，你如果直接打开会访问路径如`file:///C:/css/app.e2713bb0.css`这样的资源，这当然访问不到了。如果改成相对路径也是可以直接跑的。
-
-笔者也是通过 vue-cli 创建了一个项目实验了一下，的确是可以的。方法很简单：
-
-在项目的根目录新建`vue.config.js`修改为如下配置：
-
-```js
-module.exports = {
-  publicPath: "./"
-};
-```
-
-关于路径，我们把项目把项目托管在 Github Page 上的时候，就要去设置一下路径。因为你实际访问的路径是 /xxx/你的仓库名/，而打包的话，默认只会是根路径。
-
-- vue 通过在`vue.config.js`[设置 publicPath 为你的仓库名](https://cli.vuejs.org/guide/deployment.html#github-pages)
-- react 可以在 package.json 设置[homepage 属性](https://facebook.github.io/create-react-app/docs/deployment#github-pages-https-pagesgithubcom)
 
 ## vuex
 

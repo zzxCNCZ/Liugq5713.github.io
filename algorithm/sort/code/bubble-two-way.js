@@ -1,14 +1,23 @@
 export const bubbleWithTwoWay = arr => {
   let start = 0;
   let end = arr.length - 1;
-  while(start < end){
-    for(let i =start ;i<end;i++){
-
+  while (start < end) {
+    for (let i = start; i < end; i++) {
+      if (arr[i] > arr[i + 1]) {
+        console.count("arr");
+        [arr[i], arr[i + 1]] = [arr[i + 1], arr[i]];
+      }
     }
-    start =1
-    for(let j=end ){
+    for (let j = end; j > start; j--) {
+      if (arr[j - 1] > arr[j]) {
+        console.count("arr");
+        console.count("arr");
 
+        [arr[j], arr[j - 1]] = [arr[j - 1], arr[j]];
+      }
     }
-    end =1
+    start++;
+    end--;
   }
+  return arr;
 };

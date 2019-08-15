@@ -157,7 +157,7 @@ export const getRowIdentity = (row, rowKey) => {
 
 为啥要自定义组件的 v-model 呢，因为数据不符合要求呗。你的输入值不可能总是 value ，你的事件不可能总是 input，具体详见[文档](https://cn.vuejs.org/v2/guide/components-custom-events.html#%E8%87%AA%E5%AE%9A%E4%B9%89%E7%BB%84%E4%BB%B6%E7%9A%84-v-model)
 
-### [vue emit 传递多个参数](https://github.com/vuejs/vue/issues/5735)
+#### [ emit 自定义事件](https://github.com/vuejs/vue/issues/5735)
 
 子组件向父组件发送事件，父组件该监听事件，并需要传入额外的参数时，在父组件中可以这样写，`@custom="test(arguments, newArg)"`，
 

@@ -1,6 +1,7 @@
 import { bubble } from "./bubble-base";
 import { bubbleWithPos } from "./bubble-pos";
 import { bubbleWithGuard } from "./bubble-guard";
+import { bubbleWithTwoWay } from "./bubble-two-way";
 const ArrayToTest = [
   {
     InitialArray: [],
@@ -30,5 +31,11 @@ ArrayToTest.forEach(t => {
     t.ResultArray
   }`, () => {
     expect(bubbleWithGuard(t.InitialArray)).toEqual(t.ResultArray);
+  });
+
+  test(`bubbleWithTwoWay InitialArray ${t.InitialArray} equals ${
+    t.ResultArray
+  }`, () => {
+    expect(bubbleWithTwoWay(t.InitialArray)).toEqual(t.ResultArray);
   });
 });
