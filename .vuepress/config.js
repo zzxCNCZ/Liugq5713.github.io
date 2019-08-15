@@ -136,6 +136,7 @@ module.exports = {
             "component",
             "component-update",
             "component-sfc",
+            "lifecycle",
             "src-code-vfor",
             "communication-store",
             "qa"
