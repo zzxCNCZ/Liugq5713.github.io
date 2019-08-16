@@ -154,3 +154,15 @@ IPv4 中，0.0.0.0 被设计用来指定一个无效的未知的不可用的目�
 
 比如我司的神作:
 `import { something } from 'router'`十分的让人误解。其实他引入的是 `@/router/index.js`里面的内容
+
+## 拆包
+
+```javascript
+optimization:{
+  splitChunks: {
+    cacheGroups: {},
+  },
+}
+```
+
+cacheGroups: 我们用于定义规则，把多个 chunks 打进一个文件里面

@@ -105,6 +105,7 @@ module.exports = {
             "npmQA",
             "vscode",
             "webpack",
+            "webpack-split-chunks",
             "webpackQA"
           ]
         },
