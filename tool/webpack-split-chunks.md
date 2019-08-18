@@ -24,6 +24,8 @@ This webpack-specific term is used internally to manage the bundling process. Bu
 from memory cache 代表使用内存中的缓存，from disk cache 则代表使用的是硬盘中的缓存，浏览器读取缓存的顺序为 memory –> disk。在浏览器中，浏览器会在 js 和图片等文件解析执行后直接存入内存缓存中，那么当刷新页面时只需直接从内存缓存中读取(from memory cache)；而 css 文件则会存入硬盘文件中，所以每次渲染页面都需要从硬盘读取缓存(from disk cache)。
 :::
 
+### 防止重复打包
+
 - 启用拆分
 
 ```javascript
