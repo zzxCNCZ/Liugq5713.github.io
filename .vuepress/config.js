@@ -50,7 +50,8 @@ module.exports = {
             "func-base",
             "func-promise",
             "design-patterns-oop",
-            "error"
+            "error",
+            'module'
           ].map(i => `javascript/${i}`)
         },
         {
