@@ -46,3 +46,11 @@ put everything in node_modules into a file called vendors~main.js
 ## Code Splitting
 
 ### 路由懒加载
+
+### 资源预加载
+
+`import(/* webpackPrefetch: true */ 'LoginModal');`
+
+这种写法将会被 webpack 转为`<link rel="prefetch" href="login-modal-chunk.js">`，并添加到 head 标签里面。
+
+Prefetch 专注于下一个页面将要加载的资源并以低优先级加载
