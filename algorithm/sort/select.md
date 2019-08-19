@@ -5,3 +5,7 @@
 
 重复这样的循环 n - 1 次即得到结果
 :::
+
+## 基本做法
+
+<<< @/algorithm/sort/code/select-base.js
