@@ -13,16 +13,23 @@ categories: ["tool"]
 
 - hash
 
-hash 是整个编译过程产生的一个总的 hash 值，而不是单个文件的 hash 值，项目中任何一个文件的改动，都会造成这个 hash 值的改变
+  hash 是整个编译过程产生的一个总的 hash 值，而不是单个文件的 hash 值，项目中任何一个文件的改动，都会造成这个 hash 值的改变
 
 - chunkhash
 
-代码中引用的文件（js、css、图片等）会根据配置合并为一个或多个包，我们称一个包为 chunk。 每个 chunk 包含多个 modules。无论是否是 js，webpack 都将引入的文件视为一个 module
-[chunkhash]：这个 chunk 的 hash 值，文件发生变化时该值也会变。使用 [chunkhash] 作为文件名可以防止浏览器读取旧的缓存文件
+  代码中引用的文件（js、css、图片等）会根据配置合并为一个或多个包，我们称一个包为 chunk。 每个 chunk 包含多个 modules。无论是否是 js，webpack 都将引入的文件视为一个 module
+
+  [chunkhash]：这个 chunk 的 hash 值，文件发生变化时该值也会变。使用 [chunkhash] 作为文件名可以防止浏览器读取旧的缓存文件
 
 - contenthash
 
-[contenthash] 你可以简单理解为 moduleId + content 生成的 hash 因此一个 chunk 中的多个 module 有自己的 [contenthash]
+  [contenthash] 你可以简单理解为 moduleId + content 生成的 hash 因此一个 chunk 中的多个 module 有自己的 [contenthash].
+
+::: tip chunkhash 和 contenthash 的主要应用场景是什么呢？
+
+在实际在项目中，我们一般会把项目中的 css 都抽离出对应的 css 文件来加以引用。如果我们使用 chunkhash，当我们改了 css 代码之后，会发现 css 文件 hash 值改变的同时，js 文件的 hash 值也会改变。这时候，contenthash 就派上用场了
+
+:::
 
 ## 基本配置
 
