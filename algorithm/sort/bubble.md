@@ -8,7 +8,7 @@
 
 ## 基本做法
 
-<<< @/algorithm/sort/code/bubble-base.js
+<<< @/algorithm/sort/code/bubble.js
 
 ## 缓存 pos
 

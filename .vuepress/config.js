@@ -51,7 +51,7 @@ module.exports = {
             "func-promise",
             "design-patterns-oop",
             "error",
-            'module'
+            "module"
           ].map(i => `javascript/${i}`)
         },
         {
@@ -162,7 +162,7 @@ module.exports = {
         {
           title: "排序",
           collapsable: false,
-          children: ["", "bubble", "select"].map(i => `sort/${i}`)
+          children: ["", "bubble", "select", "insertion"].map(i => `sort/${i}`)
         },
         {
           title: "题目",

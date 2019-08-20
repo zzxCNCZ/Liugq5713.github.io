@@ -1,4 +1,4 @@
-import { bubble } from "./bubble-base";
+import { bubble } from "./bubble";
 import { bubbleWithPos } from "./bubble-pos";
 import { bubbleWithGuard } from "./bubble-guard";
 import { bubbleWithTwoWay } from "./bubble-two-way";
