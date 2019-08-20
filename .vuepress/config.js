@@ -51,7 +51,8 @@ module.exports = {
             "func-promise",
             "design-patterns-oop",
             "error",
-            "module"
+            "module",
+            "deep-call-apply"
           ].map(i => `javascript/${i}`)
         },
         {
