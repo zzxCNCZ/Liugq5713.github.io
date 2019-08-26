@@ -1,3 +1,4 @@
+// 改造的二分查找，查找插入的位置
 const binarySearch = (arr, value) => {
   let min = 0;
   let max = arr.length - 1;
