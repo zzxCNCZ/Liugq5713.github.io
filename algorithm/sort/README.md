@@ -11,3 +11,8 @@
 | 冒泡排序 |   稳定 |     O(n^2) |  O(n) `通过记录 POS` |
 |          |        |            |                      |
 |          |        |            |                      |
+
+## 参考
+
+- [Sorting Algorithms visualization (English)，强烈推荐看，对理解排序算法运行的过程很有帮助](https://www.toptal.com/developers/sorting-algorithms)
+- [优雅的 JavaScript 排序算法（ES6）代码仓库](https://github.com/RayJune/Elegant-JavaScript-Sorting-Algorithms)
