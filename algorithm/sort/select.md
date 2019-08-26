@@ -9,3 +9,5 @@
 ## 基本做法
 
 <<< @/algorithm/sort/code/select-base.js
+
+## 二分查找版
