@@ -163,7 +163,7 @@ module.exports = {
         {
           title: "排序",
           collapsable: false,
-          children: ["", "bubble", "select", "insertion"].map(i => `sort/${i}`)
+          children: ["", "bubble", "select", "insertion",'shell'].map(i => `sort/${i}`)
         },
         {
           title: "题目",

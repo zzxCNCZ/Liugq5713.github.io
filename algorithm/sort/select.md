@@ -10,4 +10,3 @@
 
 <<< @/algorithm/sort/code/select-base.js
 
-## 二分查找版
