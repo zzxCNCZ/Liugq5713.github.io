@@ -75,6 +75,11 @@ module.exports = {
           )
         },
         {
+          title: "Node",
+          collapsable: false,
+          children: [""].map(i => `node/${i}`)
+        },
+        {
           title: "其他",
           collapsable: false,
           children: [""]
@@ -163,7 +168,9 @@ module.exports = {
         {
           title: "排序",
           collapsable: false,
-          children: ["", "bubble", "select", "insertion",'shell'].map(i => `sort/${i}`)
+          children: ["", "bubble", "select", "insertion", "shell"].map(
+            i => `sort/${i}`
+          )
         },
         {
           title: "题目",
