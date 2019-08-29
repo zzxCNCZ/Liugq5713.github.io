@@ -1,190 +1,120 @@
-const path = require("path");
+const path = require('path')
 module.exports = {
   configureWebpack: {
     resolve: {
       alias: {
-        algorithm: path.join(__dirname, "algorithm")
+        algorithm: path.join(__dirname, 'algorithm')
       }
     }
   },
-  title: "重学前端",
+  title: '重学前端',
   head: [
     [
-      "link",
+      'link',
       {
-        rel: "icon",
-        href: "/favicon.ico"
+        rel: 'icon',
+        href: '/favicon.ico'
       }
     ]
   ],
-  base: "/fe/",
+  base: '/fe/',
   themeConfig: {
-    logo: "/hero.png",
+    logo: '/hero.png',
     sidebarDepth: 2,
-    lastUpdated: "Last Updated",
+    lastUpdated: 'Last Updated',
     nav: [
-      { text: "Home", link: "/" },
-      { text: "Fe", link: "/fe/" },
-      { text: "Browser", link: "/browser/" },
-      { text: "Lib", link: "/lib/" },
-      { text: "Tool", link: "/tool/" },
-      { text: "Algorithm", link: "/algorithm/" }
+      { text: 'Home', link: '/' },
+      { text: 'Fe', link: '/fe/' },
+      { text: 'Browser', link: '/browser/' },
+      { text: 'Lib', link: '/lib/' },
+      { text: 'Tool', link: '/tool/' },
+      { text: 'Algorithm', link: '/algorithm/' }
     ],
     sidebar: {
-      "/fe/": [
+      '/fe/': [
         {
-          title: "Javascript",
+          title: 'Javascript',
           collapsable: false,
           children: [
-            "",
-            "variable",
-            "type-common-number",
-            "type-common-string",
-            "type-common-boolean",
-            "type-reference-array",
-            "type-reference-object",
-            "logical-statement",
-            "build-in-date",
-            "build-in-json",
-            "build-in-timer",
-            "func-base",
-            "func-promise",
-            "design-patterns-oop",
-            "error",
-            "module",
-            "deep-call-apply"
+            '',
+            'variable',
+            'type-common-number',
+            'type-common-string',
+            'type-common-boolean',
+            'type-reference-array',
+            'type-reference-object',
+            'logical-statement',
+            'build-in-date',
+            'build-in-json',
+            'build-in-timer',
+            'build-in-regx',
+            'func-base',
+            'func-promise',
+            'design-patterns-oop',
+            'error',
+            'module',
+            'deep-call-apply'
           ].map(i => `javascript/${i}`)
         },
         {
-          title: "CSS",
+          title: 'CSS',
           collapsable: false,
-          children: [
-            "animation",
-            "css",
-            "cssExpandClickAreas",
-            "cssFontFamily",
-            "flex",
-            "QA"
-          ].map(i => `css/${i}`)
+          children: ['animation', 'css', 'cssExpandClickAreas', 'cssFontFamily', 'flex', 'QA'].map(i => `css/${i}`)
         },
         {
-          title: "HTML",
+          title: 'HTML',
           collapsable: false,
-          children: ["crossorigin", "element", "html", "iframe", "select"].map(
-            i => `html/${i}`
-          )
+          children: ['crossorigin', 'element', 'html', 'iframe', 'select'].map(i => `html/${i}`)
         },
         {
-          title: "Node",
+          title: 'Node',
           collapsable: false,
-          children: [""].map(i => `node/${i}`)
+          children: ['', 'module'].map(i => `node/${i}`)
         },
         {
-          title: "其他",
+          title: '其他',
           collapsable: false,
-          children: [""]
+          children: ['']
         }
       ],
-      "/browser/": [
-        "",
-        "viewport",
-        "crp",
-        "event",
-        "uri",
-        "storage",
-        "canvas",
-        "file",
-        "formdata"
-      ],
-      "/tool/": [
+      '/browser/': ['', 'viewport', 'crp', 'event', 'uri', 'storage', 'canvas', 'file', 'formdata', 'websafe', 'cache', 'crossorigin'],
+      '/tool/': [
         {
-          title: "其他",
+          title: '其他',
           collapsable: false,
-          children: [
-            "",
-            "babel",
-            "chrome",
-            "eslint",
-            "github",
-            "husky",
-            "nginx",
-            "npm",
-            "npmQA",
-            "vscode",
-            "webpack",
-            "webpack-split-chunks",
-            "webpackQA"
-          ]
+          children: ['', 'babel', 'chrome', 'eslint', 'github', 'husky', 'nginx', 'npm', 'npmQA', 'vscode', 'webpack', 'webpack-split-chunks', 'webpackQA']
         },
         {
-          title: "GIT",
+          title: 'GIT',
           collapsable: false,
-          children: [
-            "",
-            "base",
-            "branch",
-            "config",
-            "knowledge",
-            "log",
-            "qa",
-            "reset",
-            "stash",
-            "squash"
-          ].map(i => `git/${i}`)
+          children: ['', 'base', 'branch', 'config', 'knowledge', 'log', 'qa', 'reset', 'stash', 'squash'].map(i => `git/${i}`)
         }
       ],
-      "/lib/": [
+      '/lib/': [
         {
-          title: "Vue",
+          title: 'Vue',
           collapsable: false,
-          children: [
-            "",
-            "base",
-            "base-computed",
-            "component",
-            "component-update",
-            "component-sfc",
-            "lifecycle",
-            "src-code-vfor",
-            "communication-store",
-            "qa"
-          ].map(i => `vue/${i}`)
+          children: ['', 'base', 'base-computed', 'component', 'component-update', 'component-sfc', 'lifecycle', 'src-code-vfor', 'communication-store', 'qa'].map(i => `vue/${i}`)
         },
         {
-          title: "其他",
+          title: '其他',
           collapsable: false,
-          children: [
-            "",
-            "element",
-            "pwa",
-            "react",
-            "reactnative",
-            "test",
-            "typescript"
-          ]
+          children: ['', 'element', 'pwa', 'react', 'reactnative', 'test', 'typescript']
         }
       ],
-      "/algorithm/": [
+      '/algorithm/': [
         {
-          title: "排序",
+          title: '排序',
           collapsable: false,
-          children: ["", "bubble", "select", "insertion", "shell"].map(
-            i => `sort/${i}`
-          )
+          children: ['', 'bubble', 'select', 'insertion', 'shell'].map(i => `sort/${i}`)
         },
         {
-          title: "题目",
+          title: '题目',
           collapsable: false,
-          children: [
-            "",
-            "search",
-            "dp",
-            "13RomanToInteger",
-            "17LetterCombinationsOfAPhoneNumber"
-          ]
+          children: ['', 'search', 'dp', '13RomanToInteger', '17LetterCombinationsOfAPhoneNumber']
         }
       ],
-      "/": [""]
+      '/': ['']
     }
   }
-};
+}
