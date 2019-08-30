@@ -77,7 +77,7 @@ module.exports = {
         {
           title: "Node",
           collapsable: false,
-          children: [""].map(i => `node/${i}`)
+          children: ["", "module"].map(i => `node/${i}`)
         },
         {
           title: "其他",
