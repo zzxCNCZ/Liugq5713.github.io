@@ -69,11 +69,7 @@ module.exports = {
         {
           title: 'Node',
           collapsable: false,
-<<<<<<< HEAD
-          children: ["", "module"].map(i => `node/${i}`)
-=======
           children: ['', 'module'].map(i => `node/${i}`)
->>>>>>> 14b0b51a15663eff1014dea6114469e90d028a1f
         },
         {
           title: '其他',
