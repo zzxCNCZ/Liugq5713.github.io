@@ -68,6 +68,16 @@
 - filter : `create a new array` with all elements that pass the test implemented by the provided function
 - reduce : executes a reducer function (that you provide) on each member of the array resulting in a single output value.
 
+::: tip map 和 forEach 无法跳出循环
+解决方法就是使用数组的两个方法 some()与 every()：
+
+1. some()当内部 return true 时跳出整个循环
+2. every()当内部 return false 时跳出整个循环
+
+:::
+
+<<< @/fe/javascript/code/array-map-foreach.js
+
 ## 归并方法
 
 - reduce / reduceRight
