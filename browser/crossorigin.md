@@ -37,6 +37,10 @@ setRequestHeader()：向一个打开但未发送的请求设置或添加一个 H
 
 ## 解决方法
 
+## TL;DR
+
+`iframe,script,image`主要函数利用了 html 里面标签没有跨域的限制（他们仅仅能发送 get 请求），跨域限制是浏览器行为，但是 html 标签没有限制。CORS 和 windows.postMessage 则是新提出来的方法
+
 ### iframe
 
 首先需要把发送给 web 服务器的数据编码到 URL 中,然后设置 iframe 的 src 属性为该 URL，服务器能创建一个包含响应内容的 HTML 文档
@@ -51,15 +55,15 @@ image 标签
 
 script 标签
 
-动态添加<script>标签来调用服务器提供的 js 脚本
+动态添加`<script>`标签来调用服务器提供的 js 脚本
 
 ### CORS
 
-首部字段 Access-Control-Allow-Methods 表明服务器允许客户端使用 POST, GET 和 OPTIONS 方法发起请求。该字段与 HTTP/1.1 Allow: response header 类似，但仅限于在需要访问控制的场景中使用。
+首部字段 `Access-Control-Allow-Methods` 表明服务器允许客户端使用 POST, GET 和 OPTIONS 方法发起请求。该字段与 HTTP/1.1 Allow: response header 类似，但仅限于在需要访问控制的场景中使用。
 
-首部字段 Access-Control-Allow-Headers 表明服务器允许请求中携带字段 X-PINGOTHER 与 Content-Type。与 Access-Control-Allow-Methods 一样，Access-Control-Allow-Headers 的值为逗号分割的列表。
+首部字段 `Access-Control-Allow-Headers` 表明服务器允许请求中携带字段 X-PINGOTHER 与 Content-Type。与 Access-Control-Allow-Methods 一样，Access-Control-Allow-Headers 的值为逗号分割的列表。
 
-最后，首部字段 Access-Control-Max-Age 表明该响应的有效时间为 86400 秒，也就是 24 小时。在有效时间内，浏览器无须为同一请求再次发起预检请求。请注意，浏览器自身维护了一个最大有效时间，如果该首部字段的值超过了最大有效时间，将不会生效。
+最后，首部字段 `Access-Control-Max-Age` 表明该响应的有效时间为 86400 秒，也就是 24 小时。在有效时间内，浏览器无须为同一请求再次发起预检请求。请注意，浏览器自身维护了一个最大有效时间，如果该首部字段的值超过了最大有效时间，将不会生效。
 
 CORS 需要客户端和服务器同时支持。目前，所有浏览器都支持该机制。
 
@@ -74,3 +78,7 @@ CORS 需要客户端和服务器同时支持。目前，所有浏览器都支持
 浏览器限制从脚本内发起的跨域 HTTP 请求（也可能是返回结果被浏览器拦截了）
 
 同源策略：为通信设置了相同的域，相同的端口，相同的协议
+
+## 参考
+
+- [跨域资源共享 CORS 详解](http://www.ruanyifeng.com/blog/2016/04/cors.html)

@@ -59,7 +59,7 @@ module.exports = {
         {
           title: 'CSS',
           collapsable: false,
-          children: ['animation', 'css', 'cssExpandClickAreas', 'cssFontFamily', 'flex', 'QA'].map(i => `css/${i}`)
+          children: ['animation', 'px', 'css', 'cssExpandClickAreas', 'cssFontFamily', 'flex', 'QA'].map(i => `css/${i}`)
         },
         {
           title: 'HTML',
@@ -69,7 +69,7 @@ module.exports = {
         {
           title: 'Node',
           collapsable: false,
-          children: ['', 'module'].map(i => `node/${i}`)
+          children: ['', 'path', 'module'].map(i => `node/${i}`)
         },
         {
           title: '其他',
