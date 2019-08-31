@@ -27,22 +27,8 @@ git remote rm origin
 git remote add origin git@github.com:Liutos/foobar.git
 ```
 
-## git 工作流
-
-一个大的项目 可能对一个功能有大量的修改。可以新建一个分支名为 someFeature , 然后将所有的更改分支都合并到这个分支上，最后将该分支合并到主分支
-
-## git 暂存区的意义
-
-- 便于 track
-- 选择性提交文件
-- 提交历史更加的清晰
-
 ## diff
 
 git diff 命令可以显示两个主体之间的差异。工作区与暂存区的差异单纯的 git diff 命令显示工作区与暂存区之间的差异。
 
 git diff --staged 命令显示暂存区与当前 commit 的差异。
-
-## 前端社区中使用较多的 Git Commit 提交规范是 Angular 规范  
-
-[google 规范](https://docs.google.com/document/d/1QrDFcIiPjSLDn3EL15IJygNPiHORgU1_OOAqWjiDU5Y/edit)

@@ -1,25 +1,19 @@
----
-title: 在线交友 GitHub
-date: 2018-12-29T08:19:26.314Z
+# 在线交友 GitHub
 
-categories: ["tool"]
----
+## Archive dead repositories
+
+我有一点点洁癖，所以有时候会去整理 github，一般不用仓库直接删除就好了，但是有的仓库食之无味弃之可惜，毕竟也是自己一点一点写的。所以可以使用它的归档功能
 
 ## 常用缩写
 
 - WIP (Work In Progress) 开发中
 - LGTM (Looks Good To Me Riview) 看完别人的 PR ，没有问题
 - PTAL (Please Take A Look) 帮我看下，一般都是请别人 review 自己的 PR
-- WIP (work in progress, do not merge yet)
 - TL;DR (Too Long;Didn;t Read)
 
-## Archive dead repositories
+## github 项目优化
 
-我有一点点洁癖，所以有时候会去整理 github，一般不用仓库直接删除就好了，但是有的仓库食之无味弃之可惜，毕竟也是自己一点一点写的。所以可以使用它的归档功能
-
-# 如何让你的 Github 项目表面上更专业
-
-## README
+### README
 
 README 是用户点进你项目的第一印象，值得你好好写。当然我们自己可能考虑的不是很完全，不如使用工具来生成。推荐[readme-md-generator](https://github.com/kefranabg/readme-md-generator)。生成的 README 如下图：
 
@@ -38,7 +32,7 @@ README 是用户点进你项目的第一印象，值得你好好写。当然我�
 
 在 README 里面，我们可以添加 [Badge(徽章)](https://shields.io/)，常用的徽标主要有持续集成状态、项目版本信息、代码测试覆盖率、项目支持平台、项目语言、代码分析等，想得到这些徽章的话，知道自己该做些什么了吧。
 
-## GITHUB PAGE
+### GITHUB PAGE
 
 用户如果感兴趣，或许会想真切地感受一下项目。咱们前端项目不需要后台，真的非常合适部署在[github page](https://pages.github.com/)上。
 
@@ -46,7 +40,7 @@ README 是用户点进你项目的第一印象，值得你好好写。当然我�
 
 在你的 GITHUB PAGE 上可以添加 [Github 彩带](https://github.blog/2008-12-19-github-ribbons/)，或者 [Github Corner](http://tholman.com/github-corners/)
 
-## GIT COMMIT
+### GIT COMMIT
 
 如果你的用户对你的项目特别感兴趣，可能他会看看你的 commit，看看你写代码的过程。如果 commit 信息里面都是 fix , add 甚至 aa,dd 这种无意义的信息，你肯定会觉得这个项目的作者不是特别的用心。当然作为项目的作者，可能有时候真的懒。。。。，为了解决这个问题，推荐大家几个工具。
 
@@ -60,7 +54,3 @@ README 是用户点进你项目的第一印象，值得你好好写。当然我�
 - [GitHub 项目徽章的添加和设置](https://lpd-ios.github.io/2017/05/03/GitHub-Badge-Introduction/)
 - [awesome-bookmarks](https://panjiachen.github.io/awesome-bookmarks/website/#%E5%BC%80%E5%8F%91)
 - [Commit message 和 Change log 编写指南](http://www.ruanyifeng.com/blog/2016/01/commit_message_change_log.html)
-
-## 其他
-
-你有什么花里胡哨的技巧，不妨评论区告诉我吧

@@ -87,7 +87,7 @@ module.exports = {
         {
           title: 'GIT',
           collapsable: false,
-          children: ['', 'base', 'branch', 'config', 'knowledge', 'log', 'qa', 'reset', 'stash', 'squash'].map(i => `git/${i}`)
+          children: ['', 'knowledge', 'base', 'branch', 'config', 'log', 'reset', 'stash'].map(i => `git/${i}`)
         }
       ],
       '/lib/': [
