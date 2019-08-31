@@ -82,7 +82,7 @@ module.exports = {
         {
           title: '其他',
           collapsable: false,
-          children: ['', 'babel', 'chrome', 'eslint', 'github', 'husky', 'nginx', 'npm', 'npmQA', 'vscode', 'webpack', 'webpack-split-chunks', 'webpackQA']
+          children: ['', 'babel', 'chrome', 'eslint', 'github', 'husky', 'nginx', 'npm', 'vscode', 'webpack', 'webpack-split-chunks', 'webpackQA']
         },
         {
           title: 'GIT',
