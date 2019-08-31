@@ -64,7 +64,7 @@ module.exports = {
         {
           title: 'HTML',
           collapsable: false,
-          children: ['crossorigin', 'element', 'html', 'iframe', 'select'].map(i => `html/${i}`)
+          children: ['crossorigin', 'element', 'image', 'html', 'iframe', 'select'].map(i => `html/${i}`)
         },
         {
           title: 'Node',

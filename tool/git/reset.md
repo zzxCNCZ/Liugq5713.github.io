@@ -1,6 +1,6 @@
 # 回滚
 
-## Three Trees of Git
+## Three Trees of Git；0
 
 要想明白 reset，就要懂得 git 的三个树（Three Trees of Git）
 
