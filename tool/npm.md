@@ -1,5 +1,13 @@
 # Node 包管理器 Npm
 
+## [npx](https://medium.com/@maybekatz/introducing-npx-an-npm-package-runner-55f7d4bd282b)
+
+a tool intended to help round out the experience of using packages from the npm registry
+
+- Using locally-installed tools without npm run-script
+- Executing one-off commands
+- Run commands with different Node.js versions
+
 ## 基础知识
 
 ### npm 钩子
@@ -10,21 +18,15 @@
 npm run prebuild && npm run build && npm run postbuild
 ```
 
-## [npx](https://medium.com/@maybekatz/introducing-npx-an-npm-package-runner-55f7d4bd282b)
+## 常用命令
 
-a tool intended to help round out the experience of using packages from the npm registry
-
-- Using locally-installed tools without npm run-script
-- Executing one-off commands
-- Run commands with different Node.js versions
-
-## npm rebuild
+### npm rebuild
 
 > 我司升上了 webpack4，我个人版本的 `node`，`npm` 版本低了，需要升级
 
 This command runs the npm build command on the matched folders. This is useful when you install a new version of node, and must recompile all your C++ addons with the new binary.
 
-## npm upgrade
+### npm upgrade
 
 ```js
 npm update [-g] [<pkg>...]
@@ -33,6 +35,47 @@ npm update [-g] [<pkg>...]
 也可以使用 npm 包来管理它的升级。（npm-check）
 
 npm-check 直接运行这个命令就可以了。然后根据提示进行升级。
+
+### npm-version
+
+`npm version [<newversion> | major | minor | patch | premajor | preminor | prepatch | prerelease [--preid=<prerelease-id>] | from-git]`
+
+If run in a git repo, it will also `create a version commit and tag`. This behavior is controlled by git-tag-version
+
+## [NPM 版本相关问题](https://blog.xcatliu.com/2015/04/14/semantic_versioning_and_npm/)
+
+npm 基本遵守 [semver](http://semver.org/) 语义化版本号的规则，使用 node-semver 来解析版本号。
+
+一般来说，一个版本号包含三个部分：
+
+MAJOR MINOR PATCH
+
+MAJOR 表示主版本号，通常有重大改变或者达到里程碑才改变
+MINOR 表示次版本号，在保证主体功能基本不变的情况下,如果适当增加了新功能可以更新此版本号
+PATCH 表示修订号：一些小范围的修修补补就可以更新补丁号
+它们的取值为非负整数，若大于零，不能在前方补零
+
+### npm-config
+
+Any environment variables that start with npm_config\_ will be interpreted as a configuration parameter.
+
+`local": "npm run webpack-serve --config=test`
+
+可以通过 process.env.NPM_CONFIG_CONFIG 访问到值 test
+
+npm 的配置文件 .npmrc
+我们工作中经常用到的是就是设置一下 npm 的仓库了
+
+```shell
+// 获取
+npm get registry
+// 设置
+npm config set registry  https://registry.npm.taobao.org
+// 删除
+npm config rm register
+// 直接编辑配置文件
+npm config edit
+```
 
 ## npm 发包
 
@@ -71,54 +114,11 @@ export NODE_ENV=production
 }
 ```
 
-### npm-version
-
-`npm version [<newversion> | major | minor | patch | premajor | preminor | prepatch | prerelease [--preid=<prerelease-id>] | from-git]`
-
-If run in a git repo, it will also `create a version commit and tag`. This behavior is controlled by git-tag-version
-
-## [NPM 版本相关问题](https://blog.xcatliu.com/2015/04/14/semantic_versioning_and_npm/)
-
-npm 基本遵守 [semver](http://semver.org/) 语义化版本号的规则，使用 node-semver 来解析版本号。
-
-一般来说，一个版本号包含三个部分：
-
-MAJOR MINOR PATCH
-
-MAJOR 表示主版本号，通常有重大改变或者达到里程碑才改变
-MINOR 表示次版本号，在保证主体功能基本不变的情况下,如果适当增加了新功能可以更新此版本号
-PATCH 表示修订号：一些小范围的修修补补就可以更新补丁号
-它们的取值为非负整数，若大于零，不能在前方补零
-
-### npm-config
-
-Any environment variables that start with npm_config\_ will be interpreted as a configuration parameter.
-
-`local": "npm run webpack-serve --config=test`
-
-可以通过 process.env.NPM_CONFIG_CONFIG 访问到值 test
-
 ### npm 版本控制
 
 ### 更新
 
 > 你不能手动更新你的 npm 包的版本号，npm 提供了一些命令让你更新版本号，记得用
-
-## npm config
-
-npm 的配置文件 .npmrc
-我们工作中经常用到的是就是设置一下 npm 的仓库了。
-
-```shell
-// 获取
-npm get registry
-// 设置
-npm config set registry  https://registry.npm.taobao.org
-// 删除
-npm config rm register
-// 直接编辑配置文件
-npm config edit
-```
 
 ## package.json bootstrap
 
