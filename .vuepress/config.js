@@ -109,6 +109,11 @@ module.exports = {
           children: ['', 'bubble', 'select', 'insertion', 'shell'].map(i => `sort/${i}`)
         },
         {
+          title: '暴力求解',
+          collapsable: false,
+          children: ['', 'simple', 'arrange'].map(i => `violence/${i}`)
+        },
+        {
           title: '题目',
           collapsable: false,
           children: ['', 'search', 'dp', '13RomanToInteger', '17LetterCombinationsOfAPhoneNumber']
