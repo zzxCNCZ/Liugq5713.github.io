@@ -59,26 +59,17 @@ module.exports = {
         {
           title: "CSS",
           collapsable: false,
-          children: [
-            "animation",
-            "css",
-            "cssExpandClickAreas",
-            "cssFontFamily",
-            "flex",
-            "QA"
-          ].map(i => `css/${i}`)
+          children: ['animation', 'px', 'css', 'cssExpandClickAreas', 'cssFontFamily', 'flex', 'QA'].map(i => `css/${i}`)
         },
         {
           title: "HTML",
           collapsable: false,
-          children: ["crossorigin", "element", "html", "iframe", "select"].map(
-            i => `html/${i}`
-          )
+          children: ['crossorigin', 'element', 'image', 'html', 'iframe', 'select'].map(i => `html/${i}`)
         },
         {
           title: "Node",
           collapsable: false,
-          children: ["", "module"].map(i => `node/${i}`)
+          children: ['', 'path', 'module'].map(i => `node/${i}`)
         },
         {
           title: "其他",
@@ -105,37 +96,12 @@ module.exports = {
         {
           title: "其他",
           collapsable: false,
-          children: [
-            "",
-            "babel",
-            "chrome",
-            "eslint",
-            "github",
-            "husky",
-            "nginx",
-            "npm",
-            "npmQA",
-            "vscode",
-            "webpack",
-            "webpack-split-chunks",
-            "webpackQA"
-          ]
+          children: ['', 'babel', 'chrome', 'eslint', 'github', 'husky', 'nginx', 'npm', 'vscode', 'webpack', 'webpack-split-chunks', 'webpackQA']
         },
         {
           title: "GIT",
           collapsable: false,
-          children: [
-            "",
-            "base",
-            "branch",
-            "config",
-            "knowledge",
-            "log",
-            "qa",
-            "reset",
-            "stash",
-            "squash"
-          ].map(i => `git/${i}`)
+          children: ['', 'knowledge', 'base', 'branch', 'config', 'log', 'reset', 'stash'].map(i => `git/${i}`)
         }
       ],
       "/lib/": [
@@ -178,7 +144,12 @@ module.exports = {
           )
         },
         {
-          title: "题目",
+          title: '暴力求解',
+          collapsable: false,
+          children: ['', 'simple', 'arrange'].map(i => `violence/${i}`)
+        },
+        {
+          title: '题目',
           collapsable: false,
           children: [
             "",

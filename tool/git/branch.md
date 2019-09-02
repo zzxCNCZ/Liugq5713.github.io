@@ -1,5 +1,9 @@
 # 分支操作
 
+## TL;DR
+
+常见的分支操作有增删分支，切换分支，合并分支，以及更新分支
+
 ## 新增分支
 
 ```shell
@@ -8,21 +12,6 @@ git branch newBranch
 # 从远程新建分支
 git branch master origin/master
 ```
-
-## 切换分支
-
-```
-// 切换分支
-git checkout master
-
-// 新建并切换到分支
-git checkout -b newBranch
-
-// 强制切分支
-git checkout -f master
-```
-
-###
 
 ## 删除分支
 
@@ -38,6 +27,19 @@ git branch -D <branch_name>
 ### [远程分支](https://stackoverflow.com/questions/2003505/how-do-i-delete-a-git-branch-both-locally-and-remotely)
 
 `git push --delete <remote_name> <branch_name>` Note that in most cases the remote name is origin.
+
+## 切换分支
+
+```
+// 切换分支
+git checkout master
+
+// 新建并切换到分支
+git checkout -b newBranch
+
+// 强制切分支
+git checkout -f master
+```
 
 ## 合并分支
 
@@ -71,6 +73,10 @@ Git 执行一个合并时，它实际上会查找三个提交：
 
 `git revert --abort`
 
+### [git merge your-branch-name --squash](https://gist.github.com/patik/b8a9dc5cd356f9f6f980)
+
+痛点：当你把分支 merge 到 master 时，分支上的 commit 信息都会合并到 master 分支上，团队成员可能不关心你的你分支上那么多提交信息，你只需要告诉他们你这个分支做了什么事情就行。即你需要将你的分支上的 commit 信息合并为一个 commit 信息。但是注意的是，这个被合入的分支的原本的 commit 信息就被丢掉了
+
 ### [git rebase](https://git-scm.com/docs/git-rebase)
 
 > 我开发的时候在我的本地一顿操作，然后不能自动 rebase 了，需要我在本地 rebase，一脸懵逼。需要好好了解一下，毕竟变基比 merge 更好一点
@@ -103,4 +109,27 @@ git pull origin master
 
 ```js
 git checkout master && git branch -D sit&&git branch sit&&git push --set-upstream origin sit -f
+```
+
+## 更新 fork 下来别人的仓库
+
+git romote -v
+
+会显示一个 origin ，和一个 upstream
+
+```shell
+// 获取原仓库最新的内容
+git fetch upstream
+// 切换到master分支，把upstream/master分支上的内容合入到master分支
+git merge upstream/master
+```
+
+这种方法有问题，就是如果你对这个项目已经有 commit 了，然后你又要对项目做贡献，那么第二次你又把你第一次的 commit 提交上去了。
+
+推荐做法，直接切原作者仓库的远程分支
+
+```shell
+git checkout upstream/master
+// 然后新建一个分支
+git checkout -b devTodo
 ```

@@ -9,9 +9,9 @@ ES6 之前，JavaScript 字符串基于 16 位字符编码（UTF-16）进行构�
 UTF-16 引入了代理对，规定了用两个 16 位编码单元表示一个码位，也就是说字符串有两种，一种是由编码单元 16 位表示的 BMP 字符。另一种是由两个编码单元 32 位表示的辅助平面字符
 
 ```js
-console.log("16位表示", "汉".length); // 1
+console.log('16位表示', '汉'.length) // 1
 
-console.log("32位表示", "𠮷".length); // 2
+console.log('32位表示', '𠮷'.length) // 2
 ```
 
 ## 值不可变
@@ -23,9 +23,9 @@ console.log("32位表示", "𠮷".length); // 2
 :::
 
 ```js
-const str = "Jello World";
+const str = 'Jello World'
 // 报错：TypeError: Cannot assign to read only property '0' of string 'Jello World'
-myStr[0] = "H";
+myStr[0] = 'H'
 ```
 
 曾经遇到一个给字符串排序的需求，想使用 Array 的 sort 方法给字符串排序。
@@ -33,9 +33,9 @@ myStr[0] = "H";
 借用方法是可行的，比如借用 Array 的 map 方法
 
 ```js
-Array.prototype.map.call("test", function(res) {
-  console.log(res);
-});
+Array.prototype.map.call('test', function(res) {
+  console.log(res)
+})
 ```
 
 但是 sort 方法不行，为什么呢？
@@ -79,7 +79,7 @@ str.includes(searchString[, position])
 
 ```js
 // 取两个参数中较小的为起点，较大的为终点
-str.substring(a, b);
+str.substring(a, b)
 ```
 
 - substr()
@@ -124,41 +124,33 @@ str.substring(a, b);
 
 ```javascript
 const hidePhone = phoneNumber => {
-  return phoneNumber.replace(/^(\d{3})\d{4}/, "$1****");
-};
+  return phoneNumber.replace(/^(\d{3})\d{4}/, '$1****')
+}
 ```
 
 ### highlightText
 
-这里最重要的就是正则，开始是这样写的，`/[(中国|红利)]/g`，这样写却会匹配方括号里面出现的每一个字符。小光于是又看了一下正则表达式文章，了解到了这些知识点
-
-- 字符集<br />
-  字符集也叫做字符类. 方括号用来指定一个字符集. 在方括号中使用连字符来指定字符集的范围. 在方括号中的字符集不关心顺序. 例如, 表达式[Tt]he 匹配 the 和 The
-- (...) 特征标群<br />
-  特征标群是一组写在 (...) 中的子模式. 例如之前说的 {} 是用来表示前面一个字符出现指定次数. 但如果在 {} 前加入特征标群则表示整个标群内的字符重复 N 次. 例如, 表达式 (ab)\* 匹配连续出现 0 或更多个 ab.<br />
-  了解到这些知识点之后，小光明白了。[ ]中括号里面的字符都是单独的，也就是说`( 中 国 | 红 利 )` 被当作七个独立的字符，（）圆括号则表示这是一个分组，分组里的|有或者的含义，因此，正确的正则表达式应该是 `/(中国|红利)/g`，代码如下：
-
 ```javascript
 export const highlightText = (content, words) => {
-  if (typeof content !== "string") {
-    console.error("please make sure the type of content is string");
-    return content;
+  if (typeof content !== 'string') {
+    console.error('please make sure the type of content is string')
+    return content
   }
 
   if (Array.isArray(words)) {
     const word_group = words
       .map(word => {
-        return `${word}`;
+        return `${word}`
       })
-      .join("|");
-    const reg = new RegExp(`(${word_group})`, "g");
-    return content.replace(reg, "<span class='highlight'>$&</span>");
+      .join('|')
+    const reg = new RegExp(`(${word_group})`, 'g')
+    return content.replace(reg, "<span class='highlight'>$&</span>")
   }
 
-  if (typeof words === "string") {
-    const reg = new RegExp(words, "g");
-    return content.replace(reg, "<span class='highlight'>$&</span>");
+  if (typeof words === 'string') {
+    const reg = new RegExp(words, 'g')
+    return content.replace(reg, "<span class='highlight'>$&</span>")
   }
-  return content;
-};
+  return content
+}
 ```

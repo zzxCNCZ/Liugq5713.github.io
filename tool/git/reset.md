@@ -1,5 +1,13 @@
 # 回滚
 
+## Three Trees of Git；0
+
+要想明白 reset，就要懂得 git 的三个树（Three Trees of Git）
+
+- 工作区（The working directory），这棵树和你的文件系统同步，你对文件的修改都会保存到这个树里面
+- 暂存区（Staging index）,这里记录你工作区的更改，即你通过`git add` 提交上来的内容
+- 提交历史（Commit history），保存你 commit 提交上来的信息
+
 ## 回滚操作
 
 > git 不熟悉，对于代码回滚什么的简直灾难。我又遇到坑了去了,简直心态爆炸，好好学习回滚技术，将来线上出问题也好有的救

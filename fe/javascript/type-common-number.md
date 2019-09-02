@@ -22,6 +22,10 @@ parseInt(string, radix) 这个方法是一个将字符串转换为整数的方�
 - parseFloat
 - Number
 
+## 判断整数
+
+`Number.isInteger(x)`
+
 ## 取整
 
 - parseInt
@@ -35,8 +39,8 @@ parseInt 方法取整数，有两个不好的地方，
 这个 toString 不仅仅是“多此一举”，还可能导致严重的问题，比如：
 
 ```js
-console.log(parseInt(0.00000001)); // 1
-console.log(parseInt(1000000000000000000000)); // 1
+console.log(parseInt(0.00000001)) // 1
+console.log(parseInt(1000000000000000000000)) // 1
 ```
 
 这是因为，`0.00000001.toString() === 1e-8` 而 `1000000000000000000000..toString() === 1e+21`。
@@ -81,7 +85,7 @@ JavaScript 的取模运算%并不限于整数运算，可以对浮点数取模�
 
 ```js
 function floatEqual(num, dest) {
-  return Math.abs(num - dest) < Number.EPSILON;
+  return Math.abs(num - dest) < Number.EPSILON
 }
 ```
 

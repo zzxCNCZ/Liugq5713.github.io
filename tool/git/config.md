@@ -1,12 +1,4 @@
-# 三种级别的配置
-
-## 前言
-
-我下定决心研究它的原因，是因为我在我司的仓库的贡献记录上有三个人，真的是见了鬼了
-
-![contribute](https://wpimg.wallstcn.com/ff636a96-3cb3-43ed-b507-4f101d070bc7.png)
-
-## 配置
+# 配置
 
 config 配置有三种级别
 
@@ -16,23 +8,43 @@ config 配置有三种级别
 
 设置优先级，从`local > global > system`
 
+实测，github 客户端 的配置修改的是 global 的配置
+
 ## git config 配置
 
-很多人对于 git config 的配置止步于这两个命令，我也是，我也不打算看，等用到的时候再去了解
+很多人对于 git config 的配置止步于这两个命令
 
 ```shell
 git config --global user.name "myname"
 git config --global user.email  "test@gmail.com"
 ```
 
-我挨个查看了我三个级别的 git config，发现仅 global 设置了用户名和邮箱，讲道理，应该提交记录都是一个人啊。我陷入了困惑，难道是因为我使用了 github 客户端的原因？
+### Git 如何统一换行符
 
-## GITHUB 的配置
+" LF 和 CRLF"
 
-实测，github 的配置修改的是 global 的配置
+不同平台上，换行符发生改变时，Git 会认为整个文件被修改，这就造成我们没法 diff，不能正确反映本次的修改。还好 Git 在设计时就考虑了这一点，其提供了一个 autocrlf 的配置项，用于在提交和检出时自动转换换行符。但是 eslint 会检查你的换行符。所以干脆统一 LF 好了，在你的文本编辑器上，将文件的换行符设为 LF
 
-看来不是这个原因，我决定看一下我的提交记录，看一下这几个我，分别是什么会提交，这一看，结果就出来了。
+```js
+// 提交时转换为LF，检出时转换为CRLF
+git config --global core.autocrlf true
 
-## GITLAB 的配置
+// 提交时转换为LF，检出时不转换
+git config --global core.autocrlf input
 
-我 GITLAB 的配置是用的全名，邮箱也是公司邮箱，然而我本地是我 GITHUB 的配置。我常会在 GITLAB 上进行合并分支操作，因此 GITLAB 的配置就会被记录下来
+// 提交检出均不转换
+git config --global core.autocrlf false
+```
+
+### 手动将 CRLF 转化为 LF
+
+dos2unix 转换工具。Windows 上 Git bash 客户端自带了该工具。其他系统上也可以安装该工具，随后输入该命令
+
+```js
+find . -type f -exec dos2unix {} +
+```
+
+### GIT 如何大小写敏感
+
+"配置一下"
+git config core.ignorecase false
