@@ -37,3 +37,11 @@ Cache-Control
 控制缓存的行为
 
 HTTPS（加密，认证，完整性保护）
+
+# 给自己的网站上 https
+
+步骤其实还挺简单的
+
+##　参考
+
+- [Nginx/Tengine 服务器安装 SSL 证书](https://help.aliyun.com/knowledge_detail/95491.html?spm=5176.2020520163.cas.28.7d4556a7qbV98s)

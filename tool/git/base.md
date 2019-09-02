@@ -32,3 +32,11 @@ stage 在英文中除了有舞台、阶段之意外，还有作为动词的准�
 - refactor (refactoring production code)
 - test (adding missing tests, refactoring tests; no production code change)
 - chore (updating grunt tasks etc; no production code change)
+
+# 自动部署
+
+## 参考
+
+- [用 Git 钩子进行简单自动部署](https://aotu.io/notes/2017/04/10/githooks/index.html)
+- [使用 Github 的 webhooks 进行网站自动化部署](https://aotu.io/notes/2016/01/07/auto-deploy-website-by-webhooks-of-github/index.html)
+- [Simple automated GIT Deployment using GIT Hooks](https://gist.github.com/noelboss/3fe13927025b89757f8fb12e9066f2fa)
