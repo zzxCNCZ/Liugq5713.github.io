@@ -1,6 +1,9 @@
 const AllPermutationDict = arr => {
+  // 保证数组从小到达排列
+  arr.sort((prev, next) => {
+    return prev - next
+  })
   let j = arr.length - 1
-  // let j = 1
   let res = []
   res.push(arr.slice())
   while (((j = findSecondLargeRight(arr)), j >= 0)) {
@@ -8,7 +11,7 @@ const AllPermutationDict = arr => {
     arr_r = arr_r.filter(i => i > arr[j])
     if (Math.min(...arr_r) > arr[j]) {
       const k = arr.indexOf(Math.min(...arr_r))
-      ;[arr[j], arr[k]] = [arr[k], arr[j]]
+        ;[arr[j], arr[k]] = [arr[k], arr[j]]
       arr = arr.slice(0, j + 1).concat(arr.slice(j + 1).reverse())
       res.push(arr.slice(0))
     } else {
