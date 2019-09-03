@@ -37,9 +37,11 @@ rem 的值并不是固定的，始终是基于根元素 `<html>` 的，也代表
 
 the em unit means "my parent element's font-size".eg: 1.3em — 1.3 times its parent's font size.
 
-实际使用中，em 计算不变
+实际使用中，em 计算不是很方便
 
 the rem unit means "The root element's font-size".
+
+简化 font-size 的换算，我们在根元素 html 中加入 font-size: 62.5%;`html {font-size: 62.5%; } /* 公式 16px*62.5%=10px */`
 
 ## 模板页面
 
@@ -89,3 +91,4 @@ body {
 ## 参考
 
 - [MDN:CSS values and units](https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Values_and_units)
+- [rem 兼容性](https://caniuse.com/#feat=rem)
