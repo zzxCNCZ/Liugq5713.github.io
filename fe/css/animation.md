@@ -2,6 +2,10 @@
 
 > CSS 动画我自己了解过一点，但是没有真真的写过。
 
+## TL;DR
+
+transform 是元素的变形，transition 是元素不同状态之间的过渡，animation 是 transition 的扩展
+
 ## [transform](https://developer.mozilla.org/en-US/docs/Web/CSS/transform)（变形）
 
 lets you rotate, scale, skew, or translate a given element.
@@ -27,3 +31,7 @@ a shorthand property for the various animation properties: animation-name, anima
 ### [@keyframes](https://developer.mozilla.org/en-US/docs/Web/CSS/@keyframes)
 
 The @keyframes CSS at-rule controls the intermediate steps in a CSS animation sequence by defining styles for keyframes (or waypoints) along the animation sequence.
+
+## 参考
+
+- [CSS 动画：animation、transition、transform、translate 傻傻分不清](https://juejin.im/post/5b137e6e51882513ac201dfb)
