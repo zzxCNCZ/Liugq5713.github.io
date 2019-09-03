@@ -11,13 +11,13 @@
 - 重写 toString 方法,打印普通对象的日志会调用该对象的 toString 方法。
 
 ```js
-var re = /x/;
+var re = /x/
 re.toString = function() {
   /* TODO */
-  alert();
-  return "";
-};
-console.log(re);
+  alert()
+  return ""
+}
+console.log(re)
 ```
 
 ## 防抖 vs 节流
@@ -31,3 +31,25 @@ console.log(re);
 这样的就可以自己用 JavaScript 写一串代码，然后保存在书签栏里面，点击就执行了
 
 [转化地址](https://mrcoles.com/bookmarklet/)
+
+## 手机应用里面的 webview 如何调试？
+
+- 通过数据线将安卓手机连接，打开 PC 的 Chrome 浏览器，在地址栏输入 chrome://inspect/，并且在安卓应用里面打开一个嵌套在 webview 的网页，chrome 会检测到。
+  然后将你的项目启动，在 chrome 的调试界面的控制台下，通过 location，将网页重定向到你开发的网页。然后就可以舒舒服服的工作了。（
+
+## 在手机端的控制台
+
+> 这个软件可真是太帅了
+
+[eruda](https://github.com/liriliri/eruda)
+
+## [内存泄漏](https://auth0.com/blog/four-types-of-leaks-in-your-javascript-code-and-how-to-get-rid-of-them//)
+
+> JavaScript is one of garbage collected languages.
+
+内存泄漏的几种方式
+
+- Accidental global variables
+- Forgotten timers or callbacks
+- Out of DOM references
+- Closures

@@ -69,7 +69,7 @@ module.exports = {
         {
           title: 'Node',
           collapsable: false,
-          children: ['', 'path', 'module'].map(i => `node/${i}`)
+          children: ['', 'path', 'module', 'cli'].map(i => `node/${i}`)
         },
         {
           title: '其他',
@@ -77,7 +77,7 @@ module.exports = {
           children: ['']
         }
       ],
-      '/browser/': ['', 'viewport', 'dns', 'crp', 'event', 'uri', 'storage', 'canvas', 'file', 'formdata', 'websafe', 'cache', 'crossorigin'],
+      '/browser/': ['', 'viewport', 'router', 'dns', 'crp', 'event', 'uri', 'storage', 'canvas', 'file', 'formdata', 'websafe', 'cache', 'crossorigin'],
       '/tool/': [
         {
           title: '其他',
