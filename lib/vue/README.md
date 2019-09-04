@@ -16,16 +16,16 @@ const sharedPropertyDefinition = {
   configurable: true,
   get: noop,
   set: noop
-};
+}
 
 export function proxy(target: Object, sourceKey: string, key: string) {
   sharedPropertyDefinition.get = function proxyGetter() {
-    return this[sourceKey][key];
-  };
+    return this[sourceKey][key]
+  }
   sharedPropertyDefinition.set = function proxySetter(val) {
-    this[sourceKey][key] = val;
-  };
-  Object.defineProperty(target, key, sharedPropertyDefinition);
+    this[sourceKey][key] = val
+  }
+  Object.defineProperty(target, key, sharedPropertyDefinition)
 }
 ```
 
@@ -37,12 +37,12 @@ const obj = {
     a: 1,
     b: 2
   }
-};
+}
 for (key in obj.data) {
-  proxy(obj, "data", key);
+  proxy(obj, 'data', key)
 }
 // 输出 proxy a 1
-console.log("proxy a", obj.a);
+console.log('proxy a', obj.a)
 ```
 
 果然可以，vue 厉害啊，虽然这种做法对于初学者可能造成了一定的困扰，但是的确写代码的时候方便了很多。
@@ -63,18 +63,15 @@ console.log("proxy a", obj.a);
 function enableStrictMode(store) {
   store._vm.$watch(
     function() {
-      return this._data.$$state;
+      return this._data.$$state
     },
     () => {
-      if (process.env.NODE_ENV !== "production") {
-        assert(
-          store._committing,
-          `do not mutate vuex store state outside mutation handlers.`
-        );
+      if (process.env.NODE_ENV !== 'production') {
+        assert(store._committing, `do not mutate vuex store state outside mutation handlers.`)
       }
     },
     { deep: true, sync: true }
-  );
+  )
 }
 ```
 
@@ -97,17 +94,22 @@ function enableStrictMode(store) {
 function enableStrictMode(store) {
   store._vm.$watch(
     function() {
-      return this._data.$$state;
+      return this._data.$$state
     },
     () => {
-      if (process.env.NODE_ENV !== "production") {
-        assert(
-          store._committing,
-          `do not mutate vuex store state outside mutation handlers.`
-        );
+      if (process.env.NODE_ENV !== 'production') {
+        assert(store._committing, `do not mutate vuex store state outside mutation handlers.`)
       }
     },
     { deep: true, sync: true }
-  );
+  )
 }
 ```
+
+## vue
+
+通过 prop 传递一个值给组件，组件把这个值在传递给子组件
+
+且该值都是 sync
+
+那么处理的时候要小心了，要在组件中，给这个 props 的值换成 计算属性
