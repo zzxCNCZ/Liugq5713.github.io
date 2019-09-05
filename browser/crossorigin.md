@@ -1,6 +1,8 @@
 # 跨域
 
-只要协议，端口，域名有任何一个不同，都会被当成一个不同的域，跨域限制是浏览器行为
+## TL;DR
+
+`iframe,script,image`主要函数利用了 html 里面标签没有跨域的限制（他们仅仅能发送 get 请求），跨域限制是浏览器行为，限制的是脚本， html 标签没有限制。CORS 和 windows.postMessage 则是新提出来的方法
 
 ## AJAX
 
@@ -35,11 +37,11 @@ open()：初始化 HTTP 请求参数，例如 URL 和 HTTP 方法，但是并不
 send()：发送 HTTP 请求，使用传递给 open() 方法的参数，以及传递给该方法的可选请求体。
 setRequestHeader()：向一个打开但未发送的请求设置或添加一个 HTTP 请求。
 
-## 解决方法
+## 跨域方法
 
-## TL;DR
+浏览器限制从脚本内发起的跨域 HTTP 请求（也可能是返回结果被浏览器拦截了）
 
-`iframe,script,image`主要函数利用了 html 里面标签没有跨域的限制（他们仅仅能发送 get 请求），跨域限制是浏览器行为，但是 html 标签没有限制。CORS 和 windows.postMessage 则是新提出来的方法
+只要协议，域名，端口有任何一个不同，都会被当成一个不同的域，跨域限制是浏览器行为
 
 ### iframe
 
@@ -53,9 +55,13 @@ image 标签
 
 ### JSONP( JSON with padding )
 
-script 标签
-
 动态添加`<script>`标签来调用服务器提供的 js 脚本
+
+首先要明确的是 JSONP 就是一个 get 请求，请求类型这样:`http://www.example.net/sample.aspx?callback=mycallback`
+
+如果不是 JSONP，他可能就是返回这样的数据：`{ foo: 'bar' }`
+
+JOSNP 的请求，服务端会获取 url 里面的 callback，把 JSON 放在这个 callback 里面，然后返回类似这样`mycallback({ foo: 'bar' });`，然后开发者在自己的页面里面定义 mycallback 函数，当这个脚本加载之后，这个函数就会执行
 
 ### CORS
 
@@ -73,12 +79,7 @@ CORS 需要客户端和服务器同时支持。目前，所有浏览器都支持
 
 只有当执行它们的页面位于具有相同的协议（通常为 https），端口号（443 为 https 的默认值），以及主机 (两个页面的模数 Document.domain 设置为相同的值) 时，这两个脚本才能相互通信。
 
-## 原因
-
-浏览器限制从脚本内发起的跨域 HTTP 请求（也可能是返回结果被浏览器拦截了）
-
-同源策略：为通信设置了相同的域，相同的端口，相同的协议
-
 ## 参考
 
 - [跨域资源共享 CORS 详解](http://www.ruanyifeng.com/blog/2016/04/cors.html)
+- [What is JSONP, and why was it created?](https://stackoverflow.com/questions/2067472/what-is-jsonp-and-why-was-it-created)
