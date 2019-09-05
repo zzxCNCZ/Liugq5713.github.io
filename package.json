@@ -10,15 +10,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Liugq5713/fe.git"
+    "url": "git+https://github.com/Liugq5713/Liugq5713.github.io.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Liugq5713/fe/issues"
+    "url": "https://github.com/Liugq5713/Liugq5713.github.io/issues"
   },
-  "homepage": "https://github.com/Liugq5713/fe#readme",
+  "homepage": "https://github.com/Liugq5713/Liugq5713.github.io#readme",
   "devDependencies": {
     "@babel/core": "^7.5.5",
     "@babel/preset-env": "^7.5.5",
