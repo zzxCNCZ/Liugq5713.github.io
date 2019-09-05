@@ -4,7 +4,7 @@
 set -e
 
 # 生成静态文件
-npm install 
+npm install
 
 npm run build
 
@@ -19,7 +19,7 @@ git add -A
 git commit -m 'deploy'
 
 # Push source and build repos.
-git push -f "https://${access_token}@github.com/Liugq5713/fe.git" master:gh-pages
+git push -f "https://${access_token}@github.com/Liugq5713/Liugq5713.github.io.git" master:gh-pages
 
 # Come Back up to the Project Root
 cd ..
