@@ -16,9 +16,9 @@
 
 ```js
 try {
-  {{{{{{{{{{{{
-} catch(e) {
-  alert("The engine can't understand this code, it's invalid");
+  //eg: {{{{{{{{{{{{
+} catch (e) {
+  alert("The engine can't understand this code, it's invalid")
 }
 ```
 
@@ -29,10 +29,10 @@ try {
 ```js
 try {
   setTimeout(function() {
-    throw new Error("test");
-  }, 1000);
+    throw new Error("test")
+  }, 1000)
 } catch (e) {
-  alert("catch a error");
+  alert("catch a error")
 }
 ```
 
