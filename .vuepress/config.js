@@ -17,7 +17,6 @@ module.exports = {
       }
     ]
   ],
-  base: '/fe/',
   themeConfig: {
     logo: '/hero.png',
     sidebarDepth: 2,
@@ -82,7 +81,7 @@ module.exports = {
         {
           title: '其他',
           collapsable: false,
-          children: ['', 'babel', 'chrome', 'eslint', 'github', 'husky', 'ci','nginx', 'npm', 'vscode', 'webpack', 'webpack-split-chunks', 'webpackQA']
+          children: ['', 'babel', 'chrome', 'eslint', 'github', 'husky', 'ci', 'nginx', 'npm', 'vscode', 'webpack', 'webpack-split-chunks', 'webpackQA']
         },
         {
           title: 'GIT',
