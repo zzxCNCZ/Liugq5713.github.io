@@ -1,9 +1,5 @@
----
-title: 静态服务器 nginx
-date: 2019-04-12T07:30:16.176Z
+# 静态服务器 nginx
 
-categories: ["tool"]
----
 [nginx](http://nginx.org/en/docs/beginners_guide.html)配置文件和文件格式格式了解
 
 `nginx`拥有`master`管理进程与几个`worker`工作进程。`master`管理进程用于读取，执行配置以及管理工作进程。`worker`工作进程处理请求。这样的设计，让`nginx`在不间断服务的前提下，升级`nginx`的可执行文件
@@ -33,6 +29,6 @@ events {
 }
 ```
 
----
+## 查看 nginx 配置的详细错误信息
 
-今天看的是官网的入门教程，属于需要了解的规定。算不上什么知识。但是了解这些是我们学习的第一步。学习的事情要慢慢来。所以其实 nginx 没什么难得，就是配置配置，学知识不能有畏惧心理，不过配置项真多啊，配置项的排列组合又是一门学问了。
+`nginx -t -c /etc/nginx/nginx.conf`
