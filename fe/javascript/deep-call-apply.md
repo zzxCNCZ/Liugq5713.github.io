@@ -1,6 +1,10 @@
-# Call
+# Call Apply Bind
 
 `function.call(thisArg, arg1, arg2, ...)`
+
+## TL;DR
+
+这三个方法用于改变函数执行的上下文（改变 this 的指向），实现函数的复用
 
 ## 模拟
 
