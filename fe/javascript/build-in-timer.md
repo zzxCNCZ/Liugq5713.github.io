@@ -1,5 +1,9 @@
 # 内置对象 定时器
 
+## TL;DR
+
+定时器用于处于定时任务，尽快执行函数，执行动画，任务分片，防抖节流也有用到，用处广泛
+
 ## setTimeout
 
 `let timerId = setTimeout(func|code, [delay], [arg1], [arg2], ...)`
@@ -61,6 +65,32 @@ setInterval 的任务之间延时小于其设定的时间，如图所示
 举个例子，就像一列有时刻表的列车，如果被延时了，那么被延时的列车会发车。（延时期间该发的车不会再次发了）。正常之后还是按着原有的时刻表发车
 [查看示例](https://jsfiddle.net/liugq/n9Ljq1cw/)
 
+## requestanimationframe
+
+::: tip 比 setTimeout 做动画更好
+浏览器主动优化，非活动的标签页动画可以暂停，更省电
+
+:::
+
+运行 [demo](https://codepen.io/chriscoyier/pen/ltseg):
+
+```js
+var globalID
+
+function repeatOften() {
+  $("<div />").appendTo("body")
+  globalID = requestAnimationFrame(repeatOften)
+}
+
+$("#start").on("click", function() {
+  globalID = requestAnimationFrame(repeatOften)
+})
+
+$("#stop").on("click", function() {
+  cancelAnimationFrame(globalID)
+})
+```
+
 ## setTimeout 分片任务
 
 > setTimeout 分片任务计算斐波那契数列，首先了解一下什么是斐波那契数列，由 0 和 1 开始，之后的费波那契系数就是由之前的两数相加而得出。首几个费波那契系数是：0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233……
@@ -96,36 +126,10 @@ function fib(n) {
 }
 ```
 
-## [递归 vs 递推](https://www.zhihu.com/question/20651054)
+[递归 vs 递推](https://www.zhihu.com/question/20651054)
 
 - 递归是从问题的最终目标出发，逐渐将复杂问题化为简单问题，最终求得问题是逆向的。递推是从简单问题出发，一步步的向前发展，最终求得问题。是正向的。
 - 递推的效率高于递归（在递推可以计算的情况下，比如本例子）
-
-## requestanimationframe
-
-::: tip 比 setTimeout 做动画更好
-浏览器主动优化，非活动的标签页动画可以暂停，更省电
-
-:::
-
-运行 [demo](https://codepen.io/chriscoyier/pen/ltseg):
-
-```js
-var globalID
-
-function repeatOften() {
-  $("<div />").appendTo("body")
-  globalID = requestAnimationFrame(repeatOften)
-}
-
-$("#start").on("click", function() {
-  globalID = requestAnimationFrame(repeatOften)
-})
-
-$("#stop").on("click", function() {
-  cancelAnimationFrame(globalID)
-})
-```
 
 ## 参考
 
