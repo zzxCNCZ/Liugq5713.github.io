@@ -53,7 +53,8 @@ module.exports = {
             'design-patterns-oop',
             'error',
             'module',
-            'deep-call-apply'
+            'deep-call-apply',
+            'z-function-execution'
           ].map(i => `javascript/${i}`)
         },
         {

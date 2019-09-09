@@ -2,12 +2,18 @@
 
 ## setTimeout
 
+`let timerId = setTimeout(func|code, [delay], [arg1], [arg2], ...)`
+
 ### 参数
 
 - function/code
 
 function 是你想要在 delay 毫秒之后执行的函数
 code 是一个替代语法，你可以使用字符串代替 function ，在 delay 毫秒之后执行字符串 (使用该语法是不推荐的, 原因和使用 eval()一样，有安全风险)
+
+::: danger 注意这里是传入函数，而不是运行函数
+setTimeout(sayHi(), 1000);// wrong!
+:::
 
 - delay 可选
 
@@ -26,15 +32,15 @@ code 是一个替代语法，你可以使用字符串代替 function ，在 dela
 
 - 定时器的销毁你要注意，不仅仅是你不使用的时候，当这个组件销毁的时候（比如路由切换的时候，要在其生命周期里面手动销毁）
 
-- 定时器都有最短的时间间隔，setTimeout 最短时间间隔是 4 毫秒，setInterval 最短时间间隔是 10 毫秒
+- 定时器都有最短的时间间隔，据[ HTML5 standard ](https://html.spec.whatwg.org/multipage/timers-and-user-prompts.html#timers) ：after five nested timers, the interval is forced to be at least 4 milliseconds.
 
 ### Recursive setTimeout
 
 ```js
 let timerId = setTimeout(function tick() {
-  alert("tick");
-  timerId = setTimeout(tick, 2000); // (*)
-}, 2000);
+  alert("tick")
+  timerId = setTimeout(tick, 2000) // (*)
+}, 2000)
 ```
 
 优点：
@@ -43,6 +49,10 @@ let timerId = setTimeout(function tick() {
 - Recursive setTimeout guarantees a delay between the executions, setInterval – does not.
 
 ## setInterval
+
+setInterval 的任务之间延时小于其设定的时间，如图所示
+
+![setInterval](./imgs/setInterval.svg)
 
 > 网上一些文章说 setInterval 在进程繁忙的时候，会跳过，这个说对了一半
 
@@ -59,36 +69,65 @@ let timerId = setTimeout(function tick() {
 // 虽然我之后看了网上利用三元运算符，一行代码完事的
 function fib(n) {
   if (n < 2) {
-    return 1;
+    return 1
   }
-  return fib(n - 1) + fib(n - 2);
+  return fib(n - 1) + fib(n - 2)
 }
 ```
-
-````
 
 ```js
 function fib(n) {
   return new Promise((resolve, reject) => {
     if (n < 2) {
-      return 1;
+      return 1
     }
-    let arr = [1, 1];
-    let i = 2;
+    let arr = [1, 1]
+    let i = 2
     setTimeout(function calc() {
-      arr[i] = arr[i - 1] + arr[i - 2];
-      i++;
+      arr[i] = arr[i - 1] + arr[i - 2]
+      i++
       if (i <= n) {
-        setTimeout(calc, 50);
+        setTimeout(calc, 50)
       } else {
-        resolve(arr[i - 1]);
+        resolve(arr[i - 1])
       }
-    }, 50);
-  });
+    }, 50)
+  })
 }
-````
+```
 
 ## [递归 vs 递推](https://www.zhihu.com/question/20651054)
 
 - 递归是从问题的最终目标出发，逐渐将复杂问题化为简单问题，最终求得问题是逆向的。递推是从简单问题出发，一步步的向前发展，最终求得问题。是正向的。
 - 递推的效率高于递归（在递推可以计算的情况下，比如本例子）
+
+## requestanimationframe
+
+::: tip 比 setTimeout 做动画更好
+浏览器主动优化，非活动的标签页动画可以暂停，更省电
+
+:::
+
+运行 [demo](https://codepen.io/chriscoyier/pen/ltseg):
+
+```js
+var globalID
+
+function repeatOften() {
+  $("<div />").appendTo("body")
+  globalID = requestAnimationFrame(repeatOften)
+}
+
+$("#start").on("click", function() {
+  globalID = requestAnimationFrame(repeatOften)
+})
+
+$("#stop").on("click", function() {
+  cancelAnimationFrame(globalID)
+})
+```
+
+## 参考
+
+- [Scheduling: setTimeout and setInterval](https://javascript.info/settimeout-setinterval)
+- [using-requestanimationframe](https://css-tricks.com/using-requestanimationframe/)
