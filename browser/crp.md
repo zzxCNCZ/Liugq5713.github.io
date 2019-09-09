@@ -5,8 +5,6 @@
 关键渲染路径(Critical Rendering Path)：是指浏览器呈现网页要经历的一系列步骤
 :::
 
-PS： Google 的[关键渲染路径文档](https://developers.google.com/web/fundamentals/performance/critical-rendering-path/?hl=zh-cn)写的是真的好
-
 ## HTML -> DOM
 
 字节 → 字符 → 令牌 → 节点 → 对象模型，生成了文档对象模型
@@ -17,9 +15,7 @@ HTML response > Tokens > Nodes > DOM Tree
 
 ## CSS -> CSSOM
 
-不能使用 CSS 部分树，因为 CSS 会依据层级关系重新定义和优化样式属性，这个规则是我们能够更改 CSS 树。
-
-如果使用 CSS 部分树，会导致网页的样式渲染不正常。所以浏览器会组织呈现，直到收到并处理了所有的 CSS 内容。即 CSS 为一种渲染阻塞资源(render blocking resource)
+因为 CSS 会依据层级关系重新定义和优化样式属性,如果使用 CSS 部分树，会导致网页的样式渲染不正常，所以浏览器需解析全部资源内容才能进行渲染树的构建。即 CSS 为一种渲染阻塞资源(render blocking resource)
 
 **CSS 是阻塞渲染的资源。需要将它尽早、尽快地下载到客户端，以便缩短首次渲染的时间**
 
@@ -34,8 +30,6 @@ HTML response > Tokens > Nodes > DOM Tree
 `<meta name="viewport" content="width=device-width, initial-scale=1">`
 
 告诉浏览器布局视口的宽度应该等于设备的宽度，如果没有设置，浏览器就会使用默认视口宽度 980px
-
----
 
 ## JavaScript
 
@@ -58,3 +52,7 @@ JavaScript 允许我们修改网页的方方面面：内容、样式以及它如
 向 script 标记添加异步关键字可以指示浏览器在等待脚本可用期间不阻止 DOM 构建，这样可以显著提升性能，eg: `<script src="app.js" async></script>`
 
 :::
+
+## 参考
+
+- [Google 关键渲染路径文档](https://developers.google.com/web/fundamentals/performance/critical-rendering-path/?hl=zh-cn)
