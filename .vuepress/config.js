@@ -106,7 +106,7 @@ module.exports = {
         {
           title: '排序',
           collapsable: false,
-          children: ['', 'bubble', 'select', 'insertion', 'shell'].map(i => `sort/${i}`)
+          children: ['', 'bubble', 'select', 'insertion', 'shell', 'merge'].map(i => `sort/${i}`)
         },
         {
           title: '暴力求解',
