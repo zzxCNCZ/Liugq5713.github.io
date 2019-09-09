@@ -49,6 +49,7 @@ module.exports = {
             'build-in-regx',
             'func-base',
             'func-promise',
+            'func-async',
             'design-patterns-oop',
             'error',
             'module',
