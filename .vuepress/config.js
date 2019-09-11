@@ -48,6 +48,7 @@ module.exports = {
             'build-in-timer',
             'build-in-regx',
             'func-base',
+            'func-call-apply-bind',
             'func-promise',
             'func-async',
             'design-patterns-oop',
