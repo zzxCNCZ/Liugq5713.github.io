@@ -48,13 +48,13 @@ module.exports = {
             'build-in-timer',
             'build-in-regx',
             'func-base',
+            'func-this',
             'func-call-apply-bind',
             'func-promise',
             'func-async',
-            'design-patterns-oop',
+            'func-oop',
             'error',
             'module',
-            'deep-call-apply',
             'z-function-execution'
           ].map(i => `javascript/${i}`)
         },
