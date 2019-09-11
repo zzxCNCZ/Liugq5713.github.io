@@ -2,7 +2,7 @@
 
 ## vue 如何做到响应式
 
-###　如何追踪变化
+### 如何追踪变化
 
 当你把一个普通的 JavaScript 对象作为 data 选项传入 Vue 实例，Vue 将遍历此对象所有的属性，并使用 Object.defineProperty 把这些属性全部转为 getter/setter。这些 getter/setter 对用户来说是不可见的，但是在内部它们让**Vue 能够追踪依赖**，在属性被访问和修改时通知变更。
 
