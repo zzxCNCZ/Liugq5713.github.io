@@ -38,3 +38,7 @@ function test(a) {
 var b = new test(2)
 console.log(b.a)
 ```
+
+## 参考
+
+- [不要再问我 this 的指向问题了](https://segmentfault.com/a/1190000015438195)
