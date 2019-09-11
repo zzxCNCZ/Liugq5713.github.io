@@ -1,4 +1,4 @@
-Function.prototype.mycall = function(context) {
+Function.prototype.mycall = function (context) {
   var context = context || window;
   context.fn = this;
 
