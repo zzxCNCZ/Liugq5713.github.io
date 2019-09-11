@@ -1,6 +1,4 @@
-# 组件 最佳实战
-
-## [单文件组件](https://cn.vuejs.org/v2/guide/single-file-components.html)
+# [单文件组件](https://cn.vuejs.org/v2/guide/single-file-components.html)
 
 > 写组件的两个目的：一是为了复用，复用的话写组件要考虑多一些，各种情况都要考虑,二是为了拆分代码逻辑，使得一个文件不要太大，这种好用就行.本文主要针对目的一
 
@@ -15,6 +13,8 @@ Vue 组件的 API 来自三部分——prop、事件和插槽：
 ## prop
 
 > 组件具有自身状态，当没有相关 porps 传入时，使用自身状态完成渲染和交互逻辑；当该组件被调用时，如果有相关 props 传入，那么将会交出控制权，由父组件控制其行为
+
+> 当使用 prop 时要注意，当组件生成之后，此时改变 prop 的值，组件是否会变化，做到响应式，而不仅仅使用 prop 做初始化的工作。即 props 都转为 Computed props，Watched props
 
 ### 仅一个值传入组件
 
@@ -77,15 +77,15 @@ export default {
   computed: {
     email: {
       get() {
-        return this.value;
+        return this.value
       },
       set(val) {
-        this.$emit("input", val);
-        this.$emit("change", val);
+        this.$emit("input", val)
+        this.$emit("change", val)
       }
     }
   }
-};
+}
 ```
 
 ### 灵活的 prop
@@ -101,26 +101,26 @@ export default {
 ```js
 //https://github.com/ElemeFE/element/blob/dev/packages/table/src/util.js
 export const getRowIdentity = (row, rowKey) => {
-  if (!row) throw new Error("row is required when get row identity");
+  if (!row) throw new Error("row is required when get row identity")
   // 行数据的key
   if (typeof rowKey === "string") {
     if (rowKey.indexOf(".") < 0) {
-      return row[rowKey];
+      return row[rowKey]
     }
     // 支持多层访问：user.info.id
-    let key = rowKey.split(".");
-    let current = row;
+    let key = rowKey.split(".")
+    let current = row
     for (let i = 0; i < key.length; i++) {
-      current = current[key[i]];
+      current = current[key[i]]
     }
-    return current;
+    return current
     // 通过函数自定义
     // 我处理过父和子id可能相同的情况，只好通过Function自定义
     // 不可以通过时间或者随机字符串生成ID
   } else if (typeof rowKey === "function") {
-    return rowKey.call(null, row);
+    return rowKey.call(null, row)
   }
-};
+}
 ```
 
 由于业务场景多变，组件的设计者很难考虑完全，不妨设计灵活的 prop，由开发者自行定义
@@ -246,34 +246,8 @@ eg:`this.$refs.tree.setCheckedKeys([]);`
 <my-button type='primary' size='mini'/>
 ```
 
-## 组件命名
-
-> 这里推荐遵循 [vue 官方指南](https://cn.vuejs.org/v2/style-guide/)，值得一看
-
-我们构建组件的时候通常会将其入口命名为 index.vue ，引入的时候，直接引入该组件的文件夹即可。
-
-但是这样做会有一个问题，当你编辑多个组件的时候，所有的组件入口都叫做`index.vue`，容易糊涂
-
-vscode 显然意识到了这个问题，所以当文件名相同的文件被打开时，它会在文件名旁边显示文件夹名
-
-如何解决呢，我们可以把 index.js 当作一个单纯的入口，不承担任何逻辑。仅仅负责引入`component-name-container`以及`export default component-name-container`
-
-```text
-my-app
-└── src
-        └── components
-                └── component-name
-                    ├── component-name.css
-                    ├── component-name-container.vue
-                    └── index.js
-```
-
 ## tips（个人喜好）
 
 - [template](https://cn.vuejs.org/v2/guide/conditional.html#%E5%9C%A8-lt-template-gt-%E5%85%83%E7%B4%A0%E4%B8%8A%E4%BD%BF%E7%94%A8-v-if-%E6%9D%A1%E4%BB%B6%E6%B8%B2%E6%9F%93%E5%88%86%E7%BB%84),把一个`<template>` 元素当做不可见的包裹元素，并在上面使用 v-if。最终的渲染结果将不包含 `<template>` 元素
 - 能用 computed 计算属性的，尽量就不用 watch
 - 模板里面写太多 v-if 会让你的模板很难看，`v-else-if`尽量还是别用了吧。一长串的 if else，在模板里面看的很乱
-
----
-
-你有什么写组件的独特技巧，不妨在评论区告诉我吧

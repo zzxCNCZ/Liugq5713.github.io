@@ -95,7 +95,7 @@ module.exports = {
         {
           title: 'Vue',
           collapsable: false,
-          children: ['', 'base', 'base-computed', 'component', 'component-update', 'component-sfc', 'lifecycle', 'src-code-vfor', 'communication-store', 'qa'].map(i => `vue/${i}`)
+          children: ['', 'base', 'component', 'lifecycle', 'reactivity', 'sfc', 'project', 'src-code-vfor', 'communication-store', 'qa'].map(i => `vue/${i}`)
         },
         {
           title: '其他',
