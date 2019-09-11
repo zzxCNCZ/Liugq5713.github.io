@@ -63,6 +63,23 @@ image 标签
 
 JOSNP 的请求，服务端会获取 url 里面的 callback，把 JSON 放在这个 callback 里面，然后返回类似这样`mycallback({ foo: 'bar' });`，然后开发者在自己的页面里面定义 mycallback 函数，当这个脚本加载之后，这个函数就会执行
 
+手写一个 JSONP
+
+```js
+function suggest_so(val) {
+  console.log("val", val)
+}
+var script_el = document.createElement("script")
+var word = "中国"
+script_el.src = `https://sug.so.360.cn/suggest?word=${word}&callback=suggest_so&encodein=utf-8&encodeout=utf-8&format=json&fields=word`
+document.body.insertBefore(script_el, document.body.firstChild)
+// todo:错误处理 和 超时处理
+// 通过监听script元素的load事件来监听请求是否完成，以及给script添加了error事件
+// script_el.onload = function(val) {
+//   console.log("val", val)
+// }
+```
+
 ### CORS
 
 首部字段 `Access-Control-Allow-Methods` 表明服务器允许客户端使用 POST, GET 和 OPTIONS 方法发起请求。该字段与 HTTP/1.1 Allow: response header 类似，但仅限于在需要访问控制的场景中使用。
