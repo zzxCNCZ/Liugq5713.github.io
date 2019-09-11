@@ -4,7 +4,7 @@
 
 ###　如何追踪变化
 
-当你把一个普通的 JavaScript 对象传入 Vue 实例作为 data 选项，Vue 将遍历此对象所有的属性，并使用 Object.defineProperty 把这些属性全部转为 getter/setter。这些 getter/setter 对用户来说是不可见的，但是在内部它们让**Vue 能够追踪依赖**，在属性被访问和修改时通知变更。
+当你把一个普通的 JavaScript 对象作为 data 选项传入 Vue 实例，Vue 将遍历此对象所有的属性，并使用 Object.defineProperty 把这些属性全部转为 getter/setter。这些 getter/setter 对用户来说是不可见的，但是在内部它们让**Vue 能够追踪依赖**，在属性被访问和修改时通知变更。
 
 每个组件实例都对应一个 watcher 实例，它会在组件渲染的过程中把“接触”过的数据属性记录为依赖。之后当依赖项的 setter 触发时，会通知 watcher，从而使它关联的组件重新渲染。
 
