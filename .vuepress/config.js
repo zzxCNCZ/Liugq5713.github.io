@@ -62,17 +62,17 @@ module.exports = {
         },
         {
           title: 'CSS',
-          collapsable: false,
+          collapsable: true,
           children: ['animation', 'px', 'css', 'cssExpandClickAreas', 'cssFontFamily', 'flex', 'QA'].map(i => `css/${i}`)
         },
         {
           title: 'HTML',
-          collapsable: false,
+          collapsable: true,
           children: ['crossorigin', 'element', 'image', 'html', 'iframe', 'select'].map(i => `html/${i}`)
         },
         {
           title: 'Node',
-          collapsable: false,
+          collapsable: true,
           children: ['', 'path', 'module', 'cli'].map(i => `node/${i}`)
         },
       ],
