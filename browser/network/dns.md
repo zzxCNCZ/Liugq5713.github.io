@@ -15,11 +15,15 @@ DNS(The Domain Name Systems)就是互联网的电话号码簿，把域名转为 
 
 对于 DNS 解析器，这里使用的 DNS 查询方式是迭代查询，每个 DNS 服务并不会直接返回 DNS 信息，而是会返回另一台 DNS 服务器的位置，由客户端依次询问不同级别的 DNS 服务直到查询得到了预期的结果；另一种查询方式叫做递归查询，也就是 DNS 服务器收到客户端的请求之后会直接返回准确的结果，如果当前服务器没有存储 DNS 信息，就会访问其他的服务器并将结果返回给客户端。
 
-### 4 种 DNS 服务器
+### 域名服务器
+
+既然域名的命名空间是树形的，那么用于处理域名解析的 DNS 服务器也是树形的，只是在树的组织和每一层的职责上有一些不同。DNS 解析器从根域名服务器查找到顶级域名服务器的 IP 地址，又从顶级域名服务器查找到权威域名服务器的 IP 地址，最终从权威域名服务器查出了对应服务的 IP 地址。
+
+4 种 DNS 服务器
 
 - DNS recursor
 - Root nameserver
-- TLD nameserver
+- TLD (top level domain server) nameserver
 - Authoritative nameserver
 
 ## 参考
