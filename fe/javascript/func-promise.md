@@ -1,4 +1,4 @@
-# Promise
+# 函数 Promise
 
 ## 串联 Promise
 

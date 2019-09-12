@@ -1,4 +1,4 @@
-# Call Apply Bind
+# 函数 Call Apply Bind
 
 `function.call(thisArg, arg1, arg2, ...)`
 

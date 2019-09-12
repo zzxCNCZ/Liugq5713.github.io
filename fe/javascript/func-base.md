@@ -1,4 +1,4 @@
-# 函数
+# 函数基础
 
 ## 箭头函数
 
@@ -23,10 +23,10 @@ await 要在 async 里面使用
 ```js
 class Foo {
   static classMethod() {
-    return "hello";
+    return "hello"
   }
 }
-Foo.classMethod();
-var foo = new Foo();
-foo.classMethod();
+Foo.classMethod()
+var foo = new Foo()
+foo.classMethod()
 ```

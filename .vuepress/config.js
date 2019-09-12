@@ -51,6 +51,7 @@ module.exports = {
             'func-this',
             'func-call-apply-bind',
             'func-iife',
+            'func-recursion',
             'func-promise',
             'func-async',
             'func-oop',
