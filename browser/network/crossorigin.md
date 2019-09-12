@@ -8,6 +8,21 @@
 
 是一种能够向服务器请求额外的数据而无需卸载页面(无刷新)的技术，是对 Asynchronous Javascript + XML 的简写
 
+```js
+let xhr = new XMLHttpRequest()
+xhr.open("POST", "/xxx")
+xhr.onreadystatechange = e => {
+  if (xhr.readyState === 4) {
+    if (xhr.status >= 200 && xhr.status < 300) {
+      console.log("请求成功")
+    } else {
+      console.log("请求失败")
+    }
+  }
+}
+xhr.send("hi")
+```
+
 ### XMLHttpRequest（不能跨域）
 
 属性
@@ -91,6 +106,22 @@ document.body.insertBefore(script_el, document.body.firstChild)
 CORS 需要客户端和服务器同时支持。目前，所有浏览器都支持该机制。
 
 跨域资源共享标准新增了一组 HTTP 首部字段，允许服务器声明哪些源站有权限访问哪些资源。
+
+---
+
+cors 的请求分为两类，简单请求（simple request）和非简单请求（not-so-simple request）
+
+- 简单请求
+
+简单请求，浏览器直接发出 CORS 请求。具体来说，就是在头信息之中，增加一个 Origin 字段。Origin 字段用来说明，本次请求来自哪个源（协议 + 域名 + 端口）。服务器根据这个值，决定是否同意这次请求。
+
+- 非简单请求
+
+> 配置 nginx 跨域的时候，要判断浏览器发过来的是不是预检请求，如果是，返回 204
+
+非简单请求是那种对服务器有特殊要求的请求，比如请求方法是 PUT 或 DELETE，或者 Content-Type 字段的类型是 application/json
+
+"预检"请求用的请求方法是 OPTIONS，表示这个请求是用来询问的。头信息里面，关键字段是 Origin，表示请求来自哪个源。除了 Origin 字段，"预检"请求的头信息包括两个特殊字段。
 
 ### window.postMessage()
 
