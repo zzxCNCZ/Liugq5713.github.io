@@ -89,7 +89,7 @@ module.exports = {
         }, {
           title: '网络',
           collapsable: false,
-          children: ['', 'router', 'http-status-code', 'tcp', 'dns', 'cache', 'storage', 'crossorigin', 'websafe',].map(i => `network/${i}`)
+          children: ['', 'router', 'tcp', 'dns', 'cache', 'storage', 'crossorigin', 'websafe',].map(i => `network/${i}`)
         },
       ],
       '/tool/': [
