@@ -50,6 +50,7 @@ module.exports = {
             'func-base',
             'func-this',
             'func-call-apply-bind',
+            'func-iife',
             'func-promise',
             'func-async',
             'func-oop',
