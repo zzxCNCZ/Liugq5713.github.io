@@ -4,6 +4,21 @@
 
 如果你的系统是一个偏展示的项目需要给用户展示大量图片，是否启用图片懒加载可能是你需要考虑的一个点，不在用户视野中的图片是没有必要加载的，图片懒加载通过让图片先加载成一张统一的图片，再给进入用户视野的图片替换真正的图片地址，可以同一时间减少 http 请求开销，避免显示图片导致的画面抖动，提高用户体验
 
+### Chrome 75 将原生支持图片的惰性加载
+
+支持对 img 和 iframe 进行延迟加载
+
+```html
+<img src="celebration.jpg" loading="lazy" alt="..." />
+<iframe src="video-player.html" loading="lazy"></iframe>
+```
+
+Loading 属性控制浏览器是否延迟加载屏幕外的图像和 iframe：
+
+- lazy：对资源进行延迟加载。
+- eager：立即加载资源。
+- auto：浏览器自行判断决定是否延迟加载资源。
+
 ### getBoundingClientRect
 
 下面我提供 2 种图片懒加载的思路，这 2 个方案最终都是用将占位的图片替换成真正的图片，然后给 img 标签设置一个自定义属性 data-src 存放真正的图片地址，src 存放占位图片的地址
@@ -17,7 +32,7 @@ DOM 元素包含一个 getBoundingClientRect 方法，执行该方法返回当�
 当屏幕首次渲染时，不会触发 scroll 事件，请主动调用一次事件处理程序，否则若用户不滚动则首屏的图片会一直使用懒加载的默认图片
 当所有需要懒加载的图片都被加载完，需要移除事件监听，避免不必要的内存占用
 
-### IntersectionObserver
+### [IntersectionObserver](https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API)
 
 IntersectionObserver 作为一个构造函数，传入一个回调函数作为参数，生成一个实例 observer，这个实例有一个 observe 方法用来观察指定元素是否进入了用户的可视范围，随即触发传入构造函数中的回调函数
 同时给回调函数传入一个 entries 的参数，记录着这个实例观察的所有元素的一些阈值信息（对象），其中 intersectionRatio 属性表示图片进入可视范围的百分比，大于 0 表示已经有部分进入了用户视野
@@ -32,3 +47,4 @@ IntersectionObserver 作为一个构造函数，传入一个回调函数作为�
 ## 参考
 
 - [图片懒加载](https://juejin.im/post/5c76843af265da2ddd4a6dd0#heading-22)
+- [Chrome 75 将原生支持图片的惰性加载](https://segmentfault.com/a/1190000018855812)
