@@ -89,7 +89,7 @@ module.exports = {
         }, {
           title: '网络',
           collapsable: false,
-          children: ['', 'router', 'dns', 'cache', 'storage', 'crossorigin', 'websafe',].map(i => `network/${i}`)
+          children: ['', 'router', 'http-status-code', 'tcp', 'dns', 'cache', 'storage', 'crossorigin', 'websafe',].map(i => `network/${i}`)
         },
       ],
       '/tool/': [
@@ -108,7 +108,7 @@ module.exports = {
         {
           title: 'Vue',
           collapsable: false,
-          children: ['', 'base', 'component', 'lifecycle', 'reactivity', 'sfc', 'project', 'src-code-vfor', 'communication-store', 'qa'].map(i => `vue/${i}`)
+          children: ['', 'base', 'component', 'lifecycle', 'reactivity', 'sfc', 'project', 'src-code-vfor', 'store', 'store-communication', 'qa'].map(i => `vue/${i}`)
         },
         {
           title: '其他',

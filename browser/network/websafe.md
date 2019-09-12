@@ -25,3 +25,8 @@
 - 检查 Referer 字段,HTTP 头中有一个 Referer 字段，这个字段用以标明请求来源于哪个地址。
 - 添加校验 token
 - 要求用户浏览器提供不保存在 cookie 中，并且攻击者无法伪造的数据作为校验，
+
+##　参考
+
+- [前端安全系列（一）：如何防止 XSS 攻击？](https://tech.meituan.com/2018/09/27/fe-security.html)
+- [前端安全系列（二）：如何防止 CSRF 攻击？](https://tech.meituan.com/2018/10/11/fe-security-csrf.html)

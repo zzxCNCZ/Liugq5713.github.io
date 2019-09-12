@@ -32,3 +32,7 @@ events {
 ## 查看 nginx 配置的详细错误信息
 
 `nginx -t -c /etc/nginx/nginx.conf`
+
+## 参考
+
+- [nginxconfig.io](https://github.com/digitalocean/nginxconfig.io)

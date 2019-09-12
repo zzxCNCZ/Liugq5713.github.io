@@ -16,3 +16,4 @@ DNS(The Domain Name Systems)就是互联网的电话号码簿，把域名转为 
 ## 参考
 
 - [What Is DNS? | How DNS Works](https://www.cloudflare.com/learning/dns/what-is-dns/)
+- [详解 DNS 与 CoreDNS 的实现原理](https://draveness.me/dns-coredns)

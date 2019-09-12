@@ -37,3 +37,7 @@ private 响应只作为私有的缓存，不能在用户间共享。如果要求
 ## SessionStorage
 
 SessionStorage 的数据只存储到特定的会话中，不属于持久化的存储，所以关闭浏览器会清除数据
+
+## 参考
+
+- [前端缓存最佳实践](https://juejin.im/post/5c136bd16fb9a049d37efc47)
