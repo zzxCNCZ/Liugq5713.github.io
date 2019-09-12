@@ -28,6 +28,9 @@ url = new URL(url, [base])
 URL.createObjectURL() 静态方法会创建一个 DOMString，其中包含一个表示参数中给出的对象的 URL
 这个 URL 的生命周期和创建它的窗口中的 document 绑定。这个新的 URL 对象表示指定的 File 对象或 Blob 对象
 
+这个 API 已经不推荐使用，使用[HTMLMediaElement.srcObject
+](https://developer.mozilla.org/en-US/docs/Web/API/HTMLMediaElement/srcObject)代替
+
 ```js
 // object
 // A File, Blob, MediaStream, or MediaSource object to create an object URL for.
@@ -43,8 +46,8 @@ objectURL = URL.createObjectURL(object)
 ```
 
 ```js
-const upload = document.querySelector('#upload')
-const preview = document.querySelector('#preview')
+const upload = document.querySelector("#upload")
+const preview = document.querySelector("#preview")
 
 upload.onchange = function() {
   const file = upload.files[0] //File对象
@@ -72,7 +75,7 @@ eg: `const url =http://www.123.com?id=123&name=kuchcy'`
 ### 相对路径转绝对路径
 
 ```js
-var a = document.createElement('a')
+var a = document.createElement("a")
 a.href = url // url 为相对路径
 a.href // 相对路径已经变成绝对路径
 ```
