@@ -75,13 +75,23 @@ module.exports = {
           collapsable: false,
           children: ['', 'path', 'module', 'cli'].map(i => `node/${i}`)
         },
-        {
-          title: '其他',
-          collapsable: false,
-          children: ['']
-        }
       ],
-      '/browser/': ['', 'viewport', 'router', 'dns', 'crp', 'event', 'uri', 'storage', 'canvas', 'file', 'formdata', 'websafe', 'cache', 'crossorigin'],
+      '/browser/': [
+        {
+          title: 'WebAPI',
+          collapsable: false,
+          children: ['', 'file', 'canvas', 'formdata', 'uri', 'event',].map(i => `webapi/${i}`)
+        },
+        {
+          title: '渲染',
+          collapsable: false,
+          children: ['', 'crp', 'viewport',].map(i => `render/${i}`)
+        }, {
+          title: '网络',
+          collapsable: false,
+          children: ['', 'router', 'dns', 'cache', 'storage', 'crossorigin', 'websafe',].map(i => `network/${i}`)
+        },
+      ],
       '/tool/': [
         {
           title: '其他',
