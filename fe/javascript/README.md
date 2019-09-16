@@ -28,7 +28,3 @@ function sum(a, b) {
 - CGI 逻辑出错。如调用方入参缺失类业务逻辑报错；
 - 服务不稳定。如服务器不稳定导致 nginx 各类 500、502，cgi 路径调整导致的 404
 - 用户网络环境差。如，网络不稳定、网速慢、运营商劫持等
-
-## 参考
-
-- [33-js-concepts](https://github.com/leonardomso/33-js-concepts)
