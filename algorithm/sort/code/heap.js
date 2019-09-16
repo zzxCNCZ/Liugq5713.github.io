@@ -7,16 +7,16 @@ const heap_sort = function (array) {
   }
 
   function max_heapify(start, end) {
-    //建立父节点指标和子节点指标
+    // 建立父节点指标和子节点指标
     var dad = start;
     var son = dad * 2 + 1;
-    //若子节点指标超過范围直接跳出函數
+    // 若子节点指标超过范围直接跳出函數
     if (son >= end)
       return;
-    //先比較兩個子节点大小，選擇最大的
+    // 先比較兩個子节点大小，選擇最大的
     if (son + 1 < end && arr[son] < arr[son + 1])
       son++;
-    //如果父節點小於子節點時，交換父子內容再繼續子節點和孫節點比較
+    // 如果父节点小於子节点時，交換父子內容再繼續子节点和孫节点比較
     if (arr[dad] <= arr[son]) {
       swap(dad, son);
       max_heapify(son, end);
