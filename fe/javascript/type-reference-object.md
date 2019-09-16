@@ -169,6 +169,23 @@ if (window.UndefinedVariable) {
 }
 ```
 
+### js 函数传递参数的方式 按值传递
+
+```js
+function setName(obj) {
+  obj.name = "Nicholas"
+  obj = new Object()
+  obj.name = "Greg"
+}
+var person = new Object()
+setName(person)
+alert(person.name) //"Nicholas"
+```
+
+如果 person 是按引用传递的，那么 person 就会自动被修改为指向其 name 属性值为"Greg"的新对象。但是，当接下来再访问 person.name 时，显示的值仍然是"Nicholas"。
+
+这说明即使在函数内部修改了参数的值，但原始的引用仍然保持未变。实际上，当在函数内部重写 obj 时，这个变量引用的就是一个局部对象了。而这个局部对象会在函数执行完毕后立即被销毁。
+
 ## 参考
 
 - [如何准确判断一个对象的类型?](https://github.com/akira-cn/FE_You_dont_know/issues/11)
