@@ -1,39 +1,34 @@
-const heap_sort = function (array) {
-  var arr = array.slice(0);
+const heapify = (arr) => {
   function swap(i, j) {
     var tmp = arr[i];
     arr[i] = arr[j];
     arr[j] = tmp;
   }
-
-  function max_heapify(start, end) {
-    // 建立父节点指标和子节点指标
-    var dad = start;
-    var son = dad * 2 + 1;
-    // 若子节点指标超过范围直接跳出函數
-    if (son >= end)
-      return;
-    // 先比較兩個子节点大小，選擇最大的
-    if (son + 1 < end && arr[son] < arr[son + 1])
-      son++;
-    // 如果父节点小於子节点時，交換父子內容再繼續子节点和孫节点比較
-    if (arr[dad] <= arr[son]) {
-      swap(dad, son);
-      max_heapify(son, end);
+  const max_heapify = (start, end) => {
+    let dad = start
+    let son = start * 2 + 1
+    if (son >= end) {
+      return
+    }
+    if (son + 1 < end && arr[son + 1] > arr[son]) {
+      son++
+    }
+    if (arr[son] > arr[dad]) {
+      swap(dad, son)
+      max_heapify(son, end)
     }
   }
-
   var len = arr.length;
-  //初始化，i从最后一个父节点开始调整
-  for (var i = Math.floor(len / 2) - 1; i >= 0; i--)
-    max_heapify(i, len);
-  //先將第一個元素和已排好元素前一位做交換，再從新調整，直到排序完畢
-  for (var i = len - 1; i > 0; i--) {
-    swap(0, i);
-    max_heapify(0, i);
+  // 初始化堆 ，i从最后一个父节点开始调整
+  for (let i = Math.floor(len / 2) - 1; i >= 0; i--) {
+    max_heapify(i, len)
   }
+  // 先将第一个元素和已经排好的元素的前一位做交换，然后重新调整
+  for (let i = len - 1; i > 0; i--) {
+    swap(0, i)
+    max_heapify(0, i)
+  }
+  return arr
+}
 
-  return arr;
-};
-var a = [3, 5, 3, 0, 8, 6, 1, 5, 8, 6, 2, 4, 9, 4, 7, 0, 1, 8, 9, 7, 3, 1, 2, 5, 9, 7, 4, 0, 2, 6];
-console.log(heap_sort(a));
+console.log(heapify([4, 6, 8, 5, 9]))

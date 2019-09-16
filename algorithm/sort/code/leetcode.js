@@ -7,7 +7,7 @@ const heapify = (arr) => {
   const max_heapify = (start, end) => {
     let dad = start
     let son = start * 2 + 1
-    if (son > end) {
+    if (son >= end) {
       return
     }
     if (son + 1 < end && arr[son + 1] > arr[son]) {
@@ -19,8 +19,12 @@ const heapify = (arr) => {
     }
   }
   var len = arr.length;
-  for (let i = Math.floor(len / 2) - 1; i > 0; i--) {
+  for (let i = Math.floor(len / 2) - 1; i >= 0; i--) {
     max_heapify(i, len)
+  }
+  for (let i = len - 1; i > 0; i--) {
+    swap(0, i)
+    max_heapify(0, i)
   }
   return arr
 }
