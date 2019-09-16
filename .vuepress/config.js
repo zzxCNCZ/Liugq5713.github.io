@@ -94,15 +94,15 @@ module.exports = {
       ],
       '/tool/': [
         {
+          title: 'GIT',
+          collapsable: false,
+          children: ['', 'knowledge', 'base', 'branch', 'config', 'log', 'reset', 'stash'].map(i => `git/${i}`)
+        },
+        {
           title: '其他',
           collapsable: false,
           children: ['', 'babel', 'chrome', 'eslint', 'github', 'husky', 'ci', 'nginx', 'npm', 'vscode', 'webpack', 'webpack-split-chunks', 'webpackQA']
         },
-        {
-          title: 'GIT',
-          collapsable: false,
-          children: ['', 'knowledge', 'base', 'branch', 'config', 'log', 'reset', 'stash'].map(i => `git/${i}`)
-        }
       ],
       '/lib/': [
         {
