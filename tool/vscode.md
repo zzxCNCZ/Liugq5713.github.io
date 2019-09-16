@@ -15,15 +15,17 @@
 
 以前我使用 vscode 官方的主题，但是还是感觉有点不是。Monokai Dimmind 这个主题就是非常的不错，感觉十分的柔和，不伤眼睛。
 
-## 比较两个文件
+## 比较(diff)两个文件
 
 - [diff vscode 插件](https://marketplace.visualstudio.com/items?itemName=fabiospampinato.vscode-diff)
-- vscode 自带，在文件上右击
+- vscode 自带，在 vscdoe 的文件列表下选中待比较文件 1，右键-选择以进行比较,然后选中第二文件，右键-与已选择文件比较
 
 ## [vscode 快捷键列表查询](https://code.visualstudio.com/shortcuts/keyboard-shortcuts-windows.pdf)
 
 当然它预设的快捷键可能不太够用，你可以自定义快捷键。你`ctrl_shift+p`打开快捷键方式文件，可以看到又很多的`action`被它注释掉了，一般你想用的，它都有。添加到你自定义的快捷方式里面即可
 
-## ctrl+p 搜索文件还是挺有用的
+### ctrl+p 搜索文件
 
-双手不想离开鼠标
+### ctrl+shift+o 打开文件的大纲
+
+现在文件长度都有点长，我不太像用鼠标来回翻页，但是用上下键移动很慢，今天得知，可以使用 ctrl+shift+o 打开 vscode 的大纲，然后用上下键快速跳转，写 markdown 的时候特别好用
