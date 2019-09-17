@@ -186,6 +186,35 @@ alert(person.name) //"Nicholas"
 
 这说明即使在函数内部修改了参数的值，但原始的引用仍然保持未变。实际上，当在函数内部重写 obj 时，这个变量引用的就是一个局部对象了。而这个局部对象会在函数执行完毕后立即被销毁。
 
+## Object.defineProtery
+
+::: tip 如何让一个对象的属性不被改变？
+
+通过 Object.defineProperty 定义对象的属性
+
+:::
+
+```js
+let constance = {
+  foo: "我是不会改变的",
+  boo: "test"
+}
+Object.defineProperty(constance, "foo", {
+  get() {
+    return "我是不会改变的"
+  }
+})
+constance.foo = "sss"
+
+Object.defineProperty(constance, "boo", {
+  writable: false
+})
+
+constance.boo = "sss"
+
+console.log("foo", constance.foo, constance.boo)
+```
+
 ## 参考
 
 - [如何准确判断一个对象的类型?](https://github.com/akira-cn/FE_You_dont_know/issues/11)
