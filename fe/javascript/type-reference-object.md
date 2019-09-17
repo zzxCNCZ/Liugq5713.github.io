@@ -6,12 +6,12 @@
 
 ```js
 // 充分利用好对象的计算属性
-const test = "123"
+const test = '123'
 const obj = {
   test,
   id: 5,
-  name: "San Francisco",
-  [getKey("enabled")]: true
+  name: 'San Francisco',
+  [getKey('enabled')]: true
 }
 ```
 
@@ -21,9 +21,9 @@ const obj = {
 
 ```js
 var map = Object.create(null)
-map[5] = "foo"
-console.log(map["5"])
-;("foo")
+map[5] = 'foo'
+console.log(map['5'])
+;('foo')
 ```
 
 ## 共享对象结构
@@ -39,17 +39,17 @@ const new_obj = Object.assign({}, obj)
 
 ```js
 const person = {
-  name: "Lucy",
+  name: 'Lucy',
   friends: {
-    name: "Jack",
-    age: "Allen"
+    name: 'Jack',
+    age: 'Allen'
   }
 }
 // 其实就是personWithOtherFriends 对象浅拷贝了person，然后又将friends指针指向了新的引用
 const personWithOtherFriends = {
   ...person,
   friends: {
-    name: "Eleen"
+    name: 'Eleen'
   }
 }
 ```
@@ -96,7 +96,7 @@ var arr = [1, 2, 3]
 
 console.log(arr instanceof Array) // true
 
-var sandbox = document.createElement("iframe")
+var sandbox = document.createElement('iframe')
 document.body.append(sandbox)
 
 sandbox.contentDocument.open()
@@ -111,29 +111,45 @@ sandbox.contentDocument.close()
 
 ### constructor
 
-> 有时候我们不希望匹配父类型，只希望匹配当前类型，那么我们可以用 constructor 来判断
+有时候我们不希望匹配父类型，只希望匹配当前类型，那么我们可以用 constructor 来判断
+
+```js
+console.log(arr.constructor === Array) // true
+console.log(arr.constructor === Object) // false
+```
 
 ::: tip constructor 属性
 JavaScript 对象还有一个 constructor 属性（除了某些内置的对象，如 window，document 之外都有），它指向对象的构造器（constructor），而对象的构造器名字与对象的类型名是一样的，而构造器的名字又可以从 constructor 属性的字符串中被解析出来。下面的代码就是使用了这种机制，来获得一个现有对象的类名称，返回值为已定义的类名或 undefined
+:::
 
+对象的 constructor 会返回它的类型，而类型在定义的时候，会创建一个 name 只读属性，值为类型的名字
+
+```js
+class Foo {}
+console.log(Foo.name) // Foo
+
+const foo = new Foo()
+console.log(foo.constructor === Foo) // true
+console.log(foo.constructor.name === 'Foo') // true
+```
+
+---
+
+::: danger constructor.name 有非常大的限制，
+
+如果使用定义匿名的 class，那么 name 就变成空的,另外如果使用 es-modules，我们 import 的类名不一定是包里面的类名。
+
+再者，如果我们使用脚本压缩工具，那么文件中的类名会被替换为短名，那样的话，name 属性的名字也随着改变了。
+
+所以依赖 constructor.name 来判断不是一个好的方案。
 :::
 
 ```js
-/* Returns the class name of the argument or undefined if
-    it's not a valid JavaScript object.
-*/
+const MyClass = (function() {
+  return class {}
+})()
 
-function getObjectClass(obj) {
-  if (obj && obj.constructor && obj.constructor.toString) {
-    var arr = obj.constructor.toString().match(/function\s*(\w+)/)
-
-    if (arr && arr.length == 2) {
-      return arr[1]
-    }
-  }
-
-  return undefined
-}
+console.log(MyClass.name) // ''
 ```
 
 ### stringTag
@@ -143,8 +159,33 @@ function getObjectClass(obj) {
 ```js
 var ostring = Object.prototype.toString
 function isArray(it) {
-  return ostring.call(it) === "[object Array]"
+  return ostring.call(it) === '[object Array]'
 }
+```
+
+::: danger 注意不要使用 stringTag 判断 Number、Boolean 等 primitive 类型
+因为它没法区分装箱的类型
+:::
+
+```js
+const ostring = Object.prototype.toString
+console.log(ostring.call(1.0)) // [object Number]
+console.log(ostring.call(new Number(1.0))) // [object Number]
+```
+
+在 ES2015 之前，我们不能自定义类型的 stringTag，我们自己定义的任何类型实例的 stringTag 都返回[object Object]。
+
+但是现在，我们可以通过实现 Symbol.toStringTag 的 getter 来自定义类型的 stringTag：
+
+```js
+class Foo {
+  get [Symbol.toStringTag]() {
+    return 'Foo'
+  }
+}
+
+const foo = new Foo()
+console.log(Object.prototype.toString.call(f)) // [object Foo]
 ```
 
 ## [Cannot convert undefined or null to object](https://stackoverflow.com/questions/29721205/how-to-resolve-typeerror-cannot-convert-undefined-or-null-to-object/29721434)
@@ -163,7 +204,7 @@ Object.assign(window.UndefinedVariable, {})
 // so that the function either gets a proper Object,
 // or does not get called at all.
 
-Object.keys({ key: "value" })
+Object.keys({ key: 'value' })
 if (window.UndefinedVariable) {
   Object.assign(window.UndefinedVariable, {})
 }
@@ -173,9 +214,9 @@ if (window.UndefinedVariable) {
 
 ```js
 function setName(obj) {
-  obj.name = "Nicholas"
+  obj.name = 'Nicholas'
   obj = new Object()
-  obj.name = "Greg"
+  obj.name = 'Greg'
 }
 var person = new Object()
 setName(person)
@@ -196,25 +237,26 @@ alert(person.name) //"Nicholas"
 
 ```js
 let constance = {
-  foo: "我是不会改变的",
-  boo: "test"
+  foo: '我是不会改变的',
+  boo: 'test'
 }
-Object.defineProperty(constance, "foo", {
+Object.defineProperty(constance, 'foo', {
   get() {
-    return "我是不会改变的"
+    return '我是不会改变的'
   }
 })
-constance.foo = "sss"
+constance.foo = 'sss'
 
-Object.defineProperty(constance, "boo", {
+Object.defineProperty(constance, 'boo', {
   writable: false
 })
 
-constance.boo = "sss"
+constance.boo = 'sss'
 
-console.log("foo", constance.foo, constance.boo)
+console.log('foo', constance.foo, constance.boo)
 ```
 
 ## 参考
 
 - [如何准确判断一个对象的类型?](https://github.com/akira-cn/FE_You_dont_know/issues/11)
+- [MDN Symbol.toStringTag](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Symbol/toStringTag)

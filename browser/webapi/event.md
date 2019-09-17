@@ -101,6 +101,18 @@ window.addEventListener('beforeunload', event => {
 
 和 mouseover 不同的是，mouseenter 不支持事件冒泡
 
+## 事件广播
+
+```js
+var event= new Event('build');
+
+// listener for the event
+element.addEvenetListener('build', function(e) {...}, false);
+
+//Dispatch the event
+element.dispatchEvent(event);
+```
+
 ## 参考
 
 - [MDN 事件介绍](https://developer.mozilla.org/zh-CN/docs/Learn/JavaScript/Building_blocks/Events)
