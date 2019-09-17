@@ -85,6 +85,14 @@ a.href // 相对路径已经变成绝对路径
 了解了一下 URI 和 URL 的区别。
 URI 的英文 Uniform Resource Identify , URL 的英文 Uniform Resource Location。其实还有 URN ( Uniform Resouce Name ) 。指定一个资源我们可以通过他的名字，他的地址。所以 URL,URN are all types of URI.
 
+## Navigator.sendBeacon()
+
+> 可以用于记录用户信息，防止突然关闭浏览器记录不到的情况
+
+`navigator.sendBeacon(url, data);`
+
+The navigator.sendBeacon() method can be used to asynchronously transfer a small amount of data over HTTP to a web server.
+
 ## 参考
 
 [为什么视频网站的视频链接地址是 blob？](https://juejin.im/post/5d1ea7a8e51d454fd8057bea)
