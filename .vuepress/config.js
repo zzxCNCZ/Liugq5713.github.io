@@ -125,7 +125,7 @@ module.exports = {
         {
           title: '暴力求解',
           collapsable: false,
-          children: ['', 'simple', 'all-permutations'].map(i => `violence/${i}`)
+          children: ['', 'simple', 'all-permutations', 'queen'].map(i => `violence/${i}`)
         },
         {
           title: '题目',
