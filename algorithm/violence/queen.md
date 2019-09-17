@@ -4,5 +4,6 @@
 
 ## 参考
 
+- [维基百科 八皇后问题](https://zh.wikipedia.org/wiki/%E5%85%AB%E7%9A%87%E5%90%8E%E9%97%AE%E9%A2%98)
 - [漫画：什么是八皇后问题？](https://juejin.im/post/5accdb236fb9a028bb195562)
 - [八皇后问题的 JavaScript 解法](https://www.w3ctech.com/topic/1786)
