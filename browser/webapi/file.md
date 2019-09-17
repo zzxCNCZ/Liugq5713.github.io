@@ -1,6 +1,4 @@
-# File
-
-## 生成文件
+# 生成文件
 
 ### Blob
 
@@ -29,7 +27,7 @@ HTMLCanvasElement.toBlob() 方法创造 Blob 对象，用以展示 canvas 上的
 
 ```js
 //callback必须（可获得一个单独的Blob对象参数），其余为可选
-void canvas.toBlob(callback, type, encoderOptions);
+void canvas.toBlob(callback, type, encoderOptions)
 ```
 
 ## 读取文件
