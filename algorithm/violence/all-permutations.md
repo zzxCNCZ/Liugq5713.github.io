@@ -39,3 +39,4 @@
 
 - [46. Permutations](https://leetcode.com/problems/permutations/discuss/18308/JavaScript-using-DP)
 - [Wikipedia 全排列生成算法](https://zh.wikipedia.org/wiki/%E5%85%A8%E6%8E%92%E5%88%97%E7%94%9F%E6%88%90%E7%AE%97%E6%B3%95)
+- [漫画：什么是八皇后问题？](https://juejin.im/post/5accdb236fb9a028bb195562)
