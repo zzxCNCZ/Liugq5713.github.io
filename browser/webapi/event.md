@@ -1,8 +1,50 @@
-# Event
+# 事件模型
 
-## onclick vs addEventListener 添加的点击事件
+DOM Level 2 Events(事件模型)：捕获阶段-目标阶段-冒泡阶段
+
+```js
+/*
+ *event: 字符串，指定事件名
+ *function: 指定要事件触发时执行的函数
+ *useCapture: 布尔值，指定事件是否在捕获或冒泡阶段执行
+ */
+element.addEventListener(event, function, useCapture)
+```
+
+## 事件处理
+
+### 事件处理器属性 onclick vs addEventListener 添加的点击事件
 
 onclick 是一种覆盖绑定操作，而 addEventListener 是增加更多回调绑定，要有用得多，因为有时候一个元素的同一个事件需要作不同响应。
+
+### 事件对象
+
+有时候在事件处理函数内部，您可能会看到一个固定指定名称的参数，例如 event，evt 或简单的 e。 这被称为事件对象，它被自动传递给事件处理函数，以提供额外的功能和信息。
+
+- target 属性
+  事件对象 e 的 target 属性始终是事件刚刚发生的元素的引用。
+
+### 事件冒泡和捕获
+
+在现代浏览器中，默认情况下，所有事件处理程序都在冒泡阶段进行注册。
+
+举个例子：浏览器检查实际点击的元素是否在冒泡阶段中注册了一个 onclick 事件处理程序，如果是，则运行它，然后它移动到下一个直接的祖先元素，并做同样的事情，然后是下一个，等等，直到它到达`<html>`元素
+
+::: tip 用 stopPropagation()修复问题
+
+标准事件对象具有可用的名为 stopPropagation()的函数, 当在事件对象上调用该函数时，它只会让当前事件处理程序运行，但事件不会在冒泡链上进一步扩大，因此将不会有更多事件处理器被运行(不会向上冒泡)。所以，我们可以通过改变前面代码块中的第二个处理函数来解决当前的问题
+:::
+
+```js
+div.onclick = function(e) {
+  e.stopPropagation()
+  // do something
+}
+```
+
+::: tip 冒泡还允许我们利用事件委托
+这个概念依赖于这样一个事实,如果你想要在大量子元素中单击任何一个都可以运行一段代码，您可以将事件监听器设置在其父节点上，并将事件监听器气泡的影响设置为每个子节点，而不是每个子节点单独设置事件监听器。
+:::
 
 ## [EventTarget.addEventListener()](https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener)
 
@@ -47,14 +89,30 @@ custom messages in onbeforeunload dialogs are deprecated since chrome-51
 [取消自定义消息的原因](https://stackoverflow.com/questions/37782104/javascript-onbeforeunload-not-showing-custom-message)：To avoid scamming, chromium and hence chrome have decided to remove the ability to set a custom message in the onbeforeunload dialog.
 
 ```js
-window.addEventListener("beforeunload", event => {
+window.addEventListener('beforeunload', event => {
   // Cancel the event as stated by the standard.
-  event.preventDefault();
+  event.preventDefault()
   // Chrome requires returnValue to be set.
-  event.returnValue = "";
-});
+  event.returnValue = ''
+})
 ```
 
 ### mouseover vs mouseenter
 
 和 mouseover 不同的是，mouseenter 不支持事件冒泡
+
+## 事件广播
+
+```js
+var event= new Event('build');
+
+// listener for the event
+element.addEvenetListener('build', function(e) {...}, false);
+
+//Dispatch the event
+element.dispatchEvent(event);
+```
+
+## 参考
+
+- [MDN 事件介绍](https://developer.mozilla.org/zh-CN/docs/Learn/JavaScript/Building_blocks/Events)
