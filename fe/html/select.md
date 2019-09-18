@@ -42,16 +42,14 @@
 
 ```js
 export function isKorean(text) {
-  const reg = /([(\uAC00-\uD7AF)|(\u3130-\u318F)])+/gi;
-  return reg.test(text);
+  const reg = /([(\uAC00-\uD7AF)|(\u3130-\u318F)])+/gi
+  return reg.test(text)
 }
 ```
 
 把这个 unicode 放到[谷歌里面查了一下](https://stackoverflow.com/questions/32239102/korean-and-alphabet-regex-returning-false)，就是用来判断是否是韩文的。不知道是不是韩文比较特殊，还是我理解错了，它如果有其他的作用，可以偷偷告诉我
 
 顺便查了一下用这个`isKorean`函数`handleComposition`，由之前没见过的事件`compositionstart`,`compositionupdate`,`compositionend` 调用。
-
-![44758d1aadfc129b60b5f6307e57c697.png](en-resource://database/3190:1)
 
 [compositionstart](https://developer.mozilla.org/en-US/docs/Web/API/Element/compositionstart_event)定义：
 
