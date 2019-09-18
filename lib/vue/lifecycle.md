@@ -26,6 +26,7 @@
 
 当 dom 发生变化，更新后执行的回调，如果数据是异步的，可以在数据获取完之后，调用`this.$nextTick`
 
+`$nextTick` 全局方法 Vue.nextTick 一样，不同的是回调的 this 自动绑定到调用它的实例上。
 :::
 
 ### 为什么在 created 请求数据
@@ -39,3 +40,8 @@
 在实例创建完成后被立即调用。在这一步，实例已完成以下的配置：数据观测 (data observer)，属性和方法的运算，watch/event 事件回调。然而，挂载阶段还没开始，\$el 属性目前不可见
 
 :::
+
+## 参考
+
+- [nextTick 源码](https://github.com/vuejs/vue/blob/ba0ebd4771ddb5c56c1261f82c842b57ca7163a6/src/core/util/next-tick.js)
+- [全面解析 Vue.nextTick 实现原理](https://juejin.im/entry/5aced80b518825482e39441e)

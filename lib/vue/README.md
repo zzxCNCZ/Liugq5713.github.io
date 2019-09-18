@@ -1,5 +1,14 @@
 # 收集
 
+## 单页面应用
+
+单页应用（英语：single-page application，缩写 SPA）是一种网络应用程序或网站的模型，它通过动态重写当前页面来与用户交互，而非传统的从服务器重新加载整个新页面。这种方法避免了页面之间切换打断用户体验，使应用程序更像一个桌面应用程序
+
+## 按需加载
+
+- 动态创建标签
+- [动态 import()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/import)，以这种方式调用将返回一个 promise
+
 ## vue 里面`data`数据为啥可以直接使用 `this` 访问
 
 现在大家使用 vue 可能都习惯这样访问 data 里面的数据了，this.xx，但是有没有想过为啥，不应该是`this.data.xxx`

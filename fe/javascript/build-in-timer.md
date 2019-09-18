@@ -135,3 +135,4 @@ function fib(n) {
 
 - [Scheduling: setTimeout and setInterval](https://javascript.info/settimeout-setinterval)
 - [using-requestanimationframe](https://css-tricks.com/using-requestanimationframe/)
+- [Javascript 高性能动画与页面渲染](https://www.infoq.cn/article/javascript-high-performance-animation-and-page-rendering/)
