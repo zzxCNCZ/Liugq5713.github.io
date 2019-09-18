@@ -4,7 +4,13 @@
 
 ## 方法
 
-### 暴力枚举
+### 回溯法
+
+<<< @/algorithm/violence/code/queen.js
+
+### 回溯法
+
+<<< @/algorithm/violence/code/queen-no-recursion.js
 
 ## 参考
 
