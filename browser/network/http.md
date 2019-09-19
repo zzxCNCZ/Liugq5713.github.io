@@ -29,6 +29,25 @@ HTTPS（加密，认证，完整性保护） (进化)
 - 500 Internal Serval Error，表示服务器端在执行请求时发生了错误,通用错误消息，服务器遇到了一个未曾预料的状况，导致了它无法完成对请求的处理。没有给出具体错误信息
 - 503 Service Unavailable，表明服务器暂时处于超负载或者正在进行停机维护，现在无法处理请求
 
+---
+
+## [204 No Content](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/204)
+
+The HTTP 204 No Content success status response code indicates that the request has succeeded, but that the client doesn't need to go away from its current page. A 204 response is cacheable by default. An ETag header is included in such a response.
+
+所以对于一些提交到服务器处理的数据，只需要返回是否成功的情况下，可以考虑使用状态码 204 来作为返回信息，从而省掉多余的数据传输。
+
+## [304 Not Modified](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/304)
+
+The HTTP 304 Not Modified client redirection response code indicates that there is **no need to retransmit the requested resources**. It is an implicit redirection to **a cached resource**. This happens when the request method is safe, like a GET or a HEAD request, or when the request is conditional and uses a If-None-Match or a If-Modified-Since header.
+
+## [301 Moved Permanently](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/301) [302 Found](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/302) [303 See Other](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/303) [307 Temporary Redirect](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/307)
+
+301 表示永久重定向
+302 表示临时重定向
+
+303 和 307 是 HTTP1.1 新加的服务器响应文档的状态码，它们是对 HTTP1.0 中的 302 状态码的细化
+
 ## 控制缓存
 
 Cache-Control

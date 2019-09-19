@@ -128,3 +128,7 @@ function enableStrictMode(store) {
 且该值都是 sync
 
 那么处理的时候要小心了，要在组件中，给这个 props 的值换成 计算属性
+
+## vuex
+
+> [Vuex、Flux、Redux、Redux-saga、Dva、MobX](https://zhuanlan.zhihu.com/p/53599723)
