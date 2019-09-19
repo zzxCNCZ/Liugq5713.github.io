@@ -27,17 +27,40 @@
 
 用函数来封装以特定接口创建对象的细节
 
-### 构造函数模式
+### 借用构造函数(constructor stealing)
 
-调用 new 会经历四个步骤
+> 即在子类型构造函数的内部调用超类型构造函数
 
-创建一个新对象
+```js
+function Father() {
+  this.colors = ["red", "blue", "green"]
+}
+function Son() {
+  Father.call(this) //继承了Father,且向父类型传递参数
+}
+var instance1 = new Son()
+```
 
-将 this 指向这个新对象
+缺点就是函数都没有被继承
 
-执行构造函数中的代码
+### 组合继承
 
-返回新对象
+> 将原型链和借用构造函数的技术组合到一块,从而发挥两者之长的一种继承模式.
+
+```js
+function Father(name) {
+  this.name = name
+  this.colors = ["red", "blue", "green"]
+}
+Father.prototype.sayName = function() {
+  alert(this.name)
+}
+function Son(name, age) {
+  Father.call(this, name) //继承实例属性，第一次调用Father()
+  this.age = age
+}
+Son.prototype = new Father() //继承父类方法,第二次调用Father()
+```
 
 ### 原型模式
 
