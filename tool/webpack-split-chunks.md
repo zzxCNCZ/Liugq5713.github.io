@@ -28,6 +28,8 @@ from memory cache 代表使用内存中的缓存，from disk cache 则代表使�
 
 - 启用拆分
 
+// cacheGroups is where we define rules for how Webpack should group chunks into output files
+
 ```javascript
 optimization: {
   splitChunks: {
@@ -45,9 +47,27 @@ put everything in node_modules into a file called vendors~main.js
 我们的 vendors.js 遇到了与我们原来的 main.js 文件相同的问题 - 对其中一部分的更改意味着重新下载它的所有部分。
 那么为什么不为每个 npm 包提供单独的文件呢？这很容易做到。
 
+```js
+cacheGroups: {
+  vendor: {
+    test: /[\\/]node_modules[\\/]/,
+    name(module) {
+      // get the name. E.g. node_modules/packageName/not/this/part.js
+      // or node_modules/packageName
+      const packageName = module.context.match(/[\\/]node_modules[\\/](.*?)([\\/]|$)/)[1];
+
+      // npm package names are URL-safe, but some servers don't like @ symbols
+      return `npm.${packageName.replace('@', '')}`;
+    },
+  },
+}
+```
+
 ## Code Splitting
 
 ### 路由懒加载
+
+比如 vue 路由里面可以使用动态 import 方法引入组件
 
 ### 资源预加载
 
@@ -55,4 +75,9 @@ put everything in node_modules into a file called vendors~main.js
 
 这种写法将会被 webpack 转为`<link rel="prefetch" href="login-modal-chunk.js">`，并添加到 head 标签里面。
 
-Prefetch 专注于下一个页面将要加载的资源并以低优先级加载
+- preload 是告诉浏览器页面必定需要的资源，浏览器**一定**会加载这些资源,以高优先级加载
+- prefetch 是告诉浏览器页面可能需要的资源，浏览器**不一定**会加载这些资源,以低优先级加载
+
+## 参考
+
+- [用 preload 预加载页面资源](https://juejin.im/post/5a7fb09bf265da4e8e785c38)
