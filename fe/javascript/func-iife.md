@@ -1,6 +1,6 @@
 # 函数 IIFE＆闭包
 
-##　函数定义
+## 函数定义
 
 ### 普通定义
 
@@ -21,7 +21,7 @@ var sayHi = function() {
 }
 ```
 
-###　命名函数表达式
+### 命名函数表达式
 
 ```js
 var fibo = function fibonacci() {
@@ -35,10 +35,10 @@ var fibo = function fibonacci() {
 
 示例开头为一元操作符 `!` (使用其他的一元操作符也是可以的，比如`+-~`)，让 JavaScript 将其后的代码解释为一个表达式，而不是声明
 
-```js
-!(function() {
+```txt
+!function() {
   alert("Hello from IIFE!")
-})()
+}()
 // Shows the alert "Hello from IIFE!"
 ```
 
@@ -60,20 +60,20 @@ var fibo = function fibonacci() {
 
 - private variables
 
-```js
-;(function IIFE_initGame() {
-  // Private variables that no one has access to outside this IIFE
-  var lives
-  var weapons
+```txt
+(function IIFE_initGame() {
+    // Private variables that no one has access to outside this IIFE
+    var lives;
+    var weapons;
 
-  init()
+    init();
 
-  // Private function that no one has access to outside this IIFE
-  function init() {
-    lives = 5
-    weapons = 10
-  }
-})()
+    // Private function that no one has access to outside this IIFE
+    function init() {
+        lives = 5;
+        weapons = 10;
+    }
+}());
 ```
 
 - IIFEs with a return value
@@ -93,6 +93,17 @@ alert(result) // alerts "From IIFE"
 ;(function($, global, document) {
   // use $ for jQuery, global for window
 })(jQuery, window, document)
+```
+
+## 单例
+
+```js
+var createIntance = (function() {
+  var instance
+  return function() {
+    return instance || (instance = new Modal("modal", "这是一个弹框"))
+  }
+})()
 ```
 
 ## 参考

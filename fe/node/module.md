@@ -9,16 +9,16 @@
 - 相对导入
 
 相对于导入他的文件来的，并不能解析为一个外部模块声明（一般用于自己写的模块）
-****
+
 - 非相对导入
 
 相对于 baseUrl 或者通过路径映射来进行解析
 
 ## 模块解析策略
 
-### 服务端 CommonJS 规范( 同步 ，用于服务端)
+### 服务端 CommonJS 规范
 
-NodeJS 使用的规范
+NodeJS 使用的规范,**同步** ，用于服务端
 
 #### 相对路径解析
 
@@ -26,7 +26,7 @@ NodeJS 使用的规范
 
 - 将/root/src/moduleB.js 视为文件，检查是否存在。
 
-* 将/root/src/moduleB 视为目录，检查是否它包含 package.json 文件并且其指定了一个"main"模块。 在我们的例子里，如果 Node.js 发现文件 /root/src/moduleB/package.json 包含了{ "main": "lib/mainModule.js" }，那么 Node.js 会引用/root/src/moduleB/lib/mainModule.js。
+- 将/root/src/moduleB 视为目录，检查是否它包含 package.json 文件并且其指定了一个"main"模块。 在我们的例子里，如果 Node.js 发现文件 /root/src/moduleB/package.json 包含了{ "main": "lib/mainModule.js" }，那么 Node.js 会引用/root/src/moduleB/lib/mainModule.js。
 
 - 将/root/src/moduleB 视为目录，检查它是否包含 index.js 文件。 这个文件会被隐式地当作那个文件夹下的"main"模块。
 
@@ -64,26 +64,6 @@ Node 会在一个特殊的文件夹 node_modules 里查找你的模块。 node_m
 
 3、require() 返回的是 module.exports 而不是 exports
 
-## 浏览器端
+## 参考
 
-### AMD（Asynchronous Module Definition）
-
-require.js 基于此规范
-
-对于依赖的模块，AMD 是提前执行，CMD 是延迟执行。
-
-提前执行
-
-### CMD
-
-SeaJS 基于此规范
-
-二者区别
-
-CMD 推崇依赖就近，AMD 推崇依赖前置。
-
-### ES6 模块
-
-尽可能的静态化（模块语法的限制）
-
-export 和 import 的一个限制是 必须在其他语句和函数之外使用
+- [前端模块化：CommonJS,AMD,CMD,ES6](https://juejin.im/post/5aaa37c8f265da23945f365c)
