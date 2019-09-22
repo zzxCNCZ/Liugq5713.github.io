@@ -22,7 +22,20 @@ onclick 是一种覆盖绑定操作，而 addEventListener 是增加更多回调
 有时候在事件处理函数内部，您可能会看到一个固定指定名称的参数，例如 event，evt 或简单的 e。 这被称为事件对象，它被自动传递给事件处理函数，以提供额外的功能和信息。
 
 - target 属性
-  事件对象 e 的 target 属性始终是事件刚刚发生的元素的引用。
+  事件对象 e 的 target 属性始终是事件刚刚发生的元素的引用
+
+::: tip 阻止默认行为
+有时，你会遇到一些情况，你希望事件不执行它的默认行为。 最常见的例子是 Web 表单，例如自定义注册表单。 当你填写详细信息并按提交按钮时，自然行为是将数据提交到服务器上的指定页面进行处理，并将浏览器重定向到某种“成功消息”页面
+:::
+
+```js
+form.onsubmit = function(e) {
+  if (fname.value === "" || lname.value === "") {
+    e.preventDefault()
+    para.textContent = "You need to fill in both names!"
+  }
+}
+```
 
 ### 事件冒泡和捕获
 
@@ -89,11 +102,11 @@ custom messages in onbeforeunload dialogs are deprecated since chrome-51
 [取消自定义消息的原因](https://stackoverflow.com/questions/37782104/javascript-onbeforeunload-not-showing-custom-message)：To avoid scamming, chromium and hence chrome have decided to remove the ability to set a custom message in the onbeforeunload dialog.
 
 ```js
-window.addEventListener('beforeunload', event => {
+window.addEventListener("beforeunload", event => {
   // Cancel the event as stated by the standard.
   event.preventDefault()
   // Chrome requires returnValue to be set.
-  event.returnValue = ''
+  event.returnValue = ""
 })
 ```
 

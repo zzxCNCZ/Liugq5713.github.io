@@ -1,6 +1,6 @@
 # FormData
 
-起因是因为我要做一个合成水印，并且上传到七牛的需求。我需要把`canvas`生成的`blob`上传到七牛。我直接调用的 API，的时候一直报错`content-type isn't multipart/form-data`，估计要设置一下`ontent-type`
+起因是因为我要做一个合成水印，并且上传到七牛的需求。我需要把`canvas`生成的`blob`上传到七牛。我直接调用的 API，的时候一直报错`content-type isn't multipart/form-data`，估计要设置一下`content-type`
 
 搜索一下七牛的官方文档，上面很简单的说：
 
@@ -10,7 +10,7 @@
 
 [FormData 官方文档说明](https://developer.mozilla.org/en-US/docs/Web/API/FormData)
 
-The FormData interface provides a way to easily construct a set of key/value pairs representing form fields and their values, which can then be easily sent using the XMLHttpRequest.send() method. It uses the same format a form would use if the encoding type were set to "multipart/form-data"
+The FormData interface provides a way to easily construct a set of key/value pairs representing form fields and their values, which can then be easily sent using the XMLHttpRequest.send() method. It uses **the same format a form would use if the encoding type were set to "multipart/form-data"**
 
 它这个说明，可真是太符合我的心意了。用 FormData 来创建与表单格式相同的数据
 
@@ -24,9 +24,9 @@ formData.append('key', qiniu_key)
 
 ```js
 // 列举几个，想看自己去查
-FormData.append();
-FormData.entries();
-FormData.get();
-FormData.getAll();
-FormData.has();
+FormData.append()
+FormData.entries()
+FormData.get()
+FormData.getAll()
+FormData.has()
 ```
