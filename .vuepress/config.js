@@ -80,7 +80,7 @@ module.exports = {
         {
           title: 'WebAPI',
           collapsable: false,
-          children: ['', 'file', 'canvas', 'formdata', 'uri', 'event',].map(i => `webapi/${i}`)
+          children: ['', 'file', 'canvas', 'formdata', 'uri', 'event', 'click'].map(i => `webapi/${i}`)
         },
         {
           title: '渲染',

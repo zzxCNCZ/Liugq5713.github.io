@@ -83,16 +83,6 @@ A Boolean indicating whether events of this type will be dispatched to the regis
 
 useCapture defaults to false.
 
-## 点击穿透
-
-click 事件什么时候触发？
-
-浏览器在 touchend 之后会等待约 300ms ，如果没有 tap 行为，则触发 click 事件。
-
-## tips
-
-用 tab 键移动到某个链接然后按下回车键的动作也会触发 onclick 事件
-
 ## 常用事件
 
 ### beforeunload 用户离开或者刷新时提示保存
@@ -129,3 +119,4 @@ element.dispatchEvent(event);
 ## 参考
 
 - [MDN 事件介绍](https://developer.mozilla.org/zh-CN/docs/Learn/JavaScript/Building_blocks/Events)
+- [移动端 300ms 点击延迟和点击穿透](https://juejin.im/post/5b3cc9836fb9a04f9a5cb0e0)
