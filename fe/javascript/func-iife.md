@@ -106,6 +106,26 @@ var createIntance = (function() {
 })()
 ```
 
+## 闭包问题
+
+```js
+function genResult() {
+  const result = []
+  for (var i = 0; i < 10; i++) {
+    // 闭包，但是闭包保持着i的引用，等到for循环执行完之后，i就变成了10
+    result[i] = function() {
+      console.log(i)
+    }
+  }
+  return result
+}
+const t = genResult()
+// 输出 10 个 10
+for (var i = 0; i < t.length; i++) {
+  t[i]()
+}
+```
+
 ## 参考
 
 - [Essential JavaScript: Mastering Immediately-invoked Function Expressions](https://medium.com/@vvkchandra/essential-javascript-mastering-immediately-invoked-function-expressions-67791338ddc6)
