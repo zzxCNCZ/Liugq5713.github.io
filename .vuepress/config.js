@@ -40,6 +40,7 @@ module.exports = {
             'type-common-number',
             'type-common-string',
             'type-common-boolean',
+            'type',
             'type-reference-array',
             'type-reference-object',
             'logical-statement',
