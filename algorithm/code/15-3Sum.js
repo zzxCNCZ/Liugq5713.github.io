@@ -2,6 +2,7 @@
  * @param {number[]} nums
  * @return {number[][]}
  */
+// https://leetcode-cn.com/problems/3sum/submissions/
 var threeSum = function (nums) {
   nums.sort((a, b) => a - b)
   const len = nums.length
