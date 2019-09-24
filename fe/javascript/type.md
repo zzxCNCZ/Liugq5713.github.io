@@ -4,6 +4,9 @@
 
 ## 加性运算符有大量的特殊行为
 
+> 算数加号 或者是 字符串连接符号
+> `-, *, /,和%`等算术运算符都会把操作数转换成数字的
+
 ```txt
 5 + null    // returns 5         because null is converted to 0
 "5" + null  // returns "5null"   because null is converted to "null"
