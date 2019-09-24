@@ -107,7 +107,18 @@ CORS 需要客户端和服务器同时支持。目前，所有浏览器都支持
 
 跨域资源共享标准新增了一组 HTTP 首部字段，允许服务器声明哪些源站有权限访问哪些资源。
 
----
+#### CORS 请求如何带上 cookie
+
+> 默认情况下，跨源请求不提供凭据(cookie、HTTP 认证及客户端 SSL 证明等)
+> 如果发送的是带凭据的请求，但服务器的相应中没有相关的头部，那么浏览器就不会把相应内容交给 JavaScript,请求就无法得到结果的数据（浏览器得到了，但是我们请求的方法得不到，因为被浏览器拦截了）
+
+客户端代码，设置 withCredentials 为 true 即可让该跨域请求携带 Cookie。 注意携带的是目标页面所在域的 Cookie。
+
+还需要让目标服务器接受你跨域发送的 cookie，设置 Access-Control-Allow-Credentials 响应头为"true"
+
+PS:如果设置 `Access-Control-Allow-Origin: *`，不管 withCredentials 有没有设置，cookie 也带不过去
+
+#### cors 请求
 
 cors 的请求分为两类，简单请求（simple request）和非简单请求（not-so-simple request）
 
