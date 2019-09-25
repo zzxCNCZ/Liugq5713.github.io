@@ -9,3 +9,15 @@
 ## 持续集成 Continuous Integration (CI)
 
 ## 版本管理 Git
+
+---
+
+## 图片
+
+- 压缩
+
+`sudo apt install pngquant`
+
+替换图片
+
+`pngquant -f --ext .png *.png`
