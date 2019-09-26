@@ -40,3 +40,100 @@ JavaScript 里面涉及到遍历元素的方法都介绍一下
 - do while
 - for in : loop through `properties of an object`
 - for of : for `iterating collections`
+
+## 优化 if else 面条代码
+
+面条代码其实容易出现在不加思考的【糙快猛】式开发中。很多简单粗暴地【在这里加个 if，在那里多个 return】的 bug 修复方式，再加上注释的匮乏，很容易让代码可读性越来越差，复杂度越来越高。
+
+```js
+//判断语句优化
+//适用于if else...if else 这样的判断
+//方法一：使用查找表
+//方法二：职责链模式
+
+//普通代码
+function win(x){
+    if(x>=5){
+        console.log('gt');
+    }else if(x<0){
+        console.log('lt')
+    }else{
+        console.log('middle')
+    }
+}
+//查找表,这种只是把判断的逻辑放在了这个determineAction这个函数里面
+function determineAction(x){
+    if(x>=5){
+        return 'gt';
+    }else if(x<0){
+        return 'lt';
+    }else{
+        return 'middle';
+    }
+}
+const rules={
+    'gt':function(){
+        console.log('gt find');
+    },
+    'lt':function(){
+        console.log('lt find');
+    },
+    'middle':function(){
+        console.log('middle find');
+    }
+}
+function find_win(x){
+    var x=determineAction(x);
+    return rules[x]();
+}
+
+//职责链的形式
+const match_rule=[
+    {
+        match:function(x){
+            return x>=5 ? true :false;
+        },
+        action:function(){
+            console.log('gt duty');
+        }
+    },
+    {
+        match:function(x){
+            return x<0 ? true :false;
+        },
+        action:function(){
+            console.log('lt duty');
+        }
+    },
+    {
+        match:function(x){
+            return (x<5&&x>=0) ? true :false;
+        },
+        action:function(){
+            console.log('middle duty');
+        }
+    }
+]
+function duty_win(x){
+    for(var i=0;i<match_rule.length;i++){
+        if(match_rule[i].match(x)){
+            return match_rule[i].action();
+        }
+    }
+}
+
+//测试结果
+function getResult(){
+    var x=Math.ceil(Math.random()*20)-10;
+    console.log('----'+x+'----');
+
+    win(x);
+    find_win(x);
+    duty_win(x);
+};
+setInterval(getResult,100)；
+```
+
+## 参考
+
+- [如何无痛降低 if else 面条代码复杂度](http://ewind.us/2017/refactor-if-else/)

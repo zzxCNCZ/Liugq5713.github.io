@@ -14,7 +14,7 @@ public 指定响应会被缓存，并且在多用户间共享。也就是下图�
 
 private 响应只作为私有的缓存，不能在用户间共享。如果要求 HTTP 认证，响应会自动设置为 private。
 
-- no-cache 在发布缓存副本之前，强制要求缓存把请求提交给原始服务器进行验证， 如果资源没有改变则会响应 304 并使用缓存副本。
+- no-cache(他的意思不是说不使用缓存) ，他的意思是： revalidate with server 。 即在发布缓存副本之前，强制要求缓存把请求提交给原始服务器进行验证， 如果资源没有改变则会响应 304 并使用缓存副本
 
 - no-store 绝对禁止缓存
 
@@ -56,3 +56,4 @@ SessionStorage 的数据只存储到特定的会话中，不属于持久化的�
 
 - [前端缓存最佳实践](https://juejin.im/post/5c136bd16fb9a049d37efc47)
 - [浏览器 HTTP 缓存机制](https://juejin.im/post/5a673af06fb9a01c927ed880)
+- [Why both no-cache and no-store should be used in HTTP response?](https://stackoverflow.com/questions/866822/why-both-no-cache-and-no-store-should-be-used-in-http-response)
