@@ -38,8 +38,21 @@ JavaScript 里面涉及到遍历元素的方法都介绍一下
 - for
 - while
 - do while
-- for in : loop through `properties of an object`
-- for of : for `iterating collections`
+- for in : loop through `properties of an object`,The for...in statement iterates over all non-Symbol, enumerable properties of an object.
+
+```js
+for (variable in object) {
+  statement
+}
+```
+
+- for of : The for...of statement creates a loop iterating over iterable objects, including: built-in String, Array, Array-like objects (e.g., arguments or NodeList), TypedArray, Map, Set, and user-defined iterables.
+
+```js
+for await (variable of iterable) {
+  statement
+}
+```
 
 ## 优化 if else 面条代码
 

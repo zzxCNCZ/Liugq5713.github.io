@@ -1,5 +1,20 @@
 # 生命周期
 
+> 源码文件夹 src/core/instance
+
+```js
+// 创建之前和创建
+// https://github.com/vuejs/vue/blob/0d2e9c46f16e9ec5bd0f3eebd2aa31c7f7493856/src/core/instance/init.js
+initLifecycle(vm)
+initEvents(vm)
+initRender(vm)
+callHook(vm, "beforeCreate")
+initInjections(vm) // resolve injections before data/props
+initState(vm)
+initProvide(vm) // resolve provide after data/props
+callHook(vm, "created")
+```
+
 ![生命周期](./imgs/lifecycle.png)
 
 > activited 和 deadctivated，keep-alive 专属，组件被激活时调用，组件被销毁时调用

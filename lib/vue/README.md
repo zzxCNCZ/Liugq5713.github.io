@@ -132,3 +132,33 @@ function enableStrictMode(store) {
 ## vuex
 
 > [Vuex、Flux、Redux、Redux-saga、Dva、MobX](https://zhuanlan.zhihu.com/p/53599723)
+
+## vue 源码
+
+- 检测是否是 promise
+
+```js
+export function isDef(v: any): boolean %checks {
+  return v !== undefined && v !== null
+}
+
+export function isPromise(val: any): boolean {
+  return (
+    isDef(val) &&
+    typeof val.then === "function" &&
+    typeof val.catch === "function"
+  )
+}
+```
+
+- 检测一个对象自身是否含有某个属性
+
+```js
+/**
+ * Check whether an object has the property.
+ */
+const hasOwnProperty = Object.prototype.hasOwnProperty
+export function hasOwn(obj: Object | Array<*>, key: string): boolean {
+  return hasOwnProperty.call(obj, key)
+}
+```
