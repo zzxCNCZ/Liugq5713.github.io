@@ -44,3 +44,7 @@ Your most recent selection (in the elements inspector, or on the page with 'Insp
 ## `element.__vue__`
 
 这个属性，一般会在组件的根元素上有
+
+## 参考
+
+- [掘金小册：你不知道的 Chrome 调试技巧](https://juejin.im/book/5c526902e51d4543805ef35e)

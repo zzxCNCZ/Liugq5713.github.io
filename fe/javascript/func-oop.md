@@ -23,13 +23,44 @@
 
 通过 Object 或者对象字面量可以用来创建单个对象，但是要创建很多个对象就不适合
 
-### 工厂模式
+## 继承
 
-用函数来封装以特定接口创建对象的细节
+### 类式继承
+
+::: danger
+
+1. 父类过早地被创建，导致无法接受子类的动态参数；
+2. 仍然在原型上创建了属性，此时，多个子类的实例将共享同一个父类的属性，完蛋, 会互相影响!
+
+:::
+
+```js
+function GithubUser(username) {
+  this.username = "Unknown"
+}
+
+function JuejinUser(username, password) {}
+
+JuejinUser.prototype = new GithubUser()
+const juejinUser1 = new JuejinUser("ulivz", "xxx", 3)
+const juejinUser2 = new JuejinUser("egoist", "xxx", 0)
+
+//  这就是把属性定义在原型链上的致命缺点，你可以直接访问，但修改就是一件难事了！
+console.log(juejinUser1.username) // 'Unknown'
+juejinUser1.__proto__.username = "U"
+console.log(juejinUser1.username) // 'U'
+
+// 卧槽，无情地影响了另一个实例!!!
+console.log(juejinUser2.username) // 'U'
+```
 
 ### 借用构造函数(constructor stealing)
 
-> 即在子类型构造函数的内部调用超类型构造函数
+> 可以在子类型构造函数中向超类型构造函数传递参数
+
+::: danger
+构造函数式继承并没有继承父类原型上的方法
+:::
 
 ```js
 function Father() {
@@ -40,8 +71,6 @@ function Son() {
 }
 var instance1 = new Son()
 ```
-
-缺点就是函数都没有被继承
 
 ### 组合继承
 
@@ -61,6 +90,12 @@ function Son(name, age) {
 }
 Son.prototype = new Father() //继承父类方法,第二次调用Father()
 ```
+
+### 原型式继承
+
+### 寄生式继承
+
+### 寄生组合式继承
 
 ### 原型模式
 
@@ -84,25 +119,10 @@ Son.prototype = new Father() //继承父类方法,第二次调用Father()
 
 - 稳妥构造函数模式
 
-## 继承
-
-### 原型链
-
-每一个构造函数都有一个原型对象，原型对象都包含一个指向构造函数的指针，而实例都包含一个指向原型对象的内部指针。让原型对象等于另一个对象的实例
-
-### 借用构造函数
-
-### 组合继承
-
-### 原型式继承
-
-### 寄生式继承
-
-### 寄生组合式继承
-
 ### 面向对象的程序设计
 
 ## 参考
 
 - [JS 原型链与继承别再被问倒了](https://juejin.im/post/58f94c9bb123db411953691b)
 - [JavaScript 深入之从原型到原型链](https://github.com/mqyqingfeng/blog/issues/2)
+- [深入 JavaScript 继承原理](https://juejin.im/post/5a96d78ef265da4e9311b4d8#heading-0)
