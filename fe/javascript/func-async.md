@@ -65,6 +65,6 @@ let bar = await getBar()
 let [foo, bar] = await Promise.all([getFoo(), getBar()])
 ```
 
-##　参考
+## 参考
 
 - [ES6 入门](https://es6.ruanyifeng.com/#docs/async)
