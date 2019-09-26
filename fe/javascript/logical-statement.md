@@ -149,4 +149,5 @@ setInterval(getResult,100)；
 
 ## 参考
 
+- [for...of vs for...in Loops in JavaScript](https://alligator.io/js/for-of-for-in-loops/)
 - [如何无痛降低 if else 面条代码复杂度](http://ewind.us/2017/refactor-if-else/)
