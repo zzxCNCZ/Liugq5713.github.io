@@ -4,7 +4,9 @@
 
 通过 Vue 的 `<component>` 元素加一个特殊的 is 特性`<component v-bind:is="currentTabComponent"></component>`
 
-`<keep-alive>`元素将其动态组件包裹起来,将组件第一次被创建的时候缓存下来
+[`<keep-alive>`](https://cn.vuejs.org/v2/api/#keep-alive)元素将其动态组件包裹起来,将组件第一次被创建的时候缓存下来,官方提供了 include 和 exclude 特性，说你可以决定哪些页面使用缓存哪些页面不用缓存
+
+缓存下来的组件如果不做处理，激活的时候就会命中缓存，如果你想这个时候有一些操作，可以使用 activated 钩子函数做一些处理
 
 ```js
 <!-- 失活的组件将会被缓存！-->
@@ -20,8 +22,8 @@ Vue.component("async-webpack-example", function(resolve) {
   // 这个特殊的 `require` 语法将会告诉 webpack
   // 自动将你的构建代码切割成多个包，这些包
   // 会通过 Ajax 请求加载
-  require(["./my-async-component"], resolve);
-});
+  require(["./my-async-component"], resolve)
+})
 ```
 
 ### [单文件组件使用异步组件](https://cn.vuejs.org/v2/guide/components-dynamic-async.html#%E5%BC%82%E6%AD%A5%E7%BB%84%E4%BB%B6)
@@ -50,7 +52,7 @@ beforeCreate: function () {
 
 ```js
 components: {
-  TreeFolderContents: () => import("./tree-folder-contents.vue");
+  TreeFolderContents: () => import("./tree-folder-contents.vue")
 }
 ```
 
