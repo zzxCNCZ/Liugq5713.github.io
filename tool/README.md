@@ -21,3 +21,9 @@
 替换图片
 
 `pngquant -f --ext .png *.png`
+
+- 图片处理
+
+ubuntu 内置了 imagemaagick `sudo apt install imagemagick`
+
+`convert xxx.jpg -reisze 200`
