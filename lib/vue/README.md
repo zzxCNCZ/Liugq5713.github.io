@@ -48,10 +48,10 @@ const obj = {
   }
 }
 for (key in obj.data) {
-  proxy(obj, "data", key)
+  proxy(obj, 'data', key)
 }
 // 输出 proxy a 1
-console.log("proxy a", obj.a)
+console.log('proxy a', obj.a)
 ```
 
 果然可以，vue 厉害啊，虽然这种做法对于初学者可能造成了一定的困扰，但是的确写代码的时候方便了很多。
@@ -75,11 +75,8 @@ function enableStrictMode(store) {
       return this._data.$$state
     },
     () => {
-      if (process.env.NODE_ENV !== "production") {
-        assert(
-          store._committing,
-          `do not mutate vuex store state outside mutation handlers.`
-        )
+      if (process.env.NODE_ENV !== 'production') {
+        assert(store._committing, `do not mutate vuex store state outside mutation handlers.`)
       }
     },
     { deep: true, sync: true }
@@ -109,11 +106,8 @@ function enableStrictMode(store) {
       return this._data.$$state
     },
     () => {
-      if (process.env.NODE_ENV !== "production") {
-        assert(
-          store._committing,
-          `do not mutate vuex store state outside mutation handlers.`
-        )
+      if (process.env.NODE_ENV !== 'production') {
+        assert(store._committing, `do not mutate vuex store state outside mutation handlers.`)
       }
     },
     { deep: true, sync: true }
@@ -143,11 +137,7 @@ export function isDef(v: any): boolean %checks {
 }
 
 export function isPromise(val: any): boolean {
-  return (
-    isDef(val) &&
-    typeof val.then === "function" &&
-    typeof val.catch === "function"
-  )
+  return isDef(val) && typeof val.then === 'function' && typeof val.catch === 'function'
 }
 ```
 
@@ -162,3 +152,5 @@ export function hasOwn(obj: Object | Array<*>, key: string): boolean {
   return hasOwnProperty.call(obj, key)
 }
 ```
+
+https://juejin.im/post/5d267dcdf265da1b957081a3
