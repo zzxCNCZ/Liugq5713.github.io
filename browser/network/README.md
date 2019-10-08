@@ -15,7 +15,7 @@ var re = /x/
 re.toString = function() {
   /* TODO */
   alert()
-  return ''
+  return ""
 }
 console.log(re)
 ```
@@ -64,10 +64,10 @@ function throttle(func, wait) {
 
 ## 手机应用里面的 webview 如何调试？
 
-- 通过数据线将安卓手机连接，打开 PC 的 Chrome 浏览器，在地址栏输入 chrome://inspect/，并且在安卓应用里面打开一个嵌套在 webview 的网页，chrome 会检测到。
-  然后将你的项目启动，在 chrome 的调试界面的控制台下，通过 location，将网页重定向到你开发的网页。然后就可以舒舒服服的工作了。（
+通过数据线将安卓手机连接，打开 PC 的 Chrome 浏览器，在地址栏输入 chrome://inspect/，并且在安卓应用里面打开一个嵌套在 webview 的网页，chrome 会检测到。
+然后将你的项目启动，在 chrome 的调试界面的控制台下，通过 location，将网页重定向到你开发的网页。然后就可以舒舒服服的工作了。
 
-## 在手机端的控制台
+## 手机端的控制台
 
 > 这个软件可真是太帅了
 

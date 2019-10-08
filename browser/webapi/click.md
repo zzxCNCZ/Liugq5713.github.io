@@ -24,6 +24,16 @@ eg:
 
 用 tab 键移动到某个链接然后按下回车键的动作也会触发 onclick 事件
 
+## click 在 ios 上有 300ms 延迟，原因及如何解决？
+
+### 禁用缩放
+
+<meta name="viewport" content="width=device-width, user-scalable=no">
+
+### 利用 FastClick，其原理是：
+
+检测到 touchend 事件后，立刻出发模拟 click 事件，并且把浏览器 300 毫秒之后真正出发的事件给阻断掉
+
 ## 参考
 
 - [移动端 300ms 点击延迟和点击穿透](https://juejin.im/post/5b3cc9836fb9a04f9a5cb0e0)

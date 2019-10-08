@@ -133,7 +133,7 @@ window.addEventListener("beforeunload", event => {
 
 和 mouseover 不同的是，mouseenter 不支持事件冒泡
 
-## 事件广播
+## 事件广播（自定义事件）
 
 ```js
 var event= new Event('build');

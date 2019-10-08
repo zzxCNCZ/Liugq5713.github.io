@@ -3,3 +3,10 @@
 ## [Element.getBoundingClientRect()](https://developer.mozilla.org/en-US/docs/Web/API/Element/getBoundingClientRect)
 
 returns the size of an element and its position relative to the viewport.
+
+## 前端优化
+
+- 降低请求量：合并资源，减少 HTTP 请求数，minify / gzip 压缩，webP，lazyLoad。
+- 加快请求速度：预解析 DNS，减少域名数，并行加载，CDN 分发。
+- 缓存：HTTP 协议缓存请求，离线缓存 manifest，离线数据缓存 localStorage。
+- 渲染：JS/CSS 优化，加载顺序，服务端渲染，pipeline。

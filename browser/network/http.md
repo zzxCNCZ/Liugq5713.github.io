@@ -1,12 +1,21 @@
 # HTTP
 
-HTTPS（加密，认证，完整性保护） (进化)
+## HTTPS（加密，认证，完整性保护） (进化)
 
-## 缺点
+::: tips HTTP 缺点
 
 - 通信使用明文，可以被监听
 - 不验证通信方的身份，可能遭遇伪装
 - 无法证明报文的完整性
+
+:::
+
+https: 是以安全为目标的 HTTP 通道，简单讲是 HTTP 的安全版，即 HTTP 下加入 SSL 层，HTTPS 的安全基础是 SSL，因此加密的详细内容就需要 SSL。
+
+## HTTP 2.0
+
+- 提升访问速度（请求资源所需时间更少，访问速度更快，相比 http1.0）
+- 允许多路复用：多路复用允许同时通过单一的 HTTP/2 连接发送多重请求-响应信息。改善了：在 http1.1 中，浏览器客户端在同一时间，针对同一域名下的请求有一定数量限制（连接数量），超过限制会被阻塞。
 
 ## 状态码
 
@@ -41,24 +50,16 @@ The HTTP 204 No Content success status response code indicates that the request 
 
 The HTTP 304 Not Modified client redirection response code indicates that there is **no need to retransmit the requested resources**. It is an implicit redirection to **a cached resource**. This happens when the request method is safe, like a GET or a HEAD request, or when the request is conditional and uses a If-None-Match or a If-Modified-Since header.
 
-## [301 Moved Permanently](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/301) [302 Found](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/302) [303 See Other](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/303) [307 Temporary Redirect](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/307)
+## 301 302 303 307
 
-301 表示永久重定向
-302 表示临时重定向
+- [301 Moved Permanently](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/301):表示永久重定向
+- [302 Found](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/302):表示临时重定向
+- [303 See Other](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/303)
+- [307 Temporary Redirect](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/307)
+
+301 比较常用的场景是使用域名跳转。302 用来做临时跳转 比如未登陆的用户访问用户中心重定向到登录页面
 
 303 和 307 是 HTTP1.1 新加的服务器响应文档的状态码，它们是对 HTTP1.0 中的 302 状态码的细化
-
-## 控制缓存
-
-Cache-Control
-
-控制缓存的行为
-
-HTTPS（加密，认证，完整性保护）
-
-# 给自己的网站上 https
-
-步骤其实还挺简单的
 
 ##　参考
 
