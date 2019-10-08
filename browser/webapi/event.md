@@ -17,16 +17,26 @@ element.addEventListener(event, function, useCapture)
 
 ### HTML 事件处理程序
 
-问题：
+`<button onclick="alert('success')">点我</button>`
 
-- 时差问题，js 未加载
+::: danger 不推荐使用，问题：
+
+- 时差问题，html 加载之后，用户触发了事件，但是 js 未加载
 - HTML 和 JS 耦合
+
+:::
 
 ### DOM0 级事件处理程序
 
 eg:如何取消点击事件，可以将 DOM 元素的 onClick 属性设置为 null
 
-缺点： 只能绑定一个事件，如果绑定多个，后面的会覆盖前面的
+::: danger 缺点
+
+只能绑定一个事件，如果绑定多个，后面的会覆盖前面的
+
+不能控制元素的事件流
+
+:::
 
 ### DOM2 级事件处理程序
 
@@ -34,13 +44,11 @@ eg:如何取消点击事件，可以将 DOM 元素的 onClick 属性设置为 nu
 
 > 事件监听其实非常的常用，但是它的第三个参数不是很了解
 
-#### options
-
 - capture: A Boolean indicating that events of this type will be dispatched to the registered listener before being dispatched to any EventTarget beneath it in the DOM tree.
 - once: A Boolean indicating that the listener should be invoked at most once after being added. If true, the listener would be automatically removed when invoked.
 - passive: A Boolean which, if true, indicates that the function specified by listener will never call preventDefault(). If a passive listener does call preventDefault(), the user agent will do nothing other than generate a console warning. See Improving scrolling performance with passive listeners to learn more.
 
-##### passive
+#### passive
 
 > vue 的事件处理有一个 passive 的修饰符，好奇就查了一下，原来和移动端有关。使用这个属性可以优化页面滚动
 
@@ -48,11 +56,11 @@ eg:如何取消点击事件，可以将 DOM 元素的 onClick 属性设置为 nu
 
 所以，passive 监听器诞生了，passive 的意思是“顺从的”，表示它不会对事件的默认行为说 no，浏览器知道了一个监听器是 passive 的，它就可以在两个线程里同时执行监听器中的 JavaScript 代码和浏览器的默认行为了
 
-##### useCapture
+#### useCapture
 
 A Boolean indicating whether events of this type will be dispatched to the registered listener before being dispatched to any EventTarget beneath it in the DOM tree.
 
-useCapture defaults to false.
+默认是 false,即事件默认在冒泡阶段被触发
 
 ### IE 事件处理程序
 
