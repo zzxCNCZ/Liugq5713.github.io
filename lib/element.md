@@ -1,10 +1,4 @@
----
-title: Element
-date: 2019-04-12T07:28:49.006Z
-
-categories: ['lib']
-tags: ['element']
----
+# Element
 
 ## 前言
 

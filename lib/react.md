@@ -1,10 +1,4 @@
----
-title: React
-date: 2019-02-14T06:08:07.442Z
-
-categories: ['lib']
-tags: ['react']
----
+# React
 
 ## React Hooks
 

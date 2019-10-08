@@ -1,10 +1,4 @@
----
-title: Test
-date: 2018-11-05T09:02:04.268Z
-
-categories: ['lib']
-tags: ['test']
----
+# Test
 
 ## Jest
 

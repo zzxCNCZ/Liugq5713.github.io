@@ -1,10 +1,4 @@
----
-title: React Native
-date: 2019-03-15T10:26:19.799Z
-
-categories: ['lib']
-tags: ['react-native']
----
+# React Native
 
 [安卓模拟器](https://www.genymotion.com/fun-zone/)
 
