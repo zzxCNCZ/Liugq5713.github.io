@@ -1,5 +1,9 @@
 # CSS
 
+## 盒模型
+
+![dd](./imgs/cssbox.png)
+
 ## 优先级
 
 ### 选择符优先级
@@ -57,7 +61,7 @@ image 为啥只是 inline 元素而不是 inline-block 元素？ （来自于张
 
 ### BFC
 
-就是 block formatting context 的缩写
+就是 block formatting context 的缩写，BFC 在计算高度时，内部浮动元素的高度也要计算在内，也就是说技术 BFC 区域内只有一个浮动元素，BFC 的高度也不会发生塌缩，所以达到了清除浮动的目的，
 
 #### BFC 特性
 
