@@ -24,7 +24,7 @@ my-app
 
 ## 项目组织
 
-终于能够把目录组织说清楚了，一般三种`Rails-style`,`Domain-style`,`Ducks-style`，一般是混用，但是边界要清楚。个人是全局的使用`Rails-style`，业务相关或者局部使用到的使用`Domain-style`
+一般三种风格 `Rails-style`,`Domain-style`,`Ducks-style`，一般是混用，但是边界要清楚。个人是全局的使用`Rails-style`，业务相关或者局部使用到的使用`Domain-style`
 
 ### Rails-style
 

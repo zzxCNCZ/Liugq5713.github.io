@@ -22,7 +22,7 @@ A JavaScript runtime contains a **message queue**, which is a list of messages t
 
 Event loop basic job is to look both at **the stack and the task queue**, pushing the first thing on the queue to the stack when it see stack as empty
 
-![ss](./imgs/event-loop.png)
+![event-loop](./imgs/event-loop.png)
 
 ## 参考
 
