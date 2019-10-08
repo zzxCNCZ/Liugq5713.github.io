@@ -1,4 +1,4 @@
-# Storage
+# 数据存储
 
 ## cookie
 
@@ -9,12 +9,14 @@ cookie 实质上是 键值对
 - 大小 4KB
 - 每次都会携带在 HTTP 头中，如果使用 cookie 保存过多数据会带来性能问题
 
-## localStorage
+## Web 存储
+
+### localStorage
 
 - 大小 5M
 - 没有过期时间的设定
 
-## sessionStorage
+### sessionStorage
 
 ## cookie vs localStorage
 
@@ -25,3 +27,7 @@ cookie 实质上是 键值对
 ## localStorage vs sessionStorage
 
 sessionStorage 基本和 localStorage 相同，区别仅仅是
+
+### IndexDB
+
+结构化数据存储机制

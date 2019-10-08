@@ -1,5 +1,7 @@
 # 事件模型
 
+> 事件流：从页面中接受事件的顺序，事件处理程序以 on 开头
+
 DOM Level 2 Events(事件模型)：捕获阶段-目标阶段-冒泡阶段
 
 ```js
@@ -11,7 +13,50 @@ DOM Level 2 Events(事件模型)：捕获阶段-目标阶段-冒泡阶段
 element.addEventListener(event, function, useCapture)
 ```
 
-## 事件处理
+## 事件处理程序
+
+### HTML 事件处理程序
+
+问题：
+
+- 时差问题，js 未加载
+- HTML 和 JS 耦合
+
+### DOM0 级事件处理程序
+
+eg:如何取消点击事件，可以将 DOM 元素的 onClick 属性设置为 null
+
+缺点： 只能绑定一个事件，如果绑定多个，后面的会覆盖前面的
+
+### DOM2 级事件处理程序
+
+[EventTarget.addEventListener()](https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener)
+
+> 事件监听其实非常的常用，但是它的第三个参数不是很了解
+
+#### options
+
+- capture: A Boolean indicating that events of this type will be dispatched to the registered listener before being dispatched to any EventTarget beneath it in the DOM tree.
+- once: A Boolean indicating that the listener should be invoked at most once after being added. If true, the listener would be automatically removed when invoked.
+- passive: A Boolean which, if true, indicates that the function specified by listener will never call preventDefault(). If a passive listener does call preventDefault(), the user agent will do nothing other than generate a console warning. See Improving scrolling performance with passive listeners to learn more.
+
+##### passive
+
+> vue 的事件处理有一个 passive 的修饰符，好奇就查了一下，原来和移动端有关。使用这个属性可以优化页面滚动
+
+移动端页面很多监听了 touch 事件，由于 touchstart 事件对象的 cancelable 属性为 true，也就是说它的默认行为可以被监听器通过 preventDefault() 方法阻止，那它的默认行为是什么呢，通常来说就是滚动当前页面（还可能是缩放页面），如果它的默认行为被阻止了，页面就必须静止不动。但浏览器无法预先知道一个监听器会不会调用 preventDefault()，它能做的只有等监听器执行完后再去执行默认行为，而监听器执行是要耗时的，有些甚至耗时很明显，这样就会导致页面卡顿。
+
+所以，passive 监听器诞生了，passive 的意思是“顺从的”，表示它不会对事件的默认行为说 no，浏览器知道了一个监听器是 passive 的，它就可以在两个线程里同时执行监听器中的 JavaScript 代码和浏览器的默认行为了
+
+##### useCapture
+
+A Boolean indicating whether events of this type will be dispatched to the registered listener before being dispatched to any EventTarget beneath it in the DOM tree.
+
+useCapture defaults to false.
+
+### IE 事件处理程序
+
+IE 只支持事件冒泡
 
 ### 事件处理器属性 onclick vs addEventListener 添加的点击事件
 
@@ -58,30 +103,6 @@ div.onclick = function(e) {
 ::: tip 冒泡还允许我们利用事件委托
 这个概念依赖于这样一个事实,如果你想要在大量子元素中单击任何一个都可以运行一段代码，您可以将事件监听器设置在其父节点上，并将事件监听器气泡的影响设置为每个子节点，而不是每个子节点单独设置事件监听器。
 :::
-
-## [EventTarget.addEventListener()](https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener)
-
-> 事件监听其实非常的常用，但是它的第三个参数不是很了解
-
-### options
-
-- capture: A Boolean indicating that events of this type will be dispatched to the registered listener before being dispatched to any EventTarget beneath it in the DOM tree.
-- once: A Boolean indicating that the listener should be invoked at most once after being added. If true, the listener would be automatically removed when invoked.
-- passive: A Boolean which, if true, indicates that the function specified by listener will never call preventDefault(). If a passive listener does call preventDefault(), the user agent will do nothing other than generate a console warning. See Improving scrolling performance with passive listeners to learn more.
-
-#### passive
-
-> vue 的事件处理有一个 passive 的修饰符，好奇就查了一下，原来和移动端有关。使用这个属性可以优化页面滚动
-
-移动端页面很多监听了 touch 事件，由于 touchstart 事件对象的 cancelable 属性为 true，也就是说它的默认行为可以被监听器通过 preventDefault() 方法阻止，那它的默认行为是什么呢，通常来说就是滚动当前页面（还可能是缩放页面），如果它的默认行为被阻止了，页面就必须静止不动。但浏览器无法预先知道一个监听器会不会调用 preventDefault()，它能做的只有等监听器执行完后再去执行默认行为，而监听器执行是要耗时的，有些甚至耗时很明显，这样就会导致页面卡顿。
-
-所以，passive 监听器诞生了，passive 的意思是“顺从的”，表示它不会对事件的默认行为说 no，浏览器知道了一个监听器是 passive 的，它就可以在两个线程里同时执行监听器中的 JavaScript 代码和浏览器的默认行为了
-
-### useCapture
-
-A Boolean indicating whether events of this type will be dispatched to the registered listener before being dispatched to any EventTarget beneath it in the DOM tree.
-
-useCapture defaults to false.
 
 ## 常用事件
 

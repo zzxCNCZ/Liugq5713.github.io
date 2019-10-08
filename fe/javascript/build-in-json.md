@@ -15,7 +15,7 @@
 
 parses a JSON string, constructing the JavaScript value or object described by the string
 
-JSON.parse 也有一个额外的参数，可以传一个函数
+`JSON.parse(xxx,func)` 也有一个额外的参数，可以传一个函数，该函数在每一个键值对上调用
 
 ## [JSON.stringify](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify)
 
