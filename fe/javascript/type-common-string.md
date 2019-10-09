@@ -9,9 +9,8 @@ ES6 之前，JavaScript 字符串基于 16 位字符编码（UTF-16）进行构�
 UTF-16 引入了代理对，规定了用两个 16 位编码单元表示一个码位，也就是说字符串有两种，一种是由编码单元 16 位表示的 BMP 字符。另一种是由两个编码单元 32 位表示的辅助平面字符
 
 ```js
-console.log('16位表示', '汉'.length) // 1
-
-console.log('32位表示', '𠮷'.length) // 2
+console.log("16位表示", "汉".length) // 1
+console.log("32位表示", "𠮷".length) // 2
 ```
 
 ## 值不可变
@@ -23,9 +22,9 @@ console.log('32位表示', '𠮷'.length) // 2
 :::
 
 ```js
-const str = 'Jello World'
+const str = "Jello World"
 // 报错：TypeError: Cannot assign to read only property '0' of string 'Jello World'
-myStr[0] = 'H'
+myStr[0] = "H"
 ```
 
 曾经遇到一个给字符串排序的需求，想使用 Array 的 sort 方法给字符串排序。
@@ -33,7 +32,7 @@ myStr[0] = 'H'
 借用方法是可行的，比如借用 Array 的 map 方法
 
 ```js
-Array.prototype.map.call('test', function(res) {
+Array.prototype.map.call("test", function(res) {
   console.log(res)
 })
 ```
@@ -124,7 +123,7 @@ str.substring(a, b)
 
 ```javascript
 const hidePhone = phoneNumber => {
-  return phoneNumber.replace(/^(\d{3})\d{4}/, '$1****')
+  return phoneNumber.replace(/^(\d{3})\d{4}/, "$1****")
 }
 ```
 
@@ -132,8 +131,8 @@ const hidePhone = phoneNumber => {
 
 ```javascript
 export const highlightText = (content, words) => {
-  if (typeof content !== 'string') {
-    console.error('please make sure the type of content is string')
+  if (typeof content !== "string") {
+    console.error("please make sure the type of content is string")
     return content
   }
 
@@ -142,13 +141,13 @@ export const highlightText = (content, words) => {
       .map(word => {
         return `${word}`
       })
-      .join('|')
-    const reg = new RegExp(`(${word_group})`, 'g')
+      .join("|")
+    const reg = new RegExp(`(${word_group})`, "g")
     return content.replace(reg, "<span class='highlight'>$&</span>")
   }
 
-  if (typeof words === 'string') {
-    const reg = new RegExp(words, 'g')
+  if (typeof words === "string") {
+    const reg = new RegExp(words, "g")
     return content.replace(reg, "<span class='highlight'>$&</span>")
   }
   return content

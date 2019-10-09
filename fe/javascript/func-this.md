@@ -42,3 +42,5 @@ console.log(b.a)
 ## 参考
 
 - [不要再问我 this 的指向问题了](https://segmentfault.com/a/1190000015438195)
+- [JavaScript 的 this 指向问题深度解析](https://segmentfault.com/a/1190000008400124#articleHeader1)
+- [demo](https://github.com/Liugq5713/demo/blob/78e1d9284fa56a9fcfd975b31afa3ebadfa94643/demo/this.html)

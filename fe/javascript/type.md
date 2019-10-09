@@ -4,7 +4,7 @@
 
 ## 加性运算符有大量的特殊行为
 
-> 算数加号 或者是 字符串连接符号
+> 算数加号 或者是 字符串连接符号，加号两边如果出现字符串，会把其他参与运算的值转为字符串
 > `-, *, /,和%`等算术运算符都会把操作数转换成数字的
 
 ```txt
@@ -18,3 +18,4 @@
 ## 参考
 
 - [w3schools js 类型](https://www.w3schools.com/js/js_type_conversion.asp)
+- [demo](https://github.com/Liugq5713/demo/blob/master/demo/typeConversion.html)
