@@ -1,5 +1,37 @@
 # 函数 Async 和 Await
 
+如何实现一个函数，使得 repeat(() => {console.log('1')}, 5, 2000) 每两秒执行一次打印，总共五次?
+
+> 请大家在处理异步操作时，使用 async function，这样能够写出简洁的，让人非常容易阅读和理解的代码来。
+
+```js
+function wait(millisecond) {
+  return new Promise(resolve => {
+    setTimeout(resolve, millisecond)
+  })
+}
+
+async function repeat(task, count = 1, millisecond = 0) {
+  while (count--) {
+    await wait(millisecond)
+    task()
+  }
+}
+```
+
+使用起来也很方便
+
+```js
+;(async () => {
+  await repeat(taskA, 3, 1000)
+  taskB()
+})()
+
+// 重要： 如果你想让函数同步执行，去掉await
+repeat(taskA, 3, 1000)
+taskB()
+```
+
 ## async 函数的实现原理
 
 async 函数的实现原理，就是将 Generator 函数和自动执行器，包装在一个函数里
@@ -68,3 +100,4 @@ let [foo, bar] = await Promise.all([getFoo(), getBar()])
 ## 参考
 
 - [ES6 入门](https://es6.ruanyifeng.com/#docs/async)
+- [JS 之最佳实践（1）](https://github.com/akira-cn/FE_You_dont_know/issues/15)

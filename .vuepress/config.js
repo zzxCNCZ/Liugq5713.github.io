@@ -58,7 +58,7 @@ module.exports = {
             'func-oop',
             'error',
             'module',
-            'z-function-execution'
+            'z-event-loop'
           ].map(i => `javascript/${i}`)
         },
         {
@@ -69,7 +69,7 @@ module.exports = {
         {
           title: 'HTML',
           collapsable: true,
-          children: ['crossorigin', 'svg','script', 'image', 'html', 'iframe', 'select'].map(i => `html/${i}`)
+          children: ['crossorigin', 'svg', 'script', 'image', 'html', 'iframe', 'select'].map(i => `html/${i}`)
         },
         {
           title: 'Node',

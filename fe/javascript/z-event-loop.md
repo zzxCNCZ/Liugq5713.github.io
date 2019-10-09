@@ -1,4 +1,4 @@
-# 函数执行
+# JS 事件循环机制（event loop）之宏任务、微任务
 
 javascript 是单线程的的语言，则一次只能处理一次事件，那么他是如何处理异步事件的呢？
 
@@ -27,3 +27,4 @@ Event loop basic job is to look both at **the stack and the task queue**, pushin
 ## 参考
 
 - [Understanding Javascript Function Executions — Call Stack, Event Loop , Tasks & more](https://medium.com/@gaurav.pandvia/understanding-javascript-function-executions-tasks-event-loop-call-stack-more-part-1-5683dea1f5ec)
+- [JS 事件循环机制（event loop）之宏任务、微任务](https://segmentfault.com/a/1190000014940904#articleHeader0)
