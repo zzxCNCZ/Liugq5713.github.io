@@ -24,6 +24,11 @@ Event loop basic job is to look both at **the stack and the task queue**, pushin
 
 ![event-loop](./imgs/event-loop.png)
 
+## 微任务和宏任务
+
+宏任务(Task): setImmediate,setTimeout
+微任务(Microtasks): Promise,MutationObserver
+
 ## 参考
 
 - [Understanding Javascript Function Executions — Call Stack, Event Loop , Tasks & more](https://medium.com/@gaurav.pandvia/understanding-javascript-function-executions-tasks-event-loop-call-stack-more-part-1-5683dea1f5ec)

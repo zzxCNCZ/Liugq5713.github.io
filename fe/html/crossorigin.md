@@ -36,10 +36,10 @@ crossorigin 会让浏览器启用 CORS 访问检查，检查 http 相应头的`A
 
 ```js
 window.addEventListener("error", function(msg, url, lineno, colno, error) {
-  var string = msg.toLowerCase();
-  var substring = "script error";
+  var string = msg.toLowerCase()
+  var substring = "script error"
   if (string.indexOf(substring) > -1) {
-    alert("Script Error: See Browser Console for Detail");
+    alert("Script Error: See Browser Console for Detail")
   } else {
     var message = {
       Message: msg,
@@ -47,12 +47,12 @@ window.addEventListener("error", function(msg, url, lineno, colno, error) {
       Line: lineNo,
       Column: columnNo,
       "Error object": JSON.stringify(error)
-    };
+    }
     // send error log to server
-    record(message);
+    record(message)
   }
-  return false;
-});
+  return false
+})
 ```
 
 但是对于跨域 js 来说，只会给出很少的报错信息：'error: script error'，通过使用 crossorigin 属性可以使跨域 js 暴露出跟同域 js 同样的报错信息。但是，资源服务器必须返回一个 Access-Control-Allow-Origin 的 header，否则资源无法访问。
