@@ -2,7 +2,7 @@
 
 ## TL;DR
 
-`iframe,script,image`主要函数利用了 html 里面标签没有跨域的限制（他们仅仅能发送 get 请求），跨域限制是浏览器行为，限制的是脚本， html 标签没有限制。CORS 和 windows.postMessage 则是新提出来的方法
+`iframe,script,image`主要函数利用了 html 里面标签没有跨域的限制（他们仅仅能发送 get 请求），跨域限制是浏览器行为，限制的是脚本， html 标签没有限制。CORS 和 windows.postMessage 则是新提出来的方法，另外也可以利用服务器的转发
 
 ## AJAX
 
