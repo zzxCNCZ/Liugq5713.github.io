@@ -26,4 +26,4 @@
 
 ubuntu 内置了 imagemaagick `sudo apt install imagemagick`
 
-`convert xxx.jpg -reisze 200`
+`convert xxx.jpg -resize 200 dist-xxx.jpg`
