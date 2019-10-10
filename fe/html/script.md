@@ -2,7 +2,7 @@
 
 ## defer vs async
 
-![script]('./imgs/script.jpg')
+![script](./imgs/script.jpg)
 
 `<script src="script.js"></script>`
 
