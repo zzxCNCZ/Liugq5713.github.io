@@ -52,3 +52,15 @@ p1.then(function(value) {
   创建一个 Promise，当且仅当传入数组中的所有 Promise 都确认之后才确认，如果遇到数组中的任何一个 Promise 以否定结束，则抛出否定结果。
 - Promise.race
   创建一个 Promise，当数组中的任意对象确认时将其结果作为确认结束，或者当数组中任意对象否定时将其结果作为否定结束。
+
+::: tip 使用场景: 比如我们可以用 race 给某个异步请求设置超时时间，并且在超时后执行相应的操作
+
+写一个超时函数，比如限制 5 秒，如果 5 秒之内请求成功，返回 requestImg(）的内容，如果失败了，返回的就是 timeout 的内容
+
+:::
+
+`Promise .race([requestImg(), timeout()])`
+
+## 参考
+
+- [大白话讲解 Promise（一）](https://www.cnblogs.com/lvdabao/p/es6-promise-1.html)

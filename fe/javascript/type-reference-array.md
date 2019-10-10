@@ -82,6 +82,21 @@
 
 - reduce / reduceRight
 
+## [数组乱序](https://github.com/lessfish/underscore-analysis/issues/15)
+
+```js
+function shuffle(array) {
+  var _array = array.concat()
+  for (var i = _array.length; i--; ) {
+    var j = Math.floor(Math.random() * (i + 1))
+    var temp = _array[i]
+    _array[i] = _array[j]
+    _array[j] = temp
+  }
+  return _array
+}
+```
+
 ## Range 的左闭右开原则
 
 比如 Array.prototype.slice(begin,end)，包含 begin，不包含 end
@@ -102,7 +117,7 @@
 因此我们可以这样写数组操作，eg:
 
 ```js
-(arr || []).map(item => {
+;(arr || []).map(item => {
   // some code
-});
+})
 ```

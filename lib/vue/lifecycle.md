@@ -56,6 +56,12 @@ callHook(vm, "created")
 
 :::
 
+## vue+父子组件生命周期
+
+`父 beforeCreate->父 created->父 beforeMount->子 beforeCreate->子 created->子 beforeMount->子 mounted->父 mounted`
+
+这样很好理解，毕竟父组件可能会 props 传递数据给子组件的，因此选择 beforeMount 停止很恰当
+
 ## 参考
 
 - [nextTick 源码](https://github.com/vuejs/vue/blob/ba0ebd4771ddb5c56c1261f82c842b57ca7163a6/src/core/util/next-tick.js)
