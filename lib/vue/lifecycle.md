@@ -56,7 +56,7 @@ callHook(vm, "created")
 
 :::
 
-## vue+父子组件生命周期
+## vue 父子组件生命周期
 
 `父 beforeCreate->父 created->父 beforeMount->子 beforeCreate->子 created->子 beforeMount->子 mounted->父 mounted`
 

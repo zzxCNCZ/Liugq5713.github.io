@@ -6,12 +6,12 @@
 
 ```js
 // 充分利用好对象的计算属性
-const test = '123'
+const test = "123"
 const obj = {
   test,
   id: 5,
-  name: 'San Francisco',
-  [getKey('enabled')]: true
+  name: "San Francisco",
+  [getKey("enabled")]: true
 }
 ```
 
@@ -21,9 +21,9 @@ const obj = {
 
 ```js
 var map = Object.create(null)
-map[5] = 'foo'
-console.log(map['5'])
-;('foo')
+map[5] = "foo"
+console.log(map["5"])
+;("foo")
 ```
 
 ## 共享对象结构
@@ -39,17 +39,17 @@ const new_obj = Object.assign({}, obj)
 
 ```js
 const person = {
-  name: 'Lucy',
+  name: "Lucy",
   friends: {
-    name: 'Jack',
-    age: 'Allen'
+    name: "Jack",
+    age: "Allen"
   }
 }
 // 其实就是personWithOtherFriends 对象浅拷贝了person，然后又将friends指针指向了新的引用
 const personWithOtherFriends = {
   ...person,
   friends: {
-    name: 'Eleen'
+    name: "Eleen"
   }
 }
 ```
@@ -96,7 +96,7 @@ var arr = [1, 2, 3]
 
 console.log(arr instanceof Array) // true
 
-var sandbox = document.createElement('iframe')
+var sandbox = document.createElement("iframe")
 document.body.append(sandbox)
 
 sandbox.contentDocument.open()
@@ -130,7 +130,7 @@ console.log(Foo.name) // Foo
 
 const foo = new Foo()
 console.log(foo.constructor === Foo) // true
-console.log(foo.constructor.name === 'Foo') // true
+console.log(foo.constructor.name === "Foo") // true
 ```
 
 ---
@@ -159,7 +159,7 @@ console.log(MyClass.name) // ''
 ```js
 var ostring = Object.prototype.toString
 function isArray(it) {
-  return ostring.call(it) === '[object Array]'
+  return ostring.call(it) === "[object Array]"
 }
 ```
 
@@ -180,7 +180,7 @@ console.log(ostring.call(new Number(1.0))) // [object Number]
 ```js
 class Foo {
   get [Symbol.toStringTag]() {
-    return 'Foo'
+    return "Foo"
   }
 }
 
@@ -204,7 +204,7 @@ Object.assign(window.UndefinedVariable, {})
 // so that the function either gets a proper Object,
 // or does not get called at all.
 
-Object.keys({ key: 'value' })
+Object.keys({ key: "value" })
 if (window.UndefinedVariable) {
   Object.assign(window.UndefinedVariable, {})
 }
@@ -214,9 +214,9 @@ if (window.UndefinedVariable) {
 
 ```js
 function setName(obj) {
-  obj.name = 'Nicholas'
+  obj.name = "Nicholas"
   obj = new Object()
-  obj.name = 'Greg'
+  obj.name = "Greg"
 }
 var person = new Object()
 setName(person)
@@ -237,23 +237,23 @@ alert(person.name) //"Nicholas"
 
 ```js
 let constance = {
-  foo: '我是不会改变的',
-  boo: 'test'
+  foo: "我是不会改变的",
+  boo: "test"
 }
-Object.defineProperty(constance, 'foo', {
+Object.defineProperty(constance, "foo", {
   get() {
-    return '我是不会改变的'
+    return "我是不会改变的"
   }
 })
-constance.foo = 'sss'
+constance.foo = "sss"
 
-Object.defineProperty(constance, 'boo', {
+Object.defineProperty(constance, "boo", {
   writable: false
 })
 
-constance.boo = 'sss'
+constance.boo = "sss"
 
-console.log('foo', constance.foo, constance.boo)
+console.log("foo", constance.foo, constance.boo)
 ```
 
 ## 参考
