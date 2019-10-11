@@ -26,6 +26,14 @@ call 和 apply 的传参不同，call 接收逗号分隔的参数，apply 接收
 
 bind() 方法会创建一个新函数。当这个新函数被调用时，bind() 的第一个参数将作为它运行时的 this，之后的一序列参数将会在传递的实参前传入作为它的参数。
 
+::: tip bind 的特点
+
+- 返回函数
+- bind 的时候可以传参
+- 一个绑定函数也能使用 new 操作符创建对象
+
+:::
+
 <<< @/fe/javascript/code/simulation-bind.js
 
 ## 参考
