@@ -4,7 +4,9 @@
 
 ## TL;DR
 
-这三个方法用于改变函数执行的上下文（改变 this 的指向），实现函数的复用
+这三个方法用于改变函数执行的上下文（改变 this 的指向），实现函数的复用.
+
+call 和 apply 的传参不同，call 接收逗号分隔的参数，apply 接收数组（如何记不清这两个方法的区别的话，可以记 **apply 接收 array，都是 a 开头的**，这样比较好记），调用都会立即执行。而 bind 调用完返回的是一个函数，需要再次调用才会执行
 
 ## 模拟 call
 
@@ -30,3 +32,4 @@ bind() 方法会创建一个新函数。当这个新函数被调用时，bind() 
 
 - [JavaScript 深入之 call 和 apply 的模拟实现](https://github.com/mqyqingfeng/Blog/issues/11)
 - [JavaScript 深入之 bind 的模拟实现](https://github.com/mqyqingfeng/Blog/issues/12)
+- [“寒冬”三年经验前端面试总结（含头条、百度、饿了么、滴滴等）之手写题（一）](https://juejin.im/post/5d9eef20e51d45781332e961#heading-8)
