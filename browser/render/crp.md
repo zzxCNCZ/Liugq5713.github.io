@@ -78,6 +78,13 @@ JavaScript 允许我们修改网页的方方面面：内容、样式以及它如
   - 通过 display:none 属性隐藏元素（只有一次重排重绘），添加足够多的变更后，通过 display 属性显示（另一次重排重绘）。通过这种方式即使大量变更也只触发两次重排
 - 通常情况下，考虑一下渲染树和变更后需要重新验证的消耗。举个例子，使用绝对定位会使得该元素单独成为渲染树中 body 的一个子元素，所以当你对其添加动画时，它不会对其它节点造成太多影响。当你在这些节点上放置这个元素时，一些其它在这个区域内的节点可能需要重绘，但是不需要重排。
 
+## [网站性能优化实战](https://juejin.im/post/5b0b7d74518825158e173a0c)
+
+- 降低请求量：合并资源，减少 HTTP 请求数，minify / gzip 压缩，webP，lazyLoad。
+- 加快请求速度：预解析 DNS，减少域名数，并行加载，CDN 分发。
+- 渲染：JS/CSS 优化，加载顺序，服务端渲染，pipeline。
+- 缓存：HTTP 协议缓存请求，离线缓存 manifest，离线数据缓存 localStorage
+
 ## 参考
 
 - [Google 关键渲染路径文档](https://developers.google.com/web/fundamentals/performance/critical-rendering-path/?hl=zh-cn)
