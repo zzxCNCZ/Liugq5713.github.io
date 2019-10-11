@@ -30,4 +30,38 @@ HTMLCanvasElement.toBlob() 方法创造 Blob 对象，用以展示 canvas 上的
 void canvas.toBlob(callback, type, encoderOptions)
 ```
 
-## 读取文件
+## [读取文件 FileReader](https://developer.mozilla.org/en-US/docs/Web/API/FileReader)
+
+读取文件，将文件转化成这种格式
+
+- FileReader.readAsDataURL()
+- FileReader.readAsText()
+- FileReader.readAsArrayBuffer()
+
+### 将 base64 转为 blob
+
+```js
+ dataURItoBlob(dataURI) {
+    // convert base64 to raw binary data held in a string
+    // doesn't handle URLEncoded DataURIs
+    var byteString = atob(dataURI.split(',')[1])
+
+    // separate out the mime component
+    var mimeString = dataURI.split(',')[0].split(':')[1].split(';')[0]
+
+    // write the bytes of the string to an ArrayBuffer
+    var ab = new ArrayBuffer(byteString.length)
+
+    // create a view into the buffer
+    var ia = new Uint8Array(ab)
+
+    // set the bytes of the buffer to the correct values
+    for (var i = 0; i < byteString.length; i++) {
+      ia[i] = byteString.charCodeAt(i)
+    }
+
+    // write the ArrayBuffer to a blob, and you're done
+    var blob = new Blob([ab], { type: mimeString })
+    return blob
+}
+```

@@ -34,16 +34,6 @@ callHook(vm, "created")
 
 通过这些问题，可以对生命周期理解的更加深刻
 
-### 监听 vue.js 中 v-for 全部渲染完成
-
-::: tip
-[`Vue.$nextTick`](https://vuejs.org/v2/api/?#vm-nextTick)
-
-当 dom 发生变化，更新后执行的回调，如果数据是异步的，可以在数据获取完之后，调用`this.$nextTick`
-
-`$nextTick` 全局方法 Vue.nextTick 一样，不同的是回调的 this 自动绑定到调用它的实例上。
-:::
-
 ### 为什么在 created 请求数据
 
 因为本着获取数据越早越好的原则，如果不需要对 DOM 进行操作，在 created 周期内获取数据，因为此时实例已经完成了数据观测，属性和方法的运算
@@ -62,7 +52,3 @@ callHook(vm, "created")
 
 这样很好理解，毕竟父组件可能会 props 传递数据给子组件的，因此选择 beforeMount 停止很恰当
 
-## 参考
-
-- [nextTick 源码](https://github.com/vuejs/vue/blob/ba0ebd4771ddb5c56c1261f82c842b57ca7163a6/src/core/util/next-tick.js)
-- [全面解析 Vue.nextTick 实现原理](https://juejin.im/entry/5aced80b518825482e39441e)

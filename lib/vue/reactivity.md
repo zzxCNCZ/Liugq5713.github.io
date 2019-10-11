@@ -23,7 +23,6 @@
 由于 JavaScript 本身的限制， vue 检测不到数组和对象的一些变化
 
 - [数组更新](https://cn.vuejs.org/v2/guide/list.html#%E6%95%B0%E7%BB%84%E6%9B%B4%E6%96%B0%E6%A3%80%E6%B5%8B)
-
 - 当你利用索引直接设置一个项时，例如：vm.items[indexOfItem] = newValue
 - 当你修改数组的长度时，例如：vm.items.length = newLength
 
