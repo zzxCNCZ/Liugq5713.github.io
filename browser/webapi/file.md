@@ -40,6 +40,8 @@ void canvas.toBlob(callback, type, encoderOptions)
 
 ### 将 base64 转为 blob
 
+来自[davoclavo]的 gist(https://gist.github.com/davoclavo/4424731)
+
 ```js
  dataURItoBlob(dataURI) {
     // convert base64 to raw binary data held in a string
@@ -65,3 +67,7 @@ void canvas.toBlob(callback, type, encoderOptions)
     return blob
 }
 ```
+
+## 参考
+
+- [Base64 encoding and decoding](https://developer.mozilla.org/en-US/docs/Web/API/WindowBase64/Base64_encoding_and_decoding)
