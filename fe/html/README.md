@@ -23,3 +23,32 @@ for(var i = 1;i≤100;i++){
 - 减少 DOM 访问次数，尽量使用 JavaScript 处理
 - 使用局部变量存储 DOM 引用
 - 减少重绘和重排
+
+## 0.5px 的线
+
+### scaleY
+
+```css
+.hr.scale-half {
+  height: 1px;
+  transform: scaleY(0.5);
+  transform-origin: 50% 100%;
+}
+```
+
+### svg
+
+利用 SVG 的描边等属性的 1px 还是物理像素的 1px，而不是高清屏的 1px。
+
+### 线性渐变 linear-gradient
+
+```css
+.hr.gradient {
+  height: 1px;
+  background: linear-gradient(0deg, #fff, #000);
+}
+```
+
+## 参考
+
+- [怎么画一条 0.5px 的边](https://juejin.im/post/5ab65f40f265da2384408a95)
