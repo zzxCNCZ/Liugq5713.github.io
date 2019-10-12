@@ -61,6 +61,12 @@ p1.then(function(value) {
 
 `Promise .race([requestImg(), timeout()])`
 
+## Promise.allSettled()
+
+> returns a promise that resolves after all of the given promises have either resolved or rejected, with an array of objects that each describes the outcome of each promise
+
+如何使用 promise 模拟也很简单，
+
 ## 参考
 
 - [大白话讲解 Promise（一）](https://www.cnblogs.com/lvdabao/p/es6-promise-1.html)
