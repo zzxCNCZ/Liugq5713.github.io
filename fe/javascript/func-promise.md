@@ -41,6 +41,27 @@ p1.then(function(value) {
 
 ### 在 Promise 链中返回 Promise
 
+## finally
+
+> finally 方法用于指定不管 Promise 对象最后状态如何，都会执行的操作
+
+**finally 本质上是 then 方法的特例**
+
+模拟实现
+
+```js
+Promise.prototype.finally = function(callback) {
+  let P = this.constructor
+  return this.then(
+    value => P.resolve(callback()).then(() => value),
+    reason =>
+      P.resolve(callback()).then(() => {
+        throw reason
+      })
+  )
+}
+```
+
 ## 错误处理
 
 - “then”接受两个参数，一个处理成功，一个处理失败
@@ -65,7 +86,7 @@ p1.then(function(value) {
 
 > returns a promise that resolves after all of the given promises have either resolved or rejected, with an array of objects that each describes the outcome of each promise
 
-如何使用 promise 模拟也很简单，
+如何使用 promise.all 模拟也很简单，把传入的 promise 的 catch 都 resolve 出来，即正确的结果和错误的结果都 resolve 出来
 
 ## 参考
 

@@ -35,6 +35,33 @@ push(), pop(), shift(), unshift(), splice(), sort(), reverse()
 
 Vue 不能检测对象属性的添加或删除.你应该用两个对象的属性创建一个新的对象
 
+为啥 vue 能够监听到数组的变化，原因是 vue 对 JavaScript 的数组方法进行了重写
+
+```js
+methodsToPatch.forEach(function(method) {
+  // cache original method
+  const original = arrayProto[method]
+  def(arrayMethods, method, function mutator(...args) {
+    const result = original.apply(this, args)
+    const ob = this.__ob__
+    let inserted
+    switch (method) {
+      case "push":
+      case "unshift":
+        inserted = args
+        break
+      case "splice":
+        inserted = args.slice(2)
+        break
+    }
+    if (inserted) ob.observeArray(inserted)
+    // notify change
+    ob.dep.notify()
+    return result
+  })
+})
+```
+
 ## 让数据变得响应式
 
 ### Vue.set( target, propertyName/index, value )
@@ -60,7 +87,7 @@ The [key](https://vuejs.org/v2/api/#key) special attribute is primarily used as 
 
 ## 组件刷新而不是重新刷新页面
 
-在不刷新页面的情况下，更新页面。
+在不刷新页面的情况下，更新页面
 
 ```html
 // 先注册一个名为 `redirect` 的路由
