@@ -1,8 +1,8 @@
 ---
-title: '打包工具 Webpack'
+title: "打包工具 Webpack"
 date: 2019-02-11T10:38:35.202Z
 
-categories: ['tool']
+categories: ["tool"]
 ---
 
 > 更改 webpack 配置之后，一定要记得重新编译一下
@@ -120,7 +120,7 @@ This plugin will cause hashes to be based on the relative path of the module, ge
 
 ```js
 // 配置这个的时候，我忘记在后缀前面加点了。将 js ===> .js
-extensions: ['.js', '.jsx']
+extensions: [".js", ".jsx"]
 ```
 
 ## 进阶
@@ -185,3 +185,29 @@ optimization:{
 ```
 
 cacheGroups: 我们用于定义规则，把多个 chunks 打进一个文件里面
+
+## 优化 webpack 热更新速度
+
+> webpack 4 一直说自己更好的利用了 cache 提高了编译速度，但实测发现是有一定的提升，但当你一个项目，路由懒加载的页面多了之后，50+之后，热更新慢的问题会很明显
+
+使用 babel 的 plugins babel-plugin-dynamic-import-node。它只做一件事就是：将所有的 import()转化为 require()，这样就可以用这个插件将所有异步组件都用同步的方式引入了，并结合 BABEL_ENV 这个 bebel 环境变量，让它只作用于开发环境下。将开发环境中所有 import()转化为 require()，这种方案解决了之前重复打包的问题，同时对代码的侵入性也很小，你平时写路由的时候只需要按照官方文档路由懒加载的方式就可以了，其它的都交给 babel 来处理，当你不想用这个方案的时候，也只需要将它从 babel 的 plugins 中移除就可以了。
+具体代码：
+首先在 package.json 中增加 BABEL_ENV
+
+`"dev": "BABEL_ENV=development webpack-dev-server XXXX"`
+
+复制代码接着在.babelrc 只能加入 babel-plugin-dynamic-import-node 这个 plugins，并让它只有在 development 模式中才生效。
+
+```js
+{
+  "env": {
+    "development": {
+      "plugins": ["dynamic-import-node"]
+    }
+  }
+}
+```
+
+## 参考
+
+- [热更新速度](https://juejin.im/post/5b56909a518825195f499806#heading-11)
