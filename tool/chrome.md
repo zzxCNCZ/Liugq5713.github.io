@@ -1,13 +1,43 @@
----
-title: "浏览器 chrome"
-date: 2019-03-15T10:23:33.895Z
+# 浏览器 chrome
 
-categories: ["tool"]
----
+## 浏览器的多进程
 
-> chrome 面板还是很有用的，了解一下
+Chrome 浏览器使用多个进程来隔离不同的网页。因此在 Chrome 中打开一个网页相当于起了一个进程
+
+### GUI 渲染线程
+
+负责渲染浏览器界面，解析 HTML，CSS，构建 DOM 树和 RenderObject 树，布局和绘制等
+
+当界面需要重绘（Repaint）或由于某种操作引发回流(reflow)时，该线程就会执行
+
+注意，GUI 渲染线程与 JS 引擎线程是互斥的，当 JS 引擎执行时 GUI 线程会被挂起（相当于被冻结了），GUI 更新会被保存在一个队列中等到 JS 引擎空闲时立即被执行
+
+### JS 引擎线程
+
+也称为 JS 内核，负责处理 Javascript 脚本程序。（例如 V8 引擎）
+
+JS 引擎线程负责解析 Javascript 脚本，运行代码。
+
+JS 引擎一直等待着任务队列中任务的到来，然后加以处理，一个 Tab 页（renderer 进程）中无论什么时候都只有一个 JS 线程在运行 JS 程序
+
+同样注意，GUI 渲染线程与 JS 引擎线程是互斥的，所以如果 JS 执行的时间过长，这样就会造成页面的渲染不连贯，导致页面渲染加载阻塞。
+
+### load 事件与 DOMContentLoaded 事件的先后
+
+上面提到，渲染完毕后会触发 load 事件，那么你能分清楚 load 事件与 DOMContentLoaded 事件的先后么？
+很简单，知道它们的定义就可以了：
+
+当 DOMContentLoaded 事件触发时，仅当 DOM 加载完成，不包括样式表，图片。
+(譬如如果有 async 加载的脚本就不一定完成)
+
+当 onload 事件触发时，页面上所有的 DOM，样式表，脚本，图片都已经加载完成了。
+（渲染完毕了）
+
+所以，顺序是：DOMContentLoaded -> load
 
 ## chrome pannel
+
+> chrome 面板还是很有用的，了解一下
 
 ### Memory
 
@@ -47,4 +77,5 @@ Your most recent selection (in the elements inspector, or on the page with 'Insp
 
 ## 参考
 
+- [从浏览器多进程到 JS 单线程，JS 运行机制最全面的一次梳理](https://juejin.im/post/5a6547d0f265da3e283a1df7)
 - [掘金小册：你不知道的 Chrome 调试技巧](https://juejin.im/book/5c526902e51d4543805ef35e)
