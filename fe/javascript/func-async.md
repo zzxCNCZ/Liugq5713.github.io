@@ -97,6 +97,16 @@ let bar = await getBar()
 let [foo, bar] = await Promise.all([getFoo(), getBar()])
 ```
 
+### Iterating Sequential Asynchronous Operations
+
+```js
+function doAsyncToAllSequentially(values) {
+  return values.reduce((previousOperation, val) => {
+    return previousOperation.then(() => doSomethingAsync(val))
+  }, Promise.resolve())
+}
+```
+
 ## 参考
 
 - [ES6 入门](https://es6.ruanyifeng.com/#docs/async)
