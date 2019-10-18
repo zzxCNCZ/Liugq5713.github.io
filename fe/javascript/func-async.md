@@ -101,3 +101,4 @@ let [foo, bar] = await Promise.all([getFoo(), getBar()])
 
 - [ES6 入门](https://es6.ruanyifeng.com/#docs/async)
 - [JS 之最佳实践（1）](https://github.com/akira-cn/FE_You_dont_know/issues/15)
+- [Patterns for Asynchronous Operations with async](https://careersjs.com/magazine/async-patterns/)
