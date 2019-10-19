@@ -64,3 +64,4 @@ The HTTP 304 Not Modified client redirection response code indicates that there 
 ##　参考
 
 - [Nginx/Tengine 服务器安装 SSL 证书](https://help.aliyun.com/knowledge_detail/95491.html?spm=5176.2020520163.cas.28.7d4556a7qbV98s)
+- [解密 HTTP/2 与 HTTP/3 的新特性](https://segmentfault.com/a/1190000020714686)

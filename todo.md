@@ -5,3 +5,7 @@
 Vue 如何监听数组的变化
 
 https://juejin.im/post/5b87a6e26fb9a019b953ee8b
+
+
+VUE 具体如何做依赖收集
+
