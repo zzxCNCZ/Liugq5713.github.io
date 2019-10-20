@@ -64,7 +64,7 @@ module.exports = {
         {
           title: 'CSS',
           collapsable: true,
-          children: ['animation', 'px', 'css', 'cssExpandClickAreas', 'cssFontFamily', 'flex', 'QA'].map(i => `css/${i}`)
+          children: ['box', 'select', 'position', 'layout', 'animation', 'px', 'css', 'cssExpandClickAreas', 'cssFontFamily', 'flex', 'QA'].map(i => `css/${i}`)
         },
         {
           title: 'HTML',
@@ -109,7 +109,7 @@ module.exports = {
         {
           title: 'Vue',
           collapsable: false,
-          children: ['', 'base', 'component', 'lifecycle', 'reactivity', 'sfc', 'reuse', 'project', 'src-code-vfor', 'store', 'store-communication', 'qa', 'nexttick', 'z-vue'].map(i => `vue/${i}`)
+          children: ['', 'base', 'component', 'lifecycle', 'reactivity', 'sfc', 'reuse', 'project', 'src-code-vfor', 'store', 'store-communication', 'qa', 'nexttick', 'z-vue', 'z-vue-diff', 'z-vue-dep'].map(i => `vue/${i}`)
         },
         {
           title: '其他',

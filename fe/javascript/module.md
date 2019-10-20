@@ -21,7 +21,7 @@ MYAPP.foo()
 
 ::: tip 匿名闭包 ：IIFE 模式
 函数是 JavaScript 唯一的 Local Scope
-::: -
+:::
 
 ```js
 var Module = (function($) {
@@ -91,8 +91,8 @@ YUI().use("hello", function(Y) {
 
 浏览器环境模块化方案
 
-AMD(Async Module Definition):RequireJS 对模块定义的规范化产出
-CMD(Common Module Definition):SeaJS 对模块定义的规范化产出
+- AMD(Async Module Definition):RequireJS 对模块定义的规范化产出
+- CMD(Common Module Definition):SeaJS 对模块定义的规范化产出
 
 ## Webpack - Module Bundler
 

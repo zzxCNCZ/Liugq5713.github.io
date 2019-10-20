@@ -50,7 +50,7 @@
 
 将所有**可枚举属性**的值从一个或多个源对象复制到目标对象（拷贝过程中将调用源对象的 getter 方法，并在 target 对象上使用 setter 方法实现目标对象的拷贝
 
-- splice
+- splice : `var arrDeletedItems = array.splice(start[, deleteCount[, item1[, item2[, ...]]]])`
 - copyWithin
   param : 该方法开始填充值得索引位置
   param : 开始复制值得索引位置

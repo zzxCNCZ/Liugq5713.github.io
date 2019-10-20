@@ -2,39 +2,35 @@
 
 ## 强缓存
 
-- Cache-Control
+### Cache-Control
 
 > 强缓存主要是通过 http 请求头中的 Cache-Control 和 Expire 两个字段控制。Expire 是 HTTP1.0 标准下的字段
 
-max-age（单位为 s）指定设置缓存最大的有效时间，定义的是时间长短。当浏览器向服务器发送请求后，在 max-age 这段时间里浏览器就不会再向服务器发送请求了。
+- max-age（单位为 s）指定设置缓存最大的有效时间，定义的是时间长短。当浏览器向服务器发送请求后，在 max-age 这段时间里浏览器就不会再向服务器发送请求了。
 
-s-maxage（单位为 s）同 max-age，只用于共享缓存（比如 CDN 缓存）。
+- s-maxage（单位为 s）同 max-age，只用于共享缓存（比如 CDN 缓存）。
 
-public 指定响应会被缓存，并且在多用户间共享。也就是下图的意思。如果没有指定 public 还是 private，则默认为 public。
+- public 指定响应会被缓存，并且在多用户间共享。也就是下图的意思。如果没有指定 public 还是 private，则默认为 public。
 
-private 响应只作为私有的缓存，不能在用户间共享。如果要求 HTTP 认证，响应会自动设置为 private。
+- private 响应只作为私有的缓存，不能在用户间共享。如果要求 HTTP 认证，响应会自动设置为 private。
 
 - no-cache(他的意思不是说不使用缓存) ，他的意思是： revalidate with server 。 即在发布缓存副本之前，强制要求缓存把请求提交给原始服务器进行验证， 如果资源没有改变则会响应 304 并使用缓存副本
 
 - no-store 绝对禁止缓存
 
-- Expires: 缓存过期时间，用来指定资源到期的时间，是服务器端的具体的时间点
+### Expires: 缓存过期时间，用来指定资源到期的时间，是服务器端的具体的时间点
 
 ## 协商缓存
 
 协商缓存一定会发请求到服务器，通过资源的请求首部字段验证资源是否命中协商缓存，如果协商缓存命中，服务器会将这个请求返回，但是不会返回这个资源的实体，而是通知客户端可以从缓存中加载这个资源（304 not modified）
 
-### 控制协商缓存的字段
-
-- Last-Modified/If-Modified-Since
+### Last-Modified/If-Modified-Since
 
 服务器端文件的最后修改时间，需要和 cache-control 共同使用，是检查服务器端资源是否更新的一种方式
 
-- ETag/If-None-Match
+### ETag/If-None-Match
 
 ETag 是一个响应首部字段，它是根据实体内容生成的一段 hash 字符串，标识资源的状态，由服务端产生。浏览器会将这串字符串传回服务器，验证资源是否已经修改
-
----
 
 ## 前端实践
 

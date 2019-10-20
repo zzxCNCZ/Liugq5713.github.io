@@ -48,10 +48,10 @@ const obj = {
   }
 }
 for (key in obj.data) {
-  proxy(obj, 'data', key)
+  proxy(obj, "data", key)
 }
 // 输出 proxy a 1
-console.log('proxy a', obj.a)
+console.log("proxy a", obj.a)
 ```
 
 果然可以，vue 厉害啊，虽然这种做法对于初学者可能造成了一定的困扰，但是的确写代码的时候方便了很多。
@@ -75,8 +75,11 @@ function enableStrictMode(store) {
       return this._data.$$state
     },
     () => {
-      if (process.env.NODE_ENV !== 'production') {
-        assert(store._committing, `do not mutate vuex store state outside mutation handlers.`)
+      if (process.env.NODE_ENV !== "production") {
+        assert(
+          store._committing,
+          `do not mutate vuex store state outside mutation handlers.`
+        )
       }
     },
     { deep: true, sync: true }
@@ -106,8 +109,11 @@ function enableStrictMode(store) {
       return this._data.$$state
     },
     () => {
-      if (process.env.NODE_ENV !== 'production') {
-        assert(store._committing, `do not mutate vuex store state outside mutation handlers.`)
+      if (process.env.NODE_ENV !== "production") {
+        assert(
+          store._committing,
+          `do not mutate vuex store state outside mutation handlers.`
+        )
       }
     },
     { deep: true, sync: true }
@@ -129,18 +135,6 @@ function enableStrictMode(store) {
 
 ## vue 源码
 
-- 检测是否是 promise
-
-```js
-export function isDef(v: any): boolean %checks {
-  return v !== undefined && v !== null
-}
-
-export function isPromise(val: any): boolean {
-  return isDef(val) && typeof val.then === 'function' && typeof val.catch === 'function'
-}
-```
-
 - 检测一个对象自身是否含有某个属性
 
 ```js
@@ -154,3 +148,8 @@ export function hasOwn(obj: Object | Array<*>, key: string): boolean {
 ```
 
 https://juejin.im/post/5d267dcdf265da1b957081a3
+
+## 参考
+
+- [Vue.js 技术揭秘 ](https://ustbhuangyi.github.io/vue-analysis/)
+- [渲染器](http://hcysun.me/vue-design/zh/essence-of-comp.html)

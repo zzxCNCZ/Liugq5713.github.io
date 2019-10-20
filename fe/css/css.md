@@ -1,33 +1,5 @@
 # CSS
 
-## 盒模型
-
-![dd](./imgs/cssbox.png)
-
-## 优先级
-
-### 选择符优先级
-
-内联样式 > ID 选择符 >Class 选择符 > 标签选择符（Tag）
-
-### 来源优先级
-
-class 之间是没有权重关系的，所以以 CSS 后定义的为准，举例如下：
-
-```css
-.blue {
-  color: blue;
-}
-.red {
-  color: red;
-}
-```
-
-```html
-<div class="red blue">item</div>
-<div class="blue red">item</div>
-```
-
 ## 控制页面文字不能被选中
 
 > 来自我导航站项目的一个小需求，我发现，我点击快了，文字会被选中，非常的丑陋。也可以用于 html 中可能有些地方不想让用户复制文字
@@ -50,12 +22,6 @@ user-select: auto | text | none | contain | all;
 image 为啥只是 inline 元素而不是 inline-block 元素？ （来自于张鑫旭的《CSS 世界》）
 这里需要引入一个新的概念，替换元素（通过修改某个属性值呈现的内容就可以被替换的元素）和非替换元素。那么由定义 image 标签就是典型的替换元素，image 标签可以设置宽高式是替换元素的尺寸计算规则决定的。
 替换元素与非替换元素之间的只是隔了" src " 或 " content " 属性。单独使用 image 标签，不添加 src 属性的话，它的表现就是一个内联元素。
-
-## 盒模型
-
-### border
-
-注意 border-style 的默认值为 none，所以 单纯设置 border-width/border-color 没有边框显示
 
 ## 布局
 
