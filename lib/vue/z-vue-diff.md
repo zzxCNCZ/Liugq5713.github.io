@@ -21,7 +21,9 @@ const Vnode = {
 ### 虚拟 DOM 优点
 
 - 可以自己控制虚拟 DOM 何时渲染
-- 允许你最小化 DOM 更新次数来优化网页应用的性能
+- 允许你最小化 DOM 更新次数来优化网页应用的性能，保证性能的下限
+- 无需手动操作 DOM
+- 跨平台
 
 ## 如何比较
 
@@ -40,3 +42,5 @@ const Vnode = {
 没有 key 的情况，vue 将会从头
 
 如果有 key，将会生成 key 的对象，oldKeyToIdx
+
+// same key but different element. treat as new element

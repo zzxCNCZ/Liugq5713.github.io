@@ -32,9 +32,13 @@ Event loop basic job is to look both at **the stack and the task queue**, pushin
 ## 微任务和宏任务
 
 - 宏任务(Task): setImmediate,setTimeout
+
   Tasks execute in order, and the browser may render between them
+
 - 微任务(Microtasks 或者叫 jobs): Promise,MutationObserver
+
   Microtasks execute in order, and are executed:
+
   - after every callback, as long as no other JavaScript is mid-execution
   - at the end of each task
 

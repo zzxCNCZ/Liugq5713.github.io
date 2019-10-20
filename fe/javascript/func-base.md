@@ -2,6 +2,12 @@
 
 ## 箭头函数
 
+- 没有 this,super,arguments 和 new target 绑定
+- 不能被 new 关键字调用
+- 没有原型链
+- 不可以改变 this 的绑定
+- 不支持 arguments 对象
+
 ## 异步函数
 
 ### promise

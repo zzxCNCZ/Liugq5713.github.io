@@ -2,7 +2,7 @@
 
 ## HTTPS（加密，认证，完整性保护） (进化)
 
-::: tips HTTP 缺点
+::: tip HTTP 缺点
 
 - 通信使用明文，可以被监听
 - 不验证通信方的身份，可能遭遇伪装
@@ -54,14 +54,14 @@ The HTTP 304 Not Modified client redirection response code indicates that there 
 
 - [301 Moved Permanently](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/301):表示永久重定向
 - [302 Found](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/302):表示临时重定向
-- [303 See Other](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/303)
+- [303 See Other](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/303):The method used to display this redirected page is always GET.
 - [307 Temporary Redirect](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/307)
 
 301 比较常用的场景是使用域名跳转。302 用来做临时跳转 比如未登陆的用户访问用户中心重定向到登录页面
 
 303 和 307 是 HTTP1.1 新加的服务器响应文档的状态码，它们是对 HTTP1.0 中的 302 状态码的细化
 
-##　参考
+## 参考
 
 - [Nginx/Tengine 服务器安装 SSL 证书](https://help.aliyun.com/knowledge_detail/95491.html?spm=5176.2020520163.cas.28.7d4556a7qbV98s)
 - [解密 HTTP/2 与 HTTP/3 的新特性](https://segmentfault.com/a/1190000020714686)
