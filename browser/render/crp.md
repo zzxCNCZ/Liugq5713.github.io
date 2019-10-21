@@ -78,6 +78,23 @@ JavaScript 允许我们修改网页的方方面面：内容、样式以及它如
   - 通过 display:none 属性隐藏元素（只有一次重排重绘），添加足够多的变更后，通过 display 属性显示（另一次重排重绘）。通过这种方式即使大量变更也只触发两次重排
 - 通常情况下，考虑一下渲染树和变更后需要重新验证的消耗。举个例子，使用绝对定位会使得该元素单独成为渲染树中 body 的一个子元素，所以当你对其添加动画时，它不会对其它节点造成太多影响。当你在这些节点上放置这个元素时，一些其它在这个区域内的节点可能需要重绘，但是不需要重排。
 
+## UI 线程和 JS 线程并不是同一个线程
+
+UI 线程与 JS 线程是互斥的，因为 JS 运行结果会影响到 UI 线程的结果，互斥的实现方式大概是当 JS 引擎执行时，GUI 线程会被挂起，GUI 更新会被保存在一个队列中等到 JS 引擎空闲时立即被执行
+
+```js
+function demo() {
+  document.body.style.backgroundColor = "red"
+  const now = Date.now()
+  while (Date.now() - now <= 3000) {
+    console.log(document.body.style.backgroundColor)
+    continue
+  }
+  document.body.style.backgroundColor = "blue"
+}
+demo()
+```
+
 ## [网站性能优化实战](https://juejin.im/post/5b0b7d74518825158e173a0c)
 
 - 降低请求量：合并资源，减少 HTTP 请求数，minify / gzip 压缩，webP，lazyLoad。

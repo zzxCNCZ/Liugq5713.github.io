@@ -22,7 +22,18 @@ call 和 apply 的传参不同，call 接收逗号分隔的参数，apply 接收
 
 <<< @/fe/javascript/code/simulation-call.js
 
-## 模拟 bind
+## [bind](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_objects/Function/bind)
+
+> The bind() function creates a new bound function, which is an exotic function object (a term from ECMAScript 2015) that wraps the original function object. Calling the bound function generally results in the execution of its wrapped function
+
+```js
+function log(...args) {
+  console.log(this, args)
+}
+
+log.bind({ name: "a" }, 1, 2).bind({ name: "b" }, 3, 4)()
+// 输出的结果： {name:'a'}  [1,2,3,4]
+```
 
 bind() 方法会创建一个新函数。当这个新函数被调用时，bind() 的第一个参数将作为它运行时的 this，之后的一序列参数将会在传递的实参前传入作为它的参数。
 

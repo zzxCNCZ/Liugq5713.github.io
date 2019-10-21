@@ -59,9 +59,9 @@ p1.then(function(value) {
 
 ## finally
 
-> finally 方法用于指定不管 Promise 对象最后状态如何，都会执行的操作
+> finally 方法用于指定不管 Promise 对象最后状态如何，都会执行的操作，这样的话，同样的代码不用在 then 和 catch 里面写两遍
 
-**finally 本质上是 then 方法的特例**
+The finally() method returns a Promise. When the promise is settled, i.e either fulfilled or rejected, the specified callback function is executed. This provides a way for code to be run whether the promise was fulfilled successfully or rejected once the Promise has been dealt with.
 
 模拟实现
 
