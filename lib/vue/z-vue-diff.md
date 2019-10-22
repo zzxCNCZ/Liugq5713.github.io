@@ -27,6 +27,30 @@ const Vnode = {
 
 ## 如何比较
 
+vnode 的简单属性
+
+```js
+// body下的 <div id="v" class="classA"><div> 对应的 oldVnode 就是
+
+{
+  el:  div  //对真实的节点的引用，本例中就是document.querySelector('#id.classA')
+  tagName: 'DIV',   //节点的标签
+  sel: 'div#v.classA'  //节点的选择器
+  data: null,       // 一个存储节点属性的对象，对应节点的el[prop]属性，例如onclick , style
+  children: [], //存储子节点的数组，每个子节点也是vnode结构
+  text: null,    //如果是文本节点，对应文本节点的textContent，否则为null
+}
+```
+
+先判断是否相同
+
+```js
+// key相同，节点选择器也要相同，才能算完全相等的一个节点
+function sameVnode(oldVnode, vnode) {
+  return vnode.key === oldVnode.key && vnode.sel === oldVnode.sel
+}
+```
+
 ### 特征
 
 - 仅仅同级比较，不是跨层比较

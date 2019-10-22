@@ -29,6 +29,8 @@ function compose() {
 }
 ```
 
+## 实现 Num.of(1).add(2).minus(1)
+
 ```js
 function ops(n) {
   return {
@@ -41,7 +43,11 @@ function ops(n) {
 const Num = {
   of: x => ops(Number(x))
 }
+```
 
+## 实现 add(1)(2)()
+
+```js
 function add(n) {
   return x => (x ? add(n + x) : n)
 }

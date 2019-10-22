@@ -58,7 +58,8 @@ module.exports = {
             'func-oop',
             'error',
             'module',
-            'z-event-loop'
+            'z-event-loop',
+            'z-deep-use'
           ].map(i => `javascript/${i}`)
         },
         {

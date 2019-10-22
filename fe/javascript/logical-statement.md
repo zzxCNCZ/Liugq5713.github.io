@@ -46,10 +46,10 @@ for (variable in object) {
 }
 ```
 
-- for of : The for...of statement creates a loop iterating over iterable objects, including: built-in String, Array, Array-like objects (e.g., arguments or NodeList), TypedArray, Map, Set, and user-defined iterables.
+- for of : The for...of statement creates a loop iterating over iterable objects, including:**built-in String, Array, Array-like objects (e.g., arguments or NodeList), TypedArray, Map, Set, and user-defined iterables**.
 
 ```js
-for await (variable of iterable) {
+for (variable of iterable) {
   statement
 }
 ```

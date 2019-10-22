@@ -61,6 +61,19 @@ The HTTP 304 Not Modified client redirection response code indicates that there 
 
 303 和 307 是 HTTP1.1 新加的服务器响应文档的状态码，它们是对 HTTP1.0 中的 302 状态码的细化
 
+## HTTP 保活
+
+- HTTP 中的 Keep-Alive
+  Connection:Keep-Alive
+
+## HTTP 2 多路复用
+
+HTTP/2 引入二进制数据帧和流的概念，其中帧对数据进行顺序标识，这样浏览器收到数据之后，就可以按照序列对数据进行合并，而不会出现合并后数据错乱的情况。同样是因为有了序列，服务器就可以并行的传输数据，这就是流所做的事情。
+
+## TCP 链接为什么断开
+
+一个 TCP 连接可以被长期保持。但是现实总是很骨感，在保持 TCP 连接的过程中很可能出现各种意外的情况，比如网络故障，客户端崩溃或者异常重启，在这种情况下，如果服务端没有及时清理这些连接，服务端将发生连接泄露，直至服务端资源耗尽拒绝提供服务（connection refused exception）
+
 ## 参考
 
 - [Nginx/Tengine 服务器安装 SSL 证书](https://help.aliyun.com/knowledge_detail/95491.html?spm=5176.2020520163.cas.28.7d4556a7qbV98s)
