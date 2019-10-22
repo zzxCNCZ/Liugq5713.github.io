@@ -63,3 +63,9 @@ image 为啥只是 inline 元素而不是 inline-block 元素？ （来自于张
 ### [视差滚动效果](http://www.alloyteam.com/2014/01/parallax-scrolling-love-story/)
 
 background-attach
+
+## image 底部有白边
+
+因为 img 默认是按基线(baseline)对齐
+
+要去掉空格可以使用 vertical-align: bottom 或将 img 标签变为块级元素。
