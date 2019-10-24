@@ -133,3 +133,4 @@ export * from "./env"
 - [JavaScript 模块化七日谈](http://huangxuan.me/js-module-7day/#/)
 - [前端模块化：CommonJS,AMD,CMD,ES6](https://juejin.im/post/5aaa37c8f265da23945f365c)
 - [前端模块化开发的价值](https://github.com/seajs/seajs/issues/547)
+- [CommonJS、AMD/CMD、ES6 Modules 以及 webpack 原理浅析](https://github.com/muwoo/blogs/issues/28)

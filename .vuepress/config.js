@@ -103,7 +103,7 @@ module.exports = {
         {
           title: '其他',
           collapsable: false,
-          children: ['', 'babel', 'chrome', 'eslint', 'github', 'husky', 'ci', 'nginx', 'npm', 'vscode', 'webpack', 'webpack-split-chunks', 'webpackQA']
+          children: ['', 'babel', 'chrome', 'eslint', 'github', 'husky', 'ci', 'nginx', 'npm', 'vscode', 'webpack', 'webpack-split-chunks', 'webpack-deep', 'webpackQA']
         },
       ],
       '/lib/': [
