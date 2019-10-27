@@ -87,7 +87,7 @@ module.exports = {
         {
           title: '渲染',
           collapsable: false,
-          children: ['', 'crp', 'viewport',].map(i => `render/${i}`)
+          children: ['', 'crp', 'viewport', 'firstContentfulPaint'].map(i => `render/${i}`)
         }, {
           title: '网络',
           collapsable: false,

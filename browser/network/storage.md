@@ -1,6 +1,6 @@
 # 数据存储
 
-## cookie
+## [cookie](https://developer.mozilla.org/en-US/docs/Web/HTTP/Cookies)
 
 cookies are small files which are located on a user’s computer. They are designed to hold a generous amount of data specific to a client and website, and they can accessed either by the web server or the client computer.
 
@@ -8,6 +8,10 @@ cookie 实质上是 键值对
 
 - 大小 4KB
 - 每次都会携带在 HTTP 头中，如果使用 cookie 保存过多数据会带来性能问题
+
+### Secure and HttpOnly cookies
+
+`Set-Cookie: id=a3fWa; Expires=Wed, 21 Oct 2015 07:28:00 GMT; Secure; HttpOnly`
 
 ## Web 存储
 

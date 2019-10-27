@@ -4,12 +4,12 @@
 
 代码注入的一种
 
-- 反射型
+- 存储型
+  恶意脚本永久存储在目标服务器上。当浏览器请求数据时，脚本从服务器传回并执行，影响范围比反射型和 DOM 型 XSS 更大。存储型 XSS 攻击的原因仍然是没有做好数据过滤：前端提交数据至服务端时，没有做好过滤；服务端在接受到数据时，在存储之前，没有做过滤；前端从服务端请求到数据，没有过滤输出。
+- 反射型 Reflected XSS
   当用户点击一个恶意链接，或者提交一个表单，或者进入一个恶意网站时，注入脚本进入被攻击者的网站。Web 服务器将注入脚本，比如一个错误信息，搜索结果等，未进行过滤直接返回到用户的浏览器上。
 - DOM 型
   前端 JavaScript 代码不够严谨，把不可信的内容插入到了页面。在使用 .innerHTML、.outerHTML、.appendChild、document.write()等 API 时要特别小心，不要把不可信的数据作为 HTML 插到页面上，尽量使用 .innerText、.textContent、.setAttribute() 等
-- 存储型
-  恶意脚本永久存储在目标服务器上。当浏览器请求数据时，脚本从服务器传回并执行，影响范围比反射型和 DOM 型 XSS 更大。存储型 XSS 攻击的原因仍然是没有做好数据过滤：前端提交数据至服务端时，没有做好过滤；服务端在接受到数据时，在存储之前，没有做过滤；前端从服务端请求到数据，没有过滤输出。
 
 如何防范
 
@@ -19,9 +19,11 @@
 
 ## CSRF( Cross-site request forgery )
 
-是一种挟制用户在当前已登录的 Web 应用程序上执行非本意的操作的攻击方法。
+是一种挟制用户在当前已登录的 Web 应用程序上执行非本意的操作的攻击方法，如他的名字：伪造请求
 
 如何防范
+
+可以从两点出发，一是 保证 get 请求没有副作用，二是确保非 GET 的请求仅仅来自你的客户端
 
 - 检查 Referer 字段,HTTP 头中有一个 Referer 字段，这个字段用以标明请求来源于哪个地址。通常来讲，用户提交的请求，referer 应该是来来自站内地址，所以如果发现 referer 中地址异常，那么很可能是遭到了 CSRF 攻击
 - 避免登录的 session 长时间存储在客户端中
@@ -33,7 +35,7 @@
 
 如何防御
 
-- frame busting
+### frame busting
 
 ```js
 if (top.location != window.location) {
@@ -43,7 +45,7 @@ if (top.location != window.location) {
 
 需要注意的是: HTML5 中 iframe 的 sandbox 属性、IE 中 iframe 的 security 属性等，都可以限制 iframe 页面中的 JavaScript 脚本执行，从而可以使得 frame busting 失效
 
-- X-Frame-Options
+### X-Frame-Options
 
 X-FRAME-OPTIONS 是微软提出的一个 http 头，专门用来防御利用 iframe 嵌套的点击劫持攻击。并且在 IE8、Firefox3.6、Chrome4 以上的版本均能很好的支持。
 可以设置为以下值:
@@ -51,6 +53,19 @@ X-FRAME-OPTIONS 是微软提出的一个 http 头，专门用来防御利用 ifr
 - DENY: 拒绝任何域加载
 - SAMEORIGIN: 允许同源域下加载
 - ALLOW-FROM: 可以定义允许 frame 加载的页面地址
+
+### Content Security Policy
+
+It is designed in such a way that website authors can whitelist individual domains from which resources (like scripts, stylesheets, and fonts) can be loaded, and also domains that are permitted to embed a page.
+
+```js
+// The page cannot be displayed in a frame, regardless of the site attempting to do so.
+Content-Security-Policy: frame-ancestors 'none'
+// The page can only be displayed in a frame on the same origin as the page itself.
+Content-Security-Policy: frame-ancestors 'self'
+// The page can only be displayed in a frame on the specified origins.
+Content-Security-Policy: frame-ancestors *uri*
+```
 
 ## 参考
 

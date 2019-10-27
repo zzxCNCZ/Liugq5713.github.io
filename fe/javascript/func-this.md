@@ -1,8 +1,23 @@
 # 函数 this
 
+## 区别题
+
+```js
+var a = {
+  b: () => {
+    console.log(this)
+  },
+  c: function() {
+    console.log(this)
+  }
+}
+a.b() // 输出windows
+a.c() // 输出 a 对象
+```
+
 ## test()形式
 
-直接不带任何引用形式去调用函数，则 this 会指向全局对象，因为没有其他影响去改变 this，this 默认就是指向全局对象（浏览器是 window，Node 中是 global）的。这个结论是在非严格模式的情况下，严格模式下这个 this 其实是 undefined 的。
+直接不带任何引用形式去调用函数，则 this 会指向全局对象，因为没有其他影响去改变 this，this 默认就是指向全局对象（浏览器是 window，Node 中是 global）的。这个结论是在非严格模式的情况下，严格模式下这个 this 其实是 undefined 的
 
 ```js
 var a = 1
