@@ -106,4 +106,5 @@ Promise.prototype.finally = function(callback) {
 
 ## 参考
 
+- [Promises/A+规范](https://promisesaplus.com/)
 - [大白话讲解 Promise（一）](https://www.cnblogs.com/lvdabao/p/es6-promise-1.html)
