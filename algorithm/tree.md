@@ -15,3 +15,33 @@ var maxDepth = function(root) {
   }
 }
 ```
+
+## Binary Tree Level Order Traversal
+
+```js
+var levelOrder = function(root) {
+  if (!root) return []
+
+  let Row = []
+  let res = []
+  Row.push([root])
+
+  for (let row of Row) {
+    let nextLevel = []
+    let current = []
+
+    row.map(item => {
+      current.push(item.val)
+      if (item.left) nextLevel.push(item.left)
+      if (item.right) nextLevel.push(item.right)
+    })
+
+    res.push(current)
+
+    if (nextLevel.length > 0) {
+      Row.push(nextLevel)
+    }
+  }
+  return res
+}
+```
