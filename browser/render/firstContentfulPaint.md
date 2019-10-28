@@ -11,6 +11,17 @@
 - 通过 performance.getEntriesByType('paint') 获得 firstContentfulPaint
 - 在 head 末尾插入一段获取时间戳的代码，然后用这个时间戳减去开始接收数据的那个时间戳，得出的结果为白屏时间
 
+影响白屏时间的因素：网络，服务端性能，前端页面结构设计。
+
+## [网站性能优化实战](https://juejin.im/post/5b0b7d74518825158e173a0c)
+
+- 缓存：HTTP 协议缓存请求，离线缓存 manifest，离线数据缓存 localStorage
+- 渲染：JS/CSS 优化，加载顺序，服务端渲染，pipeline
+- 降低请求量：合并资源，减少 HTTP 请求数，minify / gzip 压缩，webP，lazyLoad。
+- 加快请求速度：预解析 DNS，减少域名数，并行加载，CDN 分发。
+
+---
+
 ## 网站传输性能优化
 
 ### 浏览器缓存
@@ -30,7 +41,7 @@
 
 ## 页面渲染性能优化
 
-- DOM 渲染层与 GPU 硬件加速
+- DOM 渲染层与 GPU (Graphics Processing Unit)硬件加速
 - 重排与重绘
 
 ## 负载均衡
