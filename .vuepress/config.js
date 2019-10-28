@@ -55,7 +55,7 @@ module.exports = {
             'func-recursion',
             'func-promise',
             'func-async',
-            'func-oop',
+            'func-prototype-oop',
             'error',
             'module',
             'z-event-loop',
