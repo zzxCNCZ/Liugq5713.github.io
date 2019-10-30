@@ -55,6 +55,8 @@ function add(n) {
 
 ## 实现 lodash 的 get 方法
 
+// 如果 JavaScript 有可选链，感觉就没这个 get 方法什么事情了
+
 ```js
 function _get(object, keys, defaultVal = null) {
   keys = Array.isArray(keys)

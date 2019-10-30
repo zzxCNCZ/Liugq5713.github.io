@@ -13,3 +13,4 @@
 - [minipack 视频](https://www.youtube.com/watch?v=Gc9-7PBqOC8&list=LLHK1mTHpwrUeYgF5gu-Kd4g)
 - [webpack 为什么这么难用？](https://zhuanlan.zhihu.com/p/32148338)
 - [Webpack 4 进阶--从前的日色变得慢 ，一下午只够打一次包](https://zhuanlan.zhihu.com/p/35407642)
+- [webpack 原理](https://juejin.im/entry/5b0e3eba5188251534379615)
