@@ -97,6 +97,13 @@ function shuffle(array) {
 }
 ```
 
+## JavaScript 怎么快速声明一个数组，长度为 100，元素全是 0？
+
+new Int8Array(100);
+
+// 创建 10 个 undefined 的数组
+Array.from({ length: 10 })
+
 ## Range 的左闭右开原则
 
 比如 Array.prototype.slice(begin,end)，包含 begin，不包含 end
