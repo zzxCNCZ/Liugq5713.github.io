@@ -132,7 +132,7 @@ module.exports = {
         {
           title: '题目',
           collapsable: false,
-          children: ['', 'search', 'dp', '13RomanToInteger', '17LetterCombinationsOfAPhoneNumber', 'link']
+          children: ['', 'search', 'dp', '13RomanToInteger', '17LetterCombinationsOfAPhoneNumber', 'link', 'tree']
         }
       ],
       '/': ['']
