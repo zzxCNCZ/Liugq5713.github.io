@@ -8,13 +8,13 @@
 
 ### 第一次握手(SYN=1, seq=x):
 
-客户端发送一个 TCP 的 SYN 标志位置 1 的包，指明客户端打算连接的服务器的端口，以及初始序号 X,保存在包头的序列号(Sequence Number)字段里。
+客户端发送一个 TCP 的 SYN(Synchronize) 标志位置 1 的包，指明客户端打算连接的服务器的端口，以及初始序号 X,保存在包头的序列号(Sequence Number)字段里。
 
-发送完毕后，客户端进入 SYN_SEND 状态。
+发送完毕后，客户端进入 SYN_SEND 状态
 
 ### 第二次握手(SYN=1, ACK=1, seq=y, ACKnum=x+1):
 
-服务器发回确认包(ACK)应答。即 SYN 标志位和 ACK 标志位均为 1。服务器端选择自己 ISN 序列号，放到 Seq 域里，同时将确认序号(Acknowledgement Number)设置为客户的 ISN 加 1，即 X+1。 发送完毕后，服务器端进入 SYN_RCVD 状态。
+服务器发回确认包(ACK)应答。即 SYN 标志位和 ACK 标志位均为 1。服务器端选择自己 ISN 序列号，放到 Seq 域里，同时将确认序号(Acknowledgement Number)设置为客户的 ISN 加 1，即 X+1。 发送完毕后，服务器端进入 SYN_RCVD 状态
 
 ### 第三次握手(ACK=1，ACKnum=y+1)
 
