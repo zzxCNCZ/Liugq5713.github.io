@@ -55,6 +55,7 @@ function add(n) {
 
 ## 实现 lodash 的 get 方法
 
+[how-to-get-the-value-of-an-object-from-a-specific-path](https://gomakethings.com/how-to-get-the-value-of-an-object-from-a-specific-path-with-vanilla-js/)
 // 如果 JavaScript 有可选链，感觉就没这个 get 方法什么事情了
 
 ```js
