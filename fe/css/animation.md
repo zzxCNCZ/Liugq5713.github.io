@@ -32,6 +32,10 @@ a shorthand property for the various animation properties: animation-name, anima
 
 The @keyframes CSS at-rule controls the intermediate steps in a CSS animation sequence by defining styles for keyframes (or waypoints) along the animation sequence.
 
+## 优化
+
+CSS 属性 `will-change`为 web 开发者提供了一种告知浏览器该元素会有哪些变化的方法
+
 ## 参考
 
 - [CSS 动画：animation、transition、transform、translate 傻傻分不清](https://juejin.im/post/5b137e6e51882513ac201dfb)
