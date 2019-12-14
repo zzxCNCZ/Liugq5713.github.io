@@ -1,4 +1,4 @@
-# props
+# 组件 props
 
 ## props 的默认值
 
