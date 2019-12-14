@@ -82,7 +82,28 @@ Git 执行一个合并时，它实际上会查找三个提交：
 > 我开发的时候在我的本地一顿操作，然后不能自动 rebase 了，需要我在本地 rebase，一脸懵逼。需要好好了解一下，毕竟变基比 merge 更好一点
 > 变基也是有准则的：不要对在你的仓库外有副本的分支执行变基。因为这样会对和你合作的小伙伴造成困扰
 
-Reapply commits on top of another base tip
+首先要明白，git rebase 是一个工具，把一个分支上的内容整合到另一个分支上。
+
+git merge 是一个 forward moving change record
+
+git rebase 是一个强力的修改历史的工具。使用他的一个理由也是，他可以提供线性的提供历史。他有两种模式，manual 和 interactive 两种。
+
+- git rebase <base>
+
+automatically rebases the current branch onto <base>
+
+- git rebase --interactive <base>
+
+lets you clean up history by removing ,splitting and altering an existing series of commits
+
+git rebase 之后需要 git push -f
+
+---
+
+git rebase 如果有冲突的话，需要解决冲突，之后重新将修改完的文件提交，即 `git add .`
+
+git rebase --abort
+git rebase --continue
 
 ## 从远程分支获取内容
 
@@ -133,3 +154,8 @@ git checkout upstream/master
 // 然后新建一个分支
 git checkout -b devTodo
 ```
+
+## 参考
+
+- [Git 工具 - 子模块](https://git-scm.com/book/zh/v1/Git-%E5%B7%A5%E5%85%B7-%E5%AD%90%E6%A8%A1%E5%9D%97)
+- [git rebase | Atlassian Git Tutorial](https://www.atlassian.com/git/tutorials/rewriting-history/git-rebase)

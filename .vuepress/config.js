@@ -156,6 +156,8 @@ module.exports = {
           collapsable: false,
           children: [
             "",
+            "shell",
+            "items",
             "babel",
             "chrome",
             "eslint",
@@ -164,6 +166,7 @@ module.exports = {
             "ci",
             "nginx",
             "npm",
+            "mac",
             "vscode",
             "webpack",
             "webpack-split-chunks",

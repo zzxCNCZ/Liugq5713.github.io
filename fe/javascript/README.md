@@ -2,6 +2,12 @@
 
 > 重学前端
 
+在 js 里面，lambda 表达式 指的是匿名函数
+
+## 参考
+
+- [Lambda 表达式有何用处？如何使用？](https://www.zhihu.com/question/20125256)
+
 ## JSDoc
 
 > 这样写函数的时候添加注释，编辑器能够给出非常优秀的提示
@@ -17,7 +23,7 @@ add documentation comments directly to your source code, right alongside the cod
  * @returns {number}
  */
 function sum(a, b) {
-  return a + b
+  return a + b;
 }
 ```
 

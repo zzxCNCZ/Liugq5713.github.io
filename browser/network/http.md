@@ -1,5 +1,25 @@
 # HTTP
 
+## HTTP 发送请求
+
+body 就有这么多的格式
+
+### application/x-www-form-urlencoded
+
+Represents an URL encoded form. This is the default value if enctype attribute is not set to anything.
+
+### multipart/form-data
+
+Represents a Multipart form. This type of form is used when the user wants to upload files
+
+### text/plain
+
+A new form type introduced in HTML5, that as the name suggests, simply sends the data without any encoding
+
+### application/json
+
+JSON 格式
+
 ## HTTP/1.1 的缺陷
 
 - 高延迟--带来页面加载速度的降低
@@ -83,5 +103,6 @@ The HTTP 304 Not Modified client redirection response code indicates that there 
 
 ## 参考
 
+- [Understanding HTML Form Encoding: URL Encoded and Multipart Forms](https://dev.to/sidthesloth92/understanding-html-form-encoding-url-encoded-and-multipart-forms-3lpa)
 - [Nginx/Tengine 服务器安装 SSL 证书](https://help.aliyun.com/knowledge_detail/95491.html?spm=5176.2020520163.cas.28.7d4556a7qbV98s)
 - [解密 HTTP/2 与 HTTP/3 的新特性](https://segmentfault.com/a/1190000020714686)
