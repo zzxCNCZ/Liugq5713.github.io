@@ -112,6 +112,10 @@ many others (try out Profiling)
 
 我的建议是，你最好先做展示组件。当你意识到，有一些中间组件传递了过多的 props，有一些组件并不使用它们继承的 props 而只是将这些 props 传递给他们的子级，而且每次子级组件需要更多数据时，你都需要重新调整或编写这些中间组件，那么，这时候你可以考虑引入容器组件了。
 
+## https://reactjs.org/docs/concurrent-mode-suspense.html
+
+suspense 可以让你等待数据加载指定 loading
+
 ## 参考
 
 - [Presentational and Container Components](https://medium.com/@dan_abramov/smart-and-dumb-components-7ca2f9a7c7d0)

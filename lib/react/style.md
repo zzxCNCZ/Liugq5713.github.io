@@ -28,3 +28,11 @@ Style-components 解决了什么问题
 - simple dynamic styling
 - Painless maintenance. 因为 css 和 js 都在一个文件里面
 - automatic vendor prefixing: styled-components 会对你的 css 有预处理
+
+处理 hover 事件
+
+```js
+const ss = styled.div`
+  &.hover{ xxx }
+`;
+```
