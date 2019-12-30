@@ -79,3 +79,7 @@ Your most recent selection (in the elements inspector, or on the page with 'Insp
 
 - [从浏览器多进程到 JS 单线程，JS 运行机制最全面的一次梳理](https://juejin.im/post/5a6547d0f265da3e283a1df7)
 - [掘金小册：你不知道的 Chrome 调试技巧](https://juejin.im/book/5c526902e51d4543805ef35e)
+
+## 网站
+
+- [做同步的网站](https://syncthing.net/)
