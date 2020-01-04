@@ -39,6 +39,40 @@ IntersectionObserver 作为一个构造函数，传入一个回调函数作为�
 
 此时替换为真实的图片，并且调用实例的 unobserve 将这个 img 元素从这个实例的观察列表的去除
 
+```jsx
+observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.intersectionRatio > 0) {
+      let lazyImage = entry.target;
+      //@ts-ignore
+      lazyImage.src = lazyImage.dataset.src;
+      this.observer.unobserve(entry.target);
+    }
+  });
+});
+
+pageLoad = () => {
+  const imgs: NodeListOf<HTMLImageElement> =
+    document.querySelectorAll < HTMLImageElement > ".readEveryDayPic";
+  imgs.forEach(img => {
+    this.observer.observe(img);
+  });
+};
+```
+
+```tsx
+// 多个image元素
+<img
+  data-src="{word.image.urlList[0]}"
+  width="100%"
+  height="100%"
+  className="readEveryDayPic"
+/>
+// ...
+// 在html文件的末尾添加一个空的image，通过触发他的error事件判断html加载完成
+ <img onError={this.pageLoad} src="" />
+```
+
 ### getBoundingClientRect vs IntersectionObserver
 
 这 2 种的区别在于监听的方式，我个人更推荐使用 Intersection Observer，因为通过监听 scroll 事件开销比较大，而让将这个工作交给另一个线程异步的去监听开销会小很多，但是它的缺点是一些老版本的浏览器可能支持率不高，好在社区有 [polyfill](https://www.npmjs.com/package/intersection-observer) 的方案
