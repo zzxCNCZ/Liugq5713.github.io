@@ -85,6 +85,7 @@ module.exports = {
           children: [
             "dom",
             "crossorigin",
+            "audioAndVedio",
             "svg",
             "script",
             "image",
@@ -128,6 +129,7 @@ module.exports = {
             "router",
             "tcp",
             "http",
+            "handleHttp",
             "dns",
             "cache",
             "storage",
