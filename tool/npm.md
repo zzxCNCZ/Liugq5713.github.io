@@ -34,8 +34,9 @@ Any environment variables that start with `npm_config_` will be interpreted as a
 
 可以通过 process.env.NPM_CONFIG_CONFIG 访问到值 test
 
-npm 的配置文件 .npmrc
-我们工作中经常用到的是就是设置一下 npm 的仓库了
+### npm 的配置文件 .npmrc
+
+我们工作中经常用到的是就是设置一下 npm 的仓库了,有时候你可以在你的项目里面放置一个.npmrc 文件，设置 npm 源地址
 
 ```shell
 // 获取

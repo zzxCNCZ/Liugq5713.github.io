@@ -14,6 +14,34 @@ const request = () => {};
 
 ## 错误处理
 
+```ts
+let time = 2;
+const request: () => Promise<boolean> = () => {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      if (time >= 1) {
+        console.log("reject");
+        time--;
+        reject(true);
+      } else {
+        console.log("solved");
+        resolve(true);
+      }
+    }, 2000);
+  });
+};
+const RequestWithRetry = async (func, retry) => {
+  try {
+    return await func();
+  } catch (err) {
+    if (retry) {
+      return RequestWithRetry(func, retry - 1)();
+    }
+  }
+};
+RequestWithRetry(request, 3);
+```
+
 ## 超时处理
 
 ## 重连处理

@@ -193,7 +193,8 @@ module.exports = {
             "componentHoc",
             "router",
             "redux",
-            "style"
+            "style",
+            "ssr"
           ].map(i => `react/${i}`)
         },
         {
@@ -223,6 +224,7 @@ module.exports = {
           collapsable: false,
           children: [
             "",
+            "antd",
             "element",
             "pwa",
             "react",

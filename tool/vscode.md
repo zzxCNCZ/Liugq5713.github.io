@@ -2,6 +2,12 @@
 
 > 毕竟现在是前端标配了，这款编辑器需要学习一些用法帮助你开发
 
+## 重构变量
+
+还再用查找和替换修改函数名么（它的问题是有可能误伤相似的名字），在 vscode 里面试试 rename symbol ,选中变量，鼠标右击，如图
+
+![示意图](./images/rename.jpeg)
+
 ## 设置 vscode 字体
 
 推荐这一款字体:https://github.com/tonsky/FiraCode，安装完之后，在vscode的配置如下
