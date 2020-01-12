@@ -194,7 +194,8 @@ module.exports = {
             "router",
             "redux",
             "style",
-            "ssr"
+            "ssr",
+            "myreact"
           ].map(i => `react/${i}`)
         },
         {
