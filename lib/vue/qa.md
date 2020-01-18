@@ -112,3 +112,15 @@ Vue.prototype.\$axios = Axios;
 提醒一下，当使用路由参数时，例如从 /user/foo 导航到 /user/bar，原来的组件实例会被复用。因为两个路由都渲染同个组件，比起销毁再创建，复用则显得更加高效。不过，这也意味着组件的生命周期钩子不会再被调用。
 
 如果提供了 path，params 会被忽略，上述例子中的 query 并不属于这种情况。取而代之的是下面例子的做法，你需要提供路由的 name 或手写完整的带有参数的 path
+
+## 常见面试问题
+
+- vue 生命周期？
+- 具体的生命周期做了什么？
+- Vue.nextTick 了解过吗 ?
+- vue 用下标修改数组，vue 监听不到，如何解决
+- vue 插件，vue 指令
+- npm 包写
+- v-if 和 v-show 区分使用场景
+- computed 和 watch 区分使用场景
+- v-for 遍历必须为 item 添加 key，且避免同时使用 v-if

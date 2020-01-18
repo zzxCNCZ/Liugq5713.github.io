@@ -8,6 +8,12 @@
 
 ![示意图](./images/rename.jpeg)
 
+## 代码结构
+
+代码写长了，不妨将代码收起来，组合键 `command+k` `command+0`
+
+收起展开部分代码，收起的快捷键是 `cmd + k , cmd +[` , 这个组合键不太方便，可以将它修改为 cmd + [
+
 ## 设置 vscode 字体
 
 推荐这一款字体:https://github.com/tonsky/FiraCode，安装完之后，在vscode的配置如下
@@ -35,3 +41,7 @@
 ### ctrl+shift+o 打开文件的大纲
 
 现在文件长度都有点长，我不太像用鼠标来回翻页，但是用上下键移动很慢，今天得知，可以使用 ctrl+shift+o 打开 vscode 的大纲，然后用上下键快速跳转，写 markdown 的时候特别好用
+
+## 参考
+
+- [23 lesser known VS Code Shortcuts as GIF](https://dev.to/devmount/23-lesser-known-vs-code-shortcuts-as-gif-80)

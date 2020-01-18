@@ -49,6 +49,10 @@ README 是用户点进你项目的第一印象，值得你好好写。当然我�
 
 如果你的所有 Commit 都符合 Angular 格式，那么发布新版本时， Change log 就可以用脚本自动生成，conventional-changelog 就是生成 Change log 的工具。
 
+## Github 仓库
+
+- [记录并且回放网页](https://github.com/rrweb-io/rrweb)
+
 ## 参考
 
 - [GitHub 项目徽章的添加和设置](https://lpd-ios.github.io/2017/05/03/GitHub-Badge-Introduction/)
