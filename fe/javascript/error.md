@@ -6,6 +6,14 @@
 
 我最近就遇到了这样的问题，我司的图片需要生成水印，但是生成水印的过程有点长，我给它加上了 loading 效果。等水印完成的时候取消 loading 状态。当时目测这样没什么问题，但我们的图片是放在七牛上的，请求图片的时候可能会失败（虽然这个概率很小），如果我没有做错误处理，很可能就一直的 loading 下去，用户可能就傻傻的等着。解决方法也很简单，捕获到这个错误，取消 loading 状态，让用户重新上传图片，或者我再去请求一下放在七牛上面的图片
 
+## Error 实例对象
+
+调用 Error 构造函数，生成一个实例对象 err。Error 构造函数接受一个参数，表示错误提示，可以从实例的 message 属性读到这个参数。抛出 Error 实例对象以后，整个程序就中断在发生错误的地方，不再往下执行。
+
+- message：错误提示信息
+- name：错误名称（非标准属性）
+- stack：错误的堆栈（非标准属性）
+
 ## try..catch 如何起作用
 
 有朋友可能觉得这个问题很简单，当然是代码里面有错的时候起作用啊。emm，有道理，但是不够深入，具体有两点
@@ -18,7 +26,7 @@
 try {
   //eg: {{{{{{{{{{{{
 } catch (e) {
-  alert("The engine can't understand this code, it's invalid")
+  alert("The engine can't understand this code, it's invalid");
 }
 ```
 
@@ -29,10 +37,10 @@ try {
 ```js
 try {
   setTimeout(function() {
-    throw new Error("test")
-  }, 1000)
+    throw new Error("test");
+  }, 1000);
 } catch (e) {
-  alert("catch a error")
+  alert("catch a error");
 }
 ```
 
