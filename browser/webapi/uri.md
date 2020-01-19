@@ -20,7 +20,7 @@ URL is used to parse, construct, normalise, and encode URLs
 
 // base Optional
 // A USVString representing the base URL to use in case url is a relative URL. If not specified, it defaults to ''.
-url = new URL(url, [base])
+url = new URL(url, [base]);
 ```
 
 ### URL.createObjectURL()
@@ -34,7 +34,7 @@ URL.createObjectURL() 静态方法会创建一个 DOMString，其中包含一个
 ```js
 // object
 // A File, Blob, MediaStream, or MediaSource object to create an object URL for.
-objectURL = URL.createObjectURL(object)
+objectURL = URL.createObjectURL(object);
 ```
 
 #### 上传图片预览
@@ -46,14 +46,14 @@ objectURL = URL.createObjectURL(object)
 ```
 
 ```js
-const upload = document.querySelector("#upload")
-const preview = document.querySelector("#preview")
+const upload = document.querySelector("#upload");
+const preview = document.querySelector("#preview");
 
 upload.onchange = function() {
-  const file = upload.files[0] //File对象
-  const src = URL.createObjectURL(file)
-  preview.src = src
-}
+  const file = upload.files[0]; //File对象
+  const src = URL.createObjectURL(file);
+  preview.src = src;
+};
 ```
 
 video 标签，audio 标签还是 img 标签的 src 属性，不管是相对路径，绝对路径，或者一个网络地址，归根结底都是指向一个文件资源的地址。那我们生成一个指向我们上传的文件的地址然后添加到 src 属性上，不就能实现预览了嘛。
@@ -75,9 +75,9 @@ eg: `const url =http://www.123.com?id=123&name=kuchcy'`
 ### 相对路径转绝对路径
 
 ```js
-var a = document.createElement("a")
-a.href = url // url 为相对路径
-a.href // 相对路径已经变成绝对路径
+var a = document.createElement("a");
+a.href = url; // url 为相对路径
+a.href; // 相对路径已经变成绝对路径
 ```
 
 ### URI vs URL
@@ -93,6 +93,17 @@ URI 的英文 Uniform Resource Identify , URL 的英文 Uniform Resource Locatio
 
 The navigator.sendBeacon() method can be used to asynchronously transfer a small amount of data over HTTP to a web server.
 
+## 双斜杠//开头的 URL 的含义
+
+“protocol-less” URL is the best way to reference third party content that’s available via both HTTP and HTTPS.
+
+缺点
+
+1. Protocol-less URLs may not work as expected when you "open" a local file in your browser, because the page's base protocol will be file:///
+
+Now that SSL is encouraged for everyone and doesn’t have performance concerns, this technique is now an anti-pattern. If the asset you need is available on SSL, then always use the https:// asset.
+
 ## 参考
 
-[为什么视频网站的视频链接地址是 blob？](https://juejin.im/post/5d1ea7a8e51d454fd8057bea)
+- [为什么视频网站的视频链接地址是 blob？](https://juejin.im/post/5d1ea7a8e51d454fd8057bea)
+- [Can I change all my http:// links to just //?](https://stackoverflow.com/questions/4831741/can-i-change-all-my-http-links-to-just)

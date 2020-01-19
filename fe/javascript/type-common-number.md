@@ -39,8 +39,8 @@ parseInt 方法取整数，有两个不好的地方，
 这个 toString 不仅仅是“多此一举”，还可能导致严重的问题，比如：
 
 ```js
-console.log(parseInt(0.00000001)) // 1
-console.log(parseInt(1000000000000000000000)) // 1
+console.log(parseInt(0.00000001)); // 1
+console.log(parseInt(1000000000000000000000)); // 1
 ```
 
 这是因为，`0.00000001.toString() === 1e-8` 而 `1000000000000000000000..toString() === 1e+21`。
@@ -77,7 +77,7 @@ JavaScript 的取模运算%并不限于整数运算，可以对浮点数取模�
 
 ## 判断数字极端情况下的方法
 
-- isNaN 判断该参数是否为数字
+- isNaN 判断该参数是否为数字,尤其适用于 数字为字符串类型的时候，eg: '42' ， 但是 isNaN('') ，isNaN(true) 为 false，The isNaN() function determines whether a value is an illegal number (Not-a-Number).
 
 - isFinite 检验参数是否是位于最大值和最小值之间
 
@@ -85,7 +85,7 @@ JavaScript 的取模运算%并不限于整数运算，可以对浮点数取模�
 
 ```js
 function floatEqual(num, dest) {
-  return Math.abs(num - dest) < Number.EPSILON
+  return Math.abs(num - dest) < Number.EPSILON;
 }
 ```
 
@@ -107,3 +107,4 @@ The toFixed() method formats a number using fixed-point notation and _return a s
 ## 参考
 
 - [如何优雅地取数值的整数和小数部分](https://github.com/akira-cn/FE_You_dont_know/issues/5)
+- [JavaScript isNaN() Function](https://www.w3schools.com/jsref/jsref_isnan.asp)
