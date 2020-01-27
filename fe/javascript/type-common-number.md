@@ -10,6 +10,15 @@
 
 `typeof NaN //'number'` `typeof -Infinity // 'number'`
 
+## 常量
+
+> 有些时候你会面临给一个变量初始化的情况，比起直接赋值一个具体的数，调用 js 本身的 API 我就觉得更好
+
+- Number.NaN `Not-A-Number`
+- Number.MAX_SAFE_INTEGER `2^53 - 1`
+- Number.MAX_VALUE `approximately 1.79E+308`
+- Number.POSITIVE_INFINITY `无穷大`
+
 ## 类型转化
 
 - praseInt 最好提供基底 ps: ES3 引擎将 070 解释为八进制，但是 ES5 是直接解释为十进制的
@@ -88,15 +97,6 @@ function floatEqual(num, dest) {
   return Math.abs(num - dest) < Number.EPSILON;
 }
 ```
-
-## 常量
-
-> 有些时候你会面临给一个变量初始化的情况，比起直接赋值一个具体的数，调用 js 本身的 API 我就觉得更好
-
-- Number.NaN `Not-A-Number`
-- Number.MAX_SAFE_INTEGER `2^53 - 1`
-- Number.MAX_VALUE `approximately 1.79E+308`
-- Number.POSITIVE_INFINITY `无穷大`
 
 ## toFixed
 

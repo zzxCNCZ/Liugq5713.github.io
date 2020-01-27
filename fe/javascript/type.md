@@ -18,4 +18,3 @@
 ## 参考
 
 - [w3schools js 类型](https://www.w3schools.com/js/js_type_conversion.asp)
-- [demo](https://github.com/Liugq5713/demo/blob/master/demo/typeConversion.html)

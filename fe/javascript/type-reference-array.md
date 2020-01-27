@@ -86,14 +86,14 @@
 
 ```js
 function shuffle(array) {
-  var _array = array.concat()
+  var _array = array.concat();
   for (var i = _array.length; i--; ) {
-    var j = Math.floor(Math.random() * (i + 1))
-    var temp = _array[i]
-    _array[i] = _array[j]
-    _array[j] = temp
+    var j = Math.floor(Math.random() * (i + 1));
+    var temp = _array[i];
+    _array[i] = _array[j];
+    _array[j] = temp;
   }
-  return _array
+  return _array;
 }
 ```
 
@@ -123,8 +123,8 @@ Array.from({ length: 10 })
 
 因此我们可以这样写数组操作，eg:
 
-```js
-;(arr || []).map(item => {
+```ts
+(arr || []).map(item => {
   // some code
-})
+});
 ```

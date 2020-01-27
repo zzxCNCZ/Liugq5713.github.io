@@ -2,6 +2,8 @@
 
 ## 存储方式
 
+字符串经常被当成字符数组。字符串的内部实现究竟有没有使用数组并不好说，但 JavaScript 中的字符串和字符数组并不是一回事，最多只是看上去相似而已。
+
 ES6 之前，JavaScript 字符串基于 16 位字符编码（UTF-16）进行构建，每 16 位的序列是一个编码单元，代表一个字符。**length 和 charAt 方法等字符串属性和方法都是基于这种编码单元构建的**
 
 但 Unicode 引入扩展字符集，编码规则进行了变更
@@ -9,8 +11,8 @@ ES6 之前，JavaScript 字符串基于 16 位字符编码（UTF-16）进行构�
 UTF-16 引入了代理对，规定了用两个 16 位编码单元表示一个码位，也就是说字符串有两种，一种是由编码单元 16 位表示的 BMP 字符。另一种是由两个编码单元 32 位表示的辅助平面字符
 
 ```js
-console.log("16位表示", "汉".length) // 1
-console.log("32位表示", "𠮷".length) // 2
+console.log("16位表示", "汉".length); // 1
+console.log("32位表示", "𠮷".length); // 2
 ```
 
 ## 值不可变
@@ -22,9 +24,9 @@ console.log("32位表示", "𠮷".length) // 2
 :::
 
 ```js
-const str = "Jello World"
+const str = "Jello World";
 // 报错：TypeError: Cannot assign to read only property '0' of string 'Jello World'
-myStr[0] = "H"
+myStr[0] = "H";
 ```
 
 曾经遇到一个给字符串排序的需求，想使用 Array 的 sort 方法给字符串排序。
@@ -33,13 +35,15 @@ myStr[0] = "H"
 
 ```js
 Array.prototype.map.call("test", function(res) {
-  console.log(res)
-})
+  console.log(res);
+});
 ```
 
 但是 sort 方法不行，为什么呢？
 
 The sort() method sorts the elements of an array **in place** and returns the array.即 sort 方法会修改原来的数组，即它会修改原来的 string ,所以不能使用
+
+一个变通（破解）的办法是先将字符串转换为数组，待处理完后再将结果转换回字符串
 
 ### 获取单个字符
 
@@ -78,7 +82,7 @@ str.includes(searchString[, position])
 
 ```js
 // 取两个参数中较小的为起点，较大的为终点
-str.substring(a, b)
+str.substring(a, b);
 ```
 
 - substr()
@@ -89,9 +93,7 @@ str.substring(a, b)
 
 // 如果参数是负数，都会给参数加上数组的宽度使其变为正数
 
-## 模式匹配
-
-模式匹配
+## String 模式匹配
 
 ### search
 
@@ -117,14 +119,16 @@ str.substring(a, b)
 
 ## replace 应用
 
+> replace 结合正则表达式，真的很强大
+
 ### hidden-phone-number
 
 **当一个参数为正则表达式，可以通过 `$n` (n 小于 100，n 从 1)访问圆括号匹配到的子字符串**，这个知识还是很有用的
 
 ```javascript
 const hidePhone = phoneNumber => {
-  return phoneNumber.replace(/^(\d{3})\d{4}/, "$1****")
-}
+  return phoneNumber.replace(/^(\d{3})\d{4}/, "$1****");
+};
 ```
 
 ### highlightText
@@ -132,24 +136,24 @@ const hidePhone = phoneNumber => {
 ```javascript
 export const highlightText = (content, words) => {
   if (typeof content !== "string") {
-    console.error("please make sure the type of content is string")
-    return content
+    console.error("please make sure the type of content is string");
+    return content;
   }
 
   if (Array.isArray(words)) {
     const word_group = words
       .map(word => {
-        return `${word}`
+        return `${word}`;
       })
-      .join("|")
-    const reg = new RegExp(`(${word_group})`, "g")
-    return content.replace(reg, "<span class='highlight'>$&</span>")
+      .join("|");
+    const reg = new RegExp(`(${word_group})`, "g");
+    return content.replace(reg, "<span class='highlight'>$&</span>");
   }
 
   if (typeof words === "string") {
-    const reg = new RegExp(words, "g")
-    return content.replace(reg, "<span class='highlight'>$&</span>")
+    const reg = new RegExp(words, "g");
+    return content.replace(reg, "<span class='highlight'>$&</span>");
   }
-  return content
-}
+  return content;
+};
 ```

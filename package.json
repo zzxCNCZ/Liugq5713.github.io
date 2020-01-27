@@ -20,10 +20,10 @@
   },
   "homepage": "https://github.com/Liugq5713/Liugq5713.github.io#readme",
   "devDependencies": {
-    "@babel/core": "^7.5.5",
-    "@babel/preset-env": "^7.5.5",
+    "@babel/core": "^7.8.3",
+    "@babel/preset-env": "^7.8.3",
     "babel-jest": "^24.8.0",
     "jest": "^24.8.0",
-    "vuepress": "^1.0.3"
+    "vuepress": "^1.2.0"
   }
 }

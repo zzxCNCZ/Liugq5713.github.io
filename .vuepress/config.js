@@ -21,6 +21,10 @@ module.exports = {
     logo: "/hero.png",
     sidebarDepth: 2,
     lastUpdated: "Last Updated",
+    // algolia: {
+    //   apiKey: "22fbfd67debbc982bce49388623a35fd",
+    //   indexName: "liugq5713"
+    // },
     nav: [
       { text: "Home", link: "/" },
       { text: "Fe", link: "/fe/" },
