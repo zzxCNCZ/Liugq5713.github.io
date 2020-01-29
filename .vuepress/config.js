@@ -191,6 +191,7 @@ module.exports = {
             "ref",
             "func",
             "lifecycle",
+            "communication",
             "hook",
             "component",
             "componentProps",
