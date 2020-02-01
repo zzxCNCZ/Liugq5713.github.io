@@ -126,3 +126,12 @@ Array.from({ length: 10 })
   // some code
 });
 ```
+
+## foreach
+
+当你使用 foreach 循环数组的时候，如果你此时修改原数组里面的元素
+
+- 如果是给原数组添加元素，访问不到
+- 如果是给原数组删除元素，也访问不到咯
+
+The range of elements processed by forEach() is set before the first invocation of callback. Elements that are appended to the array after the call to forEach() begins will not be visited by callback. If the values of existing elements of the array are changed, the value passed to callback will be the value at the time forEach() visits them; elements that are deleted before being visited are not visited.
