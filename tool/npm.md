@@ -90,6 +90,8 @@ export NODE_ENV=production
 
 ### [npx](https://medium.com/@maybekatz/introducing-npx-an-npm-package-runner-55f7d4bd282b)
 
+一个 npm 包运行工具(npm 版本 5.2 已上)
+
 a tool intended to help round out the experience of using packages from the npm registry
 
 - Using locally-installed tools without npm run-script
