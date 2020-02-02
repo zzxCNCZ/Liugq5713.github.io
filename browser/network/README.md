@@ -11,13 +11,13 @@
 - 重写 toString 方法,打印普通对象的日志会调用该对象的 toString 方法。
 
 ```js
-var re = /x/
+var re = /x/;
 re.toString = function() {
   /* TODO */
-  alert()
-  return ""
-}
-console.log(re)
+  alert();
+  return "";
+};
+console.log(re);
 ```
 
 ## 防抖 vs 节流
@@ -30,11 +30,11 @@ console.log(re)
 
 ```js
 function debounce(func, wait) {
-  let timeout
+  let timeout;
   return function() {
-    clearTimeout(timeout)
-    timeout = setTimeout(func, wait)
-  }
+    clearTimeout(timeout);
+    timeout = setTimeout(func, wait);
+  };
 }
 ```
 
@@ -42,17 +42,17 @@ function debounce(func, wait) {
 
 ```js
 function throttle(func, wait) {
-  let timeout
+  let timeout;
   return function() {
-    context = this
-    args = arguments
+    context = this;
+    args = arguments;
     if (!timeout) {
       timeout = setTimeout(function() {
-        timeout = null
-        func.apply(context, args)
-      }, wait)
+        timeout = null;
+        func.apply(context, args);
+      }, wait);
     }
-  }
+  };
 }
 ```
 
@@ -83,3 +83,7 @@ function throttle(func, wait) {
 - Forgotten timers or callbacks
 - Out of DOM references
 - Closures
+
+## 参考
+
+- [JSON Web Token (JWT) — The right way of implementing, with Node.js](https://medium.com/@siddharthac6/json-web-token-jwt-the-right-way-of-implementing-with-node-js-65b8915d550e)
