@@ -88,6 +88,7 @@ module.exports = {
           collapsable: true,
           children: [
             "dom",
+            "a",
             "crossorigin",
             "audioAndVedio",
             "svg",

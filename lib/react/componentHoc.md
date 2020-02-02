@@ -122,3 +122,4 @@ render() {
 
 - [React 高阶组件实践](https://juejin.im/post/59b36b416fb9a00a636a207e#heading-0)
 - [Refs 转发](https://zh-hans.reactjs.org/docs/forwarding-refs.html)
+- [React 101 - Composition vs Inheritance](http://blog.brew.com.hk/react-101-composition-vs-inheritance/?utm_source=hashnode.com)

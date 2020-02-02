@@ -33,3 +33,7 @@ redux 是一个单独的库
   - 更新 UI
 - 如果有必要的话，可以基于初始状态渲染 UI
 - 基于 redux 的 action，使得页面相应
+
+## 参考
+
+- [Redesigning Redux](https://hackernoon.com/redesigning-redux-b2baee8b8a38)

@@ -106,3 +106,7 @@ const Header = () => {
   );
 };
 ```
+
+## 参考
+
+- [React children composition patterns with TypeScript](https://medium.com/@martin_hotell/react-children-composition-patterns-with-typescript-56dfc8923c64)
