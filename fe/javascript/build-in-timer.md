@@ -42,9 +42,9 @@ setTimeout(sayHi(), 1000);// wrong!
 
 ```js
 let timerId = setTimeout(function tick() {
-  alert("tick")
-  timerId = setTimeout(tick, 2000) // (*)
-}, 2000)
+  alert("tick");
+  timerId = setTimeout(tick, 2000); // (*)
+}, 2000);
 ```
 
 优点：
@@ -65,6 +65,30 @@ setInterval 的任务之间延时小于其设定的时间，如图所示
 举个例子，就像一列有时刻表的列车，如果被延时了，那么被延时的列车会发车。（延时期间该发的车不会再次发了）。正常之后还是按着原有的时刻表发车
 [查看示例](https://jsfiddle.net/liugq/n9Ljq1cw/)
 
+我们设置动画间隔的时候，常常会设置其时间间隔为 16ms，因为每秒渲染 60 帧可以给用户带来比较流畅的动画体验。`1s=1000ms`,`1000/60 = 16`
+
+但是 setInterval 和 setTimeout 并不能保证在指定时间间隔或者延迟的情况
+下准时调用指定函数。所以可以换一个思路,当指定函数调用的时候,根据逝去的时间计算当前
+这一帧应该显示成什么样子,这样即使因为浏览器渲染主线程忙碌导致一帧渲染时间超过 16 毫
+秒,在后续帧渲染时至少内容不会因此滞后即使达不倒 60fps 的效果,也能保证动画在指定时
+间内完成。
+
+下面是一个这种方法实现动画的例子,首先我们实现一个 raf 函数,raf 是 request animation
+frame 的缩写,代码如下:
+
+```js
+var lastTimeStamp = new Date().getTime();
+function raf(fn) {
+  var currTimeStamp = new Date().getTime();
+  var delay = math.max(0, 16 - -lastTimeStamp);
+  var handle = setTimeout(function() {
+    fn(currTimeStamp);
+  }, delay);
+  lastTimeStamp = currTimeStamp;
+  return handle;
+}
+```
+
 ## requestanimationframe
 
 ::: tip 比 setTimeout 做动画更好
@@ -75,20 +99,20 @@ setInterval 的任务之间延时小于其设定的时间，如图所示
 运行 [demo](https://codepen.io/chriscoyier/pen/ltseg):
 
 ```js
-var globalID
+var globalID;
 
 function repeatOften() {
-  $("<div />").appendTo("body")
-  globalID = requestAnimationFrame(repeatOften)
+  $("<div />").appendTo("body");
+  globalID = requestAnimationFrame(repeatOften);
 }
 
 $("#start").on("click", function() {
-  globalID = requestAnimationFrame(repeatOften)
-})
+  globalID = requestAnimationFrame(repeatOften);
+});
 
 $("#stop").on("click", function() {
-  cancelAnimationFrame(globalID)
-})
+  cancelAnimationFrame(globalID);
+});
 ```
 
 ## setTimeout 分片任务
@@ -99,9 +123,9 @@ $("#stop").on("click", function() {
 // 虽然我之后看了网上利用三元运算符，一行代码完事的
 function fib(n) {
   if (n < 2) {
-    return 1
+    return 1;
   }
-  return fib(n - 1) + fib(n - 2)
+  return fib(n - 1) + fib(n - 2);
 }
 ```
 
@@ -109,20 +133,20 @@ function fib(n) {
 function fib(n) {
   return new Promise((resolve, reject) => {
     if (n < 2) {
-      return 1
+      return 1;
     }
-    let arr = [1, 1]
-    let i = 2
+    let arr = [1, 1];
+    let i = 2;
     setTimeout(function calc() {
-      arr[i] = arr[i - 1] + arr[i - 2]
-      i++
+      arr[i] = arr[i - 1] + arr[i - 2];
+      i++;
       if (i <= n) {
-        setTimeout(calc, 50)
+        setTimeout(calc, 50);
       } else {
-        resolve(arr[i - 1])
+        resolve(arr[i - 1]);
       }
-    }, 50)
-  })
+    }, 50);
+  });
 }
 ```
 
