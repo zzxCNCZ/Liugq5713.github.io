@@ -135,3 +135,11 @@ Array.from({ length: 10 })
 - 如果是给原数组删除元素，也访问不到咯
 
 The range of elements processed by forEach() is set before the first invocation of callback. Elements that are appended to the array after the call to forEach() begins will not be visited by callback. If the values of existing elements of the array are changed, the value passed to callback will be the value at the time forEach() visits them; elements that are deleted before being visited are not visited.
+
+```js
+let nums = [1, 2, 3, 4];
+nums.forEach((num, index) => {
+  console.log(num, index, nums);
+  nums.splice(index, 0, 5);
+});
+```
