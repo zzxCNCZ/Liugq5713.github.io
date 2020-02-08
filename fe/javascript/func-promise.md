@@ -1,5 +1,9 @@
 # 函数 Promise
 
+异步，发出异步请求的线程不用等待异步操作完成，就接着执行下面的代码，异步操作的结果通过其他方式通知给发出异步请求的线程。
+
+Promise 是一个代理对象，它与原先的异步操作没有什么关系。它接受一个“执行器 executor”作为参数，执行器在 Promise 实例创建后立刻开始执行。
+
 ## Promise 状态
 
 > promise 相当于状态的占位符
@@ -14,11 +18,11 @@
 ```js
 new Promise((resolve, reject) => {
   if (true) {
-    resolve("hello world")
+    resolve("hello world");
   } else {
-    reject("woring")
+    reject("woring");
   }
-})
+});
 ```
 
 ## 检验是否是 Promise
@@ -37,25 +41,37 @@ export function isPromise {
 }
 ```
 
+## Promise.resolve()
+
+这里必须插入介绍一下 Promise.resolve()。它是 Promise 的静态方法，可以返回一个状态为 fulfilled 的 Promise 实例。这个方法非常重要，其它方法都需要用它处理参数。它可以接受四种不同类型的参数，并且返回不同的值：
+
+1. 参数为空，返回一个 fulfilled 实例，响应函数的参数也为空。
+2. 参数不为空、也不是 Promise 实例，返回 fulfilled 实例，只不过响应函数能得到这个参数。
+3. 参数为 Promise 实例，直接原样返回。
+4. 参数为 thenable 对象，立刻执行它的 .then()
+
 ## 串联 Promise
 
 每次调用 then()方法或 catch()方法时，实际上**创建并返回了另一个 Promise**,只有当第一个 promise 完成或者被拒绝后，第二个才会解决
 
 ```js
 let p1 = new Promise(function(resolve, reject) {
-  resolve(42)
-})
+  resolve(42);
+});
 
 p1.then(function(value) {
-  console.log(value)
+  console.log(value);
 }).then(function() {
-  console.log(finished)
-})
+  console.log(finished);
+});
 ```
 
 ### Promise 链的返回值
 
 ### 在 Promise 链中返回 Promise
+
+.then() 其实接受两个函数作为参数，分别代表 fulfilled 状态时的处理函数和 rejected 状态时的处理函数。只不过通常情况下，我会建议大家使用 .catch() 捕获 rejected 状态。这个后面还会说到，暂时按下不表。
+.then() 会返回一个新的 Promise 实例，所以它可以链式调用
 
 ## finally
 
@@ -67,15 +83,15 @@ The finally() method returns a Promise. When the promise is settled, i.e either 
 
 ```js
 Promise.prototype.finally = function(callback) {
-  let P = this.constructor
+  let P = this.constructor;
   return this.then(
     value => P.resolve(callback()).then(() => value),
     reason =>
       P.resolve(callback()).then(() => {
-        throw reason
+        throw reason;
       })
-  )
-}
+  );
+};
 ```
 
 ## 错误处理
