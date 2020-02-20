@@ -79,6 +79,7 @@ module.exports = {
             "css",
             "cssExpandClickAreas",
             "cssFontFamily",
+            "cssWithJS",
             "flex",
             "QA"
           ].map(i => `css/${i}`)
