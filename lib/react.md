@@ -81,7 +81,7 @@ In short, a `key` should be:
 ```js
 doSomething = (id, e) => {
   // 这里写代码
-}
+};
 ```
 
 ## [render props](https://reactjs.org/docs/render-props.html)
@@ -131,3 +131,9 @@ Finally, the line **expect(tree).toMatchSnapshot()** does one of these two thin
 ---
 
 Shallow rendering will only render one level, that's part of the specs for it.
+
+## 列表渲染实在没有 key
+
+如果使用 index 作为列表渲染的 key,且列表有增删操作，就会出现异常。如果使用 uid 随机生成，如果有 input，每次输入，uid 变化，input 失去焦点
+
+【添加选项】数据的时候伪造一个 ID，渲染的时候 key 设置为 ID，这样才是最好的办法。

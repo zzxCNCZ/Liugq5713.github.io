@@ -103,6 +103,28 @@ The navigator.sendBeacon() method can be used to asynchronously transfer a small
 
 Now that SSL is encouraged for everyone and doesn’t have performance concerns, this technique is now an anti-pattern. If the asset you need is available on SSL, then always use the https:// asset.
 
+## decodeURI 和 decodeURIComponent
+
+从名字上看，decodeURI 就是转义整个 Uri ,
+
+decodeURIComponent 就是转义 (; / ? : @ & = + \$ , #), decodeURIComponent 将它转化为普通的文本字符，而不是当做特殊符号
+
+url 合法字符有两种(在 uri 里面的地址栏不会被转义)
+
+[What is the difference between decodeURIComponent and decodeURI?](https://stackoverflow.com/questions/747641/what-is-the-difference-between-decodeuricomponent-and-decodeuri)
+
+enCodeUri (将无效的 uri 转为合法的 uri)
+
+URL-encodes the input, but assumes a full URL is given, so returns a valid URL by not encoding the protocol (e.g. http://) and host name (e.g. www.stackoverflow.com).
+
+```js
+const s = "http://www.example.com/string with + and ? and & and spaces";
+encodeURI(s);
+// http://www.example.com/string%20with%20+%20and%20?%20and%20&%20and%20spaces
+encodeURIComponent(s);
+// http%3A%2F%2Fwww.example.com%2Fstring%20with%20%2B%20and%20%3F%20and%20%26%20and%20spaces
+```
+
 ## 参考
 
 - [为什么视频网站的视频链接地址是 blob？](https://juejin.im/post/5d1ea7a8e51d454fd8057bea)

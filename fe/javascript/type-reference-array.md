@@ -143,3 +143,23 @@ nums.forEach((num, index) => {
   nums.splice(index, 0, 5);
 });
 ```
+
+## 查找数组的方法
+
+find 和 findIndex
+
+find 返回符合条件的元素，如果没有的话，则返回 undefined
+
+indexOf 和 findIndex 的区别
+
+findIndex 更加的强大，当你的数组里面的元素是非原始类型的时候，肯定是使用 findIndex
+
+当然数组里面的元素如果是简单类型，当然你可以使用 indexOf
+
+## 数组解构
+
+这样就拿到数组第三个元素了
+
+```js
+const [, , test] = [1, 2, 3];
+```

@@ -11,3 +11,11 @@
 因此需要添加一个属性
 
 `<a href='xxx' target='_black' rel='noopener' ></a>`
+
+## 下载文件
+
+[How to trigger a file download when clicking an HTML button or JavaScript](https://stackoverflow.com/questions/11620698/how-to-trigger-a-file-download-when-clicking-an-html-button-or-javascript)
+
+可以使用 HTML 新属性 download
+
+`<a href="path_to_file" download="proposed_file_name">Download</a>`

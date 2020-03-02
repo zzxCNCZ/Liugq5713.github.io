@@ -164,6 +164,10 @@ npm script 更加的灵活，构建工具可能存在的问题：
 - 插件可能会使用一些旧的版本，不是很匹配当前文档
 - 错误不容易被处理
 
+## npm config
+
+查看 npm 配置，比如有时候看看你的 npm 仓库源是什么，可以使用 npm config list
+
 ## 参考
 
 - [npm 模块安装机制简介](http://www.ruanyifeng.com/blog/2016/01/npm-install.html)

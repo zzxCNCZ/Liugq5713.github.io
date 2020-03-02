@@ -36,3 +36,75 @@ const ss = styled.div`
   &.hover{ xxx }
 `;
 ```
+
+## styled-component
+
+写 styled components 的时候没有智能提示，安装以下 vscode 插件就可以了 `vscode-styled-components`
+
+## styled-components
+
+父组件修改子组件的方式
+
+&&& 是什么？
+
+代替 inportant 的方式
+
+## Override Props Dependent Subcomponent styles
+
+[issue](https://github.com/styled-components/styled-components/issues/330)
+[how-can-i-override-styles-with-higher-specificity](https://styled-components.com/docs/faqs#how-can-i-override-styles-with-higher-specificity)
+
+[https://github.com/styled-components/babel-plugin-styled-components](https://github.com/styled-components/babel-plugin-styled-components)
+
+子组件
+
+```js
+import React from "react";
+import styled from "styled-components";
+
+const Sub: React.FC = () => {
+  return <Title>Sub hello world</Title>;
+};
+
+export default Sub;
+
+export const Title = styled.div`
+  font-size: 16px;
+  color: red;
+  width: 400px;
+  height: 400px;
+  background-color: red;
+`;
+```
+
+父组件
+
+```js
+import React from "react";
+import styled from "styled-components";
+
+import Sub, { Title } from "./sub";
+class Helo extends React.Component {
+  render() {
+    return (
+      <Box>
+        hello world
+        <Sub></Sub>
+      </Box>
+    );
+  }
+}
+
+export default Helo;
+
+// 很方便的修改了样式
+const Box = styled.div`
+  > ${Title} {
+    font-size: 16px;
+    color: blue;
+    width: 400px;
+    height: 400px;
+    background-color: blue;
+  }
+`;
+```

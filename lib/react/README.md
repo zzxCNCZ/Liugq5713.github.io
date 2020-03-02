@@ -116,6 +116,45 @@ many others (try out Profiling)
 
 suspense 可以让你等待数据加载指定 loading
 
+## React.memo
+
+```js
+const MyComponent = React.memo(function MyComponent(props) {
+  /* render using props */
+});
+```
+
+React.memo is a higher order component. It’s similar to React.PureComponent but for function components instead of classes.
+
+记忆函数，记忆组件，通常他是在你入参、props 完全相同的时候，返回给你相同的东西
+
+vue 里面有一个 keep-alive 组件，但是 react 没有，也有过一点相关[讨论](https://github.com/facebook/react/issues/12039)
+
+如何实现 keep-alive,两个方法
+
+- Keep data cached separately from the component. For example, you can lift state up to an ancestor that doesn't get mounted, or put it in a sideways cache like Redux. We're also working on a first-class API support for this.
+- Don't unmount the views you want to “keep alive”, just hide them with style={{display: 'none'}}.
+
+## q：preform a react state update on an unmounted component
+
+```js
+componentWillUnmount = () => {
+  this.setState = (state, callback) => {
+    return;
+  };
+};
+```
+
+## Q: React does not recognize the `voiceId` prop on a DOM element.
+
+遇到这种错误,[文档上写的也是十分的清楚](https://reactjs.org/warnings/unknown-prop.html)
+
+1. 使用 {...this.props} 或者 cloneElement(element, this.props)，把 props 转发给子组件的时候，你不会误把父组件要用到的 props 也传给了子组件
+2. 你使用了非标准的的 DOM 属性在原生的 DOM 节点上
+3. React 不能识别你指定的属性，目前 react 的操作是跳过它不认识的属性
+4. 你使用组件的时候用了小写，react 把小写的标签当做 dom 标签
+
 ## 参考
 
 - [Presentational and Container Components](https://medium.com/@dan_abramov/smart-and-dumb-components-7ca2f9a7c7d0)
+- [react 小书](http://huziketang.mangojuice.top/books/react/)

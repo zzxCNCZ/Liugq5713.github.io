@@ -34,6 +34,12 @@ redux 是一个单独的库
 - 如果有必要的话，可以基于初始状态渲染 UI
 - 基于 redux 的 action，使得页面相应
 
+## Redux
+
+如何不传 mapState，我一开始还以为是传一个空对象呢
+
+`export default connect(null, mapDispatch)(Dict);`
+
 ## 参考
 
 - [Redesigning Redux](https://hackernoon.com/redesigning-redux-b2baee8b8a38)

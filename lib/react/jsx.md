@@ -132,6 +132,8 @@ render() {
 </div>
 ```
 
+## [How to concatenate two JSX fragment or variables or string and component (in Reactjs)?](https://stackoverflow.com/questions/36912179/how-to-concatenate-two-jsx-fragment-or-variables-or-string-and-component-in-rea)
+
 ## 参考
 
 - [JSX In Depth – React](https://reactjs.org/docs/jsx-in-depth.html)

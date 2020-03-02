@@ -276,6 +276,20 @@ constance.boo = "sss";
 console.log("foo", constance.foo, constance.boo);
 ```
 
+## 对象解构重命名，默认值
+
+默认值：
+
+```js
+var { a = 10, b = 5 } = { a: 3 };
+```
+
+重命名
+
+```js
+var { a: aa = 10, b: bb = 5 } = { a: 3 };
+```
+
 ## 参考
 
 - [如何准确判断一个对象的类型?](https://github.com/akira-cn/FE_You_dont_know/issues/11)

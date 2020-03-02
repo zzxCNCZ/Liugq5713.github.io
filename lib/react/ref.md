@@ -94,6 +94,29 @@ class Parent extends React.Component {
 
 - 如果 callback ref 通过内联函数定义在函数里面，在更新过程中，这个回调函数将会调用两次，第一次将会是 null 值，第二次是 DOM 元素。这是因为在更新过程中，新的组件实例生成，旧的 ref 要被清空
 
+## Ref
+
+React.forwardRef()? 应用，访问在父组件访问子组件内部的 DOM 元素
+
+```js
+const FancyButton = React.forwardRef((props, ref) => (
+  <button ref={ref} className="FancyButton">
+    {props.children}
+  </button>
+));
+
+// You can now get a ref directly to the DOM button:
+const ref = React.createRef();
+<FancyButton ref={ref}>Click me!</FancyButton>;
+```
+
+[wrappedcomponentref](https://github.com/react-component/form#note-use-wrappedcomponentref-instead-of-withref-after-rc-form140)
+
+## Ref
+
+[ref](https://stackoverflow.com/questions/53200784/react-context-consumer-how-to-access-ref-on-to-the-consuming-component)
+[React ref 基础使用、转发](https://www.codenong.com/js0837f0576006/)
+
 ## 参考
 
 - [Refs and the DOM](https://reactjs.org/docs/refs-and-the-dom.html)

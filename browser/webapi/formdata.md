@@ -24,9 +24,13 @@ formData.append('key', qiniu_key)
 
 ```js
 // 列举几个，想看自己去查
-FormData.append()
-FormData.entries()
-FormData.get()
-FormData.getAll()
-FormData.has()
+FormData.append();
+FormData.entries();
+FormData.get();
+FormData.getAll();
+FormData.has();
 ```
+
+## 为啥 submit 要阻止默认事件
+
+表单的默认事件：表单一点击提交按钮(submit)必然跳转页面，如果表单的 action 为空也会跳转到自己的页面，即效果为刷新当前页。

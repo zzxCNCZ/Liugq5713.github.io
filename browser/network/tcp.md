@@ -37,3 +37,35 @@
 | 网络层 Network       | 基于网络层地址（IP 地址）进行不同网络系统间的路径选择                                                       |
 | 数据链路层 Data Link | 在物理层上建立、撤销、标识逻辑链接和链路复用 以及差错校验等功能。通过使用接收系统的硬件地址或物理地址来寻址 |
 | 物理层 Physical      | 建立、维护和取消物理连接                                                                                    |
+
+## gateway
+
+转发其他服务器通信数据的服务器，接收从客户端发送来的请求时，它就像自己拥有资源的源服务器一样对请求进行处理。有时客户端可能都不会察觉，自己的通信目标是一个网关
+
+## socket(套接字)
+
+[Socket 为什么要翻译成套接字？](https://www.zhihu.com/question/21383903)
+
+socket 是一种进程间通信机制，提供一种供应用程序访问通信协议的操作系统调用，并且通过将 socket 与 Unix 系统文件描述符相整合，使得网络读写数据（或者服务调用）和读写本地文件一样容易。很显然，这货已经离插座越来越远了，已经完全不再是硬件上的物件，而是一序列的“指令” ，按汉语的理解，已经具备了“套接”（建立网络通讯或进程间通讯）和“字”（可交互的有序指令串）的概念。
+
+## ARP(Address Resolution Protocol )
+
+Address Resolution Protocol (ARP) is a procedure for mapping a dynamic Internet Protocol address (IP address) to a permanent physical machine address in a local area network (LAN). The physical machine address is also known as a Media Access Control
+
+## ICMP(Internet Control Message Protocol)
+
+Stands for "Internet Control Message Protocol." When information is transferred over the Internet, computer systems send and receive data using the TCP/IP protocol. If there is a problem with the connection, error and status messages regarding the connection are sent using ICMP, which is part of the Internet protocol.
+
+## netstat(network statistics)
+
+displays network connections for Transmission Control Protocol (both incoming and outgoing), routing tables, and a number of network interface (network interface controller or software-defined network interface) and network protocol statistics.
+
+## 私有地址规则
+
+在制定私有地址规则时，这些地址属于公有地址中还没有分配的范围。换句话说，私有地址本身并没有什么特别的结构，只不过是将公有地址中没分配的一部分拿出来规定只能在内网使用它们而已
+
+```txt
+10.0.0.0～10.255.255.255￼
+172.16.0.0～172.31.255.255￼
+192.168.0.0～192.168.255.255
+```

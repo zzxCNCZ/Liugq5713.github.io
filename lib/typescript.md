@@ -80,3 +80,45 @@ Object.keys(obj).map(item => {
 这个报错
 
 Turns out A global file cannot be compiled using '--isolatedModules'. Ensure your file contains imports, exports, or an 'export {}' statement.
+
+## 类型和 interface 之前如何共存
+
+[possible-to-extend-types-in-typescript](https://stackoverflow.com/questions/41385059/possible-to-extend-types-in-typescript)
+
+类型归类型，接口归接口，
+
+类型可以组合
+
+`type UserEvent = Event & {UserId: string}`
+
+接口可以继承类型（UPDATE for TypeScript 2.2）
+
+```js
+type Event = {
+  name: string,
+  dateCreated: string,
+  type: string
+};
+
+interface UserEvent extends Event {
+  UserId: string;
+}
+```
+
+## ReturnType<typeof mapState>
+
+```js
+// node_modules/typescript/lib/lib.es5.d.ts
+
+type ReturnType<T extends (...args: any[]) => any> = T extends (...args: any[]) => infer R ? R : any;
+```
+
+ReturnType,该类型的作用是获取函数的返回类型。
+
+```js
+function foo(x: number): Array<number> {
+  return [x];
+}
+
+type fn = ReturnType<typeof foo>; // -> number[]
+```

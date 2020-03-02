@@ -42,6 +42,35 @@
 
 现在文件长度都有点长，我不太像用鼠标来回翻页，但是用上下键移动很慢，今天得知，可以使用 ctrl+shift+o 打开 vscode 的大纲，然后用上下键快速跳转，写 markdown 的时候特别好用
 
+## 解决 vscode 卡顿
+
+忽视了文件
+
+试试在 setting 里面加入如下代码
+
+```json
+    "search.followSymlinks": false,
+    "files.exclude": {
+        "**/.git": true,
+        "**/.svn": true,
+        "**/.hg": true,
+        "**/CVS": true,
+        "**/.DS_Store": true,
+        "**/tmp": true,
+        "**/node_modules": true,
+        "**/bower_components": true,
+        "**/dist": true
+    },
+    "files.watcherExclude": {
+        "**/.git/objects/**": true,
+        "**/.git/subtree-cache/**": true,
+        "**/node_modules/**": true,
+        "**/tmp/**": true,
+        "**/bower_components/**": true,
+        "**/dist/**": true
+    }
+```
+
 ## 参考
 
 - [23 lesser known VS Code Shortcuts as GIF](https://dev.to/devmount/23-lesser-known-vs-code-shortcuts-as-gif-80)

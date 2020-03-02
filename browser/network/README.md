@@ -84,6 +84,24 @@ function throttle(func, wait) {
 - Out of DOM references
 - Closures
 
+## 网络测试工具
+
+- ping:目的在于测试另一台主机是否可达
+- host:用来查询 DNS 记录的
+
+## 网络故障排查
+
+1. ping 127.0.0.1
+
+   127.0.0.1 被称为主机的回环接口，是 TCP/IP 协议栈正常工作的前提。如果 ping 不通，一般可以证实为本机 TCP/IP 协议栈有问题，自然就无法连接网络了
+
+2. 确认网卡是否出现了物理或驱动故障，使用 ping 本机 IP 地址的方式，如果能 ping 通则说明本地设备和驱动都正常。
+
+3. 确认是否能 ping 通同网段的其他主机
+4. 确认是否能 ping 通网关 IP。如果数据包能正常到达网关，则说明主机和本地网络都工作正常
+5. 确认是否能 ping 通公网上的 IP，如果可以则说明本地的路由设置正确，否则就要确认路由设备是否做了正确的 nat 或路由设置
+6. 确认是否能 ping 通公网上的某个域名，如果能 ping 通则说明 DNS 部分设置正确
+
 ## 参考
 
 - [JSON Web Token (JWT) — The right way of implementing, with Node.js](https://medium.com/@siddharthac6/json-web-token-jwt-the-right-way-of-implementing-with-node-js-65b8915d550e)

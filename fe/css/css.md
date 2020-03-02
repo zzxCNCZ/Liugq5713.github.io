@@ -69,3 +69,60 @@ background-attach
 因为 img 默认是按基线(baseline)对齐
 
 要去掉空格可以使用 vertical-align: bottom 或将 img 标签变为块级元素。
+
+## 学会了 js 如何读取 css 变量
+
+通过读取一个元素的 css 属性
+
+## [How to Change a CSS Background Image’s Opacity](https://scotch.io/tutorials/how-to-change-a-css-background-images-opacity)
+
+- Use absolute positioning and an image
+
+```html
+<div class="my-container">
+  <h1>Scotch Scotch Scotch</h1>
+  <img src="http://placekitten.com/1500/1000" />
+</div>
+```
+
+```css
+.my-container img {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: auto;
+  opacity: 0.6;
+}
+```
+
+- Using CSS Pseudo-Elements
+
+```html
+<div class="my-container">
+  <h1>Scotch Scotch Scotch</h1>
+</div>
+```
+
+```css
+/* You could use :after - it doesn't really matter */
+.my-container:before {
+  content: " ";
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  opacity: 0.6;
+  background-image: url("http://placekitten.com/1500/1000");
+  background-repeat: no-repeat;
+  background-position: 50% 0;
+  -ms-background-size: cover;
+  -o-background-size: cover;
+  -moz-background-size: cover;
+  -webkit-background-size: cover;
+  background-size: cover;
+}
+```
