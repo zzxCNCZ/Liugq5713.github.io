@@ -29,6 +29,10 @@ class ShowTheLocation extends React.Component {
 const ShowTheLocationWithRouter = withRouter(ShowTheLocation);
 ```
 
+## react router 里面 push vs replace
+
+这两个很相似，但是唯一的区别就是 push 会新增一条记录,replace 会替换掉这个记录， history.length 不变。
+
 ## react 可以在路由之间传递数据
 
 history 是可以变的，因此土建你从 Route 获取 location 字段的值，而不是从 hostory.location
@@ -47,6 +51,25 @@ history 对象有几个属性和方法
   - hash
   - state 这个 state 通过 history.push 提供，仅供浏览器和 memory history
 - push 终于来到我想说的的这个方法了，有什么我们想在路由之间传递比较大的数据，不可能放在 uri 上，我们就可以通过 push，把想要传递的对象放置在 state 上
+
+### 如何定义 this.props.location.state
+
+xxx dont exist type 'PoorMansUnknown' , 这什么破报错，让人一头雾水。你的报错信息改为 RouteComponentProps location state property does not exists on type {} 这不也是挺好的么
+
+看一眼 RouteComponentProps 的定义，它是可以对 state 进行定义的
+
+```js
+export interface RouteComponentProps<
+    Params extends { [K in keyof Params]?: string } = {},
+    C extends StaticContext = StaticContext,
+    S = H.LocationState
+> {
+    history: H.History<S>;
+    location: H.Location<S>;
+    match: match<Params>;
+    staticContext?: C;
+}
+```
 
 ## Prompt(提示)
 
@@ -99,26 +122,3 @@ this.unlisten = this.props.history.listen((location, action) => {})
 注意这里的问号是写在后面的
 
 如果 line 作为可选参数，用户没有传，那么就是该值就是 undefined
-
-## react router 里面 push vs replace
-
-这两个很相似，但是唯一的区别就是 push 会新增一条记录,replace 会替换掉这个记录， history.length 不变。
-
-## 如何定义 this.props.location.state
-
-xxx dont exist type 'PoorMansUnknown' , 这什么破报错，让人一头雾水。你的报错信息改为 RouteComponentProps location state property does not exists on type {} 这不也是挺好的么
-
-看一眼 RouteComponentProps 的定义，它是可以对 state 进行定义的
-
-```js
-export interface RouteComponentProps<
-    Params extends { [K in keyof Params]?: string } = {},
-    C extends StaticContext = StaticContext,
-    S = H.LocationState
-> {
-    history: H.History<S>;
-    location: H.Location<S>;
-    match: match<Params>;
-    staticContext?: C;
-}
-```

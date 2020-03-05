@@ -19,9 +19,9 @@ const h1Styles: CSS.Properties = {
 };
 ```
 
-## Style-components
+## Style-components 解决了什么问题
 
-Style-components 解决了什么问题
+写 styled components 的时候没有智能提示，安装以下 vscode 插件就可以了 `vscode-styled-components`
 
 - no class name bug
 - easier deletion of css
@@ -37,24 +37,22 @@ const ss = styled.div`
 `;
 ```
 
-## styled-component
+## override styles with higher specificity?
 
-写 styled components 的时候没有智能提示，安装以下 vscode 插件就可以了 `vscode-styled-components`
-
-## styled-components
-
-父组件修改子组件的方式
-
-&&& 是什么？
-
-代替 inportant 的方式
+```js
+const MyStyledComponent = styled(AlreadyStyledComponent)`
+  &&& {
+    color: palevioletred;
+    font-weight: bold;
+  }
+`;
+```
 
 ## Override Props Dependent Subcomponent styles
 
-[issue](https://github.com/styled-components/styled-components/issues/330)
-[how-can-i-override-styles-with-higher-specificity](https://styled-components.com/docs/faqs#how-can-i-override-styles-with-higher-specificity)
-
-[https://github.com/styled-components/babel-plugin-styled-components](https://github.com/styled-components/babel-plugin-styled-components)
+- [issue](https://github.com/styled-components/styled-components/issues/330)
+- [how-can-i-override-styles-with-higher-specificity](https://styled-components.com/docs/faqs#how-can-i-override-styles-with-higher-specificity)
+- [https://github.com/styled-components/babel-plugin-styled-components](https://github.com/styled-components/babel-plugin-styled-components)
 
 子组件
 

@@ -34,7 +34,7 @@ function BlueDatePicker() {
 
 ### User-Defined Components Must Be Capitalized
 
-如果你不大写，react 将会把这个标签当作 html 的标签
+React 将大写的标签当做组件，小写的话会当做 html 的标签
 
 ## Choosing the Type at Runtime
 
@@ -132,8 +132,31 @@ render() {
 </div>
 ```
 
-## [How to concatenate two JSX fragment or variables or string and component (in Reactjs)?](https://stackoverflow.com/questions/36912179/how-to-concatenate-two-jsx-fragment-or-variables-or-string-and-component-in-rea)
+## 循环的时候使用 key
+
+You should add a key to each child as well as each element inside children.
+
+This way React can handle the minimal DOM change.
+
+**React uses the `key` prop to understand the component-to-DOM Element relation**, which is then used for the [reconciliation process](https://facebook.github.io/react/docs/reconciliation.html). It is therefore very important that the key _always_ remains _unique_, otherwise there is a good chance React will mix up the elements and mutate the incorrect one. It is also important that these keys _remain static_ throughout all re-renders in order to maintain best performance.
+
+That being said, one does not _always_ need to apply the above, provided it is _known_ that the array is completely static. However, applying best practices is encouraged whenever possible.
+
+A React developer said in [this GitHub issue](https://github.com/facebook/react/issues/1342#issuecomment-39230939):
+
+> - key is not really about performance, it's more about identity (which in turn leads to better performance). randomly assigned and changing values are not identity
+> - We can't realistically provide keys without knowing how your data is modeled. I would suggest maybe using some sort of hashing function if you don't have ids
+> - We already have internal keys when we use arrays, but they are the index in the array. When you insert a new element, those keys are wrong.
+
+In short, a `key` should be:
+
+## 列表渲染实在没有 key
+
+如果使用 index 作为列表渲染的 key,且列表有增删操作，就会出现异常。如果使用 uid 随机生成，如果有 input，每次输入，uid 变化，input 失去焦点
+
+【添加选项】数据的时候伪造一个 ID，渲染的时候 key 设置为 ID，这样才是最好的办法。
 
 ## 参考
 
 - [JSX In Depth – React](https://reactjs.org/docs/jsx-in-depth.html)
+- [How to concatenate two JSX fragment or variables or string and component (in Reactjs)?](https://stackoverflow.com/questions/36912179/how-to-concatenate-two-jsx-fragment-or-variables-or-string-and-component-in-rea)

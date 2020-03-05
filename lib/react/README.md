@@ -4,6 +4,18 @@
 
 同构：同构这个概念存在于 Vue，React 这些新型的前端框架中，同构实际上是客户端渲染和服务器端渲染的一个整合。我们把页面的展示内容和交互写在一起，让代码执行两次。在服务器端执行一次，用于实现服务器端渲染，在客户端再执行一次，用于接管页面交互
 
+## react & ts
+
+### create-react-app 创建
+
+```shell
+npx create-react-app my-app --typescript
+```
+
+### [如何使用](https://www.typescriptlang.org/docs/handbook/react-&-webpack.html)
+
+### [how-why-a-guide-to-using-typescript-with-react](https://blog.logrocket.com/how-why-a-guide-to-using-typescript-with-react-fffb76c61614)
+
 ## 文章
 
 - [官方推荐文章](https://reactjs.org/community/articles.html)
@@ -133,7 +145,7 @@ vue 里面有一个 keep-alive 组件，但是 react 没有，也有过一点相
 如何实现 keep-alive,两个方法
 
 - Keep data cached separately from the component. For example, you can lift state up to an ancestor that doesn't get mounted, or put it in a sideways cache like Redux. We're also working on a first-class API support for this.
-- Don't unmount the views you want to “keep alive”, just hide them with style={{display: 'none'}}.
+- Don't unmount the views you want to “keep alive”, just hide them with style display: 'none'.
 
 ## q：preform a react state update on an unmounted component
 

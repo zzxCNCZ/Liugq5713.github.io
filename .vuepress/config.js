@@ -175,6 +175,7 @@ module.exports = {
             "nginx",
             "npm",
             "mac",
+            "windows",
             "vscode",
             "webpack",
             "webpack-split-chunks",
@@ -235,7 +236,6 @@ module.exports = {
             "antd",
             "element",
             "pwa",
-            "react",
             "reactnative",
             "test",
             "typescript"
