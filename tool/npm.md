@@ -26,29 +26,6 @@ npm update [-g] [<pkg>...]
 
 npm-check 直接运行这个命令就可以了。然后根据提示进行升级。
 
-### npm-config
-
-Any environment variables that start with `npm_config_` will be interpreted as a configuration parameter.
-
-`local": "npm run webpack-serve --config=test`
-
-可以通过 process.env.NPM_CONFIG_CONFIG 访问到值 test
-
-### npm 的配置文件 .npmrc
-
-我们工作中经常用到的是就是设置一下 npm 的仓库了,有时候你可以在你的项目里面放置一个.npmrc 文件，设置 npm 源地址
-
-```shell
-// 获取
-npm get registry
-// 设置
-npm config set registry  https://registry.npm.taobao.org
-// 删除
-npm config rm register
-// 直接编辑配置文件
-npm config edit
-```
-
 ## npm ls
 
 该命令可以展示你所有的依赖，特别好用
@@ -166,7 +143,32 @@ npm script 更加的灵活，构建工具可能存在的问题：
 
 ## npm config
 
-查看 npm 配置，比如有时候看看你的 npm 仓库源是什么，可以使用 npm config list
+查看 npm 配置，比如有时候看看你的 npm 仓库源是什么，可以使用 npm config list，或者运行`npm config ls -l`显示所有的配置包含隐式配置。
+
+### npm-config
+
+Any environment variables that start with `npm_config_` will be interpreted as a configuration parameter.
+
+`local": "npm run webpack-serve --config=test`
+
+可以通过 process.env.NPM_CONFIG_CONFIG 访问到值 test
+
+### npm 的配置文件 .npmrc
+
+我们工作中经常用到的是就是设置一下 npm 的仓库了,有时候你可以在你的项目里面放置一个.npmrc 文件，设置 npm 源地址。
+
+值得注意的是，npmrc 配置文件的写法是 key=value ，一行一个
+
+```shell
+// 获取
+npm get registry
+// 设置
+npm config set registry  https://registry.npm.taobao.org
+// 删除
+npm config rm register
+// 直接编辑配置文件
+npm config edit
+```
 
 ## 参考
 

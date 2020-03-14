@@ -93,6 +93,12 @@ str.substring(a, b);
 
 // 如果参数是负数，都会给参数加上数组的宽度使其变为正数
 
+## localeCompare
+
+用户排列字符串
+
+The localeCompare() method returns a number indicating whether a reference string comes before or after or is the same as the given string in sort order.
+
 ## String 模式匹配
 
 ### search

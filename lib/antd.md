@@ -16,6 +16,12 @@ how does async-validator know an asynchronous procedure is end, if you don't use
 
 form 表单 有方法让你可以检测 表单是否被用户修改过`isFieldsTouched`，如果用户提交完表单之后，`resetFields`，重置 form 表单
 
+## antd switch
+
+valuePropName 子节点的值的属性，如 Switch 的是 'checked'
+
+如果你表单里面用到了 Switch 组件，那么就要小心这个
+
 ## Q ： You cannot set a form field before rendering a field associated with the value.
 
 这里触发的原因就是

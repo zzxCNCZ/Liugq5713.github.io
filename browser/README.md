@@ -7,6 +7,10 @@
 - 写代码过程中，如果思路不清晰，那么代码逻辑也不会很清楚
 - 这里代码比较好用的一点就是，开辟的一个字段，存储运行中的结果，然后统一输出。还是挺巧妙的吼
 
+## 导出 json
+
+[Export JSON Data To Downloadable File Using Javascript](https://www.codevoila.com/post/30/export-json-data-to-downloadable-file-using-javascript)
+
 ## 参考
 
 - [Polyfill 方案的过去、现在和未来 ](https://github.com/sorrycc/blog/issues/80)

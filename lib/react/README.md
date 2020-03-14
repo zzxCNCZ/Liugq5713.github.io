@@ -157,14 +157,18 @@ componentWillUnmount = () => {
 };
 ```
 
-## Q: React does not recognize the `voiceId` prop on a DOM element.
+## bug
 
-遇到这种错误,[文档上写的也是十分的清楚](https://reactjs.org/warnings/unknown-prop.html)
+写业务的时候常见的 bug 就是数据初始化
 
-1. 使用 {...this.props} 或者 cloneElement(element, this.props)，把 props 转发给子组件的时候，你不会误把父组件要用到的 props 也传给了子组件
-2. 你使用了非标准的的 DOM 属性在原生的 DOM 节点上
-3. React 不能识别你指定的属性，目前 react 的操作是跳过它不认识的属性
-4. 你使用组件的时候用了小写，react 把小写的标签当做 dom 标签
+- 当没有这个数据的时候咋办
+- 数据应该是一个数组，但是当他还没有被赋值的时候，是 undefined, 但是你错误的时候了数组的方法，有一个检查方法就是你定义类型的时候，把数组这样定义
+
+```ts
+const arr ?:string[]
+```
+
+这样你每次使用的时候都会去检查。
 
 ## 参考
 

@@ -42,6 +42,36 @@ Article.propTypes = {
 };
 ```
 
+## props as render func
+
+很方便，当你觉得 children 不够用的时候
+
+render props 模式方便你抽取出不同组件中不同的代码,render Props 适合于当你渲染仅供展示不包含很多操作的时候，会非常的有用
+
+```jsx
+<DataProvider render={data => <h1>Hello {data.target}</h1>} />
+```
+
+组件实现
+
+```js
+import React from 'react';
+
+const SharedComponent extends React.Component {
+  render() {
+    return (
+      <div>
+        {this.props.render()}
+      </div>
+    );
+  }
+}
+
+export default SharedComponent;
+```
+
+this.props.render 就是由另一个组件传递的函数,返回的是 React Element
+
 ## children
 
 JSX 元素可以被嵌套。在 jsx 里面可以直接使用`this.props.children`，不需要声明什么其他的东西
@@ -139,3 +169,4 @@ interface IProps {
 ## 参考
 
 - [React children composition patterns with TypeScript](https://medium.com/@martin_hotell/react-children-composition-patterns-with-typescript-56dfc8923c64)
+- [How to pass data to props.children](https://frontarm.com/james-k-nelson/passing-data-props-children/)

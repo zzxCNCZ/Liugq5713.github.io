@@ -123,6 +123,14 @@ head 默认显示前 10 行，`- n` 显示行数
 
 tail 也是显示默认 10 行，tail 有一个不错的功能，可以动态查看文件尾部。`tail -f xxx`
 
+## sudo
+
+有时候，sudo command 都需要输入代码，可以通过 visudo，然后添加 NOPASSWD 参数，这样就不用输入密码了。
+
+## linux 命令 cd
+
+直接输入 `cd` ,将会进入用户的家目录
+
 ## 参考
 
 - [前端程序员的 macOS 搭建指南](https://github.com/phodal/setup.guide)
