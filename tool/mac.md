@@ -131,7 +131,24 @@ tail 也是显示默认 10 行，tail 有一个不错的功能，可以动态查
 
 直接输入 `cd` ,将会进入用户的家目录
 
+## scp 上传文件
+
+新开一个窗口 使用 scp 命令
+scp 是 secure copy 的缩写，scp 是 linux 系统下基于 ssh 登录进行安全的远程文件拷贝命令。
+介绍一个命令：
+
+scp [-r][-p port] local_file_address username@ip:remote_file_address
+命令解释：
+-r: 递归复制整个目录
+-P port: 注意是大写的 P，port 是指定的端口号。
+local_file_address: 本地文件地址。[地址是根据当前命令所在目录来编写的]
+remote_file_address: 远程服务器地址。
+输入完以上命令，回车，之后会让你输入服务器密码。成功之后，就开始复制了。以下是我的一个操作。
+
 ## 参考
 
+- [mac 通过自带的 ssh 连接 Linux 服务器并上传解压文件](http://weiqinl.com/2018/01/27/mac%E9%80%9A%E8%BF%87%E8%87%AA%E5%B8%A6%E7%9A%84ssh%E8%BF%9E%E6%8E%A5Linux%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%B9%B6%E4%B8%8A%E4%BC%A0%E8%A7%A3%E5%8E%8B%E6%96%87%E4%BB%B6/)
 - [前端程序员的 macOS 搭建指南](https://github.com/phodal/setup.guide)
 - [命令行](https://github.com/jlevy/the-art-of-command-line/blob/master/README-zh.md)
+- [20 Sed (Stream Editor) Command Examples for Linux Users](https://www.linuxtechi.com/20-sed-command-examples-linux-users/)
+- [Sed Command in Linux/Unix with examples](https://www.geeksforgeeks.org/sed-command-in-linux-unix-with-examples/)

@@ -89,6 +89,90 @@ type T10 = Foo<{ a: string; b: string }>; // string
 type T11 = Foo<{ a: string; b: number }>; // string | number
 ```
 
+## TLDR
+
+类型推断：发生在初始化变量和成员，设置默认参数值和决定函数返回值时，会选择最佳的通用类型。
+
+兼容性：typesript 会根据结构来兼容类型
+
+## 类型推断
+
+简单的情况 `let x = 3`
+
+这种推断发生在初始化变量和成员，设置默认参数值和决定函数返回值时。
+
+### 最佳通用类型
+
+`let x = [0, 1, null];` ts 会选择最通用的类型。
+
+如果没有找到最佳通用类型的话，类型推断的结果为联合数组类型，(Rhino | Elephant | Snake)[]。
+
+eg: `let zoo = [new Rhino(), new Elephant(), new Snake()];`
+
+### 上下文类型
+
+按上下文归类会发生在表达式的类型与所处的位置相关时。比如：
+
+```js
+window.onmousedown = function(mouseEvent) {
+  console.log(mouseEvent.button); //<- Error
+};
+```
+
+## 类型兼容性
+
+TypeScript 里的类型兼容性是基于结构子类型的。
+
+结构类型是一种只使用其成员来描述类型的方式
+
+```js
+interface Named {
+  name: string;
+}
+
+class Person {
+  name: string;
+}
+
+// Person 和 Named 都有 name 属性
+let p: Named;
+// OK, because of structural typing
+p = new Person();
+```
+
+TypeScript 结构化类型系统的基本规则是，如果 x 要兼容 y，那么 y 至少具有与 x 相同的属性
+
+### 如何比较两个函数相同
+
+```js
+let x = (a: number) => 0;
+let y = (b: number, s: string) => 0;
+
+y = x; // OK
+x = y; // Error
+```
+
+x 能够复制给 y
+
+首先看他们的参数列表,要查看 x 是否能赋值给 y，首先看它们的参数列表。 x 的每个参数必须能在 y 里找到对应类型的参数。 注意的是参数的名字相同与否无所谓，只看它们的类型
+
+### 为什么可以忽略参数
+
+因为忽略参数对于 js 来说，是可以的。不如 forEach 函数，我们很可能就用到它第一个参数
+
+## typescript 声明函数
+
+```ts
+let myAdd: (x: number, y: number) => number = function(
+  x: number,
+  y: number
+): number {
+  return x + y;
+};
+```
+
+因为这定义了函数的类型，所以可能就会有重载的需求
+
 ## 参考
 
 - [TypeScript Tutorial - 'infer' keyword](https://dev.to/aexol/typescript-tutorial-infer-keyword-2cn)

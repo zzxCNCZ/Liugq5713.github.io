@@ -4,6 +4,36 @@
 babel 是一个 Javascript 编译器，主要用于将 ECMAScript 2015+ 版本的代码转换为向后兼容的 JavaScript 语法，以便能够运行在当前和旧版本的浏览器或其他环境。
 :::
 
+```js
+// useBuiltIns 有三种值
+// false 仅仅是转化语法
+// entry 把所有的包引入
+// useage 只是引入用到的包
+
+ {
+     "presets": [
+         [ "@babel/preset-env", {
+             "targets": {},
+             "useBuiltIns": false,
+             "corejs": false
+         }]
+     ]
+ }
+```
+
+## @babel/polyfill
+
+这个包被废弃，
+
+所以在针对 Babel >= 7.4.0 的情况，我们需要安装 core-js 替代 babel-polyfill,而 regenerator-runtime 会在我们安装 @babel/runtime 时自动安装，所以不必单独安装了。
+
+## babel-runtime
+
+babel-runtime 一般应用于两种场景：
+
+开发类库/工具（生成不污染全局空间和内置对象原型的代码）
+借助 @babel/runtime 中帮助函数（helper function）移除冗余工具函数
+
 ## 配置方式
 
 1. 在 package.json 中设置 babel 字段。
@@ -62,3 +92,4 @@ babel 可以转化一些新的特性，但是对于新的内置函数（Promise,
 
 - [Babel 快速上手使用指南](https://juejin.im/post/5cf45f9f5188254032204df1#heading-0)
 - [babel 到底该如何配置？](https://juejin.im/post/59ec657ef265da431b6c5b03#heading-0)
+- [结合 Babel 7.4.0 谈一下 Babel-runtime 和 Babel-polyfill](https://juejin.im/post/5d0373a95188251e1b5ebb6c)

@@ -7,14 +7,14 @@
 ```js
 function wait(millisecond) {
   return new Promise(resolve => {
-    setTimeout(resolve, millisecond)
-  })
+    setTimeout(resolve, millisecond);
+  });
 }
 
 async function repeat(task, count = 1, millisecond = 0) {
   while (count--) {
-    await wait(millisecond)
-    task()
+    await wait(millisecond);
+    task();
   }
 }
 ```
@@ -22,14 +22,14 @@ async function repeat(task, count = 1, millisecond = 0) {
 使用起来也很方便
 
 ```js
-;(async () => {
-  await repeat(taskA, 3, 1000)
-  taskB()
-})()
+(async () => {
+  await repeat(taskA, 3, 1000);
+  taskB();
+})();
 
 // 重要： 如果你想让函数同步执行，去掉await
-repeat(taskA, 3, 1000)
-taskB()
+repeat(taskA, 3, 1000);
+taskB();
 ```
 
 ## async 函数的实现原理
@@ -40,7 +40,7 @@ async 函数的实现原理，就是将 Generator 函数和自动执行器，包
 function fn(args) {
   return spawn(function*() {
     // ...
-  })
+  });
 }
 ```
 
@@ -51,34 +51,34 @@ spawn 函数就是自动执行器。下面给出 spawn 函数的实现，基本�
 ```js
 function spawn(genF) {
   return new Promise(function(resolve, reject) {
-    const gen = genF()
+    const gen = genF();
     function step(nextF) {
-      let next
+      let next;
       try {
-        next = nextF()
+        next = nextF();
       } catch (e) {
-        return reject(e)
+        return reject(e);
       }
       if (next.done) {
-        return resolve(next.value)
+        return resolve(next.value);
       }
       Promise.resolve(next.value).then(
         v => {
           step(function() {
-            return gen.next(v)
-          })
+            return gen.next(v);
+          });
         },
         e => {
           step(function() {
-            return gen.throw(e)
-          })
+            return gen.throw(e);
+          });
         }
-      )
+      );
     }
     step(function() {
-      return gen.next(undefined)
-    })
-  })
+      return gen.next(undefined);
+    });
+  });
 }
 ```
 
@@ -87,14 +87,14 @@ function spawn(genF) {
 - 多个 await 命令后面的异步操作，如果不存在继发关系，最好让它们同时触发
 
 ```js
-let foo = await getFoo()
-let bar = await getBar()
+let foo = await getFoo();
+let bar = await getBar();
 ```
 
 上面代码中，getFoo 和 getBar 是两个独立的异步操作（即互不依赖），被写成继发关系。这样比较耗时，因为只有 getFoo 完成以后，才会执行 getBar，完全可以让它们同时触发。
 
 ```js
-let [foo, bar] = await Promise.all([getFoo(), getBar()])
+let [foo, bar] = await Promise.all([getFoo(), getBar()]);
 ```
 
 ### Iterating Sequential Asynchronous Operations
@@ -102,10 +102,26 @@ let [foo, bar] = await Promise.all([getFoo(), getBar()])
 ```js
 function doAsyncToAllSequentially(values) {
   return values.reduce((previousOperation, val) => {
-    return previousOperation.then(() => doSomethingAsync(val))
-  }, Promise.resolve())
+    return previousOperation.then(() => doSomethingAsync(val));
+  }, Promise.resolve());
 }
 ```
+
+## Async Await
+
+[7 Reasons Why JavaScript Async/Await Is Better Than Plain Promises (Tutorial)](https://dev.to/gafi/7-reasons-to-always-use-async-await-over-plain-promises-tutorial-4ej9) ,async await 优点
+
+- Concise and clean
+- error handler
+  Async/await makes it finally possible to handle both synchronous and asynchronous errors with the same construct, good old try/catch.
+- Intermediate values
+- Conditionals
+
+### You can await anything
+
+Last but not least, await can be used for both synchronous and asynchronous expressions. For example, you can write await 5, which is equivalent to Promise.resolve(5).
+
+这里的一个用法是，当你设计 API 的时候，可能不知道用户传入的函数是异步的函数还是同步的，所以使用 await 比较好
 
 ## 参考
 
