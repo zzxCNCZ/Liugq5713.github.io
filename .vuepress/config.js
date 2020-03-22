@@ -3,7 +3,7 @@ module.exports = {
   configureWebpack: {
     resolve: {
       alias: {
-        algorithm: path.join(__dirname, "algorithm")
+        algorithm: "../algorithm"
       }
     }
   },
@@ -172,6 +172,7 @@ module.exports = {
             "github",
             "husky",
             "ci",
+            "word",
             "nginx",
             "npm",
             "mac",
@@ -193,12 +194,14 @@ module.exports = {
             "jsx",
             "ref",
             "func",
+            "comp",
+            "compProps",
             "lifecycle",
-            "communication",
-            "hook",
-            "component",
-            "componentProps",
-            "componentHoc",
+            "compFunc",
+            "compFuncHook",
+            "compHoc",
+            "compChat",
+            "compOptimize",
             "router",
             "redux",
             "style",

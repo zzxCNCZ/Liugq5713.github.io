@@ -20,3 +20,13 @@ The spread operator can be used to pull variables off props, and put the remaini
 2. 你使用了非标准的的 DOM 属性在原生的 DOM 节点上
 3. React 不能识别你指定的属性，目前 react 的操作是跳过它不认识的属性
 4. 你使用组件的时候用了小写，react 把小写的标签当做 dom 标签
+
+## q：Error: preform a react state update on an unmounted component
+
+```js
+componentWillUnmount = () => {
+  this.setState = (state, callback) => {
+    return;
+  };
+};
+```

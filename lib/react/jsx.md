@@ -1,5 +1,7 @@
 # JSX
 
+JSX 使用组件的时候，组件的标签大写
+
 ## Specifying The React Element Type
 
 ### React Must Be in Scope
@@ -150,11 +152,32 @@ A React developer said in [this GitHub issue](https://github.com/facebook/react/
 
 In short, a `key` should be:
 
-## 列表渲染实在没有 key
+## [列表渲染实在没有 key](https://medium.com/@robinpokorny/index-as-a-key-is-an-anti-pattern-e0349aece318)
 
 如果使用 index 作为列表渲染的 key,且列表有增删操作，就会出现异常。如果使用 uid 随机生成，如果有 input，每次输入，uid 变化，input 失去焦点
 
 【添加选项】数据的时候伪造一个 ID，渲染的时候 key 设置为 ID，这样才是最好的办法。
+
+如果一个列表有删除操作，排序操作，或者数组是计算出来的
+
+使用数组的 index，那么就百分百有问题，因为 index 随着你增删数据是一直在变的。
+
+作者推荐使用 ID
+
+```js
+todoCounter = 1;
+function createNewTodo(text) {
+  return {
+    completed: false,
+    id: todoCounter++,
+    text
+  };
+}
+```
+
+这里使用全局的 todoCounter,方便如果其他元素也使用这个函数，那么可以生成唯一的 id
+
+当然你也可以使用别人写的库，比如 shortid
 
 ## 参考
 

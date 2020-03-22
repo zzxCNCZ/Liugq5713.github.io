@@ -27,3 +27,54 @@ valuePropName 子节点的值的属性，如 Switch 的是 'checked'
 这里触发的原因就是
 
 if your form doesn't have the fields these you set, this error will appear!
+
+## 表单排列方式
+
+- 水平排列(horizontal)：标签和表单控件水平排列；（默认）
+- 垂直排列(vertical)：标签和表单控件上下垂直排列；
+- 行内排列(inline)：表单项水平行内排列。
+
+### Form layout
+
+```js
+const formItemLayout = {
+  labelCol: {
+    xs: { span: 24 },
+    sm: { span: 8 }
+  },
+  wrapperCol: {
+    xs: { span: 24 },
+    sm: { span: 16 }
+  }
+};
+```
+
+## 表单域
+
+```js
+<Form.Item {...props}>{children}</Form.Item>
+```
+
+## 表单方法
+
+## this.props.form.getFieldDecorator(id, options)
+
+经过 getFieldDecorator 包装的控件，表单控件会自动添加 value（或 valuePropName 指定的其他属性） onChange（或 trigger 指定的其他属性），数据同步将被 Form 接管，这会导致以下结果：
+
+### onchange 事件
+
+你不再需要也不应该用 onChange 来做同步，但还是可以继续监听 onChange 等事件。
+
+### 默认值
+
+你不能用控件的 value defaultValue 等属性来设置表单域的值，**默认值可以用 getFieldDecorator 里的 initialValue。**
+
+### 动态设置表单的值
+
+**你不应该用 setState，可以使用 this.props.form.setFieldsValue 来动态改变表单值。**
+
+## isFieldTouched
+
+判断一个输入控件是否经历过 getFieldDecorator 的值收集时机 options.trigger
+
+代表这个表单字段仅仅被获取焦点之后才会显示错误信息
