@@ -102,3 +102,60 @@ function MyComponent() {
 https://reactjs.org/docs/forms.html#controlled-components
 
 了解一下 react 的受控组件和非受控组件
+
+## 一些原则
+
+有状态的组件没有渲染，有渲染的组件没有状态。 这个思路可以用作写组件的指导思想。
+
+eg：自己的代码里有不下 30 个的 isShow、isOpen、isVisible 和对应一个 toggle 方法，而没有人去想过可以有 withToggle 这样的 HoC 解决问题。并不是不想去抽象，而是当 isShow、isOpen 和其它的逻辑混在一起，比如{isShow, username}和{isOpen, validationErrors}的时候，普通的人无法从这 2 个大集合中挑出 isShow 和 isOpen 并准确地认知到他们是可以复用的
+
+React Hooks 要解决的问题是状态共享,注意重点是状态共享而不是 ui 复用。
+
+## 为什么 setState 不设计成返回一个 promise
+
+1. 解决异步带来的困扰方案其实很多。比如，我们可以在合适的生命周期 hook 函数中完成相关逻辑。在这个场景里，就是在行组件的 componentDidMount 里调用 focus，自然就完成了自动聚焦。
+2. 任何需要使用 setState 第二个参数 callback 的场景，都可以使用生命周期函数 componentDidUpdate (and/or componentDidMount) 来复写。
+
+- [github 讨论：Make setState return a promise](https://github.com/facebook/react/issues/2642)
+- [从 setState promise 化的探讨 体会 React 团队设计思想](https://zhuanlan.zhihu.com/p/28905707)
+
+## [React hooks: not magic, just arrays](https://medium.com/@ryardley/react-hooks-not-magic-just-arrays-cd4f1857236e)
+
+想明白 react hooks，首先你要明白为啥 hook 有使用的原则
+
+### [hook rules](https://reactjs.org/docs/hooks-rules.html)
+
+- 不在循环语句，条件语句中使用 hook
+- 仅在函数组件内使用 hooks
+
+## 为什么 setState 不设计成返回一个 promise
+
+1. 解决异步带来的困扰方案其实很多。比如，我们可以在合适的生命周期 hook 函数中完成相关逻辑。在这个场景里，就是在行组件的 componentDidMount 里调用 focus，自然就完成了自动聚焦。
+2. 任何需要使用 setState 第二个参数 callback 的场景，都可以使用生命周期函数 componentDidUpdate (and/or componentDidMount) 来复写。
+
+- [github 讨论：Make setState return a promise](https://github.com/facebook/react/issues/2642)
+- [从 setState promise 化的探讨 体会 React 团队设计思想](https://zhuanlan.zhihu.com/p/28905707)
+
+## [React hooks: not magic, just arrays](https://medium.com/@ryardley/react-hooks-not-magic-just-arrays-cd4f1857236e)
+
+想明白 react hooks，首先你要明白为啥 hook 有使用的原则
+
+## react 写法 good case
+
+这样做有一个好处，只是声明了一处。声明了初始值，通过类型推断判断出类型。这样就不用分开写了。之前我是先声明类型，然后在类里面定义初始值。
+
+```jsx
+const initialState = Object.freeze({
+  optionWords: [] as h.dictation_comm.Word[],
+  words: [] as string[],
+  bizType: BizType.ShengZi
+});
+
+type StateType = typeof initialState;
+/**
+ * 添加生词弹窗
+ */
+class WordModal extends React.PureComponent<PropsType, StateType> {
+     public state = initialState;
+}
+```

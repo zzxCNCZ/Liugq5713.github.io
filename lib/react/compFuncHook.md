@@ -34,6 +34,12 @@ useState 如果是用来使用数据，使用 concat 返回新的数组
 
 2. useEffect 像 componentDidMount + componentDidUpdate + componentDidUnMount 它会在第一次渲染时会调用。监听依赖的 props 和 state，更新时调用。数据更新后会调用 return 的函数
 
+## useState
+
+[useState undefined behavior when state is function](https://github.com/facebook/react/issues/15279)
+
+会直接调用
+
 ## 解决的方法
 
 ### 使用依赖

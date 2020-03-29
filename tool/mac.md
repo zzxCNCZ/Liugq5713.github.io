@@ -145,6 +145,30 @@ local_file_address: 本地文件地址。[地址是根据当前命令所在目�
 remote_file_address: 远程服务器地址。
 输入完以上命令，回车，之后会让你输入服务器密码。成功之后，就开始复制了。以下是我的一个操作。
 
+## 查看 8080 端口
+
+```js
+netstat -tulpn | grep 8080
+```
+
+## 连上安卓设备快速输入
+
+```js
+adb shell input text "sometext"
+```
+
+## 权限
+
+1 ：执行
+2：写
+4： 读
+
+所以会看到 777
+
+## mac 删除应用的方法
+
+打开访达，选择应用程序，然后将你想删除的应用程序拖到废纸篓里面去即可。
+
 ## 参考
 
 - [mac 通过自带的 ssh 连接 Linux 服务器并上传解压文件](http://weiqinl.com/2018/01/27/mac%E9%80%9A%E8%BF%87%E8%87%AA%E5%B8%A6%E7%9A%84ssh%E8%BF%9E%E6%8E%A5Linux%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%B9%B6%E4%B8%8A%E4%BC%A0%E8%A7%A3%E5%8E%8B%E6%96%87%E4%BB%B6/)

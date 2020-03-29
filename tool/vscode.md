@@ -27,6 +27,14 @@
 
 以前我使用 vscode 官方的主题，但是还是感觉有点不是。Monokai Dimmind 这个主题就是非常的不错，感觉十分的柔和，不伤眼睛。
 
+## vscode 实现远端开发部署
+
+1. 远程主机安装 openssh-server`apt-get install openssh-server`
+2. 本地主机安装 openssh-client，mac os 自带，跳过这一步`apt-get install openssh-client`
+3. vscode 安装 Remote Development 插件
+4. 更改配置。通过 ctrl+shift+p 打开设置 Remote-SSH-Settings，设置 Remote.SSH:Show Login Terminal 为 true，这样每次都会询问密码。
+5. 添加主机。可以把常用的主机都保存下来。安装完插件后左下角会出现一个绿色的图标，点击选择会在命令窗口弹出几个选项，可以可视化添加 ssh 配置，也可以编辑配置文件。
+
 ## 比较(diff)两个文件
 
 - [diff vscode 插件](https://marketplace.visualstudio.com/items?itemName=fabiospampinato.vscode-diff)

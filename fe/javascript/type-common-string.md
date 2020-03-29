@@ -123,6 +123,22 @@ The localeCompare() method returns a number indicating whether a reference strin
 
 将调用他的字符串拆分为一个子串组成的数组
 
+## string 的正则方法 and 正则的方法
+
+```js
+// string的方法
+
+string.replace();
+string.match();
+string.search();
+```
+
+```js
+// 正则的方法
+RegExp.prototype.exec();
+RegExp.prototype.test();
+```
+
 ## replace 应用
 
 > replace 结合正则表达式，真的很强大

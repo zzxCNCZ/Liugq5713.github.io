@@ -207,6 +207,7 @@ module.exports = {
             "redux",
             "style",
             "ssr",
+            "ts",
             "myreact"
           ].map(i => `react/${i}`)
         },

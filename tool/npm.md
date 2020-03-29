@@ -170,6 +170,28 @@ npm config rm register
 npm config edit
 ```
 
+## pm2 进程守护
+
+pm2 delete [name] 可以删除掉你不需要在列表上展示的任务。
+
+现在 pm2 可以运行 yarn ？ 虽然我没有试用成功
+
+- [QUICK START](https://pm2.keymetrics.io/docs/usage/quick-start/)
+
+## pm2 直接运行 npm script
+
+不知道为啥运行 yarn 就不行，[相关 issue](https://github.com/Unitech/pm2/issues/3652)
+
+最后，我通过运行 npm 解决了问题 [查看](https://stackoverflow.com/questions/31579509/can-pm2-run-an-npm-start-script)
+
+pm2 start npm --no-automation --name {app name} -- run {script name}
+
+## nodemon 执行非 node 脚本
+
+```js
+nodemon --exec "python -v" ./app.py
+```
+
 ## 参考
 
 - [npm 模块安装机制简介](http://www.ruanyifeng.com/blog/2016/01/npm-install.html)
