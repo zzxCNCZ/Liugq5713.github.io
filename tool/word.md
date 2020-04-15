@@ -18,6 +18,8 @@
 
 - SCM（Software Configuration Management)：软件配置管理
 
+- CMS 是"Content Management System"的缩写，意为"内容管理系统"。
+
 ---
 
 - TTS： text to speech 从文本到语音

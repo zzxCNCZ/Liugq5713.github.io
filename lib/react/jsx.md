@@ -158,12 +158,6 @@ In short, a `key` should be:
 
 【添加选项】数据的时候伪造一个 ID，渲染的时候 key 设置为 ID，这样才是最好的办法。
 
-如果一个列表有删除操作，排序操作，或者数组是计算出来的
-
-使用数组的 index，那么就百分百有问题，因为 index 随着你增删数据是一直在变的。
-
-作者推荐使用 ID
-
 ```js
 todoCounter = 1;
 function createNewTodo(text) {
@@ -179,7 +173,15 @@ function createNewTodo(text) {
 
 当然你也可以使用别人写的库，比如 shortid
 
+但是具体使用数组的index的key会有什么问题呢？
+
+Reorders can also cause issues with component state when indexes are used as keys. Component instances are updated and reused based on their key. If the key is an index, moving an item changes it. As a result, component state for things like uncontrolled inputs can get mixed up and updated in unexpected ways.
+
+翻译过来就是，如果你拿数组的index作为key,那么在重排的时候，一些非受控组件将会出现不可预料的错误。
+
 ## 参考
 
 - [JSX In Depth – React](https://reactjs.org/docs/jsx-in-depth.html)
 - [How to concatenate two JSX fragment or variables or string and component (in Reactjs)?](https://stackoverflow.com/questions/36912179/how-to-concatenate-two-jsx-fragment-or-variables-or-string-and-component-in-rea)
+- [Keys](https://reactjs.org/docs/reconciliation.html#keys)
+- [an example of the issues that can be caused by using indexes as keys](https://codepen.io/pen?editors=0010)

@@ -1,5 +1,12 @@
 # 其他
 
+## 学会查看 log
+
+TCE
+
+- TCE: /opt/tiger/toutiao/log/app/xxx 查 access 和 error log
+- TCE: pm2 logs
+
 ## 前后端分离再分离
 
 你会发现前端开发的体系化、正规化，其实伴随着前后端分离逐步深化:

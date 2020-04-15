@@ -40,12 +40,12 @@ if your form doesn't have the fields these you set, this error will appear!
 const formItemLayout = {
   labelCol: {
     xs: { span: 24 },
-    sm: { span: 8 }
+    sm: { span: 8 },
   },
   wrapperCol: {
     xs: { span: 24 },
-    sm: { span: 16 }
-  }
+    sm: { span: 16 },
+  },
 };
 ```
 
@@ -78,3 +78,39 @@ const formItemLayout = {
 判断一个输入控件是否经历过 getFieldDecorator 的值收集时机 options.trigger
 
 代表这个表单字段仅仅被获取焦点之后才会显示错误信息
+
+## antd form 的函数
+
+antd form 的函数很有意思，validateFields，`( [fieldNames: string[]], [options: object], callback(errors, values) ) => void`
+写法上十分的灵活。那么它是怎么做到的呢，其实很简单，就是通过定义一个 getParams 函数来判断参数的类型来理顺参数
+
+```js
+export function getParams(ns, opt, cb) {
+  let names = ns;
+  let options = opt;
+  let callback = cb;
+  if (cb === undefined) {
+    if (typeof names === "function") {
+      callback = names;
+      options = {};
+      names = undefined;
+    } else if (Array.isArray(names)) {
+      if (typeof options === "function") {
+        callback = options;
+        options = {};
+      } else {
+        options = options || {};
+      }
+    } else {
+      callback = options;
+      options = names || {};
+      names = undefined;
+    }
+  }
+  return {
+    names,
+    options,
+    callback,
+  };
+}
+```

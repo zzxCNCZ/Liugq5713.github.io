@@ -1,5 +1,11 @@
 # 历史记录
 
+## git plugin
+
+glol 命令查看 log 特别好用，查看 log 特别的清晰
+
+`alias glol="git log --graph --pretty='%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'"`
+
 ## 查看 git 记录
 
 > git 比较优秀的地方就是可以一切操作都是有记录的，除了部分操作，都是有补救措施的，所以查看操作记录也是必须的

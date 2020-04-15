@@ -103,7 +103,11 @@ The navigator.sendBeacon() method can be used to asynchronously transfer a small
 
 Now that SSL is encouraged for everyone and doesn’t have performance concerns, this technique is now an anti-pattern. If the asset you need is available on SSL, then always use the https:// asset.
 
-## decodeURI 和 decodeURIComponent
+## decodeURI vs decodeURIComponent
+
+encodeURI 将输出符号的 utf-8 形式，并且在每个字节前加上%，需要注意的是，encodeURI 不对单引号编码
+
+URL 只能使用英文字母，阿拉伯数字和某一些符号。
 
 从名字上看，decodeURI 就是转义整个 Uri ,
 

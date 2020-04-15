@@ -120,6 +120,40 @@ Promise.prototype.finally = function(callback) {
 
 如何使用 promise.all 模拟也很简单，把传入的 promise 的 catch 都 resolve 出来，即正确的结果和错误的结果都 resolve 出来
 
+## 实现一个 promisfy
+
+即一个函数，能够将异步函数传给
+
+```js
+function promisfy(fn, ctx) {
+  return function() {
+    let args = arguments;
+
+    return new Promise(function(resolve, reject) {
+      function callback(e, ...result) {
+        if (e) {
+          reject(e);
+        } else {
+          if (result.length == 1) {
+            resolve(result[0]);
+          } else {
+            resolve(result);
+          }
+        }
+      }
+
+      let fnArgs = [];
+      for (let i of args) {
+        fnArgs.push(i);
+      }
+      fnArgs.push(callback);
+
+      fn.apply(ctx, fnArgs);
+    });
+  };
+}
+```
+
 ## 参考
 
 - [Promises/A+规范](https://promisesaplus.com/)

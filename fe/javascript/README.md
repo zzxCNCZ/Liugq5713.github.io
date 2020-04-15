@@ -4,6 +4,12 @@
 
 在 js 里面，lambda 表达式 指的是匿名函数
 
+## 可选链
+
+optional chaining
+
+比如判断属性的长度是否为零，`a.b.length > 0` 当 b 可能不存在，就需要这么写 a.b&&a.b.length 但是其实不必要这么写，可以直接使用 a.b?.length>0 。这样就很方便了。
+
 ## 参考
 
 - [Lambda 表达式有何用处？如何使用？](https://www.zhihu.com/question/20125256)
