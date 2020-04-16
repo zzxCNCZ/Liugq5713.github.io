@@ -99,6 +99,15 @@ str.substring(a, b);
 
 The localeCompare() method returns a number indicating whether a reference string comes before or after or is the same as the given string in sort order.
 
+## [startsWith](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/startsWith) (string)
+
+```js
+const str1 = "Saturday night plans";
+
+console.log(str1.startsWith("Sat"));
+// expected output: true
+```
+
 ## String 模式匹配
 
 ### search
@@ -148,7 +157,7 @@ RegExp.prototype.test();
 **当一个参数为正则表达式，可以通过 `$n` (n 小于 100，n 从 1)访问圆括号匹配到的子字符串**，这个知识还是很有用的
 
 ```javascript
-const hidePhone = phoneNumber => {
+const hidePhone = (phoneNumber) => {
   return phoneNumber.replace(/^(\d{3})\d{4}/, "$1****");
 };
 ```
@@ -164,7 +173,7 @@ export const highlightText = (content, words) => {
 
   if (Array.isArray(words)) {
     const word_group = words
-      .map(word => {
+      .map((word) => {
         return `${word}`;
       })
       .join("|");

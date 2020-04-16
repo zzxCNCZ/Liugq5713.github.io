@@ -30,3 +30,7 @@ componentWillUnmount = () => {
   };
 };
 ```
+
+## Q:react-router-dom 5.1.2 明明有 hooks 可以用了呀，为啥 vscode 不识别呢？
+
+大概率原因是 其定义文件和当前使用库的版本不一致，定义文件里面没有这个东西的定义

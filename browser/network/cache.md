@@ -50,6 +50,18 @@ ETag 是一个响应首部字段，它是根据实体内容生成的一段 hash 
 
 SessionStorage 的数据只存储到特定的会话中，不属于持久化的存储，所以关闭浏览器会清除数据
 
+## 'Cache-Control': 'no-store,private'
+
+[cache-control 参考](https://www.imperva.com/learn/performance/cache-control/)
+
+- private
+
+Indicates that all or part of the response message is intended for a single user and MUST NOT be cached by a shared cache, such as a proxy server.
+
+- no-store
+
+The no-store directive means browsers aren’t allowed to cache a response and must pull it from the server each time it’s requested. This setting is usually used for sensitive data, such as personal banking details.
+
 ## 参考
 
 - [前端缓存最佳实践](https://juejin.im/post/5c136bd16fb9a049d37efc47)

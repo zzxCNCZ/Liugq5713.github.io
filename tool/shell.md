@@ -78,6 +78,20 @@ done
 
 `stdout | sed 's/pattern/replace/'`
 
+## ifconfig
+
+utun0 是什么接口 : vpn 使用的隧道接口
+
+"utun0 is For "Back to My Mac" given your described setup I would assume it's created by GNS3 for / as the secure localhost connection.. as for the MTU not sure" --- Refer to superuser
+
+## 删除当前目录下的某一种具体文件
+
+删除当前目录下各个文件夹下的 xx 文件
+
+```shell
+rm **/*.js
+```
+
 ## 参考
 
 aka: also known as
