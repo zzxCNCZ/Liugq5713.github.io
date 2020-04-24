@@ -85,8 +85,8 @@ The finally() method returns a Promise. When the promise is settled, i.e either 
 Promise.prototype.finally = function(callback) {
   let P = this.constructor;
   return this.then(
-    value => P.resolve(callback()).then(() => value),
-    reason =>
+    (value) => P.resolve(callback()).then(() => value),
+    (reason) =>
       P.resolve(callback()).then(() => {
         throw reason;
       })
@@ -121,6 +121,8 @@ Promise.prototype.finally = function(callback) {
 如何使用 promise.all 模拟也很简单，把传入的 promise 的 catch 都 resolve 出来，即正确的结果和错误的结果都 resolve 出来
 
 ## 实现一个 promisfy
+
+[nodejs util promisify 实现](https://github.com/nodejs/node/blob/v12.x/lib/internal/util.js#L277)
 
 即一个函数，能够将异步函数传给
 

@@ -101,6 +101,12 @@ The HTTP 304 Not Modified client redirection response code indicates that there 
 
 一个 TCP 连接可以被长期保持。但是现实总是很骨感，在保持 TCP 连接的过程中很可能出现各种意外的情况，比如网络故障，客户端崩溃或者异常重启，在这种情况下，如果服务端没有及时清理这些连接，服务端将发生连接泄露，直至服务端资源耗尽拒绝提供服务（connection refused exception）
 
+## get 请求
+
+浏览器会默认缓存 get 请求 ？ 自己需要验证
+
+## [http redircet to https](https://stackoverflow.com/questions/7450940/automatic-https-connection-redirect-with-node-js-express)
+
 ## 参考
 
 - [Understanding HTML Form Encoding: URL Encoded and Multipart Forms](https://dev.to/sidthesloth92/understanding-html-form-encoding-url-encoded-and-multipart-forms-3lpa)

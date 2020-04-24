@@ -1,5 +1,13 @@
 # shell 脚本
 
+## shell 命令格式
+
+命令的配置项一般是一个连词线开头，同一个配置项往往有长和短两种形式，短形式便于手动输入，长形式一般用在脚本中，可读性好，利于解释自身含义
+
+## shell 参数
+
+- 脚本后面可加上参数 $1 代表的脚本里面的第一个参数，$@ 代表所有的参数
+
 ## shell 脚本变量
 
 ```shell
@@ -92,9 +100,13 @@ utun0 是什么接口 : vpn 使用的隧道接口
 rm **/*.js
 ```
 
-## 参考
+## echo
 
-aka: also known as
+echo 的命令，echo -e 可以对转义字符进行解释
+
+- echo $1 的时候$1 代表参数，所以需要转义字符转义一下
+
+## 参考
 
 - [Bash Scripting: Everything you need to know about Bash-shell programming](https://itnext.io/bash-scripting-everything-you-need-to-know-about-bash-shell-programming-cd08595f2fba)
 - [15 Basic ‘ls’ Command Examples in Linux](https://www.tecmint.com/15-basic-ls-command-examples-in-linux/)

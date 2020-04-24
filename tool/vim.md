@@ -19,6 +19,8 @@ G 跳到文件末尾
 
 撤销一个撤销 CTRL+R
 
+## vim 交换两行的位置 ddp
+
 ## vim 换行
 
 教程上说设置 set wrap 就可以了，但是没有效果。需要删除一些文件 `rm -rf ~/.vimviews`

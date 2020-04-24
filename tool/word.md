@@ -9,6 +9,9 @@
 - ANR：Application Not Responding 应用无响应
 - OTA：Over-the-Air Technology 空间下载技术
 
+- aka: also known as
+- PTAL: please take another look
+
 ---
 
 - CI: continuous integration
@@ -39,3 +42,9 @@ monkey 问题 ： 自动化测试，比如让猴子随机操作
 ## ORM
 
 对象关系映射（Object Relational Mapping，简称 ORM）模式是一种为了解决面向对象与关系数据库存在的互不匹配的现象的技术。简单来说，将程序中的兑现自动持久化到关系数据库中。那么，到底如何实现持久化呢？一种简单的反感是采用硬编码的方式（jdbc 操作 sql 方式），
+
+---
+
+## tips
+
+- 问题的出现，不能毫无头绪，查看源码是有效的方式，但是不能一通瞎看，看源码的过程就是理清楚你代码运行逻辑的过程，所以尽量先理清楚你的代码的运行过程，越是棘手对你帮助越大

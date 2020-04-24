@@ -1,5 +1,9 @@
 # Antd
 
+## 面包屑
+
+面包屑导航(BreadcrumbNavigation)这个概念来自童话故事“汉赛尔和格莱特”，当汉赛尔和格莱特穿过森林时，不小心迷路了，但是他们发现在沿途走过的地方都撒下了面包屑，让这些面包屑来帮助他们找到回家的路。所以，面包屑导航的作用是告诉访问者他们目前在网站中的位置以及如何返回。
+
 ## [checkbox 模拟 radio](https://github.com/ant-design/ant-design/issues/7182)
 
 直接用 checkbox，然后 prefixCls="ant-radio"就能模拟出 radio 的样式，然后限制一下选择个数就行
