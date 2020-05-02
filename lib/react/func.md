@@ -12,7 +12,7 @@ class Greeting extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      xxx
+      xxx,
     };
   }
 }
@@ -23,7 +23,7 @@ class Greeting extends Component {
 ```js
 class Greeting extends Component {
   state = {
-    xxx
+    xxx,
   };
 }
 ```
@@ -141,3 +141,7 @@ A.prototype.handleClick is not a function.
 总结来说，类的属性的箭头函数最后会被放到类的构造函数里面。类属性的箭头函数不会在原型上，所以我们不能使用 super 调用他
 
 Arrow functions in class properties are much slower than bound functions, and both are much slower than usual function.
+
+## 参考
+
+- [精读《Function Component 入门》](https://github.com/dt-fe/weekly/blob/v2/104.%E7%B2%BE%E8%AF%BB%E3%80%8AFunction%20Component%20%E5%85%A5%E9%97%A8%E3%80%8B.md)

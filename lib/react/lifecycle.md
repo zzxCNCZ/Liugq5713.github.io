@@ -45,7 +45,7 @@ class LifeCycle extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      now: props.clock
+      now: props.clock,
     };
   }
 
@@ -111,6 +111,10 @@ render() {
 生命周期一旦被打断，下次恢复的时候又会再跑一次之前的生命周期，因此 componentWillMount，componentWillReceiveProps， componentWillUpdate 都不能保证只在挂载/拿到 props/状态变化的时候刷新一次了，所以这三个方法被标记为不安全。
 
 https://juejin.im/post/5aca20c96fb9a028d700e1ce
+
+## 生命周期
+
+[生命周期 demo](https://codesandbox.io/s/quirky-water-xj6og?file=/src/children.js)
 
 ## 参考
 

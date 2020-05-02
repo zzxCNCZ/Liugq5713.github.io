@@ -118,3 +118,53 @@ export function getParams(ns, opt, cb) {
   };
 }
 ```
+
+### 复杂表单组件
+
+常见的优化方式
+
+1. 自定义表单元素
+
+将表单也分为几个模块，然后把每一个模块都单独拆出来当做单独的表单元素，不过这样处理，表单验证也需要自己去做，需要自定义表单验证的方式。
+
+2. 当表单元素具有增删改的操作时，一种做法是把增删改的元素封装成自定义的表单元素，另一种就是通过遍历动态生成表单元素
+
+```js
+const formItems = keys.map((k, index) => (
+      <Form.Item
+        {...(index === 0 ? formItemLayout : formItemLayoutWithOutLabel)}
+        label={index === 0 ? 'Passengers' : ''}
+        required={false}
+        key={k}
+      >
+        {getFieldDecorator(`names[${k}]`, {
+          validateTrigger: ['onChange', 'onBlur'],
+          rules: [
+            {
+              required: true,
+              whitespace: true,
+              message: "Please input passenger's name or delete this field.",
+            },
+          ],
+        })(<Input placeholder="passenger name" style={{ width: '60%', marginRight: 8 }} />)}
+        {keys.length > 1 ? (
+          <Icon
+            className="dynamic-delete-button"
+            type="minus-circle-o"
+            onClick={() => this.remove(k)}
+          />
+        ) : null}
+      </Form.Item>
+```
+
+### adb 命令
+
+调试台灯的时候，常常要看连接的设备 `adb devices`
+
+在台灯里面输入地址比较麻烦，我们也可以通过 adb 命令来帮助我们输入 `adb shell input text yourInput`
+
+### z-index 管理
+
+z-index 如果是开发的时候随便填的数值，那么当层级多了的时候就很容易乱。不同的层级，各种齐齐怪怪的数值。如果你用变量的话，层级之间关系会变动，改起来就会很痛苦。
+
+还好我们使用了 styled=components 以及 ts，我们通过枚举变量来设置层级。想插入层级的时候直接插入，由于枚举的特性，层级会自动后延，非常的方便。

@@ -1,5 +1,13 @@
 # 类型别名(Type Aliases)
 
+- 条件冲突的参考 https://www.typescriptlang.org/docs/handbook/release-notes/typescript-2-8.html
+
+## [infer](https://www.typescriptlang.org/docs/handbook/release-notes/typescript-2-8.html#type-inference-in-conditional-types)
+
+## 条件类型
+
+Conditional Types T extends U ? X ：Y 这个类型意味着当 T 可以声明给 U，那么类型就是 X 否则类型就是 Y
+
 ## type aliases vs interface
 
 - type aliases 可以声明基本类型，联合类型，元祖等类型

@@ -81,3 +81,9 @@ know if a string matches a regular expression RegExp
 only want the first match found
 
 obtain capture groups and the global flag is set
+
+## 常见的正则匹配
+
+### SHA256
+
+SHA256 由 16 进制的数字组成，使用正则验证的时候，验证一下是否是 16 进制的数，是否是 64 个数字, 正则表则式像这样 ^[A-Fa-f0-9]{64}\$

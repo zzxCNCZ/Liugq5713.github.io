@@ -37,9 +37,11 @@ echo "Hello $MY_NAME - hope you're well."
 
 ## 复制
 
+> cp 命令执行的，无论你的目标的文件或者文件夹是否存在，都会直接复制，存在的话也会覆盖的。真的好可怕呀，嘤嘤
+
 复制一个文件夹里面所有的内容到另一个文件夹
 
-cp -r dir1 dir2
+cp -R Src_directory Dest_directory 用于复制整个目录
 
 如果 dir2 目录已存在，则需要使用
 cp -r dir1/. dir2

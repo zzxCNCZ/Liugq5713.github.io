@@ -3,9 +3,9 @@ module.exports = {
   configureWebpack: {
     resolve: {
       alias: {
-        algorithm: "../algorithm"
-      }
-    }
+        algorithm: "../algorithm",
+      },
+    },
   },
   title: "重学前端",
   head: [
@@ -13,9 +13,9 @@ module.exports = {
       "link",
       {
         rel: "icon",
-        href: "/favicon.ico"
-      }
-    ]
+        href: "/favicon.ico",
+      },
+    ],
   ],
   themeConfig: {
     logo: "/hero.png",
@@ -31,7 +31,7 @@ module.exports = {
       { text: "Browser", link: "/browser/" },
       { text: "Lib", link: "/lib/" },
       { text: "Tool", link: "/tool/" },
-      { text: "Algorithm", link: "/algorithm/" }
+      { text: "Algorithm", link: "/algorithm/" },
     ],
     sidebar: {
       "/fe/": [
@@ -63,8 +63,8 @@ module.exports = {
             "error",
             "module",
             "z-event-loop",
-            "z-deep-use"
-          ].map(i => `javascript/${i}`)
+            "z-deep-use",
+          ].map((i) => `javascript/${i}`),
         },
         {
           title: "CSS",
@@ -81,8 +81,9 @@ module.exports = {
             "cssFontFamily",
             "cssWithJS",
             "flex",
-            "QA"
-          ].map(i => `css/${i}`)
+            "svg",
+            "QA",
+          ].map((i) => `css/${i}`),
         },
         {
           title: "HTML",
@@ -97,14 +98,14 @@ module.exports = {
             "image",
             "html",
             "iframe",
-            "select"
-          ].map(i => `html/${i}`)
+            "select",
+          ].map((i) => `html/${i}`),
         },
         {
           title: "Node",
           collapsable: true,
-          children: ["", "path", "module", "cli"].map(i => `node/${i}`)
-        }
+          children: ["", "path", "module", "cli"].map((i) => `node/${i}`),
+        },
       ],
       "/browser/": [
         {
@@ -117,15 +118,15 @@ module.exports = {
             "formdata",
             "uri",
             "event",
-            "click"
-          ].map(i => `webapi/${i}`)
+            "click",
+          ].map((i) => `webapi/${i}`),
         },
         {
           title: "渲染",
           collapsable: false,
           children: ["", "crp", "viewport", "firstContentfulPaint"].map(
-            i => `render/${i}`
-          )
+            (i) => `render/${i}`
+          ),
         },
         {
           title: "网络",
@@ -140,9 +141,9 @@ module.exports = {
             "cache",
             "storage",
             "crossorigin",
-            "websafe"
-          ].map(i => `network/${i}`)
-        }
+            "websafe",
+          ].map((i) => `network/${i}`),
+        },
       ],
       "/tool/": [
         {
@@ -156,8 +157,8 @@ module.exports = {
             "config",
             "log",
             "reset",
-            "stash"
-          ].map(i => `git/${i}`)
+            "stash",
+          ].map((i) => `git/${i}`),
         },
         {
           title: "其他",
@@ -182,9 +183,9 @@ module.exports = {
             "webpack",
             "webpack-split-chunks",
             "webpack-deep",
-            "webpackQA"
-          ]
-        }
+            "webpackQA",
+          ],
+        },
       ],
       "/lib/": [
         {
@@ -208,8 +209,8 @@ module.exports = {
             "style",
             "ssr",
             "ts",
-            "myreact"
-          ].map(i => `react/${i}`)
+            "myreact",
+          ].map((i) => `react/${i}`),
         },
         {
           title: "Vue",
@@ -230,8 +231,8 @@ module.exports = {
             "nexttick",
             "z-vue",
             "z-vue-diff",
-            "z-vue-dep"
-          ].map(i => `vue/${i}`)
+            "z-vue-dep",
+          ].map((i) => `vue/${i}`),
         },
         {
           title: "其他",
@@ -244,9 +245,9 @@ module.exports = {
             "pwa",
             "reactnative",
             "test",
-            "typescript"
-          ]
-        }
+            "typescript",
+          ],
+        },
       ],
       "/algorithm/": [
         {
@@ -260,15 +261,15 @@ module.exports = {
             "shell",
             "merge",
             "heap",
-            "quick"
-          ].map(i => `sort/${i}`)
+            "quick",
+          ].map((i) => `sort/${i}`),
         },
         {
           title: "暴力求解",
           collapsable: false,
           children: ["", "simple", "all-permutations", "queen"].map(
-            i => `violence/${i}`
-          )
+            (i) => `violence/${i}`
+          ),
         },
         {
           title: "题目",
@@ -280,11 +281,11 @@ module.exports = {
             "13RomanToInteger",
             "17LetterCombinationsOfAPhoneNumber",
             "link",
-            "tree"
-          ]
-        }
+            "tree",
+          ],
+        },
       ],
-      "/": [""]
-    }
-  }
+      "/": [""],
+    },
+  },
 };

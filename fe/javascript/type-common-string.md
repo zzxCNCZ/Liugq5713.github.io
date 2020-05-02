@@ -74,6 +74,16 @@ str.includes(searchString[, position])
 
 <<< @/fe/javascript/code/type-common-string-substring.js
 
+```js
+// 大于 255 就是中文
+text.charCodeAt(i) > 255;
+```
+
+```js
+const regx = /[\u4e00-\u9fa5]*/g;
+const zhCnt = text.match(regx).join("").length;
+```
+
 ## 截取字符串
 
 // 因为字符串是不可修改的，所以这些方法不会修改原先的字符串
@@ -187,4 +197,39 @@ export const highlightText = (content, words) => {
   }
   return content;
 };
+```
+
+## 其他应用
+
+### 设置省略的字符号
+
+```js
+export const setTextEllipsis = (text, len = 28) => {
+  if (!text) {
+    return;
+  }
+  let cnt = 0;
+  let i = 0;
+  // 中文字符占两个，英文字符占一个
+  while (cnt <= len) {
+    console.log(cnt);
+    const weigth = text.charCodeAt(i) > 255 ? 2 : 1;
+    cnt = cnt + weigth;
+    i++;
+  }
+
+  if (text.length > i) {
+    return text.substring(0, i) + "...";
+  } else {
+    return text;
+  }
+};
+```
+
+### 依据字符串首字母排序
+
+```js
+const recommendArr = Object.keys(payloadsObj).sort((a, b) =>
+  a.intention.localeCompare(b.intention)
+);
 ```
