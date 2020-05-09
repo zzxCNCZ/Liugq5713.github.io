@@ -14,6 +14,12 @@ iterms 比较好用的一点，在命令行输入 d ，就可以输出 10 个你
 
 `iTerm2 -> Preferences -> Appearance -> Hotkey -> Check Show/hide`
 
+## 分屏幕
+
+竖分屏 `command+d` 横分屏 `command+shift+d`
+
+iterm 的使用小技巧，我觉得分为多个标签页还是有点麻烦，不如使用分屏，然后分屏的话，在不同屏幕之间跳转 command + [
+
 ## https://opensource.com/article/19/9/adding-plugins-zsh zsh 添加多个 plugin 的时候，使用空格隔开
 
 ## https://www.sitepoint.com/zsh-tips-tricks/ 使用 zsh 的十个建议，还挺实用的

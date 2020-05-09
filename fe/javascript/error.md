@@ -87,3 +87,27 @@ try {
 ## try catch 可以捕获 async 代码
 
 <<< @/fe/javascript/code/error-try-catch-async.js
+
+## try catch with return
+
+```js
+function func() {
+  try {
+    console.log("in try");
+    return "return try ";
+  } catch (e) {
+    console.log("in catch");
+    message.error(e.message);
+  } finally {
+    console.log("in finally");
+    return "return finally";
+  }
+
+  console.log("hello");
+}
+// 输出顺序：
+// "in try"
+// "in finally"
+// "return finally"
+console.log(func());
+```

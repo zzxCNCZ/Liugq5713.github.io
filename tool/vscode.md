@@ -87,6 +87,12 @@ vscode 当按住 command + click 跳转到定义文件之后，如何跳转回�
     }
 ```
 
+## 插件推荐
+
+### [import-sorter](https://marketplace.visualstudio.com/items?itemName=mike-co.import-sorter)
+
+可以帮你调整 import 文件的顺序, 需要开启配置 importSorter.generalConfiguration.sortOnBeforeSave: true,
+
 ## 参考
 
 - [23 lesser known VS Code Shortcuts as GIF](https://dev.to/devmount/23-lesser-known-vs-code-shortcuts-as-gif-80)
