@@ -87,6 +87,10 @@ vscode 当按住 command + click 跳转到定义文件之后，如何跳转回�
     }
 ```
 
+## vscode setting
+
+在每个项目里面新建 .vsocde 文件，把一些项目的配置可以放在这里面，可以在 vscode 排除某些文件，之前没找到，其实是 vscode 配置了 vscode files exclude
+
 ## 插件推荐
 
 ### [import-sorter](https://marketplace.visualstudio.com/items?itemName=mike-co.import-sorter)

@@ -181,6 +181,23 @@ let myAdd: (x: number, y: number) => number = function(
 
 因为这定义了函数的类型，所以可能就会有重载的需求
 
+## Omit vs Exclude
+
+typescript 类型的变化，omit 和 exclude 的区别：https://stackoverflow.com/questions/56916532/difference-b-w-only-exclude-and-omit-pick-exclude-typescript
+
+exclude 的底层实现： `type Exclude<T, U> = T extends U ? never : T;`
+
+## 获取对象的 key 作为类型
+
+```js
+const createWay = {
+  create: '创建新的词槽',
+  reuse: '复用已有词槽'
+}
+
+type CreateWay = keyof typeof createWay;
+```
+
 ## 参考
 
 - [TypeScript Tutorial - 'infer' keyword](https://dev.to/aexol/typescript-tutorial-infer-keyword-2cn)
