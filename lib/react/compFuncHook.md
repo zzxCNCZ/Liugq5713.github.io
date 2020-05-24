@@ -1,5 +1,33 @@
 # hook
 
+## function vs class
+
+当你的应用里同时存在 Functional 组件和 class 组件时，你就面临着 UI 的不一致性，虽然 react 官方说 function 组件是为了保障 UI 的一致性，但这是建立在所有组件都是 functional 组件，事实上这假设几乎不成立，如果你都采用 class 组件也可能保证 UI 的一致性（都显示最新值），一旦你页面里混用了 class 组件和 functional 组件（使用 useref 暂存状态也视为 class 组件），就存在的 UI 不一致性的可能
+
+- 在异步函数执行前可以对闭包访问的自由变量进行快照捕获：实现快照功能
+- 在异步函数执行中可以通过 ref 读取最新的值
+
+```js
+for (var i = 0; i < 10; i++) {
+  setTimeout(() => console.log("val:", i)); // 拿到的是最新值
+}
+for (var i = 0; i < 10; i++) {
+  setTimeout(((val) => console.log("val:", val)).bind(null, i)); // 拿到的是快照
+}
+const ref = { current: null };
+for (var i = 0; i < 10; i++) {
+  ref.current = i;
+  setTimeout(((val) => console.log("val:", ref.current)).bind(null, ref)); // 拿到的是最新值
+}
+for (var i = 0; i < 10; i++) {
+  // 拿到的是快照
+  let t = i;
+  setTimeout(() => {
+    console.log("t:", t);
+  });
+}
+```
+
 ## hook 是个什么玩意
 
 什么是 Hooks？Hooks 是一个 React 函数组件内一类特殊的函数（通常以 "use" 开头，比如 "useState"），使开发者能够在 function component 里依旧使用 state 和 life-cycles，以及使用 custom hook 复用业务逻辑。
@@ -86,7 +114,7 @@ function Counter() {
 }
 ```
 
-### 使用 callback
+### [使用 callback](https://zhuanlan.zhihu.com/p/98554943)
 
 ```js
 function Counter() {
