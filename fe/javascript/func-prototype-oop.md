@@ -7,6 +7,14 @@
 - 将步骤 1 新创建的对象作为 this 的上下文 ；
 - 如果**该函数没有返回对象**，则返回 this。
 
+## Object.create()
+
+The Object.create() method creates a new object, using an existing object as the prototype of the newly created object.
+
+## [object.create vs new](https://stackoverflow.com/questions/4166616/understanding-the-difference-between-object-create-and-new-somefunction)
+
+Very simply said, new X is Object.create(X.prototype) with additionally running the constructor function. (And giving the constructor the chance to return the actual object that should be the result of the expression instead of this.)
+
 ## 原型链
 
 ![原型链](./imgs/prototype5.png)
@@ -36,22 +44,22 @@
 
 ```js
 function GithubUser(username) {
-  this.username = "Unknown"
+  this.username = "Unknown";
 }
 
 function JuejinUser(username, password) {}
 
-JuejinUser.prototype = new GithubUser()
-const juejinUser1 = new JuejinUser("ulivz", "xxx", 3)
-const juejinUser2 = new JuejinUser("egoist", "xxx", 0)
+JuejinUser.prototype = new GithubUser();
+const juejinUser1 = new JuejinUser("ulivz", "xxx", 3);
+const juejinUser2 = new JuejinUser("egoist", "xxx", 0);
 
 //  这就是把属性定义在原型链上的致命缺点，你可以直接访问，但修改就是一件难事了！
-console.log(juejinUser1.username) // 'Unknown'
-juejinUser1.__proto__.username = "U"
-console.log(juejinUser1.username) // 'U'
+console.log(juejinUser1.username); // 'Unknown'
+juejinUser1.__proto__.username = "U";
+console.log(juejinUser1.username); // 'U'
 
 // 卧槽，无情地影响了另一个实例!!!
-console.log(juejinUser2.username) // 'U'
+console.log(juejinUser2.username); // 'U'
 ```
 
 ### 借用构造函数(constructor stealing)
@@ -64,12 +72,12 @@ console.log(juejinUser2.username) // 'U'
 
 ```js
 function Father() {
-  this.colors = ["red", "blue", "green"]
+  this.colors = ["red", "blue", "green"];
 }
 function Son() {
-  Father.call(this) //继承了Father,且向父类型传递参数
+  Father.call(this); //继承了Father,且向父类型传递参数
 }
-var instance1 = new Son()
+var instance1 = new Son();
 ```
 
 ### 组合继承
@@ -78,17 +86,17 @@ var instance1 = new Son()
 
 ```js
 function Father(name) {
-  this.name = name
-  this.colors = ["red", "blue", "green"]
+  this.name = name;
+  this.colors = ["red", "blue", "green"];
 }
 Father.prototype.sayName = function() {
-  alert(this.name)
-}
+  alert(this.name);
+};
 function Son(name, age) {
-  Father.call(this, name) //继承实例属性，第一次调用Father()
-  this.age = age
+  Father.call(this, name); //继承实例属性，第一次调用Father()
+  this.age = age;
 }
-Son.prototype = new Father() //继承父类方法,第二次调用Father()
+Son.prototype = new Father(); //继承父类方法,第二次调用Father()
 ```
 
 ### 原型式继承

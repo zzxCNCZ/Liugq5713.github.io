@@ -122,7 +122,7 @@ Array.from({ length: 10 })
 工作中我们经常使用数组操作，但是众所周知，后端数据不可信。你以为是个数组很可能是个`null`值，因此我们可以这样写数组操作，eg:
 
 ```ts
-(arr || []).map(item => {
+(arr || []).map((item) => {
   // some code
 });
 ```
@@ -155,6 +155,40 @@ indexOf 和 findIndex 的区别
 findIndex 更加的强大，当你的数组里面的元素是非原始类型的时候，肯定是使用 findIndex
 
 当然数组里面的元素如果是简单类型，当然你可以使用 indexOf
+
+## [洗牌算法](https://stackoverflow.com/questions/2450954/how-to-randomize-shuffle-a-javascript-array?utm_source=caibaojian.com)
+
+最简单的打散数组的方式
+
+```js
+function shuffle(array) {
+  array.sort(() => Math.random() - 0.5);
+}
+```
+
+洗牌算法
+
+```js
+function shuffle(array) {
+  var currentIndex = array.length,
+    temporaryValue,
+    randomIndex;
+
+  // While there remain elements to shuffle...
+  while (0 !== currentIndex) {
+    // Pick a remaining element...
+    randomIndex = Math.floor(Math.random() * currentIndex);
+    currentIndex -= 1;
+
+    // And swap it with the current element.
+    temporaryValue = array[currentIndex];
+    array[currentIndex] = array[randomIndex];
+    array[randomIndex] = temporaryValue;
+  }
+
+  return array;
+}
+```
 
 ## 数组解构
 

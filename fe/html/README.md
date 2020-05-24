@@ -49,6 +49,11 @@ for(var i = 1;i≤100;i++){
 }
 ```
 
+## tabindex
+
+The tabindex attribute specifies the tab order of an element (when the "tab" button is used for navigating).
+The tabindex attribute can be used on any HTML element (it will validate on any HTML element. However, it is not necessarily useful)
+
 ## 参考
 
 - [怎么画一条 0.5px 的边](https://juejin.im/post/5ab65f40f265da2384408a95)

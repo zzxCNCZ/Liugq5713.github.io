@@ -43,7 +43,7 @@ monkey 问题 ： 自动化测试，比如让猴子随机操作
 
 对象关系映射（Object Relational Mapping，简称 ORM）模式是一种为了解决面向对象与关系数据库存在的互不匹配的现象的技术。简单来说，将程序中的兑现自动持久化到关系数据库中。那么，到底如何实现持久化呢？一种简单的反感是采用硬编码的方式（jdbc 操作 sql 方式），
 
----
+## PPE stands for Pre-Production Environment (software development)
 
 ## tips
 

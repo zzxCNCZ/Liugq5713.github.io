@@ -108,6 +108,18 @@ echo 的命令，echo -e 可以对转义字符进行解释
 
 - echo $1 的时候$1 代表参数，所以需要转义字符转义一下
 
+## 按行读取文件
+
+```shell
+input="./ttt.txt"
+
+arr=( )
+while IFS= read -r line
+do
+    arr+=( $line )
+done < "$input"
+```
+
 ## 参考
 
 - [Bash Scripting: Everything you need to know about Bash-shell programming](https://itnext.io/bash-scripting-everything-you-need-to-know-about-bash-shell-programming-cd08595f2fba)

@@ -8,6 +8,12 @@ SVG 是一种基于 XML 语法的图像格式，全称是可缩放矢量图（Sc
 
 直接使用，但是缺点就是没有办法使用 css 控制.
 
+## svg 转为 component 组件
+
+`"build:icons": "./node_modules/.bin/svgr --icon --typescript -d src/app/components/Icons ./src/app/assets/icons "`
+
+Svgr 把 svg 转为 组件
+
 ## 参考
 
 - [SVG 图像入门教程](https://www.ruanyifeng.com/blog/2018/08/svg.html)
