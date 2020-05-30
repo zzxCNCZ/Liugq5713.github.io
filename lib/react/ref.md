@@ -6,7 +6,9 @@
 
 ## 获取 ref
 
-ps: 也有通过字符串形式获取 ref，不过这种形式以后会被废弃掉，不推荐
+::: warning 通过字符串形式获取 ref
+这种形式以后会被废弃掉，不推荐
+:::
 
 ### react.createRef
 
@@ -33,7 +35,7 @@ class CustomTextInput extends React.Component {
   constructor(props) {
     super(props);
     this.textInput = null;
-    this.setTextInputRef = element => {};
+    this.setTextInputRef = (element) => {};
   }
 
   render() {

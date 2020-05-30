@@ -197,3 +197,18 @@ function shuffle(array) {
 ```js
 const [, , test] = [1, 2, 3];
 ```
+
+## 数组解构
+
+```js
+const a = [1, 2, 3];
+
+// output: [1, 2, 3]
+const arr = [...arr];
+// output: [object Object] {
+//   0: 1,
+//   1: 2,
+//   2: 3
+// }
+const obj = { ...arr };
+```

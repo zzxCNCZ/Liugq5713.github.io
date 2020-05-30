@@ -12,6 +12,12 @@ npx create-react-app my-app --typescript
 
 ### [how-why-a-guide-to-using-typescript-with-react](https://blog.logrocket.com/how-why-a-guide-to-using-typescript-with-react-fffb76c61614)
 
+## 命名 on vs handle
+
+on 后面一般接动词，个人比较喜欢把 onXXX 作为 组件的 props 的属性，向下传递，毕竟他的意思就是说监听什么事情会发生。
+
+handle 作为处理某某事情，后面一般加上名词。组件内部使用
+
 ## 文章
 
 - [官方推荐文章](https://reactjs.org/community/articles.html)

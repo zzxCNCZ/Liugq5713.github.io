@@ -11,7 +11,17 @@ const obj = {
   test,
   id: 5,
   name: "San Francisco",
-  [getKey("enabled")]: true
+  [getKey("enabled")]: true,
+};
+```
+
+```js
+// 通过this，获取到对象上的属性。
+const obj = {
+  name: "test",
+  say() {
+    console.log(this.name);
+  },
 };
 ```
 
@@ -41,15 +51,15 @@ const person = {
   name: "Lucy",
   friends: {
     name: "Jack",
-    age: "Allen"
-  }
+    age: "Allen",
+  },
 };
 // 其实就是personWithOtherFriends 对象浅拷贝了person，然后又将friends指针指向了新的引用
 const personWithOtherFriends = {
   ...person,
   friends: {
-    name: "Eleen"
-  }
+    name: "Eleen",
+  },
 };
 ```
 
@@ -258,17 +268,17 @@ alert(person.name); //"Nicholas"
 ```js
 let constance = {
   foo: "我是不会改变的",
-  boo: "test"
+  boo: "test",
 };
 Object.defineProperty(constance, "foo", {
   get() {
     return "我是不会改变的";
-  }
+  },
 });
 constance.foo = "sss";
 
 Object.defineProperty(constance, "boo", {
-  writable: false
+  writable: false,
 });
 
 constance.boo = "sss";

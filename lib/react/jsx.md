@@ -1,24 +1,21 @@
 # JSX
 
-JSX 使用组件的时候，组件的标签大写
+## 这就是为什么我需要在每一个 jsx 文件里面引入 react
 
-## Specifying The React Element Type
-
-### React Must Be in Scope
-
-这就是为什么我需要在每一个 jsx 文件里面引入 react 的原因
+JSX 只是一种语法糖。最后它会将类型 HTML 的结构转成 JavaScript
 
 ```js
 import React from ‘react’;
 import CustomButton from ‘./CustomButton’;
 
 function WarningButton() {
+  // 最后会被转成这样：
   // return React.createElement(CustomButton, {color: 'red'}, null);
   return <CustomButton color="red" />;
 }
 ```
 
-### Using Dot Notation for JSX Type
+### 在 JSX 中使用点记法
 
 ```js
 import React from ‘react’;
@@ -34,13 +31,15 @@ function BlueDatePicker() {
 }
 ```
 
-### User-Defined Components Must Be Capitalized
+### 用户定义的组件必需要大写使用
 
 React 将大写的标签当做组件，小写的话会当做 html 的标签
 
-## Choosing the Type at Runtime
+## 在运行的时候选定组件类型
 
-这个不就是相当于 vue 里面的动态组件么，非常好！
+这个不就是相当于 vue 里面的动态组件么，非常好！但是这样会对组件的的 props 有要求，最好动态切换的组件的 props 是相等的。
+
+但是在实际工作中，我一般会在 render 函数里面使用条件判断来选择使用什么组件。
 
 ```js
 import React from ‘react’;
@@ -58,40 +57,15 @@ function Story(props) {
 }
 ```
 
-## Props in JSX
-
-### JavaScript Expressions as Props
-
-### String Literals
-
-这两种写法是相等的
-
-```jsx
-<MyComponent message=“hello world” />
-
-<MyComponent message={‘hello world’} />
-```
-
-### Props Default to “True”
-
-这两种写法相等的
+## 展示原始的 HTML
 
 ```js
-<MyTextBox autocomplete />
-
-<MyTextBox autocomplete={true} />
-```
-
-### Spread Attributes
-
-```js
-function App1() {
-  return <Greeting firstName=“Ben” lastName=“Hector” />;
+function createMarkup() {
+  return { __html: "First &middot; Second" };
 }
 
-function App2() {
-  const props = {firstName: 'Ben', lastName: 'Hector'};
-  return <Greeting {...props} />;
+function MyComponent() {
+  return <div dangerouslySetInnerHTML={createMarkup()} />;
 }
 ```
 
@@ -99,7 +73,7 @@ function App2() {
 
 ### String Literals
 
-JSX 移除字符串首尾的空格，包括首尾的空行
+JSX 会自动移除字符串首尾的空格，包括首尾的空行
 
 ### JSX Children
 
@@ -164,7 +138,7 @@ function createNewTodo(text) {
   return {
     completed: false,
     id: todoCounter++,
-    text
+    text,
   };
 }
 ```
@@ -173,11 +147,11 @@ function createNewTodo(text) {
 
 当然你也可以使用别人写的库，比如 shortid
 
-但是具体使用数组的index的key会有什么问题呢？
+但是具体使用数组的 index 的 key 会有什么问题呢？
 
 Reorders can also cause issues with component state when indexes are used as keys. Component instances are updated and reused based on their key. If the key is an index, moving an item changes it. As a result, component state for things like uncontrolled inputs can get mixed up and updated in unexpected ways.
 
-翻译过来就是，如果你拿数组的index作为key,那么在重排的时候，一些非受控组件将会出现不可预料的错误。
+翻译过来就是，如果你拿数组的 index 作为 key,那么在重排的时候，一些非受控组件将会出现不可预料的错误。
 
 ## 参考
 

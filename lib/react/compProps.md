@@ -17,7 +17,7 @@ class ThemedButton extends React.Component {
   // Set default props
   static defaultProps = {
     theme: "secondary",
-    label: "Button Text"
+    label: "Button Text",
   };
 }
 ```
@@ -38,9 +38,51 @@ eg:
 ```js
 Article.propTypes = {
   title: PropTypes.string.isRequired,
-  price: PropTypes.number.isRequired
+  price: PropTypes.number.isRequired,
 };
 ```
+
+## Props in JSX
+
+### 字符串字面量
+
+这两种写法是相等的
+
+```jsx
+<MyComponent message=“hello world” />
+
+<MyComponent message={'hello world'} />
+```
+
+### Props 默认为 true
+
+这两种写法相等的
+
+```js
+<MyTextBox autocomplete />
+
+<MyTextBox autocomplete={true} />
+```
+
+### 扩展运算符
+
+```js
+function App1() {
+  return <Greeting firstName=“Ben” lastName=“Hector” />;
+}
+
+function App2() {
+  const props = {firstName: 'Ben', lastName: 'Hector'};
+  return <Greeting {...props} />;
+}
+```
+
+### react 如何向组件里面的函数传递参数
+
+> 果然 react 需要一个前端工程师有点水平之后才能写，[教程](https://segmentfault.com/q/1010000008136261)
+
+- 使用匿名函数包装一下
+- 使用 bind，传递参数
 
 ## props as render func
 
@@ -49,7 +91,7 @@ Article.propTypes = {
 render props 模式方便你抽取出不同组件中不同的代码,render Props 适合于当你渲染仅供展示不包含很多操作的时候，会非常的有用
 
 ```jsx
-<DataProvider render={data => <h1>Hello {data.target}</h1>} />
+<DataProvider render={(data) => <h1>Hello {data.target}</h1>} />
 ```
 
 组件实现
@@ -82,7 +124,7 @@ JSX 元素可以被嵌套。在 jsx 里面可以直接使用`this.props.children
 export const Card: FunctionComponent<CardProps> = ({
   title,
   paragraph,
-  children
+  children,
 }) => (
   <aside>
     <h2>{title}</h2>
@@ -102,7 +144,7 @@ import React from "react";
 export const AppContext = React.createContext({
   authenticated: true,
   lang: "en",
-  theme: "dark"
+  theme: "dark",
 });
 ```
 
@@ -115,7 +157,7 @@ const App = () => {
       value={{
         lang: "de",
         authenticated: true,
-        theme: "light"
+        theme: "light",
       }}
     >
       <Header />

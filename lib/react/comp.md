@@ -1,17 +1,22 @@
 # 组件
 
-## use displayName
+## [use displayName](https://reactjs.org/docs/higher-order-components.html#convention-wrap-the-display-name-for-easy-debugging)
 
-你可以手动去检查
+通常情况下，你不需要手动去指定 displayName , 因为 react 可以从组件名中推测出来 DisplayName 属性。
 
-Usually, you don’t need to set it explicitly because it’s inferred from the name of the function or class that defines the component.
+但是推荐在高阶组件中，使用 DisplayName 方便你调试，eg:
 
-## react 如何向组件里面的函数传递参数
-
-> 果然 react 需要一个前端工程师有点水平之后才能写，[教程](https://segmentfault.com/q/1010000008136261)
-
-- 使用匿名函数包装一下
-- 使用 bind，传递参数
+```js
+function withSubscription(WrappedComponent) {
+  class WithSubscription extends React.Component {
+    /* ... */
+  }
+  WithSubscription.displayName = `WithSubscription(${getDisplayName(
+    WrappedComponent
+  )})`;
+  return WithSubscription;
+}
+```
 
 ## [给一个数组添加元素](http://stackoverflow.link/question/40911194)
 
@@ -33,16 +38,6 @@ case ADD_ITEM :
         ...state,
         arr: state.arr.concat(action.newItem)
     }
-```
-
-## 函数方法也可以不用绑定 this
-
-> 每次写函数都要在构造函数里面绑定一个 this，实在是有点烦，可以尝试这样的写法
-
-```js
-doSomething = (id, e) => {
-  // 这里写代码
-};
 ```
 
 ## 容器组件和展示组件
@@ -85,18 +80,6 @@ const MyNewComponent: React.FC<IProps> = (props) => {...};
 
 ## 有状态组件
 
-## 展示原始的 HTML
-
-```js
-function createMarkup() {
-  return { __html: "First &middot; Second" };
-}
-
-function MyComponent() {
-  return <div dangerouslySetInnerHTML={createMarkup()} />;
-}
-```
-
 ## 受控组件和非受控组件
 
 https://reactjs.org/docs/forms.html#controlled-components
@@ -119,28 +102,7 @@ React Hooks 要解决的问题是状态共享,注意重点是状态共享而不�
 - [github 讨论：Make setState return a promise](https://github.com/facebook/react/issues/2642)
 - [从 setState promise 化的探讨 体会 React 团队设计思想](https://zhuanlan.zhihu.com/p/28905707)
 
-## [React hooks: not magic, just arrays](https://medium.com/@ryardley/react-hooks-not-magic-just-arrays-cd4f1857236e)
-
-想明白 react hooks，首先你要明白为啥 hook 有使用的原则
-
-### [hook rules](https://reactjs.org/docs/hooks-rules.html)
-
-- 不在循环语句，条件语句中使用 hook
-- 仅在函数组件内使用 hooks
-
-## 为什么 setState 不设计成返回一个 promise
-
-1. 解决异步带来的困扰方案其实很多。比如，我们可以在合适的生命周期 hook 函数中完成相关逻辑。在这个场景里，就是在行组件的 componentDidMount 里调用 focus，自然就完成了自动聚焦。
-2. 任何需要使用 setState 第二个参数 callback 的场景，都可以使用生命周期函数 componentDidUpdate (and/or componentDidMount) 来复写。
-
-- [github 讨论：Make setState return a promise](https://github.com/facebook/react/issues/2642)
-- [从 setState promise 化的探讨 体会 React 团队设计思想](https://zhuanlan.zhihu.com/p/28905707)
-
-## [React hooks: not magic, just arrays](https://medium.com/@ryardley/react-hooks-not-magic-just-arrays-cd4f1857236e)
-
-想明白 react hooks，首先你要明白为啥 hook 有使用的原则
-
-## react 写法 good case
+## react 写法声明 state
 
 这样做有一个好处，只是声明了一处。声明了初始值，通过类型推断判断出类型。这样就不用分开写了。之前我是先声明类型，然后在类里面定义初始值。
 

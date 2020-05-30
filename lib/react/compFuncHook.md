@@ -28,6 +28,15 @@ for (var i = 0; i < 10; i++) {
 }
 ```
 
+## [React hooks: not magic, just arrays](https://medium.com/@ryardley/react-hooks-not-magic-just-arrays-cd4f1857236e)
+
+想明白 react hooks，首先你要明白为啥 hook 有使用的原则
+
+### [hook rules](https://reactjs.org/docs/hooks-rules.html)
+
+- 不在循环语句，条件语句中使用 hook
+- 仅在函数组件内使用 hooks
+
 ## hook 是个什么玩意
 
 什么是 Hooks？Hooks 是一个 React 函数组件内一类特殊的函数（通常以 "use" 开头，比如 "useState"），使开发者能够在 function component 里依旧使用 state 和 life-cycles，以及使用 custom hook 复用业务逻辑。
@@ -62,13 +71,13 @@ useState 如果是用来使用数据，使用 concat 返回新的数组
 
 2. useEffect 像 componentDidMount + componentDidUpdate + componentDidUnMount 它会在第一次渲染时会调用。监听依赖的 props 和 state，更新时调用。数据更新后会调用 return 的函数
 
-## useState
+## useState 中传入函数会怎么样
 
 [useState undefined behavior when state is function](https://github.com/facebook/react/issues/15279)
 
 会直接调用
 
-## 解决的方法
+## 如果 effect 内部获取不到最新值，怎么办？
 
 ### 使用依赖
 

@@ -1,7 +1,5 @@
 # 组件里面的函数
 
-## Arrow Functions in Class Properties Might Not Be As Great As We Think
-
 ## Class Porperties Proposal
 
 在 react 里面，可以在类里面直接写 state
@@ -53,15 +51,16 @@ https://reactjs.org/docs/handling-events.html
 
 在 JavaScript 里面，类方法默认没有绑定 this
 
-react 文档上面说，这是 JavaScript 的行为，ok，一开始我还以为他说的是 JavaScript 的类，但是其实是函数呀。
+react 文档上面说，这是 JavaScript 的行为，ok，一开始我还以为他说的是 JavaScript 的类，但是其实是函数呀。（class 只是 function 的语法糖）
 
-看下面的代码就明白了，say 函数里面，的确是没有 this 值的
+看下面的代码就明白了，如果想要 Ha 实例里面有 say 函数，得手动 bind this。
 
 ```js
 function Ha(name) {
   this.name = name;
+  this.say = say.bind(this);
   function say() {
-    console.log(“this “, this);
+    console.log("this", this);
   }
 }
 ```
@@ -97,7 +96,7 @@ class LoggingButton extends React.Component {
   render() {
     // This syntax ensures `this` is bound within handleClick
     return (
-      <button onClick={(e) => this.handleClick(e)}>
+      <button onClick={(e) => this.handleClick.bind(this,e)}>
         Click me
       </button>
     );
