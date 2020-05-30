@@ -104,7 +104,7 @@ module.exports = {
         {
           title: "Node",
           collapsable: true,
-          children: ["", "path", "module", "cli"].map((i) => `node/${i}`),
+          children: ["", "fs", "path", "module", "cli"].map((i) => `node/${i}`),
         },
       ],
       "/browser/": [
