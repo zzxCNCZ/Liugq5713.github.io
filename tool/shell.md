@@ -120,6 +120,34 @@ do
 done < "$input"
 ```
 
+## [chmod](https://www.computerhope.com/unix/uchmod.htm)
+
+- 0 : no permission
+- 1 : execute
+- 2 : write
+- 4 : read
+
+```shell
+chmod 644 file.htm
+```
+
+## [bash array](https://opensource.com/article/18/5/you-dont-know-bash-intro-bash-arrays)
+
+- `arr=()` Create an empty array
+- `arr=(1 2 3)` Initialize array
+
+## ${} vs $()
+
+- `${}` 用于在字符串中区分对象,`${parameter}` The value of parameter is substituted.
+- `$()` is used to execute a command:
+
+## shell 变量声明
+
+变量声明在左右操作符不需要留有空白。否则 shell 脚本会错误解析。
+
+- `var=23` is just invoking the var=23 command.
+- `var =23` is invoking the var command with =23 as argument.
+
 ## 参考
 
 - [Bash Scripting: Everything you need to know about Bash-shell programming](https://itnext.io/bash-scripting-everything-you-need-to-know-about-bash-shell-programming-cd08595f2fba)

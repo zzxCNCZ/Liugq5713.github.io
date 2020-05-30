@@ -9,7 +9,7 @@
 
 ## Object.create()
 
-The Object.create() method creates a new object, using an existing object as the prototype of the newly created object.
+The Object.create() method creates a new object, using an existing object as the prototype of the newly created object.(Object.create 方法可以传入参数，)
 
 ## [object.create vs new](https://stackoverflow.com/questions/4166616/understanding-the-difference-between-object-create-and-new-somefunction)
 

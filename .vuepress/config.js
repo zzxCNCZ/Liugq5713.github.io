@@ -180,6 +180,7 @@ module.exports = {
             "mac",
             "windows",
             "vscode",
+            "puppeteer",
             "webpack",
             "webpack-split-chunks",
             "webpack-deep",

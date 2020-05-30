@@ -1,5 +1,9 @@
 # api
 
+## postMessage
+
+监听方使用 window.addEventListener message 会接收到来自 chrome 插件的信息，有点坑爹
+
 ## 剪贴板
 
 - navigator.clipboard.writeText(window.location.toString()) 把一些文字复制到剪贴板上，这个 api 兼容性还可以，就是 mac 上面要 13 的版本才能支持

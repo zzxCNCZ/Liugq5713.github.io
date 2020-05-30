@@ -159,6 +159,23 @@ git checkout upstream/master
 git checkout -b devTodo
 ```
 
+## 基于 commit 开心的分支
+
+```js
+git branch testTcs 8297e7000937709cef1a09be81469c3645208666
+
+基于一个commit  开一个新的分支
+
+
+git checkout -b testBr c485217
+
+同理，也可以创建新分支
+```
+
+## git show commit_id
+
+查看当前 commit 的信息
+
 ## 参考
 
 - [Git 工具 - 子模块](https://git-scm.com/book/zh/v1/Git-%E5%B7%A5%E5%85%B7-%E5%AD%90%E6%A8%A1%E5%9D%97)

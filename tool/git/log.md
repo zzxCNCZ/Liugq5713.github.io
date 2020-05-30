@@ -6,6 +6,14 @@ glol 命令查看 log 特别好用，查看 log 特别的清晰
 
 `alias glol="git log --graph --pretty='%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'"`
 
+## git show
+
+Shows one or more objects (blobs, trees, tags and commits).
+
+- 如果知道一个文件的 sha-1 值，`git show 215ded5`
+- 比如查看 v1 标签： `git show tagLearn`
+- 查看 commit 对象：`git show 5a97a20`
+
 ## 查看 git 记录
 
 > git 比较优秀的地方就是可以一切操作都是有记录的，除了部分操作，都是有补救措施的，所以查看操作记录也是必须的

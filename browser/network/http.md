@@ -107,6 +107,18 @@ The HTTP 304 Not Modified client redirection response code indicates that there 
 
 ## [http redircet to https](https://stackoverflow.com/questions/7450940/automatic-https-connection-redirect-with-node-js-express)
 
+## [HTTP Header](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers)
+
+Downloads Content-Disposition
+
+可以让用户如下下载文件，
+
+Attachment 可以下载的
+
+Content-Disposition: inline
+Content-Disposition: attachment
+Content-Disposition: attachment;filename="filename.jpg"
+
 ## 参考
 
 - [Understanding HTML Form Encoding: URL Encoded and Multipart Forms](https://dev.to/sidthesloth92/understanding-html-form-encoding-url-encoded-and-multipart-forms-3lpa)
