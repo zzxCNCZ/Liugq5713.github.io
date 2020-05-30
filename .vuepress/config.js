@@ -166,7 +166,7 @@ module.exports = {
           children: [
             "",
             "shell",
-            "items",
+            "iterm",
             "babel",
             "chrome",
             "eslint",

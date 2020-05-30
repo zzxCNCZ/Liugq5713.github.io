@@ -27,7 +27,3 @@
 ubuntu 内置了 imagemaagick `sudo apt install imagemagick`
 
 `convert xxx.jpg -resize 200 dist-xxx.jpg`
-
-## TBD
-
-To Be Discussed / Determined 的缩写,中文含义“待讨论”

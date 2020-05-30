@@ -1,12 +1,5 @@
 # 其他
 
-## 学会查看 log
-
-TCE
-
-- TCE: /opt/tiger/toutiao/log/app/xxx 查 access 和 error log
-- TCE: pm2 logs
-
 ## 前后端分离再分离
 
 你会发现前端开发的体系化、正规化，其实伴随着前后端分离逐步深化:
@@ -34,31 +27,3 @@ https://samnewman.io/patterns/architectural/bff/
 - [中文版 33-js-concepts](https://github.com/stephentian/33-js-concepts)
 - [七个对我最重要的职业建议（译文）](http://www.ruanyifeng.com/blog/2015/09/career-advice.html)
 - [前端部署演化史](https://mp.weixin.qq.com/s/bfZkqgr0JAy_oxcqc4ULFw)
-
-## 名词
-
-### 回流页和落地页
-
-回流页特指从 APP 内分享至第三方渠道（微信、微博、易信等），并在这些渠道中打开内容的页面。
-
-落地页也称“着陆页”，是指访问者在其他地方看到发出的某个具有明确主题的特定营销活动，点击后被链接到你网站上的第一个页面。
-
-## 求助的方式
-
-学会使用 codesandbox 给问问题的人更多地信息，学会提问
-
-eg: `https://codesandbox.io/s/jolly-brook-p24vu`
-
-## 重写的方式
-
-重写一部分的代码的时候，建议把这一部分代码复制出来，然后对比着改，保证原有的功能可用。
-
-- 对业务的理解，可以帮你学习到一些同行的经验，可以少走一些坑
-
-* 当你的工作上，有依赖的上下游时，我们需要看一下你的同学的 okr，确保自己的 ok 在其他的同学的 ok 里面
-
-- 聊天的目的： 关键工作进展，个人发展困惑，团队问题反馈等相关问题的准备
-
-* 线上出现问题，应该先回滚，保证线上的服务稳定性。然后在处理问题。 线上出了问题，要疯狂联系同学。保证线上服务稳定第一
-
-- 如果你的提供者不是很成熟，那么你需要把控过程
