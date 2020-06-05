@@ -1,5 +1,11 @@
 # 错误处理
 
+## Error 构造函数
+
+`new Error([message[, fileName[, lineNumber]]])`
+
+## try catch
+
 [try catch 教程](https://javascript.info/try-catch)，有代码示例，自己可以跟着一步一步的做，本文基于此
 
 错误处理真的很必要，它强迫我们站在用户的角度去思考问题，如果这段代码就是出了问题怎么办？

@@ -81,3 +81,13 @@ TCE
 
 - TCE: /opt/tiger/toutiao/log/app/xxx 查 access 和 error log
 - TCE: pm2 logs
+
+## 常用的写文章的规矩
+
+// -> 用于显示表达式的结果。例如：
+1 + 1; // -> 2
+// > 意思是 console.log 或其他输出的结果。例如：
+console.log("hello, world!"); // > hello, world!
+// 只是一个解释的评论。例如：
+// Assigning a function to foo constant
+const foo = function() {};

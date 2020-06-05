@@ -40,6 +40,11 @@ const SiderWrapper = styled.div`
 `;
 ```
 
+## [z-index](https://www.zhangxinxu.com/wordpress/2016/01/understand-css-stacking-context-order-z-index/)
+
+1.  z-index 只有在 position 为 absolute | fixed | relative | sticky 时才生效.
+2.  当父元素设置了 z-index 后，其子元素所设置的 z-index 都将在父元素内进行排列，这种情况下的子元素不会与父元素外部其他元素出现渲染层次交叉的情况。
+
 ## 参考
 
 - [CSS Utility Classes and "Separation of Concerns"](https://adamwathan.me/css-utility-classes-and-separation-of-concerns/)

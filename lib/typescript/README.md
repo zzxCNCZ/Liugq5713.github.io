@@ -1,3 +1,10 @@
+# Typescript
+
+## 三斜线
+
+`/// <reference path="..." />`指令是三斜线指令中最常见的一种。 它用于声明文件间的 依赖。
+三斜线引用告诉编译器在编译过程中要引入的额外的文件。
+
 ## enum
 
 [ss](https://stackoverflow.com/questions/50365598/typescript-runtime-error-cannot-read-property-of-undefined-enum)
@@ -37,7 +44,7 @@ If you have the same issue, you can work around it like this:
 ```js
 const elem = styled.div`
   border-radius: 10px;
-  background-image: url(${p =>
+  background-image: url(${(p) =>
     p.available ? availableIcon : unavailableIcon});
 `;
 ```
@@ -47,7 +54,7 @@ becomes:
 ```js
 const elem = styled.div`
   border-radius: 10px;
-  ${p =>
+  ${(p) =>
     p.available
       ? `background-image: ${availableIcon};`
       : `background-image: ${unavailableIcon};`}

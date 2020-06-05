@@ -153,6 +153,12 @@ do
 done < "$input"
 ```
 
+## base64 转音频
+
+1. 仅将使用 base64 编码的内容复制到文本文件中。
+2. 使用 base64 命令行工具对源文本文件进行解码：
+   `$ base64 --decode source_base64_text_file > dest_audio_file`
+
 ## 参考
 
 - [Bash Scripting: Everything you need to know about Bash-shell programming](https://itnext.io/bash-scripting-everything-you-need-to-know-about-bash-shell-programming-cd08595f2fba)

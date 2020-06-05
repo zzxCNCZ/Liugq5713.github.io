@@ -68,10 +68,10 @@ If you want to disable output on errors, you can use the `noEmitOnError` option 
 ```ts
 const obj = {
   name: "lily",
-  age: 12
+  age: 12,
 };
 
-Object.keys(obj).map(item => {
+Object.keys(obj).map((item) => {
   console.log(obj[item]);
   return item;
 });
@@ -97,7 +97,7 @@ Turns out A global file cannot be compiled using '--isolatedModules'. Ensure you
 type Event = {
   name: string,
   dateCreated: string,
-  type: string
+  type: string,
 };
 
 interface UserEvent extends Event {
