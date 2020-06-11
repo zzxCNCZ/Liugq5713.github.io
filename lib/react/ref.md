@@ -82,7 +82,7 @@ React.createRef() will not work with Stateless Functional components because the
 const node = this.myRef.current;
 ```
 
-## 父子组件内
+## 父组件获取函数子组件的 ref
 
 ### Refs - Forwarding Refs 获取函数组件的 ref
 
