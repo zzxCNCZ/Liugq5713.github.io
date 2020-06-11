@@ -14,6 +14,10 @@ iterms 比较好用的一点，在命令行输入 d ，就可以输出 10 个你
 
 `iTerm2 -> Preferences -> Appearance -> Hotkey -> Check Show/hide`
 
+## 推荐主题 ：Powerlevel10k
+
+Type p10k configure to access the builtin WISIWIG configuration wizard right from your terminal.
+
 ## 分屏幕
 
 竖分屏 `command+d` 横分屏 `command+shift+d`

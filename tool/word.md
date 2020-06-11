@@ -31,7 +31,8 @@
 
 * CGI 公共网关接口（Common Gateway Interface，CGI）是 Web 服务器运行时外部程序的规范，按 CGI 编写的程序可以扩展服务器功能。CGI 应用程序能与浏览器进行交互，还可通过数据 API 与数据库服务器等外部数据源进行通信，从数据库服务器中获取数据。格式化为 HTML 文档后，发送给浏览器，也可以将从浏览器获得的数据放到数据库中。
 
-- nlp Natural language processing 自然语言处理
+- nlp : Natural language processing 自然语言处理(实现人机间自然语言通信)
+- ASR : 自动语音识别技术（Automatic Speech Recognition）
 
 - PPE stands for Pre-Production Environment (software development)
 

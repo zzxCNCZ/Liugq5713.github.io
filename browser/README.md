@@ -15,6 +15,10 @@
 
 [Export JSON Data To Downloadable File Using Javascript](https://www.codevoila.com/post/30/export-json-data-to-downloadable-file-using-javascript)
 
+## base64 编码
+
+- [Encoding and Decoding Base64 Strings in Node.js](https://stackabuse.com/encoding-and-decoding-base64-strings-in-node-js/)
+
 ## 参考
 
 - [Polyfill 方案的过去、现在和未来 ](https://github.com/sorrycc/blog/issues/80)

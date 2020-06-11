@@ -27,3 +27,7 @@
 ubuntu 内置了 imagemaagick `sudo apt install imagemagick`
 
 `convert xxx.jpg -resize 200 dist-xxx.jpg`
+
+## FFmpeg
+
+一个很好用的工具帮助你处理音频

@@ -27,7 +27,7 @@ HTMLCanvasElement.toBlob() 方法创造 Blob 对象，用以展示 canvas 上的
 
 ```js
 //callback必须（可获得一个单独的Blob对象参数），其余为可选
-void canvas.toBlob(callback, type, encoderOptions)
+void canvas.toBlob(callback, type, encoderOptions);
 ```
 
 ## [读取文件 FileReader](https://developer.mozilla.org/en-US/docs/Web/API/FileReader)
@@ -65,6 +65,16 @@ void canvas.toBlob(callback, type, encoderOptions)
     // write the ArrayBuffer to a blob, and you're done
     var blob = new Blob([ab], { type: mimeString })
     return blob
+}
+```
+
+## [csv 文件打开乱码，有哪些方法可以解决](https://www.zhihu.com/question/21869078)
+
+```js
+export function adaptExcel(content: string) {
+  const BOM = Buffer.from("\uFEFF");
+  const bomCsv = Buffer.concat([BOM, Buffer.from(content)]);
+  return bomCsv.toString();
 }
 ```
 
