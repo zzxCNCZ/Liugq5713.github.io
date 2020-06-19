@@ -1,5 +1,9 @@
 # Typescript
 
+## tsconfig
+
+可以通过 tsc --init 帮助你快速生成 ts 配置文件
+
 ## 三斜线
 
 `/// <reference path="..." />`指令是三斜线指令中最常见的一种。 它用于声明文件间的 依赖。

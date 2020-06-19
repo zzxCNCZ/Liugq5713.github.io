@@ -97,6 +97,35 @@ vscode 当按住 command + click 跳转到定义文件之后，如何跳转回�
 
 可以帮你调整 import 文件的顺序, 需要开启配置 importSorter.generalConfiguration.sortOnBeforeSave: true,
 
+## [网页 code server 部署](https://hackernoon.com/how-you-can-set-up-remote-development-workflow-with-vs-code-in-your-browser-3y3q3wu9)
+
+Code server 部署
+
+首先，部署还是很简单的。
+
+仓库地址： https://github.com/cdr/code-server
+
+找到文件下载地址，解压缩之后就可以跑了。运行 bin 里面的命令就可以跑了。
+
+https://github.com/cdr/code-server/releases
+
+跑起来之后，配置文件在：~/.config/code-server/config.yaml
+
+```yaml
+bind-addr: 10.227.14.200:8080
+auth: password
+password: liu123
+cert: false
+```
+
+然后要让这个命令在后台跑，也很简单，运行下面命令就可以了
+
+https://www.ibm.com/developerworks/cn/linux/l-cn-nohup/index.html
+
+```js
+nohup ./code-server
+```
+
 ## 参考
 
 - [23 lesser known VS Code Shortcuts as GIF](https://dev.to/devmount/23-lesser-known-vs-code-shortcuts-as-gif-80)

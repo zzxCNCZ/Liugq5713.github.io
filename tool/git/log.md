@@ -13,6 +13,7 @@ Shows one or more objects (blobs, trees, tags and commits).
 - 如果知道一个文件的 sha-1 值，`git show 215ded5`
 - 比如查看 v1 标签： `git show tagLearn`
 - 查看 commit 对象：`git show 5a97a20`
+- 和某一个 commitID 进行比较： git diff d34ff657f5^!
 
 ## 查看 git 记录
 

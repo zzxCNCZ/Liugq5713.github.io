@@ -164,6 +164,19 @@ useReducer 用于一些比较复杂的操作
 - 副作用不需要清理
 - 副作用需要清理，useEffect 需要返回一个函数
 
+## [useReducer](https://www.sumologic.com/blog/react-hook-typescript/)
+
+如何给 reducer 添加类型，给 state 和 action 添加类型就可以
+
+```js
+function reducer(state: State, action: Action): State {
+  switch (action.type) {
+    case "failure":
+      return { isLoading: false, error: action.error };
+  }
+}
+```
+
 ## 参考
 
 - [深入理解 react](https://overreacted.io/zh-hans/a-complete-guide-to-useeffect/)

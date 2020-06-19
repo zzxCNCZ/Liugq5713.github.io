@@ -174,3 +174,10 @@ z-index 如果是开发的时候随便填的数值，那么当层级多了的时
 1： 动态增删表单 使用 Form.List
 2, 多个表单之间联动，使用 Form.Provider
 3，条件表单，使用 shouldUpdate
+
+## antd form list name
+
+调试 antd 组件，可以在 antd/lib 文件夹内添加 console.log
+
+Form list 里面的元素 name 是 list 名 + 序号 + 自己的名字
+`["entries", 0, "raw_query"]`

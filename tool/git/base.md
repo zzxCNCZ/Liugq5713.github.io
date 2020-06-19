@@ -62,6 +62,8 @@ git submodule init 来初始化你的本地配置文件，git submodule update �
 - [Angular 项目规范](https://github.com/angular/angular/blob/master/CONTRIBUTING.md#type)
 - [Commit message 和 Change log 编写指南](http://www.ruanyifeng.com/blog/2016/01/commit_message_change_log.html)
 
+## [git tag](https://mohitkhare.me/blog/git-tags-explained/)
+
 ## git 工作流
 
 一个大的项目 可能对一个功能有大量的修改。可以新建一个分支名为 someFeature , 然后将所有的更改分支都合并到这个分支上，最后将该分支合并到主分支

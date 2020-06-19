@@ -159,8 +159,19 @@ done < "$input"
 2. 使用 base64 命令行工具对源文本文件进行解码：
    `$ base64 --decode source_base64_text_file > dest_audio_file`
 
+## [uname](https://man.linuxde.net/uname)
+
+[查看 linux 版本号](https://www.qiancheng.me/post/coding/show-linux-issue-version)
+
+`uname -a` 展示所有
+
+uname 命令用于打印当前系统相关信息（内核版本号、硬件架构、主机名称和操作系统类型等）。
+
 ## 参考
 
 - [Bash Scripting: Everything you need to know about Bash-shell programming](https://itnext.io/bash-scripting-everything-you-need-to-know-about-bash-shell-programming-cd08595f2fba)
 - [15 Basic ‘ls’ Command Examples in Linux](https://www.tecmint.com/15-basic-ls-command-examples-in-linux/)
 - [Shell Scripting TutorialVariables ](https://www.shellscript.sh/variables1.html)
+- [docker tutorial](https://www.tutorialspoint.com/docker/installing_docker_on_linux.htm)
+- [使用 Docker 构建前端应用](https://zhuanlan.zhihu.com/p/39241059)
+- [史上最全（全平台）docker 安装方法！ - 知乎](https://zhuanlan.zhihu.com/p/54147784)

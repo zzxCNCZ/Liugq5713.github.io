@@ -20,6 +20,17 @@
 - name：错误名称（非标准属性）
 - stack：错误的堆栈（非标准属性）
 
+## [抛出错误](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/throw)
+
+throw 也可以抛出对象，比如 `throw {test:1}`
+
+```js
+throw "Error2"; // generates an exception with a string value
+throw 42; // generates an exception with the value 42
+throw true; // generates an exception with the value true
+throw new Error("Required"); // generates an error object with the message of Required
+```
+
 ## try..catch 如何起作用
 
 有朋友可能觉得这个问题很简单，当然是代码里面有错的时候起作用啊。emm，有道理，但是不够深入，具体有两点

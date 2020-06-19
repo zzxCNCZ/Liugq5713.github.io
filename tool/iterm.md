@@ -28,6 +28,12 @@ iterm 的使用小技巧，我觉得分为多个标签页还是有点麻烦，�
 
 [zsh 添加多个 plugin 的时候，使用空格隔开](https://opensource.com/article/19/9/adding-plugins-zsh)
 
+### 推荐插件
+
+- zsh-syntax-highlighting
+- zsh-autosuggestions
+- zsh-history-substring-search
+
 ## 参考
 
 - [items 的使用指南](https://xiaozhou.net/learn-the-command-line-iterm-and-zsh-2017-06-23.html)
