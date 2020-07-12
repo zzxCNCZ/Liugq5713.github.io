@@ -21,6 +21,10 @@
 
 https://samnewman.io/patterns/architectural/bff/
 
+## 测试
+
+测试 bug 的时候，要把上下文理清楚，环境，网络参数啥的
+
 ## 参考
 
 - [33-js-concepts](https://github.com/leonardomso/33-js-concepts)

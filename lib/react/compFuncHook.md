@@ -157,6 +157,23 @@ useReducer 用于一些比较复杂的操作
 
 当封闭的值始终不会变的情况下闭包是非常棒的。这使它们非常容易思考因为你本质上在引用常量。
 
+### useState
+
+- Lazy initial state
+
+这个 initialState 仅仅使用在初次渲染中，如果 initialState 的值是由某些值算出来的，那么你就可以传入一个函数，仅在初次渲染的时候会执行。
+
+```js
+const [state, setState] = useState(() => {
+  const initialState = someExpensiveComputation(props);
+  return initialState;
+});
+```
+
+- Bailing out of a state update
+
+如果 setState 是相同的值，那么 react 就不会更新。但是 react 仍然会渲染某一个写特殊的组件。但是不会深入组件树。如果你在 render 的时候做昂贵的计算，你可以使用 useMemo
+
 ### useEffect
 
 用于防治一些副作用的代码

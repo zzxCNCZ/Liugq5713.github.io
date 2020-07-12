@@ -34,6 +34,10 @@ iterm 的使用小技巧，我觉得分为多个标签页还是有点麻烦，�
 - zsh-autosuggestions
 - zsh-history-substring-search
 
+## iterm2 开启状态栏
+
+- [状态栏文档](https://www.iterm2.com/documentation-status-bar.html)
+
 ## 参考
 
 - [items 的使用指南](https://xiaozhou.net/learn-the-command-line-iterm-and-zsh-2017-06-23.html)

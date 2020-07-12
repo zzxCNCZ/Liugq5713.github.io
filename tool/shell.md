@@ -167,6 +167,16 @@ done < "$input"
 
 uname 命令用于打印当前系统相关信息（内核版本号、硬件架构、主机名称和操作系统类型等）。
 
+## [scp](https://gravitational.com/blog/scp-familiar-simple-insecure-slow/)
+
+## [tar](https://www.interserver.net/tips/kb/use-tar-command-linux-examples/)
+
+`tar -cvf test.tar`
+
+### [tar vs gzip](http://www.differencebetween.net/technology/difference-between-gzip-and-tar/)
+
+Tar is an archiver, meaning it would archive multiple files into a single file but without compression. Gzip which handles the .gz extension is the compression tool that is used to reduce the disk space used by the file.
+
 ## 参考
 
 - [Bash Scripting: Everything you need to know about Bash-shell programming](https://itnext.io/bash-scripting-everything-you-need-to-know-about-bash-shell-programming-cd08595f2fba)

@@ -151,6 +151,10 @@ remote_file_address: 远程服务器地址。
 netstat -tulpn | grep 8080
 ```
 
+你可以使用 lsof 命令来查看某一端口是否开放。查看端口可以这样来使用，我就以 80 端口为例：
+lsof -i:80
+如果有显示说明已经开放了，如果没有显示说明没有开放。
+
 ## 连上安卓设备快速输入
 
 ```js
@@ -168,6 +172,21 @@ adb shell input text "sometext"
 ## mac 删除应用的方法
 
 打开访达，选择应用程序，然后将你想删除的应用程序拖到废纸篓里面去即可。
+
+## cp 命令如何不覆盖当前目录已经存在的文件
+
+-n, --no-clobber 不要覆盖已存在的文件(使前面的 -i 选项失效)
+
+## mkdir
+
+- 创建多个目录
+
+`mkdir aa bb cc`
+
+- 创建多级目录
+
+`mkdir -p aaa/bbb/ccc` //建立 aaa/bbb/ccc 这样的层级目录
+`mkdir -p src/{a,b,c,d}/img` //建立目录 src，其中含有 4 个文件夹 a, b, c, d，且这 4 个文件都含有一个 img 文件夹
 
 ## 参考
 

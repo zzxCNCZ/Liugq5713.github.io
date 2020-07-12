@@ -55,8 +55,8 @@
   param : 该方法开始填充值得索引位置
   param : 开始复制值得索引位置
   param : 限制重写值得数量
-- fill
-  用指定的值填充一至多个数组元素
+- [fill](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/fill)
+  用指定的值填充一至多个数组元素,快速创建长度为 100，元素为 0 的数组： `Array(100).fill(0)`
   eg : nums.fill(0,1,2) ,将数至 2 下标的元素填充
 
 ## 迭代
