@@ -47,6 +47,20 @@ git submodule init 来初始化你的本地配置文件，git submodule update �
 
 ## git commit
 
+### git commit accepts several message
+
+```shell
+git commit -m "commit title" -m "commit description"
+```
+
+or
+
+```shell
+git commit -m "commit title
+>
+> commit description"
+```
+
 ### 书写良好的 Git 提交信息
 
 - feat (new feature)

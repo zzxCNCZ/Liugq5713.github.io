@@ -1,5 +1,9 @@
 # Antd
 
+## [侧边栏固定布局](https://codesandbox.io/s/cebiangudinggundongtiao-xqcyd?file=/src/styles.css)
+
+- [Hide scroll bar, but while still being able to scroll](https://stackoverflow.com/questions/16670931/hide-scroll-bar-but-while-still-being-able-to-scroll)
+
 ## 面包屑
 
 面包屑导航(BreadcrumbNavigation)这个概念来自童话故事“汉赛尔和格莱特”，当汉赛尔和格莱特穿过森林时，不小心迷路了，但是他们发现在沿途走过的地方都撒下了面包屑，让这些面包屑来帮助他们找到回家的路。所以，面包屑导航的作用是告诉访问者他们目前在网站中的位置以及如何返回。
@@ -50,7 +54,7 @@ const formItemLayout = {
     xs: { span: 24 },
     sm: { span: 16 },
   },
-};
+}
 ```
 
 ## 表单域
@@ -90,32 +94,32 @@ antd form 的函数很有意思，validateFields，`( [fieldNames: string[]], [o
 
 ```js
 export function getParams(ns, opt, cb) {
-  let names = ns;
-  let options = opt;
-  let callback = cb;
+  let names = ns
+  let options = opt
+  let callback = cb
   if (cb === undefined) {
     if (typeof names === "function") {
-      callback = names;
-      options = {};
-      names = undefined;
+      callback = names
+      options = {}
+      names = undefined
     } else if (Array.isArray(names)) {
       if (typeof options === "function") {
-        callback = options;
-        options = {};
+        callback = options
+        options = {}
       } else {
-        options = options || {};
+        options = options || {}
       }
     } else {
-      callback = options;
-      options = names || {};
-      names = undefined;
+      callback = options
+      options = names || {}
+      names = undefined
     }
   }
   return {
     names,
     options,
     callback,
-  };
+  }
 }
 ```
 

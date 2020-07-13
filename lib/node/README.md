@@ -32,11 +32,11 @@ npm install @babel/core @babel/register @babel/preset-env --save-dev
 ```js
 // Transpile all code following this line with babel and use '@babel/preset-env' (aka ES6) preset.
 require("@babel/register")({
-  presets: ["@babel/preset-env"]
-});
+  presets: ["@babel/preset-env"],
+})
 
 // Import the rest of our application.
-module.exports = require("./server.js");
+module.exports = require("./server.js")
 ```
 
 ## npm install --save esm
@@ -70,7 +70,7 @@ nodemon 同样也是可以使用的 `nodemon -r esm server.js`
 这里，我们可以通过包直接把 css 文件忽略掉
 
 ```js
-import "ignore-styles";
+import "ignore-styles"
 ```
 
 ### 不能识别 react 组件
@@ -99,3 +99,12 @@ Base64 是一种基于 64 个可打印字符来表示二进制数据的表示方
 - npm install axios@0.16.2
 - npm install superagent@3.5.2
 - npm install got@7.1.0
+
+## [node-gyp 安装不下来](https://github.com/nodejs/node-gyp/issues/1927)
+
+maybe this is a trouble with mac
+
+```js
+sudo rm -rf /Library/Developer/CommandLineTools
+xcode-select --install
+```

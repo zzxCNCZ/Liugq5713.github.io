@@ -18,11 +18,11 @@ Promise 是一个代理对象，它与原先的异步操作没有什么关系。
 ```js
 new Promise((resolve, reject) => {
   if (true) {
-    resolve("hello world");
+    resolve("hello world")
   } else {
-    reject("woring");
+    reject("woring")
   }
-});
+})
 ```
 
 ## 检验是否是 Promise
@@ -56,14 +56,14 @@ export function isPromise {
 
 ```js
 let p1 = new Promise(function(resolve, reject) {
-  resolve(42);
-});
+  resolve(42)
+})
 
 p1.then(function(value) {
-  console.log(value);
+  console.log(value)
 }).then(function() {
-  console.log(finished);
-});
+  console.log(finished)
+})
 ```
 
 ### Promise 链的返回值
@@ -83,15 +83,15 @@ The finally() method returns a Promise. When the promise is settled, i.e either 
 
 ```js
 Promise.prototype.finally = function(callback) {
-  let P = this.constructor;
+  let P = this.constructor
   return this.then(
     (value) => P.resolve(callback()).then(() => value),
     (reason) =>
       P.resolve(callback()).then(() => {
-        throw reason;
+        throw reason
       })
-  );
-};
+  )
+}
 ```
 
 ## 错误处理
@@ -129,30 +129,51 @@ Promise.prototype.finally = function(callback) {
 ```js
 function promisfy(fn, ctx) {
   return function() {
-    let args = arguments;
+    let args = arguments
 
     return new Promise(function(resolve, reject) {
       function callback(e, ...result) {
         if (e) {
-          reject(e);
+          reject(e)
         } else {
           if (result.length == 1) {
-            resolve(result[0]);
+            resolve(result[0])
           } else {
-            resolve(result);
+            resolve(result)
           }
         }
       }
 
-      let fnArgs = [];
+      let fnArgs = []
       for (let i of args) {
-        fnArgs.push(i);
+        fnArgs.push(i)
       }
-      fnArgs.push(callback);
+      fnArgs.push(callback)
 
-      fn.apply(ctx, fnArgs);
-    });
-  };
+      fn.apply(ctx, fnArgs)
+    })
+  }
+}
+```
+
+## sleep
+
+- best solution
+
+```js
+const sleep = (ms) => {
+  return new Promise((resolve) => setTimeout(resolve, ms))
+}
+```
+
+- worse solution
+
+```js
+function sleep(sleepDuration) {
+  var now = new Date().getTime()
+  while (new Date().getTime() < now + sleepDuration) {
+    /* do nothing */
+  }
 }
 ```
 

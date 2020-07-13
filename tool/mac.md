@@ -188,6 +188,10 @@ adb shell input text "sometext"
 `mkdir -p aaa/bbb/ccc` //建立 aaa/bbb/ccc 这样的层级目录
 `mkdir -p src/{a,b,c,d}/img` //建立目录 src，其中含有 4 个文件夹 a, b, c, d，且这 4 个文件都含有一个 img 文件夹
 
+## [如何禁止 mac 更换工作区](https://www.zhihu.com/question/49530172)
+
+System Preference > Mission Control，禁用掉 rearrange workspace
+
 ## 参考
 
 - [mac 通过自带的 ssh 连接 Linux 服务器并上传解压文件](http://weiqinl.com/2018/01/27/mac%E9%80%9A%E8%BF%87%E8%87%AA%E5%B8%A6%E7%9A%84ssh%E8%BF%9E%E6%8E%A5Linux%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%B9%B6%E4%B8%8A%E4%BC%A0%E8%A7%A3%E5%8E%8B%E6%96%87%E4%BB%B6/)

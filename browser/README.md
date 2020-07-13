@@ -19,6 +19,10 @@
 
 - [Encoding and Decoding Base64 Strings in Node.js](https://stackabuse.com/encoding-and-decoding-base64-strings-in-node-js/)
 
+## wechat
+
+- [如何避免服务号运营过程中，触发微信惩罚机制？](http://www.woshipm.com/operate/3346500.html)
+
 ## 参考
 
 - [Polyfill 方案的过去、现在和未来 ](https://github.com/sorrycc/blog/issues/80)
