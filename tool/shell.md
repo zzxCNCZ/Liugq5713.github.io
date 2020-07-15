@@ -1,5 +1,11 @@
 # shell 脚本
 
+## [sh 文件首部加注释](https://stackoverflow.com/questions/8967902/why-do-you-need-to-put-bin-bash-at-the-beginning-of-a-script-file)
+
+`#! /bin/bash`
+
+[Shebang 解释](https://zh.wikipedia.org/wiki/Shebang)
+
 ## [shell 命令格式](https://wangdoc.com/bash/grammar.html#%E5%91%BD%E4%BB%A4%E6%A0%BC%E5%BC%8F)
 
 命令的配置项一般是一个连词线开头，同一个配置项往往有长和短两种形式，短形式便于手动输入，长形式一般用在脚本中，可读性好，利于解释自身含义

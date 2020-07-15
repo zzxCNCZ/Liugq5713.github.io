@@ -9,22 +9,22 @@
 
 ```js
 for (var i = 0; i < 10; i++) {
-  setTimeout(() => console.log("val:", i)); // 拿到的是最新值
+  setTimeout(() => console.log("val:", i)) // 拿到的是最新值
 }
 for (var i = 0; i < 10; i++) {
-  setTimeout(((val) => console.log("val:", val)).bind(null, i)); // 拿到的是快照
+  setTimeout(((val) => console.log("val:", val)).bind(null, i)) // 拿到的是快照
 }
-const ref = { current: null };
+const ref = { current: null }
 for (var i = 0; i < 10; i++) {
-  ref.current = i;
-  setTimeout(((val) => console.log("val:", ref.current)).bind(null, ref)); // 拿到的是最新值
+  ref.current = i
+  setTimeout(((val) => console.log("val:", ref.current)).bind(null, ref)) // 拿到的是最新值
 }
 for (var i = 0; i < 10; i++) {
   // 拿到的是快照
-  let t = i;
+  let t = i
   setTimeout(() => {
-    console.log("t:", t);
-  });
+    console.log("t:", t)
+  })
 }
 ```
 
@@ -83,17 +83,17 @@ useState 如果是用来使用数据，使用 concat 返回新的数组
 
 ```js
 function Counter() {
-  const [count, setCount] = useState(0);
+  const [count, setCount] = useState(0)
   // 这个useEffect依赖于 count ,每次运行的时候会区到count的最新值
   useEffect(() => {
     const id = setInterval(() => {
-      setCount(count + 1);
-    }, 1000);
+      setCount(count + 1)
+    }, 1000)
 
-    return () => clearInterval(id);
-  }, [count]);
+    return () => clearInterval(id)
+  }, [count])
 
-  return <h1>{count}</h1>;
+  return <h1>{count}</h1>
 }
 ```
 
@@ -101,25 +101,25 @@ function Counter() {
 
 ```js
 function Counter() {
-  const [count, setCount] = useState(0);
-  const countRef = useRef(count);
-  countRef.current = count;
+  const [count, setCount] = useState(0)
+  const countRef = useRef(count)
+  countRef.current = count
 
   const syncIM = () => {
-    console.log(countRef.current);
-  };
+    console.log(countRef.current)
+  }
 
   useEffect(() => {
-    const id = setInterval(syncIM, 1000);
+    const id = setInterval(syncIM, 1000)
 
     setTimeout(() => {
-      setCount(count + 1);
-    }, 2000);
+      setCount(count + 1)
+    }, 2000)
 
-    return () => clearInterval(id);
-  }, []);
+    return () => clearInterval(id)
+  }, [])
 
-  return <h1>{count}</h1>;
+  return <h1>{count}</h1>
 }
 ```
 
@@ -127,19 +127,19 @@ function Counter() {
 
 ```js
 function Counter() {
-  const [count, setCount] = useState(0);
+  const [count, setCount] = useState(0)
 
   const syncIM = useCallback(() => {
-    console.log(count);
-  }, [count]);
+    console.log(count)
+  }, [count])
 
   useEffect(() => {
-    const id = setInterval(syncIM, 1000);
-    setTimeout(() => setCount(count + 1), 2000);
-    return () => clearInterval(id);
-  }, [syncIM]);
+    const id = setInterval(syncIM, 1000)
+    setTimeout(() => setCount(count + 1), 2000)
+    return () => clearInterval(id)
+  }, [syncIM])
 
-  return <h1>{count}</h1>;
+  return <h1>{count}</h1>
 }
 ```
 
@@ -165,9 +165,9 @@ useReducer 用于一些比较复杂的操作
 
 ```js
 const [state, setState] = useState(() => {
-  const initialState = someExpensiveComputation(props);
-  return initialState;
-});
+  const initialState = someExpensiveComputation(props)
+  return initialState
+})
 ```
 
 - Bailing out of a state update
@@ -189,7 +189,7 @@ const [state, setState] = useState(() => {
 function reducer(state: State, action: Action): State {
   switch (action.type) {
     case "failure":
-      return { isLoading: false, error: action.error };
+      return { isLoading: false, error: action.error }
   }
 }
 ```
@@ -197,3 +197,4 @@ function reducer(state: State, action: Action): State {
 ## 参考
 
 - [深入理解 react](https://overreacted.io/zh-hans/a-complete-guide-to-useeffect/)
+- [Five common mistakes writing react components (with hooks) in 2020](https://www.lorenzweiss.de/common_mistakes_react_hooks/)
