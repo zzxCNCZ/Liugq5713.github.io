@@ -15,6 +15,10 @@
 
 [ss](https://stackoverflow.com/questions/50183529/why-does-typescript-think-my-enum-is-undefined/50185219)
 
+[get a list of keys from an enumerator](https://stackoverflow.com/questions/48413651/is-there-a-simple-way-to-get-a-list-of-keys-numbers-from-enum-in-typescript)
+
+In this generated code, an enum is compiled into an object that stores both forward (name -> value) and reverse (value -> name) mappings. References to other enum members are always emitted as property accesses and never inlined.
+
 ## ts 将枚举转为数组
 
 A tricky bit is that TypeScript will 'double' map the enum in the emitted object, so it can be accessed both by key and value.
